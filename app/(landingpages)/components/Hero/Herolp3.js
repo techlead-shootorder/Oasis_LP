@@ -9,6 +9,8 @@ const LeadFormV2 = dynamic(
     () => import("../LeadForm/LeadFormV2"),
     { loading: () => <FormSkeleton /> }
   );
+
+LeadFormV2.displayName = "LeadFormV2";
   
   const LeadFormlp3Meta = dynamic(
     () => import("../LeadForm/LeadFormlp3Meta"),
