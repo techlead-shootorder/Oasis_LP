@@ -1,10 +1,26 @@
-import React, { memo, useMemo } from 'react';
+import React, { memo, useMemo, Suspense } from 'react';
 import { normalizeCityParams, getFilteredData } from './helper';
 import masterlp3 from "@/util/lp/masterlp3";
+import dynamic from 'next/dynamic';
 
 import HeaderTesting from "@/app/(landingpages)/components/Header/HeaderTesting";
 import Herolp3 from "@/app/(landingpages)/components/Hero/Herolp3";
 
+const MinimalLoader = () => <div className="animate-pulse bg-gray-200 h-10" />;
+const ComponentLoader = () => <div className="animate-pulse bg-gray-200 h-64 rounded-lg" />;
+
+
+// Dynamic components with single import pattern
+const DynamicComponents = {
+  // StickyButtonScreenlp3: dynamic(
+  //   () => import('@/app/(landingpages)/components/StickyButtonScreen/StickyButtonScreenlp3'),
+  //   { loading: () => <MinimalLoader /> }
+  // ),
+  StatisticBannerV2: dynamic(
+    () => import('@/app/(landingpages)/components/Hero/StatisticsBannerV2'),
+    { loading: () => <ComponentLoader /> }
+  ),
+}
 
 export async function generateStaticParams() {
   const params = [];
@@ -29,8 +45,19 @@ const Page = memo(({ params }) => {
         <header id="headerlp3">
           <HeaderTesting center={filteredCity} metanum={metanum} />
         </header>
+
+        {/* <Suspense fallback={<MinimalLoader />}>
+        <DynamicComponents.StickyButtonScreenlp3 center={filteredCity} />
+      </Suspense> */}
+
         <main>
           <Herolp3 center={filteredCity} isMeta={isMeta} />
+
+          <div className="mt-[20px] md:mt-0">
+          <Suspense fallback={<ComponentLoader />}>
+            <DynamicComponents.StatisticBannerV2 />
+          </Suspense>
+        </div>
         </main>
       </section>
     </>
