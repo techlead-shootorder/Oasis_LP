@@ -28,6 +28,18 @@ const DynamicComponents = {
     () => import('@/app/(landingpages)/components/Specialists/SpeciaListslp3'),
     { loading: () => <ComponentLoader /> }
   ),
+  Reviewlp3: dynamic(
+    () => import('@/app/(landingpages)/components/Review/Reviewlp3'),
+    { loading: () => <ComponentLoader /> }
+  ),
+  TrustedCliniclp3: dynamic(
+    () => import('@/app/(landingpages)/components/TrustedClinic/TrustedCliniclp3'),
+    { loading: () => <ComponentLoader /> }
+  ),
+  Centerslp3: dynamic(
+    () => import('@/app/(landingpages)/components/Centers/Centerslp3'),
+    { loading: () => <ComponentLoader /> }
+  ),
 }
 
 export async function generateStaticParams() {
@@ -45,7 +57,8 @@ const Page = memo(({ params }) => {
   const { city: rawCity } = params;
   const { city, isMeta, metanum } = normalizeCityParams(rawCity);
   const filteredCity = useMemo(() => masterlp3.find((center) => center.center_name === city), [city]);
-  useMemo(() => getFilteredData(city, filteredCity), [city, filteredCity]);
+  const { reviews: filteredReview } =
+    useMemo(() => getFilteredData(city, filteredCity), [city, filteredCity]);
 
   return (
     <>
@@ -72,6 +85,22 @@ const Page = memo(({ params }) => {
 
             <Suspense fallback={<ComponentLoader />}>
               <DynamicComponents.SpeciaListslp3 isMeta={isMeta} />
+            </Suspense>
+
+            <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 py-10 lg:py-16 bg-[url(https://images.oasisindia.in/website/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat mb-10 lg:mb-16 relative">
+              <Suspense fallback={<ComponentLoader />}>
+                <DynamicComponents.Reviewlp3
+                  center={filteredCity}
+                  filteredReview={filteredReview}
+                />
+              </Suspense>
+              <Suspense fallback={<ComponentLoader />}>
+                <DynamicComponents.TrustedCliniclp3 center={filteredCity} />
+              </Suspense>
+            </section>
+
+            <Suspense fallback={<ComponentLoader />}>
+              <DynamicComponents.Centerslp3 />
             </Suspense>
           </div>
         </main>
