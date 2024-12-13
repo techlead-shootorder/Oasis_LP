@@ -24,6 +24,10 @@ const DynamicComponents = {
     () => import('@/app/(landingpages)/components/Treatment/Treatmentlp3'),
     { loading: () => <ComponentLoader /> }
   ),
+  SpeciaListslp3: dynamic(
+    () => import('@/app/(landingpages)/components/Specialists/SpeciaListslp3'),
+    { loading: () => <ComponentLoader /> }
+  ),
 }
 
 export async function generateStaticParams() {
@@ -64,6 +68,10 @@ const Page = memo(({ params }) => {
 
             <Suspense fallback={<ComponentLoader />}>
               <DynamicComponents.Treatmentlp3 center={filteredCity} />
+            </Suspense>
+
+            <Suspense fallback={<ComponentLoader />}>
+              <DynamicComponents.SpeciaListslp3 isMeta={isMeta} />
             </Suspense>
           </div>
         </main>
