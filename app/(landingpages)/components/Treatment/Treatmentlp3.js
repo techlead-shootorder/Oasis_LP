@@ -99,7 +99,11 @@ const ButtonGroup = memo(({ next, previous, activeButton, setActiveButton }) => 
             <button
                 key={type}
                 onClick={() => {
-                    type === 'prev' ? previous() : next();
+                    if (type === 'prev') {
+                        previous();
+                      } else {
+                        next();
+                      }
                     setActiveButton(type);
                 }}
                 className="relative group transform transition hover:scale-105"
