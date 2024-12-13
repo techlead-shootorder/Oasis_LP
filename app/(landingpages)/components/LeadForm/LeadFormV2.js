@@ -421,6 +421,7 @@ const LeadFormV2 = () => {
             src='https://images.oasisindia.in/website/lp/lp3/shield_icon.svg'
             width={16}
             height={16}
+            priority
             alt="shield_icon"
           />
           <span className="text-green-800">Your data is 100% safe with us.</span>

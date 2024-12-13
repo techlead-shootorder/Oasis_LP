@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
+#headerlp3{
+    height: 72px;
 }
-
-
+.logow{
+    width: 120px;
+}
