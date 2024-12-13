@@ -1,3 +1,4 @@
+
 import React, { memo, useMemo, Suspense } from 'react';
 import { normalizeCityParams, getFilteredData } from './helper';
 import masterlp3 from "@/util/lp/masterlp3";
@@ -40,6 +41,22 @@ const DynamicComponents = {
     () => import('@/app/(landingpages)/components/Centers/Centerslp3'),
     { loading: () => <ComponentLoader /> }
   ),
+  ChooseOasislp3: dynamic(
+    () => import('@/app/(landingpages)/components/ChooseOasis/ChooseOasislp3'),
+    { loading: () => <ComponentLoader /> }
+  ),
+  AwardV2: dynamic(
+    () => import('@/app/(landingpages)/components/Award/AwardV2'),
+    { loading: () => <ComponentLoader /> }
+  ),
+  BestDoctorslp3: dynamic(
+    () => import('@/app/(landingpages)/components/BestDoctors/BestDoctorslp3'),
+    { loading: () => <ComponentLoader /> }
+  ),
+  IVFClinicSliderlp3: dynamic(
+    () => import('@/app/(landingpages)/components/IVFClinicSlider/IVFClinicSliderlp3'),
+    { loading: () => <ComponentLoader /> }
+  ),
 }
 
 export async function generateStaticParams() {
@@ -57,7 +74,7 @@ const Page = memo(({ params }) => {
   const { city: rawCity } = params;
   const { city, isMeta, metanum } = normalizeCityParams(rawCity);
   const filteredCity = useMemo(() => masterlp3.find((center) => center.center_name === city), [city]);
-  const { reviews: filteredReview } =
+  const { reviews: filteredReview, doctors: filteredDoctors, videos: cityVideos } =
     useMemo(() => getFilteredData(city, filteredCity), [city, filteredCity]);
 
   return (
@@ -102,6 +119,31 @@ const Page = memo(({ params }) => {
             <Suspense fallback={<ComponentLoader />}>
               <DynamicComponents.Centerslp3 />
             </Suspense>
+
+            <Suspense fallback={<ComponentLoader />}>
+              <DynamicComponents.ChooseOasislp3 center={filteredCity} />
+            </Suspense>
+
+            <Suspense fallback={<ComponentLoader />}>
+              <DynamicComponents.AwardV2 />
+            </Suspense>
+
+            <Suspense fallback={<ComponentLoader />}>
+              <DynamicComponents.BestDoctorslp3
+                center={filteredCity}
+                filteredDoctors={filteredDoctors}
+                isMeta={isMeta}
+              />
+            </Suspense>
+
+            <Suspense fallback={<ComponentLoader />}>
+              <DynamicComponents.IVFClinicSliderlp3
+                center={filteredCity}
+                cityVideos={cityVideos}
+              />
+            </Suspense>
+
+           
           </div>
         </main>
       </section>

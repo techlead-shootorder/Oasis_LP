@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/lp/[city]/page.jsx", "app/(general)/component/LeadController.js", "app/api/lead/route.js", "app/api/otp/route.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/lp/[city]/page.jsx", "app/(general)/component/LeadController.js", "app/api/lead/route.js", "app/api/otp/route.js", "app/(landingpages)/components/IVFClinicSlider/IVFClinicSliderlp3.jsx", "app/(landingpages)/components/IVFClinicSlider/IVFClinicSliderlp3.jsx", "app/(landingpages)/components/IVFClinicSlider/IVFClinicSliderlp3.jsx", "app/(general)/home/components/client/YoutubePlayer.jsx", "app/(landingpages)/components/IVFClinicSlider/IVFClinicSliderlp3.jsx"],
   "exclude": ["node_modules"]
 }
