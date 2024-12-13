@@ -16,9 +16,6 @@ LeadFormV2.displayName = "LeadFormV2";
   );
   
 
-
-
-
 const BannerSkeleton = memo(() => (
   <div className="animate-pulse">
     <div className="hidden md:block h-[787px] w-full bg-gray-200" />

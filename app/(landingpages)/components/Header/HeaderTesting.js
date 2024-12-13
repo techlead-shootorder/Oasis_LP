@@ -24,14 +24,14 @@ const PHONE_NUMBERS = {
 
 // Memoized Components
 const LogoSection = memo(() => (
-  <a className="flex-shrink-0" href="#">
+  <a className="flex-shrink-0 logow" href="#">
     <Image
       src="https://images.oasisindia.in/website/lp/logo.png"
       width={120}
       height={41}
       alt="Logo"
-     
-      fetchpriority="high" 
+      priority={true}
+      
     />
   </a>
 ));
