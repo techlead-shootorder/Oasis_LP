@@ -28,10 +28,10 @@ const LogoSection = memo(() => (
     <Image
       src="https://images.oasisindia.in/website/lp/logo.png"
       width={120}
-      height={64}
+      height={41}
       alt="Logo"
-      className="w-auto h-auto"
-      priority
+     
+      fetchpriority="high" 
     />
   </a>
 ));

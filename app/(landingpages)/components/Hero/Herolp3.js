@@ -6,32 +6,17 @@ import dynamic from 'next/dynamic';
 
 // Dynamic imports with loading states
 const LeadFormV2 = dynamic(
-    () => import("../LeadForm/LeadFormV2"),
-    { loading: () => <FormSkeleton /> }
+    () => import("../LeadForm/LeadFormV2")
   );
 
 LeadFormV2.displayName = "LeadFormV2";
   
   const LeadFormlp3Meta = dynamic(
-    () => import("../LeadForm/LeadFormlp3Meta"),
-    { loading: () => <FormSkeleton /> }
+    () => import("../LeadForm/LeadFormlp3Meta")
   );
   
 
-// Skeleton Components
-const FormSkeleton = memo(() => (
-  <div className="animate-pulse bg-white rounded-lg p-4 w-full max-w-md">
-    <div className="h-8 bg-gray-200 rounded mb-4" />
-    <div className="space-y-3">
-      {[1, 2, 3].map(i => (
-        <div key={i} className="h-10 bg-gray-200 rounded" />
-      ))}
-    </div>
-    <div className="h-12 bg-gray-200 rounded mt-4" />
-  </div>
-));
 
-FormSkeleton.displayName = "FormSkeleton";
 
 
 const BannerSkeleton = memo(() => (
@@ -142,7 +127,7 @@ const HeroV2 = ({ center, service, isMeta }) => {
     <Suspense fallback={
       <div className="animate-pulse bg-[#fde9f2] h-screen">
         <BannerSkeleton />
-        {/* <FormSkeleton /> */}
+      
       </div>
     }>
       <section id="herolp3" className="bg-[#fde9f2] relative max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 md:mb-6 lg:mb-10">
