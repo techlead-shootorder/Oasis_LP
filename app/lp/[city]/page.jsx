@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic';
 import HeaderTesting from "@/app/(landingpages)/components/Header/HeaderTesting";
 import Herolp3 from "@/app/(landingpages)/components/Hero/Herolp3";
 
-const MinimalLoader = () => <div className="animate-pulse bg-gray-200 h-10" />;
+// const MinimalLoader = () => <div className="animate-pulse bg-gray-200 h-10" />;
 const ComponentLoader = () => <div className="animate-pulse bg-gray-200 h-64 rounded-lg" />;
 
 
@@ -18,6 +18,10 @@ const DynamicComponents = {
   // ),
   StatisticBannerV2: dynamic(
     () => import('@/app/(landingpages)/components/Hero/StatisticsBannerV2'),
+    { loading: () => <ComponentLoader /> }
+  ),
+  Treatmentlp3: dynamic(
+    () => import('@/app/(landingpages)/components/Treatment/Treatmentlp3'),
     { loading: () => <ComponentLoader /> }
   ),
 }
@@ -54,10 +58,14 @@ const Page = memo(({ params }) => {
           <Herolp3 center={filteredCity} isMeta={isMeta} />
 
           <div className="mt-[20px] md:mt-0">
-          <Suspense fallback={<ComponentLoader />}>
-            <DynamicComponents.StatisticBannerV2 />
-          </Suspense>
-        </div>
+            <Suspense fallback={<ComponentLoader />}>
+              <DynamicComponents.StatisticBannerV2 />
+            </Suspense>
+
+            <Suspense fallback={<ComponentLoader />}>
+              <DynamicComponents.Treatmentlp3 center={filteredCity} />
+            </Suspense>
+          </div>
         </main>
       </section>
     </>

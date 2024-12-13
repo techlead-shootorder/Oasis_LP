@@ -6,9 +6,9 @@ const StickyButtonScreenV2 = ({ center, service }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showButton, setShowButton] = useState(false);
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
+//   const handleOpenModal = () => {
+//     setIsModalOpen(true);
+//   };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
