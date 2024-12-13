@@ -7,7 +7,7 @@ import dynamic from 'next/dynamic';
 import HeaderTesting from "@/app/(landingpages)/components/Header/HeaderTesting";
 import Herolp3 from "@/app/(landingpages)/components/Hero/Herolp3";
 
-// const MinimalLoader = () => <div className="animate-pulse bg-gray-200 h-10" />;
+const MinimalLoader = () => <div className="animate-pulse bg-gray-200 h-10" />;
 const ComponentLoader = () => <div className="animate-pulse bg-gray-200 h-64 rounded-lg" />;
 
 
@@ -57,6 +57,26 @@ const DynamicComponents = {
     () => import('@/app/(landingpages)/components/IVFClinicSlider/IVFClinicSliderlp3'),
     { loading: () => <ComponentLoader /> }
   ),
+  PlanInfolp3: dynamic(
+    () => import('@/app/(landingpages)/components/PlanInfo/PlanInfolp3'),
+    { loading: () => <ComponentLoader /> }
+  ),
+  Faqlp3: dynamic(
+    () => import('@/app/(landingpages)/components/Faq/Faqlp3'),
+    { loading: () => <ComponentLoader /> }
+  ),
+  FooterStickyButtonlp3: dynamic(
+    () => import('@/app/(landingpages)/components/FooterStickyButtons/FooterStickyButtonlp3'),
+    { loading: () => <MinimalLoader /> }
+  ),
+  FooterV2: dynamic(
+    () => import('@/app/(landingpages)/components/Footer/FooterV2'),
+    { loading: () => <ComponentLoader /> }
+  ),
+  PhoneCall: dynamic(
+    () => import('@/app/(landingpages)/components/PhoneCall/PhoneCall'),
+    { loading: () => <MinimalLoader /> }
+  )
 }
 
 export async function generateStaticParams() {
@@ -85,8 +105,8 @@ const Page = memo(({ params }) => {
         </header>
 
         {/* <Suspense fallback={<MinimalLoader />}>
-        <DynamicComponents.StickyButtonScreenlp3 center={filteredCity} />
-      </Suspense> */}
+          <DynamicComponents.StickyButtonScreenlp3 center={filteredCity} />
+        </Suspense> */}
 
         <main>
           <Herolp3 center={filteredCity} isMeta={isMeta} />
@@ -143,7 +163,28 @@ const Page = memo(({ params }) => {
               />
             </Suspense>
 
-           
+
+            <Suspense fallback={<ComponentLoader />}>
+              <DynamicComponents.PlanInfolp3 isMeta={isMeta} />
+            </Suspense>
+
+            <Suspense fallback={<ComponentLoader />}>
+              <DynamicComponents.Faqlp3 />
+            </Suspense>
+
+            <Suspense fallback={<MinimalLoader />}>
+              <DynamicComponents.FooterStickyButtonlp3 center={filteredCity} />
+            </Suspense>
+
+            <Suspense fallback={<ComponentLoader />}>
+              <DynamicComponents.FooterV2 />
+            </Suspense>
+
+            <Suspense fallback={<MinimalLoader />}>
+              <DynamicComponents.PhoneCall center={filteredCity} metanum={metanum} />
+            </Suspense>
+
+
           </div>
         </main>
       </section>
