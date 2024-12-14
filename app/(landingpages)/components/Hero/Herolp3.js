@@ -131,7 +131,7 @@ const HeroV2 = ({ center, service, isMeta }) => {
         {/* <FormSkeleton /> */}
       </div>
     }>
-      <section id="herolp3" className="bg-[#fde9f2] relative max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 md:mb-6 lg:mb-10">
+      <section id="herolp3" className="bg-[#fde9f2] lg:h-screen relative max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 md:mb-6 lg:mb-10">
         <div>
           <HeroHeading service={service} centerName={centerName} />
           <div>
