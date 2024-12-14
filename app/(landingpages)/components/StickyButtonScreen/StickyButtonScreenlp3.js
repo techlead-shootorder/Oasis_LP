@@ -1,18 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import ModalV2 from "../../components/LeadForm/LeadFormV2";
 
-const StickyButtonScreenV2 = ({ center, service }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+const StickyButtonScreenV2 = () => {
   const [showButton, setShowButton] = useState(false);
-
-//   const handleOpenModal = () => {
-//     setIsModalOpen(true);
-//   };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
 
   const handleScroll = () => {
     // Get the scroll position and slide height
@@ -56,7 +46,6 @@ const StickyButtonScreenV2 = ({ center, service }) => {
           </button>
         </div>
       )}
-      <ModalV2 isOpen={isModalOpen} onClose={handleCloseModal} center={center} service={service} />
     </>
   );
 };

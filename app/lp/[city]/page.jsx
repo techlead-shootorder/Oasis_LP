@@ -13,10 +13,10 @@ const ComponentLoader = () => <div className="animate-pulse bg-gray-200 h-64 rou
 
 // Dynamic components with single import pattern
 const DynamicComponents = {
-  // StickyButtonScreenlp3: dynamic(
-  //   () => import('@/app/(landingpages)/components/StickyButtonScreen/StickyButtonScreenlp3'),
-  //   { loading: () => <MinimalLoader /> }
-  // ),
+  StickyButtonScreenlp3: dynamic(
+    () => import('@/app/(landingpages)/components/StickyButtonScreen/StickyButtonScreenlp3'),
+    { loading: () => <MinimalLoader /> }
+  ),
   StatisticBannerV2: dynamic(
     () => import('@/app/(landingpages)/components/Hero/StatisticsBannerV2'),
     { loading: () => <ComponentLoader /> }
@@ -104,9 +104,9 @@ const Page = memo(({ params }) => {
           <HeaderTesting center={filteredCity} metanum={metanum} />
         </header>
 
-        {/* <Suspense fallback={<MinimalLoader />}>
+        <Suspense fallback={<MinimalLoader />}>
           <DynamicComponents.StickyButtonScreenlp3 center={filteredCity} />
-        </Suspense> */}
+        </Suspense>
 
         <main>
           <Herolp3 center={filteredCity} isMeta={isMeta} />
@@ -115,6 +115,7 @@ const Page = memo(({ params }) => {
             <Suspense fallback={<ComponentLoader />}>
               <DynamicComponents.StatisticBannerV2 />
             </Suspense>
+          </div>
 
             <Suspense fallback={<ComponentLoader />}>
               <DynamicComponents.Treatmentlp3 center={filteredCity} />
@@ -172,9 +173,11 @@ const Page = memo(({ params }) => {
               <DynamicComponents.Faqlp3 />
             </Suspense>
 
+
             <Suspense fallback={<MinimalLoader />}>
               <DynamicComponents.FooterStickyButtonlp3 center={filteredCity} />
             </Suspense>
+            </main>
 
             <Suspense fallback={<ComponentLoader />}>
               <DynamicComponents.FooterV2 />
@@ -185,8 +188,8 @@ const Page = memo(({ params }) => {
             </Suspense>
 
 
-          </div>
-        </main>
+          
+        
       </section>
     </>
   );

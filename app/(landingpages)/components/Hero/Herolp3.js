@@ -4,17 +4,19 @@ import React, { Suspense, memo } from "react";
 import Image from "next/image";
 import dynamic from 'next/dynamic';
 
-// Dynamic imports with loading states
-const LeadFormV2 = dynamic(
-    () => import("../LeadForm/LeadFormV2")
-  );
-
-LeadFormV2.displayName = "LeadFormV2";
-  
-  const LeadFormlp3Meta = dynamic(
-    () => import("../LeadForm/LeadFormlp3Meta")
-  );
-  
+// Skeleton Components
+const FormSkeleton = memo(() => (
+  <div className="animate-pulse bg-white rounded-lg p-4 w-full max-w-md">
+    <div className="h-8 bg-gray-200 rounded mb-4" />
+    <div className="space-y-3">
+      {[1, 2, 3].map(i => (
+        <div key={i} className="h-10 bg-gray-200 rounded" />
+      ))}
+    </div>
+    <div className="h-12 bg-gray-200 rounded mt-4" />
+  </div>
+));
+FormSkeleton.displayName = "FormSkeleton";
 
 const BannerSkeleton = memo(() => (
   <div className="animate-pulse">
@@ -22,9 +24,18 @@ const BannerSkeleton = memo(() => (
     <div className="md:hidden h-[452px] w-full bg-gray-200" />
   </div>
 ));
-
 BannerSkeleton.displayName = "BannerSkeleton";
 
+// Dynamic imports with loading states
+const LeadFormV2 = dynamic(
+  () => import("../LeadForm/LeadFormV2"),
+  { loading: () => <FormSkeleton /> }
+);
+
+const LeadFormlp3Meta = dynamic(
+  () => import("../LeadForm/LeadFormlp3Meta"),
+  { loading: () => <FormSkeleton /> }
+);
 
 // Constants
 const BANNER_IMAGES = {
@@ -39,7 +50,7 @@ const BANNER_IMAGES = {
     src: "/images/lp/lp3/Mobile Banner.webp",
     width: 428,
     height: 452,
-    className: "w-full object-cover absolute left-0 top-6 md:hidden h-full",
+    className: "w-full object-cover absolute left-0 -top-12 md:hidden h-full",
     sizes: "(max-width: 768px) 100vw, (min-width: 768px) 50vw"
   }
 };
@@ -56,17 +67,15 @@ const HeroBanner = memo(({ type, ...props }) => (
     />
   </Suspense>
 ));
-
 HeroBanner.displayName = "HeroBanner";
 
 // Memoized Content Components
 const HeroHeading = memo(({ service, centerName }) => (
-  <h1 id="heroBannerHeading" className="absolute text-[26px] top-[72px] left-0 md:text-[26px] lg:text-4xl xl:text-5xl md:top-12 md:left-[24px] lg:left-[40px] xl:left-[60px] 2xl:left-[100px] z-10 font-semibold text-primary py-2 text-center md:text-left w-full md:w-auto">
+  <h1 id="heroBannerHeading" className="absolute text-[26px] top-[0px] left-0 md:text-[26px] lg:text-4xl xl:text-5xl md:top-12 md:left-[24px] lg:left-[40px] xl:left-[60px] 2xl:left-[100px] z-10 font-semibold text-primary py-2 text-center md:text-left w-full md:w-auto">
     Best <span className={service !== 'fertility' ? 'uppercase' : ''}>{service || "IVF"}</span> Clinic in{" "}
     {centerName}
   </h1>
 ));
-
 HeroHeading.displayName = "HeroHeading";
 
 const InvisibleArticle = memo(() => (
@@ -74,10 +83,7 @@ const InvisibleArticle = memo(() => (
 
   </article>
 ));
-
 InvisibleArticle.displayName = "InvisibleArticle";
-
-
 
 const LeadFormWrapper = memo(({ isMeta, center, service }) => (
   <>
@@ -88,11 +94,10 @@ const LeadFormWrapper = memo(({ isMeta, center, service }) => (
      }
   </>
 ));
-
 LeadFormWrapper.displayName = "LeadFormWrapper";
 
 const MobileLeadForm = memo(({ center, service, isMeta }) => (
-  <div id="leadformlp3" className="md:hidden flex items-center -mt-[80px] w-full">
+  <div id="leadformlp3" className="md:hidden flex items-center -mt-[152px] w-full">
     <div className="flex flex-col items-center w-full">
       <div className="flex justify-center w-full">
         <div className="bg-[#bf64bf] text-white w-[80%] text-center py-0.5 rounded-t-2xl font-semibold z-50">
@@ -105,7 +110,6 @@ const MobileLeadForm = memo(({ center, service, isMeta }) => (
     </div>
   </div>
 ));
-
 MobileLeadForm.displayName = "MobileLeadForm";
 
 // Helper Functions
@@ -124,7 +128,7 @@ const HeroV2 = ({ center, service, isMeta }) => {
     <Suspense fallback={
       <div className="animate-pulse bg-[#fde9f2] h-screen">
         <BannerSkeleton />
-      
+        {/* <FormSkeleton /> */}
       </div>
     }>
       <section id="herolp3" className="bg-[#fde9f2] relative max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 md:mb-6 lg:mb-10">

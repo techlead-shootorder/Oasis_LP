@@ -1,17 +1,41 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Cormorant_Garamond, Lato, Questrial,Pattaya } from "next/font/google";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const questrial = Questrial({
+  subsets: ["latin"],
+  display: "swap",
+  weight: "400",
+  variable: "--font-questrial",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+
+const lato = Lato({
+  subsets: ["latin"],
+  display: "swap",
+  weight: "400",
+  variable: "--font-lato",
 });
+
+const lato_light = Lato({
+  subsets: ["latin"],
+  display: "swap",
+  weight: "300",
+  variable: "--font-lato_light",
+});
+
+const cormorant_garamond = Cormorant_Garamond({
+  subsets: ["latin"],
+  display: "swap",
+  weight: "400",
+  variable: "--font-cormorant_garamond",
+});
+
+const pattaya = Pattaya({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: '400',
+  variable: '--font-pattaya',
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,9 +48,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${questrial.variable} ${lato.variable} ${lato_light.variable} ${cormorant_garamond.variable} ${pattaya.variable}`}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className="text-neutral bg-white font-questrial"
       >
         {children}
       </body>

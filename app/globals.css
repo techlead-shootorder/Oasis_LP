@@ -1,10 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 #headerlp3{
     height: 72px;
 }
 .logow{
     width: 120px;
+}
+
+.line-min-size {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+}
+
+.position-unset {
+    position: unset !important;
+}
+
+.book-a-consultation {
+
+
+
+    /* background: #229bad;
+    color: #fff; */
+    /* border-radius: 1.25rem 1.25rem 0 0; */
+    /* transform: rotate(270deg); */
+    padding: .5rem 1rem;
+    /* cursor: pointer;
+    z-index: 3; */
+
+}
+
+.custom-youtube-player {
+    position: fixed;
+    width: 450px;
+    height: 300px;
+    bottom: 40px;
+    right: 40px;
+    background: #000;
+}
+
+.custom-youtube-player .close,
+.custom-youtube-player .handle {
+    position: absolute;
+    right: 0px;
+    top: -30px;
+    width: 32px;
+    height: 32px;
+    background: #000;
+    color: #fff;
+    opacity: 1;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.custom-youtube-player .handle {
+    right: 32px;
+    padding-top: 8px;
+    cursor: move;
+}
+
+@media screen and (min-width: 768px) {
+    .before-dot::before {
+        content: "•";
+        color: currentColor;
+        margin-right: 0.75rem;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+    }
+
+    .custom-youtube-player {
+        right: 55px;
+    }
+
+}
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .custom-youtube-player {
+        right: 0;
+    }
+}
+
+.media_list .react-multi-carousel-dot-list {
+    bottom: 10px;
+}
+
+.media_list .react-multi-carousel-dot--active button {
+    background: #874487 !important;
+    border-color: #874487;
+}
+
+.media_list .react-multi-carousel-dot button {
+    background: #F8ADCE;
+    border-color: #874487;
+
+}
+
+.process_last_list:last-child .process_line {
+    display: none
+}
+
+.home_banner .react-multi-carousel-track {
+    height: 100%;
 }
