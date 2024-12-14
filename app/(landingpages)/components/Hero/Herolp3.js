@@ -2,8 +2,8 @@
 
 import React, { Suspense, memo } from "react";
 import Image from "next/image";
-import dynamic from 'next/dynamic';
-
+import LeadFormV2 from "../LeadForm/LeadFormV2";
+import LeadFormlp3Meta from "../LeadForm/LeadFormlp3Meta";
 // Skeleton Components
 const FormSkeleton = memo(() => (
   <div className="animate-pulse bg-white rounded-lg p-4 w-full max-w-md">
@@ -26,16 +26,7 @@ const BannerSkeleton = memo(() => (
 ));
 BannerSkeleton.displayName = "BannerSkeleton";
 
-// Dynamic imports with loading states
-const LeadFormV2 = dynamic(
-  () => import("../LeadForm/LeadFormV2"),
-  { loading: () => <FormSkeleton /> }
-);
 
-const LeadFormlp3Meta = dynamic(
-  () => import("../LeadForm/LeadFormlp3Meta"),
-  { loading: () => <FormSkeleton /> }
-);
 
 // Constants
 const BANNER_IMAGES = {
