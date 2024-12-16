@@ -77,7 +77,7 @@ const CarouselButtons = memo(({ next, previous }) => (
          width={60}
          height={60}
          alt={type}
-         loading="eager"
+         loading="lazy"
        />
      </button>
    ))}

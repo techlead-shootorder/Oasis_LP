@@ -135,6 +135,7 @@ export default function IVFClinicSliderV2({ center, userAgentString, cityVideos,
               width={60} 
               height={60} 
               alt="prev" 
+              loading='lazy'
             />
           </button>
           <button onClick={next}>
@@ -144,6 +145,7 @@ export default function IVFClinicSliderV2({ center, userAgentString, cityVideos,
               width={60} 
               height={60} 
               alt="next" 
+              loading='lazy'
             />
           </button>
         </div>
@@ -196,6 +198,7 @@ export default function IVFClinicSliderV2({ center, userAgentString, cityVideos,
                     width={359} 
                     height={0} 
                     alt={`pregnancyplan${index + 1}`} 
+                    loading='lazy'
                   />
                   <button 
                     onClick={() => {
@@ -219,6 +222,7 @@ export default function IVFClinicSliderV2({ center, userAgentString, cityVideos,
                       height={0} 
                       alt="ic playbtn" 
                       className="w-10 sm:w-[114px]" 
+                      loading='lazy'
                     />
                   </button>
                   <div className="relative z-10 aspect-[9/16] flex flex-col justify-end p-5 lg:py-8 bg-custom-gradient">

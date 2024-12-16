@@ -25,10 +25,10 @@ const TrustedCliniclp3 = ({ center, service }) => {
       <div className="grid grid-cols-3 items-center w-full lg:w-[66%] gap-5 lg:gap-10">
         <div className="">
           <Image className="w-auto mx-auto"
-            src="https://images.oasisindia.in/website/lp/campaign/ic-practo.webp" alt="practo" width={288} height={67} />
+            src="https://images.oasisindia.in/website/lp/campaign/ic-practo.webp" alt="practo" loading="lazy" width={288} height={67} />
           <div className="flex justify-center items-center gap-2 mt-2 lg:mt-5">
             <Image className="h-[18px] lg:h-[26px]"
-              src="https://images.oasisindia.in/website/lp/campaign/Practo_Health_Logo.png" alt="practo logo" width={26} height={26} />
+              src="https://images.oasisindia.in/website/lp/campaign/Practo_Health_Logo.png" alt="practo logo" loading="lazy" width={26} height={26} />
             <h3 className="text-xs lg:text-[21px] text-black font-semibold">98%</h3>
             {/* <Image className="h-6 lg:h-10 w-auto" src="https://images.oasisindia.in/website/lp/campaign/thumb.gif" alt="thumb" width={512} height={512} /> */}
           </div>
@@ -36,7 +36,7 @@ const TrustedCliniclp3 = ({ center, service }) => {
 
         <div className="">
           <Image className="w-auto mx-auto"
-            src="https://images.oasisindia.in/website/lp/campaign/ic-google.webp" alt="google" width={248} height={84} />
+            src="https://images.oasisindia.in/website/lp/campaign/ic-google.webp" alt="google" loading="lazy" width={248} height={84} />
           <div className="flex items-center justify-center gap-2 mt-1">
             <div className="flex items-center justify-center xl:justify-start lg:gap-2">
               <FaStar className="text-xs xl:text-base text-accent" />
@@ -50,7 +50,7 @@ const TrustedCliniclp3 = ({ center, service }) => {
         </div>
         <div className="">
           <Image className="w-auto lg:max-w-[197px] h-auto mx-auto"
-            src="https://images.oasisindia.in/website/lp/campaign/ic-pulse.webp" alt="pulse" width={198} height={88} />
+            src="https://images.oasisindia.in/website/lp/campaign/ic-pulse.webp" loading="lazy" alt="pulse" width={198} height={88} />
           <div className="flex items-center justify-center gap-2 mt-1">
             <div className="flex items-center justify-center xl:justify-start lg:gap-2">
               <FaStar className="text-xs xl:text-base text-accent" />

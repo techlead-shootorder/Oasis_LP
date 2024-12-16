@@ -97,6 +97,7 @@ const CarouselButton = memo(({ onClick, type, isActive }) => (
       width={60}
       height={60}
       alt={type}
+      loading="lazy"
     />
     <Image
       className={`w-10 2xl:w-[60px] h-10 2xl:h-[60px] absolute top-0 left-0 transition-opacity duration-300 ${isActive ? 'opacity-100' : 'group-hover:opacity-100 opacity-0'}`}
@@ -104,6 +105,7 @@ const CarouselButton = memo(({ onClick, type, isActive }) => (
       width={60}
       height={60}
       alt={`${type} hover`}
+      loading="lazy"
     />
   </button>
 ));

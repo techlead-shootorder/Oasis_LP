@@ -117,6 +117,7 @@ const ReviewV2 = ({ center, service, filteredReview }) => {
                 alt=""
                 width={39}
                 height={40}
+                loading="lazy"
               />
               <div className="flex items-center justify-center xl:justify-start gap-2">
                 {Array.from({ length: testimonial.rating }, (_, index) => (

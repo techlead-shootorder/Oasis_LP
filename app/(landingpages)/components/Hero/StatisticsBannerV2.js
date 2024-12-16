@@ -43,7 +43,7 @@ const StatItem = memo(({ icon, value, label, alt }) => (
                 alt={alt}
                 width={80}
                 height={80}
-                loading="eager"
+                loading="lazy"
                 quality={90}
             />
             <h3 className="text-accent text-[18px] lg:text-[30px] 4xl:text-[40px] font-medium">

@@ -131,7 +131,7 @@ const HeroV2 = ({ center, service, isMeta }) => {
           </div>
         </div>
 
-        <div className="relative pt-24 pb-14 sm:py-14 lg:py-16 xl:py-18 2xl:py-24 flex items-end justify-between h-full lg:flex md:hidden ">
+        <div className="relative pt-24 pb-14 sm:py-14 lg:py-16 xl:py-18 2xl:py-24 flex items-end justify-between h-full lg:flex ">
           <InvisibleArticle />
           <div className="hidden md:block md:mr-[0px] lg:mr-[50px] xl:mr-[100px] relative z-50">
             <LeadFormWrapper isMeta={isMeta} center={center} service={service} />

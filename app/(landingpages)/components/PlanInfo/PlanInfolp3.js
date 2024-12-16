@@ -37,7 +37,7 @@ const PlanInfo = ({ isMeta }) => {
                         <div className="flex justify-between items-center">
                             <div className="flex items-center gap-1">
                                 <h3 className="text-[40px] lg:text-3xl font-pattaya text-black">Value Plan</h3>
-                                <Image src="https://images.oasisindia.in/website/lp/campaign/star_img.png" width={32} height={27} alt="star image" />
+                                <Image src="https://images.oasisindia.in/website/lp/campaign/star_img.png" width={32} height={27} loading='lazy' alt="star image" />
                             </div>
                         </div>
                         <h3 className="text-xl lg:text-[25px] font-lato font-medium text-[#623162] line-through mt-2">
@@ -63,15 +63,15 @@ const PlanInfo = ({ isMeta }) => {
 
                         <div className={`lg:mt-5 ${isSection1Expanded ? 'block' : 'hidden'} lg:block`}>
                             <div className="max-w-[345px] border-b border-[#4E204E] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" width={24} height={17} alt="Right" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" loading='lazy' width={24} height={17} alt="Right" />
                                 <h3 className="text-base font-lato lg:whitespace-nowrap">Consultation + Scans + Investigation</h3>
                             </div>
                             <div className="max-w-[345px] border-b border-[#4E204E] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" width={24} height={17} alt="Right" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" loading='lazy' width={24} height={17} alt="Right" />
                                 <h3 className="text-base font-lato">IVF + ICSI</h3>
                             </div>
                             <div className="max-w-[345px] border-b border-[#4E204E] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/wrong_img.png" width={24} height={17} alt="Wrong" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/wrong_img.png" loading='lazy' width={24} height={17} alt="Wrong" />
                                 <div className="inline-flex items-center gap-2">
                                     <h3 className="text-base font-lato">Stimulations & Medications</h3>
                                     <h4
@@ -83,7 +83,7 @@ const PlanInfo = ({ isMeta }) => {
                                 </div>
                             </div>
                             <div className="max-w-[345px] border-b border-[#4E204E] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/wrong_img.png" width={24} height={17} alt="Wrong" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/wrong_img.png" loading='lazy' width={24} height={17} alt="Wrong" />
                                 <div className="inline-flex items-center gap-2">
                                     <h3 className="text-base font-lato">FSH</h3>
                                     <h4
@@ -95,7 +95,7 @@ const PlanInfo = ({ isMeta }) => {
                                 </div>
                             </div>
                             <div className="max-w-[345px] border-b border-[#4E204E] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/wrong_img.png" width={24} height={17} alt="Wrong" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/wrong_img.png" loading='lazy' width={24} height={17} alt="Wrong" />
                                 <div className="inline-flex items-center gap-2">
                                     <h3 className="text-base font-lato">Fresh embryo transfer</h3>
                                     <h4
@@ -107,7 +107,7 @@ const PlanInfo = ({ isMeta }) => {
                                 </div>
                             </div>
                             <div className="max-w-[345px] border-b border-[#4E204E] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/wrong_img.png" width={24} height={17} alt="Wrong" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/wrong_img.png" loading='lazy' width={24} height={17} alt="Wrong" />
                                 <div className="inline-flex items-center gap-2">
                                     <h3 className="text-base font-lato">Embryo freezing</h3>
                                     <h4
@@ -119,7 +119,7 @@ const PlanInfo = ({ isMeta }) => {
                                 </div>
                             </div>
                             <div className="max-w-[345px] border-b border-[#4E204E] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/wrong_img.png" width={24} height={17} alt="Wrong" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/wrong_img.png" loading='lazy' width={24} height={17} alt="Wrong" />
                                 <div className="inline-flex items-center gap-2">
                                     <h3 className="text-base font-lato">Frozen Embryo transfer </h3>
                                     <h4
@@ -131,7 +131,7 @@ const PlanInfo = ({ isMeta }) => {
                                 </div>
                             </div>
                             <div className="max-w-[345px] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/wrong_img.png" width={24} height={17} alt="Wrong" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/wrong_img.png" loading='lazy' width={24} height={17} alt="Wrong" />
                                 <div className="inline-flex items-center gap-2">
                                     <h3 className="text-base font-lato">Second Embryo transfer</h3>
                                     <h4
@@ -163,7 +163,7 @@ const PlanInfo = ({ isMeta }) => {
                         <div className="flex justify-between items-center">
                             <div className="flex items-center gap-1">
                                 <h3 className="text-[40px] lg:text-3xl font-pattaya text-black">Service plan</h3>
-                                <Image src="https://images.oasisindia.in/website/lp/campaign/star_img.png" width={32} height={27} alt="star image" />
+                                <Image src="https://images.oasisindia.in/website/lp/campaign/star_img.png" loading='lazy' width={32} height={27} alt="star image" />
                             </div>
                         </div>
                         <h3 className="text-xl lg:text-[25px] font-lato font-medium text-[#623162] line-through mt-2">
@@ -188,15 +188,15 @@ const PlanInfo = ({ isMeta }) => {
 
                         <div className={`lg:mt-5 ${isSection2Expanded ? 'block' : 'hidden'} lg:block lg:group`}>
                             <div className="max-w-[345px] border-b border-[#4E204E] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" width={24} height={17} alt="Right" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" loading='lazy' width={24} height={17} alt="Right" />
                                 <h3 className="text-base font-lato">Consultation + Scans + Investigation</h3>
                             </div>
                             <div className="max-w-[345px] border-b border-[#4E204E] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" width={24} height={17} alt="Right" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" loading='lazy' width={24} height={17} alt="Right" />
                                 <h3 className="text-base font-latolg:whitespace-nowrap lg:overflow-hidden">IVF + ICSI</h3>
                             </div>
                             <div className="max-w-[345px] border-b border-[#4E204E] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/wrong_img.png" width={24} height={17} alt="Wrong" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/wrong_img.png" loading='lazy' width={24} height={17} alt="Wrong" />
                                 <div className="inline-flex items-center gap-2">
                                     <h3 className="text-base font-lato">Stimulations & Medications</h3>
                                     <h4
@@ -208,7 +208,7 @@ const PlanInfo = ({ isMeta }) => {
                                 </div>
                             </div>
                             <div className="max-w-[345px] border-b border-[#4E204E] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/wrong_img.png" width={24} height={17} alt="Wrong" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/wrong_img.png" loading='lazy' width={24} height={17} alt="Wrong" />
                                 <div className="inline-flex items-center gap-2">
                                     <h3 className="text-base font-lato">FSH</h3>
                                     <h4
@@ -220,7 +220,7 @@ const PlanInfo = ({ isMeta }) => {
                                 </div>
                             </div>
                             <div className="max-w-[345px] border-b border-[#4E204E] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/wrong_img.png" width={24} height={17} alt="Wrong" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/wrong_img.png" loading='lazy' width={24} height={17} alt="Wrong" />
                                 <div className="inline-flex items-center gap-2">
                                     <h3 className="text-base font-lato">Fresh embryo transfer</h3>
                                     <h4
@@ -232,19 +232,19 @@ const PlanInfo = ({ isMeta }) => {
                                 </div>
                             </div>
                             <div className="max-w-[345px] border-b border-[#4E204E] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" width={24} height={17} alt="Wrong" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" loading='lazy' width={24} height={17} alt="Wrong" />
                                 <div className="inline-flex items-center gap-2">
                                     <h3 className="text-base font-lato">Embryo freezing</h3>
                                 </div>
                             </div>
                             <div className="max-w-[345px] border-b border-[#4E204E] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" width={24} height={17} alt="Wrong" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" loading='lazy' width={24} height={17} alt="Wrong" />
                                 <div className="inline-flex items-center gap-2">
                                     <h3 className="text-base font-lato">Frozen Embryo transfer </h3>
                                 </div>
                             </div>
                             <div className="max-w-[345px] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/wrong_img.png" width={24} height={17} alt="Wrong" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/wrong_img.png" loading='lazy' width={24} height={17} alt="Wrong" />
                                 <div className="inline-flex items-center gap-2">
                                     <h3 className="text-base font-lato">Second Embryo transfer</h3>
                                     <h4
@@ -274,7 +274,7 @@ const PlanInfo = ({ isMeta }) => {
                         <div className="flex justify-between items-center">
                             <div className="flex items-center gap-1">
                                 <h3 className="text-[40px] lg:text-3xl font-pattaya text-black">Flexible Plan</h3>
-                                <Image src="https://images.oasisindia.in/website/lp/campaign/star_img.png" width={32} height={27} alt="star image" />
+                                <Image src="https://images.oasisindia.in/website/lp/campaign/star_img.png" loading='lazy' width={32} height={27} alt="star image" />
                             </div>
                         </div>
                         <h3 className="text-xl lg:text-[25px] font-lato font-medium text-[#623162] line-through mt-2">
@@ -300,21 +300,21 @@ const PlanInfo = ({ isMeta }) => {
 
                         <div className={`lg:mt-5 ${isSection3Expanded ? 'block' : 'hidden'} lg:block text-gray-200 lg:group`}>
                             <div className="max-w-[345px] border-b border-[#4E204E] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" width={24} height={17} alt="Right" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" loading='lazy' width={24} height={17} alt="Right" />
                                 <h3 className="text-base font-lato">Consultation + Scans + Investigation</h3>
                             </div>
                             <div className="max-w-[345px] border-b border-[#4E204E] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" width={24} height={17} alt="Right" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" loading='lazy' width={24} height={17} alt="Right" />
                                 <h3 className="text-base font-lato">IVF + ICSI</h3>
                             </div>
                             <div className="max-w-[345px] border-b border-[#4E204E] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" width={24} height={17} alt="Wrong" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" loading='lazy' width={24} height={17} alt="Wrong" />
                                 <div className="inline-flex items-center gap-2">
                                     <h3 className="text-base font-lato">Stimulations & Medications</h3>
                                 </div>
                             </div>
                             <div className="max-w-[345px] border-b border-[#4E204E] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/wrong_img.png" width={24} height={17} alt="Wrong" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/wrong_img.png" loading='lazy' width={24} height={17} alt="Wrong" />
                                 <div className="inline-flex items-center gap-2">
                                     <h3 className="text-base font-lato">FSH</h3>
                                     <h4
@@ -326,25 +326,25 @@ const PlanInfo = ({ isMeta }) => {
                                 </div>
                             </div>
                             <div className="max-w-[345px] border-b border-[#4E204E] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" width={24} height={17} alt="Wrong" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" loading='lazy' width={24} height={17} alt="Wrong" />
                                 <div className="inline-flex items-center gap-2">
                                     <h3 className="text-base font-lato">Fresh embryo transfer</h3>
                                 </div>
                             </div>
                             <div className="max-w-[345px] border-b border-[#4E204E] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" width={24} height={17} alt="Wrong" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" loading='lazy' width={24} height={17} alt="Wrong" />
                                 <div className="inline-flex items-center gap-2">
                                     <h3 className="text-base font-lato">Embryo freezing</h3>
                                 </div>
                             </div>
                             <div className="max-w-[345px] border-b border-[#4E204E] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" width={24} height={17} alt="Wrong" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" loading='lazy' width={24} height={17} alt="Wrong" />
                                 <div className="inline-flex items-center gap-2">
                                     <h3 className="text-base font-lato">Frozen Embryo transfer </h3>
                                 </div>
                             </div>
                             <div className="max-w-[345px] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/wrong_img.png" width={24} height={17} alt="Wrong" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/wrong_img.png" loading='lazy' width={24} height={17} alt="Wrong" />
                                 <div className="inline-flex items-center gap-2">
                                     <h3 className="text-base font-lato">Second Embryo transfer</h3>
                                     <h4
@@ -374,7 +374,7 @@ const PlanInfo = ({ isMeta }) => {
                         <div className="flex justify-between items-center">
                             <div className="flex items-center gap-1">
                                 <h3 className="text-[38px] lg:text-3xl font-pattaya text-black">Ultimate Plan</h3>
-                                <Image src="https://images.oasisindia.in/website/lp/campaign/star_img.png" width={32} height={27} alt="star image" />
+                                <Image src="https://images.oasisindia.in/website/lp/campaign/star_img.png" loading='lazy' width={32} height={27} alt="star image" />
                             </div>
                         </div>
                         <h3 className="text-xl lg:text-[25px] font-lato font-medium text-[#623162] line-through mt-2">
@@ -399,45 +399,45 @@ const PlanInfo = ({ isMeta }) => {
 
                         <div className={`lg:mt-5 ${isSection4Expanded ? 'block' : 'hidden'} lg:block text-white lg:group`}>
                             <div className="max-w-[345px] border-b border-[#4E204E] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" width={24} height={17} alt="Right" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" loading='lazy' width={24} height={17} alt="Right" />
                                 <h3 className="text-base font-lato">Consultation + Scans + Investigation</h3>
                             </div>
                             <div className="max-w-[345px] border-b border-[#4E204E] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" width={24} height={17} alt="Right" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" loading='lazy' width={24} height={17} alt="Right" />
                                 <h3 className="text-base font-lato">IVF + ICSI</h3>
                             </div>
                             <div className="max-w-[345px] border-b border-[#4E204E] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" width={24} height={17} alt="Wrong" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" loading='lazy' width={24} height={17} alt="Wrong" />
                                 <div className="inline-flex items-center gap-2">
                                     <h3 className="text-base font-lato">FSH</h3>
                                 </div>
                             </div>
                             <div className="max-w-[345px] border-b border-[#4E204E] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" width={24} height={17} alt="Wrong" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" loading='lazy' width={24} height={17} alt="Wrong" />
                                 <div className="inline-flex items-center gap-2">
                                     <h3 className="text-base font-lato">Stimulations & Medications</h3>
                                 </div>
                             </div>
                             <div className="max-w-[345px] border-b border-[#4E204E] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" width={24} height={17} alt="Wrong" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" loading='lazy' width={24} height={17} alt="Wrong" />
                                 <div className="inline-flex items-center gap-2">
                                     <h3 className="text-base font-lato">Fresh embryo transfer</h3>
                                 </div>
                             </div>
                             <div className="max-w-[345px] border-b border-[#4E204E] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" width={24} height={17} alt="Wrong" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" loading='lazy' width={24} height={17} alt="Wrong" />
                                 <div className="inline-flex items-center gap-2">
                                     <h3 className="text-base font-lato">Embryo freezing</h3>
                                 </div>
                             </div>
                             <div className="max-w-[345px] border-b border-[#4E204E] py-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" width={24} height={17} alt="Wrong" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" loading='lazy' width={24} height={17} alt="Wrong" />
                                 <div className="inline-flex items-center gap-2">
                                     <h3 className="text-base font-lato">Frozen Embryo transfer </h3>
                                 </div>
                             </div>
                             <div className="max-w-[345px] pt-3 flex items-center gap-5">
-                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" width={24} height={17} alt="Wrong" />
+                                <Image className="w-auto h-[13px]" src="https://images.oasisindia.in/website/lp/campaign/right_img.png" loading='lazy' width={24} height={17} alt="Wrong" />
                                 <div className="inline-flex items-center gap-2">
                                     <h3 className="text-base font-lato">Second Embryo transfer</h3>
                                 </div>

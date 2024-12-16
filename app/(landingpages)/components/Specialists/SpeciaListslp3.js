@@ -40,7 +40,7 @@ const DoctorCard = memo(({ doctor, onBookClick }) => (
        className="w-auto mx-auto h-[270px] lg:h-[190px] xl:h-[290px] 2xl:h-[350px]"
        width={691}
        height={775}
-       loading="eager"
+       loading="lazy"
        quality={90}
      />
    </div>
