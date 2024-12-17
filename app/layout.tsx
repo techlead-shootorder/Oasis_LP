@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Lato, Questrial,Pattaya } from "next/font/google";
+import { Suspense } from "react";
+import { Cormorant_Garamond, Lato, Questrial, Pattaya } from "next/font/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import { AppConstant } from "@/lib/constant/AppConstant";
+import Script from "next/script";
+
+
 import "./globals.css";
 
 const questrial = Questrial({
@@ -39,18 +45,18 @@ const pattaya = Pattaya({
 
 export const metadata: Metadata = {
   title: "Fertility Clinic | Top IVF Centres in India | Oasis Fertility",
-        description: "Oasis Fertility Clinic is the trusted #1 choice for male and female infertility problems, offering treatments like IVF, IVM, IUI, Preservation, etc. across India. Explore Now.",
-        alternates: {
-            canonical: `https://oasisindia.in/`,
-        },
-        robots: {
-            index: false,
-            follow: false,
-            googleBot: {
-                index: false,
-                follow: false
-            }
-        }
+  description: "Oasis Fertility Clinic is the trusted #1 choice for male and female infertility problems, offering treatments like IVF, IVM, IUI, Preservation, etc. across India. Explore Now.",
+  alternates: {
+    canonical: `https://oasisindia.in/`,
+  },
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false
+    }
+  }
 };
 
 export default function RootLayout({
@@ -60,6 +66,42 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${questrial.variable} ${lato.variable} ${lato_light.variable} ${cormorant_garamond.variable} ${pattaya.variable}`}>
+      <head>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src={`https://www.facebook.com/tr?id=454040158968223&ev=PageView&noscript=1`}
+          />
+        </noscript>
+      </head>
+      <>
+        <Suspense>
+          {AppConstant.GTM_ID && (
+            <GoogleTagManager gtmId={AppConstant.GTM_ID} />
+          )}
+          {AppConstant.GA4_ID && <GoogleAnalytics gaId={AppConstant.GA4_ID} />}
+        </Suspense>
+        <Suspense>
+          <Script
+            id="facebook-pixel"
+            strategy="afterInteractive">
+            {`
+                !function(f,b,e,v,n,t,s)
+                {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t,s)}(window, document,'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+                fbq('init', '454040158968223');
+                fbq('track', 'PageView');
+            `}
+          </Script>
+        </Suspense>
+      </>
       <body
         className="text-neutral bg-white font-questrial"
       >
