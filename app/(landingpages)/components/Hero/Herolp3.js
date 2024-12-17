@@ -41,7 +41,7 @@ const BANNER_IMAGES = {
     src: "/images/lp/lp3/Mobile Banner.webp",
     width: 428,
     height: 452,
-    className: "w-full object-cover absolute left-0 -top-12 md:hidden h-full",
+    className: "w-full object-cover absolute left-0 -top-[40px] md:hidden h-full",
     sizes: "(max-width: 768px) 100vw, (min-width: 768px) 50vw"
   }
 };
@@ -62,7 +62,7 @@ HeroBanner.displayName = "HeroBanner";
 
 // Memoized Content Components
 const HeroHeading = memo(({ service, centerName }) => (
-  <h1 id="heroBannerHeading" className="absolute text-[26px] top-[0px] left-0 md:text-[26px] lg:text-4xl xl:text-5xl md:top-12 md:left-[24px] lg:left-[40px] xl:left-[60px] 2xl:left-[100px] z-10 font-semibold text-primary py-2 text-center md:text-left w-full md:w-auto">
+  <h1 id="heroBannerHeading" className="absolute text-[26px] top-[10px] left-0 md:text-[26px] lg:text-4xl xl:text-5xl md:top-12 md:left-[24px] lg:left-[40px] xl:left-[60px] 2xl:left-[100px] z-10 font-semibold text-primary py-2 text-center md:text-left w-full md:w-auto">
     Best <span className={service !== 'fertility' ? 'uppercase' : ''}>{service || "IVF"}</span> Clinic in{" "}
     {centerName}
   </h1>

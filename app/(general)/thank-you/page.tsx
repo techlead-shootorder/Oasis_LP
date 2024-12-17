@@ -9,7 +9,7 @@ export default async function ThankYou() {
     const blogData = await getBlogsDetails();
     const headersList = headers();
     const useragent = headersList.get('user-agent');
-    let userAgentString = JSON.stringify(useragent);
+    const userAgentString = JSON.stringify(useragent);
     return (
         <div className="max-w-screen-2xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20">
             <Banner />

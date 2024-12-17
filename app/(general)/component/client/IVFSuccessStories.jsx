@@ -21,7 +21,7 @@ const responsive = {
     }
 };
 
-const ButtonGroup = ({ next, previous, ...rest }: any) => {
+const ButtonGroup = ({ next, previous, ...rest }) => {
     const {
         carouselState: { currentSlide, totalItems, slidesToShow }
     } = rest;
@@ -40,7 +40,7 @@ const ButtonGroup = ({ next, previous, ...rest }: any) => {
     );
 };
 
-export default function IVFSuccessStories( {headerText="IVF Success Stories", isDynamicButton = false}:any) {
+export default function IVFSuccessStories({ headerText = "IVF Success Stories", isDynamicButton = false }) {
     
     return (
         <div className="pb-10 lg:pb-24">
@@ -48,9 +48,14 @@ export default function IVFSuccessStories( {headerText="IVF Success Stories", is
                 <h2 className="text-primary text-[22px] md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-[52px] !leading-[1.2]">{headerText}</h2>
                 <hr className="flex-1 border-primary-50" />
             </div>
-            <Carousel responsive={responsive} arrows={false} swipeable={true} ssr={true} customButtonGroup={<ButtonGroup />}
+            <Carousel 
+                responsive={responsive} 
+                arrows={false} 
+                swipeable={true} 
+                ssr={true} 
+                customButtonGroup={<ButtonGroup />}
                 infinite
-                autoPlay
+                autoPlay={false}
                 autoPlaySpeed={2000}
                 className="sm:pb-10 xl:pb-20 2xl:pb-24"
             >
@@ -58,8 +63,13 @@ export default function IVFSuccessStories( {headerText="IVF Success Stories", is
                     <div className="flex flex-col sm:flex-row gap-6 sm:gap-16 mt-10 sm:mt-20">
                         <div className="w-full sm:w-[40%]">
                             <div className="flex items-center px-10 relative">
-                                <Image className="rounded-[50px] sm:rounded-[200px] mx-auto"
-                                    src="https://images.oasisindia.in/website/Rajani.png" alt="Rajani" width={576} height={0} />
+                                <Image 
+                                    className="rounded-[50px] sm:rounded-[200px] mx-auto"
+                                    src="https://images.oasisindia.in/website/Rajani.png" 
+                                    alt="Rajani" 
+                                    width={576} 
+                                    height={0} 
+                                />
                             </div>
                             <div className="text-center font-lato mt-5 hidden sm:block">
                                 <h4 className="text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl">Mrs & Mr Reddy</h4>
@@ -74,7 +84,8 @@ export default function IVFSuccessStories( {headerText="IVF Success Stories", is
                                     className="text-[22px] md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-[54px] 3xl:text-[65px] text-accent !leading-[1.2]">
                                     We are happy to be <br />
                                     blessed with a beautiful <br /> baby girl
-                                    <FaQuoteRight className="inline-block text-lg md:text-xl lg:text-2xl xl:text-4xl text-accent mr-2 text-accent ml-2 align-text-top" /></h2>
+                                    <FaQuoteRight className="inline-block text-lg md:text-xl lg:text-2xl xl:text-4xl text-accent mr-2 text-accent ml-2 align-text-top" />
+                                </h2>
                             </div>
 
                             <p
@@ -92,8 +103,13 @@ export default function IVFSuccessStories( {headerText="IVF Success Stories", is
                     <div className="flex flex-col sm:flex-row gap-6 sm:gap-16 mt-10 sm:mt-20">
                         <div className="w-full sm:w-[40%]">
                             <div className="flex items-center px-10 relative">
-                                <Image className="rounded-[50px] sm:rounded-[200px] mx-auto"
-                                    src="https://images.oasisindia.in/website/Satya.png" alt="Satya" width={576} height={0} />
+                                <Image 
+                                    className="rounded-[50px] sm:rounded-[200px] mx-auto"
+                                    src="https://images.oasisindia.in/website/Satya.png" 
+                                    alt="Satya" 
+                                    width={576} 
+                                    height={0} 
+                                />
                             </div>
                             <div className="text-center font-lato mt-5 hidden sm:block">
                                 <h4 className="text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl">Mrs & Mr Kumar</h4>
@@ -107,11 +123,12 @@ export default function IVFSuccessStories( {headerText="IVF Success Stories", is
                                 <h2
                                     className="text-[22px] md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-[52px] text-accent !leading-[1.2]">
                                     Helping another couple<br /> achieve the dream of<br /> parenthood
-                                    <FaQuoteRight className="inline-block text-lg md:text-xl lg:text-2xl xl:text-4xl text-accent mr-2 text-accent ml-2 align-text-top" /></h2>
+                                    <FaQuoteRight className="inline-block text-lg md:text-xl lg:text-2xl xl:text-4xl text-accent mr-2 text-accent ml-2 align-text-top" />
+                                </h2>
                             </div>
                             <p
                                 className="font-lato_light md:text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-[45px] font-light !leading-[1.2] mt-4 pl-6 lg:pl-8 xl:pl-12">
-                                The blessing of having children doesn't come easy to some. Listen to one such couple as they recount how Oasis Fertility helped them become parents after years of longing.
+                                The blessing of having children doesn&apos;t come easy to some. Listen to one such couple as they recount how Oasis Fertility helped them become parents after years of longing.
                             </p>
                             <div className="sm:text-center font-lato mt-5 sm:hidden pl-6">
                                 <h4 className="sm:text-xl">Mrs & Mr Kumar</h4>
@@ -123,8 +140,12 @@ export default function IVFSuccessStories( {headerText="IVF Success Stories", is
             </Carousel>
             {isDynamicButton && (
                 <div className="flex justify-center mt-8">
-                    <Link className="font-lato px-4 py-2 sm:px-6 sm:py-3 rounded-[10px] bg-accent text-sm sm:text-xl font-semibold text-[#FFFFFF] uppercase"
-                        href="/why-oasis/our-success-stories/">SHOW MORE</Link>
+                    <Link 
+                        className="font-lato px-4 py-2 sm:px-6 sm:py-3 rounded-[10px] bg-accent text-sm sm:text-xl font-semibold text-[#FFFFFF] uppercase"
+                        href="/why-oasis/our-success-stories/"
+                    >
+                        SHOW MORE
+                    </Link>
                 </div>
             )}
         </div>

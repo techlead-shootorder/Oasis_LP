@@ -65,13 +65,12 @@ const BlogsListData = [
     }
 ];
 
-export default function BlogSlider({ userAgentString, blogData, isDynamicBlogs = false }: any) {
-
-    let parser = new UAParser(userAgentString);
+export default function BlogSlider({ userAgentString, blogData, isDynamicBlogs = false }) {
+    const parser = new UAParser(userAgentString);
     const result = parser.getResult()
     const deviceType = (result.device && result.device.type) || 'desktop';
 
-    const ButtonGroup = ({ next, previous }: any) => {
+    const ButtonGroup = ({ next, previous }) => {
         return (
             <div className="carousel-button-group absolute left-[50%] translate-x-[-50%] bottom-0 flex 2xl:gap-8 gap-4">
                 <button onClick={previous}>
@@ -99,10 +98,10 @@ export default function BlogSlider({ userAgentString, blogData, isDynamicBlogs =
                 ssr={true}
                 deviceType={deviceType}
                 infinite
-                autoPlay
+                autoPlay={false}
                 autoPlaySpeed={2000}
             >
-                {isDynamicBlogs && blogData && blogData?.map((data: any, index: any) => {
+                {isDynamicBlogs && blogData && blogData?.map((data, index) => {
                     return (
                         <React.Fragment key={index}>
                             <Link href={data.yoast_head_json?.canonical} className="bg-[#FDF4F7] rounded-xl block h-full">

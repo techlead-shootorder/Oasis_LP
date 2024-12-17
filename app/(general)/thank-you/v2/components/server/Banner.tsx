@@ -19,7 +19,7 @@ export default function Banner() {
                         <p className="text-base md:text-lg lg:text-2xl xl:text-[32px] leading-none mt-3 xl:mt-8 opacity-[0.6] lg:opacity-[1] text-center md:text-left max-w-[600px] px-4 md:px-0">
                             With science on your side, <br className="hidden sm:block" />
                             your dream is within reach, <br className="hidden sm:block" />
-                            and we're with you all the way.</p>
+                            and we&apos;re with you all the way.</p>
                     </article>
                 </div>
             </div>

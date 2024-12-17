@@ -3,53 +3,53 @@
 import React, { memo } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { PiLineVertical } from "react-icons/pi";
+// import { PiLineVertical } from "react-icons/pi";
 import { MdCall } from "react-icons/md";
-import { Cinzel_Decorative } from "@next/font/google";
+// import { Cinzel_Decorative } from "@next/font/google";
 // import dynamic from 'next/dynamic';
 
 
 // Font configuration
-const cinzelDecorative = Cinzel_Decorative({
-  subsets: ["latin"],
-  weight: ["400", "700"]
-});
+// const cinzelDecorative = Cinzel_Decorative({
+//   subsets: ["latin"],
+//   weight: ["400", "700"]
+// });
 
 // Constants
-const COMPANY_YEARS = "15";
+// const COMPANY_YEARS = "15";
 const PHONE_NUMBERS = {
   default: "9513736432",
   meta: "9513736518"
 };
 
 // Memoized Components
-const LogoSection = memo(() => (
-  <a className="flex-shrink-0 logow" href="#">
-    <Image
-      src="https://images.oasisindia.in/website/lp/logo.png"
-      width={120}
-      height={41}
-      alt="Logo"
-      priority={true}
+// const LogoSection = memo(() => (
+//   <a className="flex-shrink-0 logow" href="#">
+//     <Image
+//       src="https://images.oasisindia.in/website/lp/logo.png"
+//       width={120}
+//       height={41}
+//       alt="Logo"
+//       priority={true}
       
-    />
-  </a>
-));
+//     />
+//   </a>
+// ));
 
-LogoSection.displayName = 'LogoSection';
+// LogoSection.displayName = 'LogoSection';
 
-const YearsSection = memo(() => (
-  <div className="flex items-center">
-    <h1 className={`${cinzelDecorative.className} text-5xl font-light leading-none text-white`}>
-      {COMPANY_YEARS}
-    </h1>
-    <p className="text-white text-xs mt-0.5 font-thin leading-tight">
-      YEARS<br />OF CLINICAL<br />EXCELLENCE
-    </p>
-  </div>
-));
+// const YearsSection = memo(() => (
+//   <div className="flex items-center">
+//     <h1 className={`${cinzelDecorative.className} text-5xl font-light leading-none text-white`}>
+//       {COMPANY_YEARS}
+//     </h1>
+//     <p className="text-white text-xs mt-0.5 font-thin leading-tight">
+//       YEARS<br />OF CLINICAL<br />EXCELLENCE
+//     </p>
+//   </div>
+// ));
 
-YearsSection.displayName = 'YearsSection';
+// YearsSection.displayName = 'YearsSection';
 
 const PhoneSection = memo(({ center, metanum }) => {
   const phoneNumber = metanum ? PHONE_NUMBERS.meta : PHONE_NUMBERS.default;
@@ -80,11 +80,20 @@ PhoneSection.displayName = 'PhoneSection';
 // Desktop Header
 const DesktopHeader = memo(({ center, metanum }) => (
   <nav className="hidden md:block max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 bg-primary">
-    <div className="px-2 lg:px-4 xl:px-4 2xl:px-8 flex justify-between py-3">
+    <div className="px-2 lg:px-4 xl:px-4 2xl:px-8 flex justify-between ">
       <div className="flex items-center">
-        <LogoSection />
+        {/* <LogoSection />
         <PiLineVertical className="!text-white text-4xl font-thin" />
-        <YearsSection />
+        <YearsSection /> */}
+         <Image
+      src='/images/lp/lp3/mobile header image.webp'
+      alt='logo'
+      width={375}
+      height={100}
+      className='object-cover'
+      loading="eager"
+      priority={true}
+      />
       </div>
       <PhoneSection center={center} metanum={metanum} />
     </div>
@@ -96,18 +105,18 @@ DesktopHeader.displayName = 'DesktopHeader';
 const MobileHeader = memo(() => (
   <nav className="block md:hidden fixed w-full top-[0px] z-[999999]">
     <div className="bg-primary flex justify-center items-center py-2 text-white">
-      <LogoSection />
+      {/* <LogoSection />
       <PiLineVertical className="text-white text-4xl font-thin" />
-      <YearsSection />
-  {/* <Image
-      src='/images/lp/lp3/mobile header images.jpeg'
+      <YearsSection /> */}
+  <Image
+      src='/images/lp/lp3/mobile header image.webp'
       alt='logo'
       width={375}
       height={100}
       className='object-cover'
       loading="eager"
       priority={true}
-      /> */}
+      />
     </div>
   </nav>
 ));

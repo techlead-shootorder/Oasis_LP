@@ -5,7 +5,7 @@ export default function InfoSection() {
         <div className="mb-10 lg:mb-24">
             <div className="flex items-center gap-4">
                 <h2 className="text-primary text-[22px] md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-[52px] !leading-[1.2]">
-                    What's Next?</h2>
+                    What&apos;s Next?</h2>
                 <hr className="flex-1 border-[#9678B6]" />
             </div>
 
@@ -16,7 +16,7 @@ export default function InfoSection() {
                 </div>
                 <div className="w-full xl:w-3/5">
                     <h4 className="text-2xl xl:text-[32px] 2xl:text-4xl 3xl:text-[40px] font-normal leading-tight">Learn more about our fertility
-                        treatments and find the one that's right for you</h4>
+                        treatments and find the one that&apos;s right for you</h4>
                     <p
                         className="mt-4 xl:mt-6">
                         For over 15 years, the fertility experts at Oasis Fertility have been helping couples struggling with infertility have healthy babies with personalized and science-based treatments. The wide range of male and female fertility treatments available at Oasis Fertility include IUI, IVF, ICSI, IVM, and MicroTESE. Along with the standard fertility treatments, Oasis Fertility also offers advanced testing methods such as PGT-A (Preimplantation Genetic Testing) and ERA (Endometrial Receptivity Array) to ensure that the treatment is successful and the babies are born healthy.</p>

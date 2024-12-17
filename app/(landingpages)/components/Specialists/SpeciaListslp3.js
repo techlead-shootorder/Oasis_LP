@@ -49,7 +49,7 @@ const DoctorCard = memo(({ doctor, onBookClick }) => (
      <div className="lg:mb-8 inline-flex items-center gap-2 lg:transition lg:ease-in-out lg:duration-500 lg:opacity-0 lg:group-hover:opacity-100 mt-5 lg:mt-0">
        <Image 
          className="h-[26px] w-auto"
-         src="https://images.oasisindia.in/website/lp/campaign/Practo_Health_Logo.png"
+         src="images/lp/campaign/Practo_Health_Logo.png"
          alt="practo logo"
          width={26}
          height={26}

@@ -418,7 +418,7 @@ const LeadFormV2 = () => {
           {/* <AiFillSafetyCertificate className="text-green-500 mr-2"/> */}
           <Image
             className="mr-2"
-            src='https://images.oasisindia.in/website/lp/lp3/shield_icon.svg'
+            src='/images/lp/lp3/shield_icon.svg'
             width={16}
             height={16}
             priority
