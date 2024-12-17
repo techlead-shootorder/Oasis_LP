@@ -99,7 +99,7 @@ const MobileHeader = memo(() => (
       <LogoSection />
       <PiLineVertical className="text-white text-4xl font-thin" />
       <YearsSection />
-      {/* <Image
+  {/* <Image
       src='/images/lp/lp3/mobile header images.jpeg'
       alt='logo'
       width={375}
