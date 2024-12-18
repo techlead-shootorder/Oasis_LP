@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
+// import { Suspense } from "react";
 import { Cormorant_Garamond, Lato, Questrial, Pattaya } from "next/font/google";
-import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
-import { AppConstant } from "@/lib/constant/AppConstant";
-import Script from "next/script";
+// import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+// import { AppConstant } from "@/lib/constant/AppConstant";
+// import Script from "next/script";
 
 
 import "./globals.css";
@@ -77,13 +77,13 @@ export default function RootLayout({
         </noscript>
       </head>
       <>
-        <Suspense>
+        {/* <Suspense>
           {AppConstant.GTM_ID && (
             <GoogleTagManager gtmId={AppConstant.GTM_ID} />
           )}
           {AppConstant.GA4_ID && <GoogleAnalytics gaId={AppConstant.GA4_ID} />}
-        </Suspense>
-        <Suspense>
+        </Suspense> */}
+        {/* <Suspense>
           <Script
             id="facebook-pixel"
             strategy="afterInteractive">
@@ -100,7 +100,7 @@ export default function RootLayout({
                 fbq('track', 'PageView');
             `}
           </Script>
-        </Suspense>
+        </Suspense> */}
       </>
       <body
         className="text-neutral bg-white font-questrial"
