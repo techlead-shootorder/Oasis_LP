@@ -6,8 +6,8 @@ import { cityToVideos, videos } from "@/util/lp/videos";
 import dynamic from 'next/dynamic';
 
 
-import Headerlp3 from "../../../(landingpages)/components/Header/Headerlp3";
-import HeaderMobilelp3 from "../../../(landingpages)/components/Header/HeaderMobilelp3";
+import HeaderTesting from "@/app/(landingpages)/components/Header/HeaderTesting";
+
 import Herolp3 from "../../../(landingpages)/components/Hero/Herolp3";
 
 
@@ -95,15 +95,15 @@ export async function generateMetadata({ params }) {
 
     if (city == 'meta' || city == 'google' || city == 'meta1' || city == 'google1') {
         city = 'india';
-    
-      }
+
+    }
     const capitalizedCity = city.charAt(0).toUpperCase() + city.slice(1);
     const pageTitle = `Oasis ${capitalizedCity} | Top ${service?.toUpperCase()} Clinic in ${capitalizedCity}`;
     const pageDescription = `Best IVF clinic in ${capitalizedCity} offering top fertility treatments and services. Highest IVF success rate, affordable IVF cost & 1,00,000+ happy couples.`;
-   
+
     return {
-      title: pageTitle,
-      description: pageDescription
+        title: pageTitle,
+        description: pageDescription
     }
 }
 
@@ -115,11 +115,11 @@ export default function Page({ params }) {
         if (city == 'meta1' || city == 'google1') {
             isMeta = true;
         }
-        if(city == 'meta1' || city == 'meta'){
+        if (city == 'meta1' || city == 'meta') {
             metanum = true;
-          }
+        }
         city = 'india';
-      }
+    }
     const filteredCity = masterlp3.find((center) => center.center_name === city);
     // const filteredTestimonials = doctors.filter((testimonial) => {
     //     return filteredCity?.id === testimonial.master_id;
@@ -154,12 +154,11 @@ export default function Page({ params }) {
         <div className="relative overflow-y-auto">
 
             <header id="headerlp3" className="">
-                <Headerlp3 center={filteredCity} metanum={metanum} />
-                <HeaderMobilelp3 center={filteredCity} />
+                <HeaderTesting center={filteredCity} metanum={metanum} />
             </header>
             {/* <StickyButtonScreenlp3 center={filteredCity} /> */}
             <main>
-                <Herolp3 center={filteredCity} service={service} isMeta={isMeta}  />
+                <Herolp3 center={filteredCity} service={service} isMeta={isMeta} />
                 <div className={`mt-[20px] md:mt-0`}>
                     <StatisticBannerV2 />
                 </div>
@@ -167,11 +166,11 @@ export default function Page({ params }) {
                 <SpeciaListslp3 service={service} isMeta={isMeta} />
                 <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 py-10 lg:py-16 bg-[url(https://images.oasisindia.in/website/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat mb-10 lg:mb-16 relative">
                     <Reviewlp3 center={filteredCity} filteredReview={filteredReview} service={service} />
-                    <TrustedCliniclp3 center={filteredCity} service={service}/>
+                    <TrustedCliniclp3 center={filteredCity} service={service} />
                 </section>
                 <Centerslp3 />
                 <ChooseOasislp3 center={filteredCity} />
-                <AwardV2 service={service}/>
+                <AwardV2 service={service} />
                 <BestDoctorslp3 center={filteredCity} filteredDoctors={filteredDoctors} isMeta={isMeta} />
                 <IVFClinicSliderlp3 center={filteredCity} cityVideos={cityVideos} service={service} />
                 <PlanInfolp3 isMeta={isMeta} />
