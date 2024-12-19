@@ -10,9 +10,13 @@ export default function AnalyticsProvider({ gtmId, metaPixelId, children }) {
     // Initialize Meta Pixel on mount
     if (metaPixelId && typeof window !== 'undefined') {
       window.fbq = window.fbq || function() {
-        window.fbq.callMethod ? 
-        window.fbq.callMethod.apply(window.fbq, arguments) : 
-        window.fbq.queue.push(arguments)
+        if(window.fbq.callMethod){
+          window.fbq.callMethod.apply(window.fbq, arguments)
+        }
+        else{
+          window.fbq.queue.push(arguments)
+        }
+        
       };
       window.fbq('init', metaPixelId);
       window.fbq('track', 'PageView');
