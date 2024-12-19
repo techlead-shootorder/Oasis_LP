@@ -32,11 +32,11 @@ const AWARDS_DATA = [
    id: 1,
    desc: "Recognized as The IVF Chain of the Year (South) 2023 by ET Healthworld National Fertility Awards.",
    awardImage: {
-     src: "https://images.oasisindia.in/website/lp/campaign/award1.webp",
+     src: "/images/lp/campaign/award1.webp",
      alt: "award1"
    },
    brandImage: {
-     src: "https://images.oasisindia.in/website/lp/campaign/ic-healthworld.png", 
+     src: "/images/lp/campaign/ic-healthworld.png", 
      alt: "healthworld"
    }
  },
@@ -44,11 +44,11 @@ const AWARDS_DATA = [
    id: 2,
    desc: "Oasis Fertility awarded as one of the Best Healthcare Brands 2023 by The Economic Times.",
    awardImage: {
-     src: "https://images.oasisindia.in/website/lp/campaign/award2.webp",
+     src: "/images/lp/campaign/award2.webp",
      alt: "award2"
    },
    brandImage: {
-     src: "https://images.oasisindia.in/website/lp/campaign/ic-economic-times.png",
+     src: "/images/lp/campaign/ic-economic-times.png",
      alt: "economic times" 
    }
  }
@@ -98,7 +98,7 @@ const CarouselButtons = memo(({ next, previous }) => (
      <button key={type} onClick={type === 'prev' ? previous : next}>
        <Image
          className="w-10 2xl:w-[60px] h-10 2xl:h-[60px]"
-         src={`https://images.oasisindia.in/website/ic-${type}2.png`}
+         src={`/images/ic-${type}2.png`}
          width={60}
          height={60}
          alt={type}

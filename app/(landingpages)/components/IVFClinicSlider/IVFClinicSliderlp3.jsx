@@ -73,11 +73,11 @@ export default function IVFClinicSliderV2({ center, userAgentString, cityVideos,
   const deviceType = (result.device && result.device.type) || 'desktop';
 
   // const ivfClinicVideos = [
-  //   { videoId: 'TSUFeOgscYM', VideoTitleText: "Everything about pregnancy planning", videoImage: 'https://images.oasisindia.in/website/home/pregnancyplan1.png', youTubeVideoUrl: 'https://youtube.com/shorts/TSUFeOgscYM', isSelected: false },
-  //   { videoId: 'KDz_mfG1AEo', VideoTitleText: "What are the factors that affect the success rate of egg freezing?", videoImage: 'https://images.oasisindia.in/website/home/pregnancyplan2.png', youTubeVideoUrl: 'https://youtu.be/KDz_mfG1AEo', isSelected: false },
-  //   { videoId: 'HARgKEK7ihA', VideoTitleText: "Kids Planning", videoImage: 'https://images.oasisindia.in/website/home/pregnancyplan3.png', youTubeVideoUrl: 'https://youtube.com/shorts/HARgKEK7ihA', isSelected: false },
-  //   { videoId: 'p6W3t5FcIyQ', VideoTitleText: "Does the use of cosmetics, perfume, and deo affect fertility in women?", videoImage: 'https://images.oasisindia.in/website/home/pregnancyplan5.png', youTubeVideoUrl: 'https://youtube.com/shorts/p6W3t5FcIyQ', isSelected: false },
-  //   { videoId: '9qT8zaJV56U', VideoTitleText: "Get Ready for Parenthood with Advanced Infertility Treatments in 2024 With Oasis Fertility", videoImage: 'https://images.oasisindia.in/website/home/Rohit_Marina.png', youTubeVideoUrl: 'https://youtube.com/shorts/9qT8zaJV56U', isSelected: false }
+  //   { videoId: 'TSUFeOgscYM', VideoTitleText: "Everything about pregnancy planning", videoImage: '/images/home/pregnancyplan1.png', youTubeVideoUrl: 'https://youtube.com/shorts/TSUFeOgscYM', isSelected: false },
+  //   { videoId: 'KDz_mfG1AEo', VideoTitleText: "What are the factors that affect the success rate of egg freezing?", videoImage: '/images/home/pregnancyplan2.png', youTubeVideoUrl: 'https://youtu.be/KDz_mfG1AEo', isSelected: false },
+  //   { videoId: 'HARgKEK7ihA', VideoTitleText: "Kids Planning", videoImage: '/images/home/pregnancyplan3.png', youTubeVideoUrl: 'https://youtube.com/shorts/HARgKEK7ihA', isSelected: false },
+  //   { videoId: 'p6W3t5FcIyQ', VideoTitleText: "Does the use of cosmetics, perfume, and deo affect fertility in women?", videoImage: '/images/home/pregnancyplan5.png', youTubeVideoUrl: 'https://youtube.com/shorts/p6W3t5FcIyQ', isSelected: false },
+  //   { videoId: '9qT8zaJV56U', VideoTitleText: "Get Ready for Parenthood with Advanced Infertility Treatments in 2024 With Oasis Fertility", videoImage: '/images/home/Rohit_Marina.png', youTubeVideoUrl: 'https://youtube.com/shorts/9qT8zaJV56U', isSelected: false }
   // ];
 
   const startVideoPlayer = useVideoStore(state => state?.startVideoPlayer);
@@ -131,7 +131,7 @@ export default function IVFClinicSliderV2({ center, userAgentString, cityVideos,
           <button onClick={previous}>
             <Image 
               className="w-10 2xl:w-[60px] h-10 2xl:h-[60px]" 
-              src="https://images.oasisindia.in/website/ic-prev2.png" 
+              src="/images/ic-prev2.png" 
               width={60} 
               height={60} 
               alt="prev" 
@@ -141,7 +141,7 @@ export default function IVFClinicSliderV2({ center, userAgentString, cityVideos,
           <button onClick={next}>
             <Image 
               className="w-10 2xl:w-[60px] h-10 2xl:h-[60px]" 
-              src="https://images.oasisindia.in/website/ic-next2.png" 
+              src="/images/ic-next2.png" 
               width={60} 
               height={60} 
               alt="next" 
@@ -217,7 +217,7 @@ export default function IVFClinicSliderV2({ center, userAgentString, cityVideos,
                     className="p-0 m-0 border-none outline-none absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] z-20"
                   >
                     <Image 
-                      src="https://images.oasisindia.in/website/home/ic-playbtn.png" 
+                      src="/images/home/ic-playbtn.png" 
                       width={114} 
                       height={0} 
                       alt="ic playbtn" 

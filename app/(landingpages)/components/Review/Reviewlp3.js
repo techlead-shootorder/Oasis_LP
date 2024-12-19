@@ -40,14 +40,14 @@ const ReviewV2 = ({ center, service, filteredReview }) => {
         >
           <Image
             className={`w-10 2xl:w-[60px] h-10 2xl:h-[60px] transition-opacity duration-300 ${activeButton === 'next' ? 'opacity-100' : 'opacity-0'}`}
-            src="https://images.oasisindia.in/website/ic-prev2.png"
+            src="/images/ic-prev2.png"
             width={60}
             height={60}
             alt="prev"
           />
           <Image
             className={`w-10 2xl:w-[60px] h-10 2xl:h-[60px] absolute top-0 left-0 transition-opacity duration-300 ${activeButton === 'prev' ? 'opacity-100' : 'group-hover:opacity-100 opacity-0'}`}
-            src="https://images.oasisindia.in/website/ic-prev2-hover.png"
+            src="/images/ic-prev2-hover.png"
             width={60}
             height={60}
             alt="prev hover"
@@ -62,14 +62,14 @@ const ReviewV2 = ({ center, service, filteredReview }) => {
         >
           <Image
             className={`w-10 2xl:w-[60px] h-10 2xl:h-[60px] transition-opacity duration-300 ${activeButton === 'prev' ? 'opacity-100' : 'opacity-0'}`}
-            src="https://images.oasisindia.in/website/ic-next2.png"
+            src="/images/ic-next2.png"
             width={60}
             height={60}
             alt="prev"
           />
           <Image
             className={`w-10 2xl:w-[60px] h-10 2xl:h-[60px] absolute top-0 left-0 transition-opacity duration-300 ${activeButton === 'next' ? 'opacity-100' : 'group-hover:opacity-100 opacity-0'}`}
-            src="https://images.oasisindia.in/website/ic-next2-hover.png"
+            src="/images/ic-next2-hover.png"
             width={60}
             height={60}
             alt="prev hover"
@@ -113,7 +113,7 @@ const ReviewV2 = ({ center, service, filteredReview }) => {
             <div className="flex items-center justify-center gap-2">
               <Image
                 className="w-auto h-[27px] lg:h-[39px]"
-                src="https://images.oasisindia.in/website/lp/review/google_img.png"
+                src="/images/lp/review/google_img.png"
                 alt=""
                 width={39}
                 height={40}

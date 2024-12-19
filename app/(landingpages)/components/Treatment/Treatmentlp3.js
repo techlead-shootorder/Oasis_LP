@@ -85,7 +85,7 @@ const OptimizedImage = memo(({ src, alt, ...props }) => (
         placeholder="blur"
         blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRsdHR8fIR0hISEdISEhISEhISEiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiL/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
         onError={(e) => {
-            e.currentTarget.src = 'https://images.oasisindia.in/website/lp/fallback.jpg';
+            e.currentTarget.src = '/images/lp/fallback.jpg';
         }}
     />
 ));
@@ -112,7 +112,7 @@ const ButtonGroup = memo(({ next, previous, activeButton, setActiveButton }) => 
                 <OptimizedImage
                     className={`w-10 2xl:w-[60px] h-10 2xl:h-[60px] transition-opacity duration-300 ${activeButton === (type === 'prev' ? 'next' : 'prev') ? 'opacity-100' : 'opacity-0'
                         }`}
-                    src={`https://images.oasisindia.in/website/ic-${type}2.png`}
+                    src={`/images/ic-${type}2.png`}
                     width={60}
                     height={60}
                     alt={type}
@@ -120,7 +120,7 @@ const ButtonGroup = memo(({ next, previous, activeButton, setActiveButton }) => 
                 <OptimizedImage
                     className={`w-10 2xl:w-[60px] h-10 2xl:h-[60px] absolute top-0 left-0 transition-opacity duration-300 ${activeButton === type ? 'opacity-100' : 'group-hover:opacity-100 opacity-0'
                         }`}
-                    src={`https://images.oasisindia.in/website/ic-${type}2-hover.png`}
+                    src={`/images/ic-${type}2-hover.png`}
                     width={60}
                     height={60}
                     alt={`${type} hover`}
@@ -192,7 +192,7 @@ const TreatmentsV2 = memo(({ center, service }) => {
     }, [activeTab]);
 
     return (
-        <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 mb-10 lg:mb-16 py-8 xl:py-10 rounded-3xl bg-[url(https://images.oasisindia.in/website/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat">
+        <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 mb-10 lg:mb-16 py-8 xl:py-10 rounded-3xl bg-[url(/images/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat">
             <h2 className="text-[22px] md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-[52px] font-bold leading-tight text-primary text-center tracking-wide">
                 <span className={service !== 'fertility' ? 'uppercase' : ''}>
                     {service ? service === 'fertility' ? 'Fertility' : service : "IVF"}

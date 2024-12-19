@@ -93,7 +93,7 @@ const CarouselButton = memo(({ onClick, type, isActive }) => (
   <button onClick={onClick} className="relative group">
     <Image
       className={`w-10 2xl:w-[60px] h-10 2xl:h-[60px] transition-opacity duration-300 ${isActive ? 'opacity-0' : 'opacity-100'}`}
-      src={`https://images.oasisindia.in/website/ic-${type}2.png`}
+      src={`/images/ic-${type}2.png`}
       width={60}
       height={60}
       alt={type}
@@ -101,7 +101,7 @@ const CarouselButton = memo(({ onClick, type, isActive }) => (
     />
     <Image
       className={`w-10 2xl:w-[60px] h-10 2xl:h-[60px] absolute top-0 left-0 transition-opacity duration-300 ${isActive ? 'opacity-100' : 'group-hover:opacity-100 opacity-0'}`}
-      src={`https://images.oasisindia.in/website/ic-${type}2-hover.png`}
+      src={`/images/ic-${type}2-hover.png`}
       width={60}
       height={60}
       alt={`${type} hover`}

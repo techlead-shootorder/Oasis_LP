@@ -14,7 +14,7 @@ const SPECIALISTS_DATA = [
  {
    id: 1,
    name: "Dr. Durga.G.Rao",
-   image: "https://images.oasisindia.in/website/lp/doctors/updated/Dr.Durga_G _rao.webp",
+   image: "/images/lp/doctors/updated/Dr.Durga_G _rao.webp",
    qualifications: "MBBS, DGO, MRCOG (UK)",
    role: "Co-founder & Medical Director",
    rating: "99%",
@@ -23,7 +23,7 @@ const SPECIALISTS_DATA = [
  {
    id: 2, 
    name: "Dr. Krishna Chaitanya",
-   image: "https://images.oasisindia.in/website/lp/doctors/updated/Krishna_Chaithanya.webp",
+   image: "/images/lp/doctors/updated/Krishna_Chaithanya.webp",
    qualifications: "MS (Clinical Embryology)",
    role: "Scientific Head and Clinical Embryologist",
    rating: "99%",

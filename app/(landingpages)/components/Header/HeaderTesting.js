@@ -3,17 +3,8 @@
 import React, { memo } from "react";
 import Image from "next/image";
 import Link from "next/link";
-// import { PiLineVertical } from "react-icons/pi";
 import { MdCall } from "react-icons/md";
-// import { Cinzel_Decorative } from "@next/font/google";
-// import dynamic from 'next/dynamic';
 
-
-// Font configuration
-// const cinzelDecorative = Cinzel_Decorative({
-//   subsets: ["latin"],
-//   weight: ["400", "700"]
-// });
 
 // Constants
 // const COMPANY_YEARS = "15";
@@ -82,9 +73,7 @@ const DesktopHeader = memo(({ center, metanum }) => (
   <nav className="hidden md:block max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 bg-primary">
     <div className="px-2 lg:px-4 xl:px-4 2xl:px-8 flex justify-between ">
       <div className="flex items-center">
-        {/* <LogoSection />
-        <PiLineVertical className="!text-white text-4xl font-thin" />
-        <YearsSection /> */}
+        
          <Image
       src='/images/lp/lp3/mobile header image.webp'
       alt='logo'

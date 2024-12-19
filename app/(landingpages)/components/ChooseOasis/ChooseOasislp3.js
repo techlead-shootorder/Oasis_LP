@@ -33,25 +33,25 @@ const OASIS_DATA = [
    id: 1,
    title: "Clinical Excellence",
    desc: "Science and evidence-based fertility care by experienced fertility doctors, to help couples have healthy babies.",
-   imgUrl: "https://images.oasisindia.in/website/lp/campaign/Clinical_Excellence.webp"
+   imgUrl: "/images/lp/campaign/Clinical_Excellence.webp"
  },
  {
    id: 2,
    title: "Personalized Treatments",
    desc: "Treatments that are tailored to suit your specific needs and ensure the best outcomes.",
-   imgUrl: "https://images.oasisindia.in/website/lp/campaign/Personalized_Treatments.webp"
+   imgUrl: "/images/lp/campaign/Personalized_Treatments.webp"
  },
  {
    id: 3,
    title: "Comprehensive Care",
    desc: "Patient-centric nutritional, psychological, and holistic support in every step of the fertility journey.",
-   imgUrl: "https://images.oasisindia.in/website/lp/campaign/Comprehensive_Care.webp"
+   imgUrl: "/images/lp/campaign/Comprehensive_Care.webp"
  },
  {
    id: 4,
    title: "Transparent Pricing",
    desc: "No hidden costs. Clear pricing on every test, scan, and procedure.",
-   imgUrl: "https://images.oasisindia.in/website/lp/campaign/Transparent_Pricing.webp"
+   imgUrl: "/images/lp/campaign/Transparent_Pricing.webp"
  }
 ];
 
@@ -73,7 +73,7 @@ const CarouselButtons = memo(({ next, previous }) => (
      <button key={type} onClick={type === 'prev' ? previous : next}>
        <Image 
          className="w-10 2xl:w-[60px] h-10 2xl:h-[60px]"
-         src={`https://images.oasisindia.in/website/ic-${type}2.png`}
+         src={`/images/ic-${type}2.png`}
          width={60}
          height={60}
          alt={type}
@@ -115,7 +115,7 @@ const formatCenterName = (name) => {
 formatCenterName.displayName = "formatCenterName";
 
 const ChooseOasisV2 = memo(({ center }) => (
- <div className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 mb-10 lg:mb-16 py-10 lg:py-16 bg-[url(https://images.oasisindia.in/website/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat">
+ <div className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 mb-10 lg:mb-16 py-10 lg:py-16 bg-[url(/images/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat">
    <h2 className="text-[22px] md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-[52px] !leading-[1.2] font-bold text-primary text-center tracking-wide">
      Why Choose Oasis Fertility in {formatCenterName(center?.center_name)}
    </h2>

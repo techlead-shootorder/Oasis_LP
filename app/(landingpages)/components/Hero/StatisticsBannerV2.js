@@ -5,28 +5,28 @@ import Image from "next/image";
 const STATISTICS = [
     {
         id: 'healthy-babies',
-        icon: "https://images.oasisindia.in/website/lp/campaign/ic-Healthy-Babies.webp",
+        icon: "/images/lp/campaign/ic-Healthy-Babies.webp",
         value: "1,00,000+",
         label: "Healthy Babies",
         alt: "Healthy Babies"
     },
     {
         id: 'success-rate',
-        icon: "https://images.oasisindia.in/website/lp/campaign/ic-Success-Rate.webp",
+        icon: "/images/lp/campaign/ic-Success-Rate.webp",
         value: "69% IVF",
         label: "Success Rate Across India",
         alt: "Success Rate Across India"
     },
     {
         id: 'microtese',
-        icon: "https://images.oasisindia.in/website/lp/campaign/ic-MicroTESE.webp",
+        icon: "/images/lp/campaign/ic-MicroTESE.webp",
         value: "1000+ Cases",
         label: "MicroTESE Solving Male Infertility",
         alt: "MicroTESE Solving Male Infertility"
     },
     {
         id: 'centers',
-        icon: "https://images.oasisindia.in/website/lp/campaign/ic-centre.webp",
+        icon: "/images/lp/campaign/ic-centre.webp",
         value: "32 Centres",
         label: "Across India",
         alt: "Across India"
