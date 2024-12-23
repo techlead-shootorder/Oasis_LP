@@ -37,33 +37,7 @@ const config: Config = {
       'infertility-bg-img': "url('https://images.oasisindia.in/website/Treatment/background-img.png')",
       'announcement-bar-gradient': 'linear-gradient(90deg, #fbc2eb 18%, #f6c2eb 0, #a6c1ee 78%)',
     },
-    animation: {
-      marquee: 'marquee 10s linear infinite',
-      slide: 'slide 12s infinite ease-in-out',
-      'spin-slow': 'spin 5s linear infinite',
-      'spin-reverse': 'spin-reverse 5s linear infinite',
-      ripple: 'ripple 2s infinite',
-    },
-    keyframes: {
-      marquee: {
-        '0%': { transform: 'translateX(100%)' },
-        '100%': { transform: 'translateX(-100%)' },
-      },
-      slide: {
-        '0%, 20%': { transform: 'translateY(0%)' },
-        '25%, 45%': { transform: 'translateY(-100%)' },
-        '50%, 70%': { transform: 'translateY(-200%)' },
-        '75%, 100%': { transform: 'translateY(-0%)' },
-      },
-      'spin-reverse': {
-        from: { transform: 'rotate(360deg)' },
-        to: { transform: 'rotate(0deg)' },
-      },
-      ripple: {
-        '0%': { transform: 'scale(0.9)', opacity: '1' },
-        '100%': { transform: 'scale(1.5)', opacity: '0' },
-      },
-    },
+    
   },
   plugins: [],
 };
