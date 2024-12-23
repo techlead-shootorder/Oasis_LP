@@ -123,7 +123,7 @@ const DoctorCard = memo(({ data, onBookClick }) => {
         <div className="relative">
           <Image
             src={`https://images.oasisindia.in/website/doctor/newDoctors/${data.docterImage}`}
-            alt={data?.fullName}
+            alt={data.fullName || "Doctor Image"}
             width={691}
             height={775}
             className="w-auto mx-auto mb-2 lg:mb-4"
@@ -171,7 +171,7 @@ const DoctorCard = memo(({ data, onBookClick }) => {
       <div className="mt-3 lg:mt-6 text-center lg:transition lg:ease-in-out lg:duration-500 lg:opacity-0 lg:group-hover:opacity-100">
         <button
           onClick={onBookClick}
-          className="p-2 sm:px-4 2xl:px-8 sm:py-3 leading-none rounded-lg sm:rounded-[10px] bg-accent text-[8px] sm:text-xs lg:text-sm xl:text-base whitespace-nowrap font-semibold text-white uppercase w-full"
+          className="p-2 sm:px-4 2xl:px-8 sm:py-3 leading-none rounded-lg sm:rounded-[10px] bg-orange-500 text-[8px] sm:text-xs lg:text-sm xl:text-base whitespace-nowrap font-semibold text-white uppercase w-full"
         >
           Book Consultation
         </button>

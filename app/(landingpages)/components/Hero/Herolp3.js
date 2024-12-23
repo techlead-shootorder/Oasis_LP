@@ -91,7 +91,7 @@ const MobileLeadForm = memo(({ center, service, isMeta }) => (
   <div id="leadformlp3" className="md:hidden flex items-center -mt-[152px] w-full">
     <div className="flex flex-col items-center w-full">
       <div className="flex justify-center w-full">
-        <div className="bg-[#bf64bf] text-white w-[80%] text-center py-0.5 rounded-t-2xl font-semibold z-50">
+        <div className="bg-[#874487] text-white w-[80%] text-center py-0.5 rounded-t-2xl font-semibold z-50">
           IVF @ 94,999* &nbsp; | &nbsp; LIMITED VALIDITY
         </div>
       </div>

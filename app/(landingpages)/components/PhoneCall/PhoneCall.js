@@ -20,6 +20,7 @@ const PhoneCall = ({ refferal = false, center, metanum }) => {
                     ? "tel:+919513736518"
                     : `tel:09513736518`
             }
+            aria-label="Read more about Seminole tax hike"
             className="relative text-white bg-blue-500 p-3 rounded-full cursor-pointer shadow-xl transition-transform transform hover:scale-110 active:scale-95"
             onClick={handleClick}
         >
@@ -41,6 +42,7 @@ const PhoneCall = ({ refferal = false, center, metanum }) => {
                     ? "tel:+919513736432"
                     : `tel:0${center?.phone.replace(/\D/g, "").slice(-10)}`
             }
+            aria-label="Call Oasis"
             className="relative text-white bg-blue-500 p-3 rounded-full cursor-pointer shadow-xl transition-transform transform hover:scale-110 active:scale-95"
             onClick={handleClick}
         >
