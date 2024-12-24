@@ -325,6 +325,7 @@ const LeadFormV2 = () => {
         <div className="flex space-x-4 mb-3 xl:mb-4">
           <div className="relative w-1/2">
             <select
+            aria-label="gender"
               id="gender"
               name="gender"
               className="w-full p-3 bg-white border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
@@ -344,6 +345,7 @@ const LeadFormV2 = () => {
 
           <div className="relative w-1/2">
             <select
+            aria-label="age"
               id="age"
               name="age"
               className="w-full p-3 bg-white border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
