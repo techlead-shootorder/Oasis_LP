@@ -122,7 +122,7 @@ const DoctorCard = memo(({ data, onBookClick }) => {
       <div className="text-center relative flex-grow">
         <div className="relative">
           <Image
-            src={`https://images.oasisindia.in/website/doctor/newDoctors/${data.docterImage}`}
+            src={`/images/doctor/newDoctors/${data.docterImage}`}
             alt={data.fullName || "Doctor Image"}
             width={691}
             height={775}
