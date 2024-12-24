@@ -164,7 +164,7 @@ export default function Page({ params }) {
                 </div>
                 <Treatmentlp3 center={filteredCity} service={service} />
                 <SpeciaListslp3 service={service} isMeta={isMeta} />
-                <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 py-10 lg:py-16 bg-[url(https://images.oasisindia.in/website/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat mb-10 lg:mb-16 relative">
+                <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 py-10 lg:py-16 bg-[url(/images/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat mb-10 lg:mb-16 relative">
                     <Reviewlp3 center={filteredCity} filteredReview={filteredReview} service={service} />
                     <TrustedCliniclp3 center={filteredCity} service={service} />
                 </section>

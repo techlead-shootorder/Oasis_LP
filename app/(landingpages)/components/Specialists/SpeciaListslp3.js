@@ -38,10 +38,12 @@ const DoctorCard = memo(({ doctor, onBookClick }) => (
        src={doctor.image}
        alt={doctor.name}
        className="w-auto mx-auto h-[270px] lg:h-[190px] xl:h-[290px] 2xl:h-[350px]"
-       width={691}
-       height={775}
+       width={239}
+       height={290}
        loading="lazy"
        quality={90}
+       objectFit="cover"
+
      />
    </div>
 

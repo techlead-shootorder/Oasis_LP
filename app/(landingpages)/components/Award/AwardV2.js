@@ -36,7 +36,7 @@ const AWARDS_DATA = [
      alt: "award1"
    },
    brandImage: {
-     src: "/images/lp/campaign/ic-healthworld.png", 
+     src: "/images/lp/campaign/ic-healthworld.webp", 
      alt: "healthworld"
    }
  },
@@ -48,7 +48,7 @@ const AWARDS_DATA = [
      alt: "award2"
    },
    brandImage: {
-     src: "/images/lp/campaign/ic-economic-times.png",
+     src: "/images/lp/campaign/ic-economic-times.webp",
      alt: "economic times" 
    }
  }
