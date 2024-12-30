@@ -9,7 +9,7 @@ const LIVE_SF_CLIENT_SECRET = "347AC2A3BCA22AFA96F29043FC175553277A56925A67DD836
 const LIVE_SF_USERNAME = "integration.user@oasis.in.prod";
 const LIVE_SF_PASSWORD = "oasis@1234";
 
-const LEADSQUARED_URL = "https://api.leadsquared.com/v2/LeadManagement.svc/Lead.Capture?&accessKey=u$r28bf3b3ba19df2ce87f563a0c9e7d95d&secretKey=eb6eaef1c9fc31bceaf852a72b99a3b827883261";
+// const LEADSQUARED_URL = "https://api.leadsquared.com/v2/LeadManagement.svc/Lead.Capture?&accessKey=u$r28bf3b3ba19df2ce87f563a0c9e7d95d&secretKey=eb6eaef1c9fc31bceaf852a72b99a3b827883261";
 
 const QA_LEAD_URL_PREFIX = "https://test.salesforce.com";
 const QA_SF_CLIENT_ID = "3MVG9KAEr0ABaqiqvyP38gRpW3_7xFyHEqjH1Cpc6k1v7M6VKbs5uli3p1HYAx80ZgGLTa7BWgfxsQayH7BOK";
