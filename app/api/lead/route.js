@@ -280,46 +280,46 @@ async function storeLeadData(requestJson) {
   }
 }
 
-async function sendLeadSquaredRequest(requestJson) {
-  try {
-    let name = requestJson.firstName + (requestJson.lastName ? " " + requestJson.lastName : "");
-    const raw = JSON.stringify([
-      { Attribute: "FirstName", Value: name },
-      { Attribute: "mx_Gender", Value: requestJson.gender ?? "" },
-      { Attribute: "mx_Age", Value: requestJson.age ?? "" },
-      { Attribute: "mx_SelectYourBranch", Value: "" },
-      { Attribute: "Mobile", Value: requestJson.mobileNo },
-      { Attribute: "Source", Value: requestJson.utmSource ?? "" },
-      { Attribute: "mx_UTM_Campaign", Value: requestJson.utmCampaign ?? "" },
-      { Attribute: "mx_UTM_Source", Value: requestJson.utmSource ?? "" },
-      { Attribute: "mx_UTM_medium", Value: requestJson.utmMedium ?? "" },
-      { Attribute: "mx_UTM_Content", Value: requestJson.utmContent ?? "English|" },
-      { Attribute: "mx_UTM_Term", Value: requestJson.utmTerm ?? "" },
-      { Attribute: "mx_Source_Campaign_ID", Value: requestJson.utmCampaignId ?? "" },
-      { Attribute: "mx_Source_Adgroup_Id", Value: requestJson.adGroupId ?? "" },
-      { Attribute: "Origin", Value: requestJson.referralUrl ?? "" },
-      { Attribute: "mx_Appointment_Date", Value: requestJson.appointmentDate ?? formatDateToYYYYMMDD(new Date()) },
-      { Attribute: "SearchBy", Value: "Mobile" },
-    ]);
+// async function sendLeadSquaredRequest(requestJson) {
+//   try {
+//     let name = requestJson.firstName + (requestJson.lastName ? " " + requestJson.lastName : "");
+//     const raw = JSON.stringify([
+//       { Attribute: "FirstName", Value: name },
+//       { Attribute: "mx_Gender", Value: requestJson.gender ?? "" },
+//       { Attribute: "mx_Age", Value: requestJson.age ?? "" },
+//       { Attribute: "mx_SelectYourBranch", Value: "" },
+//       { Attribute: "Mobile", Value: requestJson.mobileNo },
+//       { Attribute: "Source", Value: requestJson.utmSource ?? "" },
+//       { Attribute: "mx_UTM_Campaign", Value: requestJson.utmCampaign ?? "" },
+//       { Attribute: "mx_UTM_Source", Value: requestJson.utmSource ?? "" },
+//       { Attribute: "mx_UTM_medium", Value: requestJson.utmMedium ?? "" },
+//       { Attribute: "mx_UTM_Content", Value: requestJson.utmContent ?? "English|" },
+//       { Attribute: "mx_UTM_Term", Value: requestJson.utmTerm ?? "" },
+//       { Attribute: "mx_Source_Campaign_ID", Value: requestJson.utmCampaignId ?? "" },
+//       { Attribute: "mx_Source_Adgroup_Id", Value: requestJson.adGroupId ?? "" },
+//       { Attribute: "Origin", Value: requestJson.referralUrl ?? "" },
+//       { Attribute: "mx_Appointment_Date", Value: requestJson.appointmentDate ?? formatDateToYYYYMMDD(new Date()) },
+//       { Attribute: "SearchBy", Value: "Mobile" },
+//     ]);
 
-    console.log("Leadsquared request is " + raw);
+//     console.log("Leadsquared request is " + raw);
 
-    let response = await fetch(LEADSQUARED_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: raw,
-    });
+//     let response = await fetch(LEADSQUARED_URL, {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: raw,
+//     });
 
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
+//     if (!response.ok) {
+//       throw new Error("Network response was not ok");
+//     }
 
-    let leadSubmitData = await response.json();
+//     let leadSubmitData = await response.json();
 
-    console.log("Lead form submission response from leadsquared is ", leadSubmitData);
-  } catch (error) {
-    console.log(error);
-  }
-}
+//     console.log("Lead form submission response from leadsquared is ", leadSubmitData);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
