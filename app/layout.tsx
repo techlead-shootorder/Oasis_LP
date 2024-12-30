@@ -3,7 +3,7 @@
 import type { Metadata } from "next";
 import { Questrial, Pattaya } from "next/font/google";
 import "./globals.css";
-// import AnalyticsProvider, { PageViewTracker } from '@/app/(landingpages)/components/Analytics/Analytics';
+import AnalyticsProvider, { PageViewTracker } from '@/app/(landingpages)/components/Analytics/Analytics';
 
 const questrial = Questrial({
   subsets: ["latin"],
@@ -53,13 +53,13 @@ export default function RootLayout({
         </noscript>
       </head>
       <body className="text-neutral bg-white font-questrial">
-        {/* <AnalyticsProvider
+        <AnalyticsProvider
           gtmId={process.env.NEXT_PUBLIC_GTM_ID}
           metaPixelId={process.env.NEXT_PUBLIC_META_PIXEL_ID}
-        > */}
-          {/* <PageViewTracker /> */}
+        >
+          <PageViewTracker />
           {children}
-        {/* </AnalyticsProvider> */}
+        </AnalyticsProvider>
       </body>
     </html>
   );

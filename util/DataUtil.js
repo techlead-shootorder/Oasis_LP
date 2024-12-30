@@ -1,4 +1,9 @@
-export function convertTo12HourFormat(time24: string) {
+/**
+ * Converts 24-hour format time to 12-hour format
+ * @param {string} time24 - Time in 24-hour format (HH:MM)
+ * @returns {string} Time in 12-hour format with AM/PM
+ */
+export function convertTo12HourFormat(time24) {
     if (time24) {
         // Split the input time into hours and minutes
         const [hour24, minutes] = time24.split(':');
@@ -22,7 +27,12 @@ export function convertTo12HourFormat(time24: string) {
     }
 }
 
-export function formatDateToYYYYMMDD(date: Date) {
+/**
+ * Formats a date object to YYYY-MM-DD string format
+ * @param {Date} date - Date object to format
+ * @returns {string} Formatted date string
+ */
+export function formatDateToYYYYMMDD(date) {
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-based
     const day = String(date.getDate()).padStart(2, '0');
@@ -30,7 +40,12 @@ export function formatDateToYYYYMMDD(date: Date) {
     return `${year}-${month}-${day}`;
 }
 
-export function getFormattedDate(dateStr: Date) {
+/**
+ * Gets a formatted date string in "MMM D, YYYY" format
+ * @param {Date} dateStr - Date to format
+ * @returns {string} Formatted date string
+ */
+export function getFormattedDate(dateStr) {
     const date = new Date(dateStr);
 
     const formattedDate = date.toLocaleDateString('en-US', {
@@ -42,9 +57,14 @@ export function getFormattedDate(dateStr: Date) {
     return formattedDate;
 }
 
-export function getShortDayName(day: string): string {
+/**
+ * Gets the short form (3 letters) of a day name
+ * @param {string} day - Full name of the day
+ * @returns {string} Short form of the day name
+ */
+export function getShortDayName(day) {
     // Map of full weekday names to abbreviations
-    const dayAbbreviations: { [key: string]: string } = {
+    const dayAbbreviations = {
         "Sunday": "Sun",
         "Monday": "Mon",
         "Tuesday": "Tue",
