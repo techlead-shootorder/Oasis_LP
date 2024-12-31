@@ -1,9 +1,7 @@
 'use client'
 import { useState } from 'react';
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
-import ModalV2 from '../Modal/ModalV2';
 import Modallp3 from '../Modal/Modallp3';
 
 // const ModalV2 = dynamic(() => import('../Modal/ModalV2'), {
