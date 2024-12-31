@@ -281,7 +281,7 @@ const PlanInfo = ({ isMeta }) => {
                             ₹1,95,000
                         </h3>
                         <div className="flex flex-col mb-1">
-                            <h3 className="text-[40px] lg:text-[50px] text-white leading-none">₹1,79,999</h3>
+                            <h3 className="text-[40px] lg:text-[50px] text-white leading-none">1,84,999</h3>
                             <sub className='text-xs lg:text-sm text-white'>(incl. medications)</sub>
 
                         </div>
