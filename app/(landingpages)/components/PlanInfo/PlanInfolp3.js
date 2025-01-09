@@ -18,7 +18,7 @@ const PlanInfo = ({ isMeta }) => {
     const handleCloseModal = () => setShowModal(false);
     const handleOpenModal = () => setShowModal(true);
     return (<>
-        <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 mb-10 lg:mb-16">
+        <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 py-10 lg:py-16">
             <h2 className='text-[22px] mb-[1rem] md:mb-[2rem] md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-[52px] !leading-[1.2] font-bold text-primary text-center tracking-wide'>
             Oasis Fertility Treatment Cost
             </h2>

@@ -156,10 +156,10 @@ export default function IVFClinicSliderV2({ center, userAgentString, cityVideos,
   if (isLoading) return <VideoReelSkeleton />;
 
   return (
-    <div className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 mb-10 lg:mb-16">
+    <div className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 py-4 lg:py-4">
       <div className="pb-16 lg:pb-16 mb-6 relative">
         <div className="flex justify-center">
-          <h2 className='text-[22px] mb-[1rem] md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-[52px] !leading-[1.2] font-bold text-primary text-center tracking-wide'>
+          <h2 className='text-[22px] mb-[1rem] md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-[52px] !leading-[1.2] font-bold text-primary text-center tracking-wide mt-4'>
             Most Trusted <span className={service != 'fertility' ? 'uppercase' : ''}>{service || "IVF"}</span> Clinic in{" "}
             {center?.center_name
               .split("-")
