@@ -548,7 +548,7 @@ const newdoctorslp3 = [
     {
         "id": 52,
         "fullname": "Dr. Vijayalakshmi D",
-        "designation": "Clinical Head, Fertility Specialist & Laparoscopic Surgeon",
+        "designation": "Clinical Head, Laparoscopic Surgeon & Fertility Specialist",
         "experience": "12 Years",
         "docterImage": "Dr. Vijayalakshmi D.webp",
         "master_id": "15",
@@ -592,7 +592,7 @@ const newdoctorslp3 = [
     {
         "id": 56,
         "fullname": "Dr. Vijayalakshmi D",
-        "designation": "Clinical Head, Fertility Specialist & Laparoscopic Surgeon",
+        "designation": "Clinical Head, Laparoscopic Surgeon & Fertility Specialist ",
         "experience": "12 Years",
         "docterImage": "Dr. Vijayalakshmi D.webp",
         "master_id": "16",
@@ -624,7 +624,7 @@ const newdoctorslp3 = [
     {
         "id": 59,
         "fullname": "Dr. Vijayalakshmi D",
-        "designation": "Clinical Head, Fertility Specialist & Laparoscopic Surgeon",
+        "designation": "Clinical Head, Laparoscopic Surgeon & Fertility Specialist",
         "experience": "12 Years",
         "docterImage": "Dr. Vijayalakshmi D.webp",
         "master_id": "17",
@@ -959,7 +959,7 @@ const newdoctorslp3 = [
     {
         "id": 90,
         "fullname": "Dr. Poornima Mathur",
-        "designation": "Consultant - Fertility Specialist, Laparoscopic Surgeon",
+        "designation": "Consultant - Laparoscopic Surgeon, Fertility Specialist",
         "experience": "9 Years",
         "docterImage": "Dr. Poornima Mathur.webp",
         "master_id": "29",
@@ -1252,7 +1252,7 @@ const newdoctorslp3 = [
     {
         "id": 117,
         "fullname": "Dr. Vijayalakshmi D",
-        "designation": "Clinical Head, Fertility Specialist & Laparoscopic Surgeon",
+        "designation": "Clinical Head, Laparoscopic Surgeon & Fertility Specialist",
         "experience": "12 Years",
         "docterImage": "Dr. Vijayalakshmi D.webp",
         "master_id": "36",

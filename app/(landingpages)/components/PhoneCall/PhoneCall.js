@@ -26,7 +26,17 @@ const PhoneCall = ({ refferal = false, center, metanum }) => {
         >
             {/* Call Icon */}
             <MdCall className="text-4xl relative z-10" />
+            {metanum && <>
+                {/* Glow Animation */}
+                <div className="absolute inset-0 w-full h-full rounded-full bg-blue-400 opacity-50 blur-lg animate-pulse"></div>
 
+                {/* Rotating Sparkles */}
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-300 rounded-full blur-md animate-spin-slow"></div>
+                <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-blue-300 rounded-full blur-md animate-spin-reverse"></div>
+
+                {/* Ripple Effect */}
+                <div className="absolute inset-0 rounded-full border-4 border-blue-400 opacity-30 animate-ripple"></div>
+                </>}
            
         </a>  : <a
             href={
@@ -40,7 +50,17 @@ const PhoneCall = ({ refferal = false, center, metanum }) => {
         >
             {/* Call Icon */}
             <MdCall className="text-4xl relative z-10" />
+            {metanum &&  <>
+                {/* Glow Animation */}
+                <div className="absolute inset-0 w-full h-full !rounded-full bg-blue-400 opacity-50 blur-lg animate-pulse"></div>
 
+                {/* Rotating Sparkles */}
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-300 rounded-full blur-md animate-spin-slow"></div>
+                <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-blue-300 rounded-full blur-md animate-spin-reverse"></div>
+
+                {/* Ripple Effect */}
+                <div className="absolute inset-0 rounded-full border-4 border-blue-400 opacity-30 animate-ripple"></div>
+                </>}
             
         </a>}
     </div>

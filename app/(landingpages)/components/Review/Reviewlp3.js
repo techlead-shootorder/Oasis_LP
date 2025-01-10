@@ -3,11 +3,14 @@ import Image from "next/image";
 import React, {useState} from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import MobileReview from "./MobileReview";
 import { FaRegStar, FaStar, FaStarHalfStroke } from "react-icons/fa6";
+import review from '@/util/lp/reviewlp3';
 
 const ReviewV2 = ({ center, service, filteredReview }) => {
   const totalStars = 5;
   const [activeButton, setActiveButton] = useState('next');
+  const filterReview = review.filter((item) => item.center_name === center?.center_name);
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -94,6 +97,13 @@ const ReviewV2 = ({ center, service, filteredReview }) => {
                     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
                     .join(" ")}
       </h2>
+      
+
+      <div className="sm:hidden">
+      <MobileReview center={center} filteredReview={filteredReview}/>
+      </div>
+
+      <div className="hidden sm:block">
       <Carousel
         responsive={responsive}
         partialVisbile
@@ -105,7 +115,7 @@ const ReviewV2 = ({ center, service, filteredReview }) => {
         autoPlay={false}
         customButtonGroup={<ButtonGroup />}
       >
-        {filteredReview?.map(testimonial => (
+        {filterReview?.map(testimonial => (
           <div
             key={testimonial.id}
             className="border bg-white border-primary p-5 rounded-xl lg:rounded-[20px] text-center font-lato h-full"
@@ -142,12 +152,12 @@ const ReviewV2 = ({ center, service, filteredReview }) => {
               </div>
               {/* <h3 className="text-lg lg:text-2xl font-medium ">4.5</h3> */}
             </div>
-            <p className="font-lato mt-4 text-black">{testimonial.testimonial}</p>
+            <p className="font-lato mt-4 text-black">{testimonial.review}</p>
             <h3 className="text-xl lg:text-[28px] mt-3 text-black">
-              {testimonial.name}, {testimonial.age}
+              {testimonial.name}
             </h3>
             <p className="text-black">
-              {testimonial.location
+              {testimonial.clinic_location
                 .split(" ")
                 .map(word => word.charAt(0).toUpperCase() + word.slice(1))
                 .join(" ")}
@@ -155,6 +165,8 @@ const ReviewV2 = ({ center, service, filteredReview }) => {
           </div>
         ))}
       </Carousel>
+      </div>
+
     </div>
   );
 };

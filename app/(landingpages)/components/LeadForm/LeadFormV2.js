@@ -9,13 +9,14 @@ import Image from "next/image";
 
 
 
-const LeadFormV2 = () => {
+const LeadFormV2 = ({ internal = false}) => {
 
   const [userDetails, setUserDetails] = useState({
     firstName: "",
     mobileNo: "+91",
     gender: "",
     age: "",
+    notes: "",
     consent: true,
   });
   const [errMsg, setErrorMessage] = useState("");
@@ -177,6 +178,7 @@ const LeadFormV2 = () => {
           mobileNo: "",
           gender: "",
           age: "",
+          notes: "",
           consent: false,
         });
         if (typeof window !== "undefined") {
@@ -202,242 +204,174 @@ const LeadFormV2 = () => {
   };
 
   return (
-    // bg-[url(https://images.oasisindia.in/website/lp/campaign/Form_bg.png)]
+
     <>
-     
-    <div className="rounded-[27px] bg-cover bg-center bg-[#f3c1d7] overflow-hidden relative">
-      {/* <form
-        onSubmit={handleSubmit}
-        className="p-4 lg:p-5 xl:p-6"
-      >
-        <h2 className="text-[22px] md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-[52px] !leading-[1.2] font-semibold mb-3 xl:mb-4 text-center text-primary">
-          Free Consultation
-        </h2>
 
-        <input
-          type="text"
-          id="fullName"
-          name="firstName"
-          placeholder="Full Name"
-          className="w-full p-3 bg-white mb-3 xl:mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
-          value={userDetails.firstName}
-          onChange={handleInputChange}
-        />
+      <div className="rounded-[27px] bg-cover bg-center bg-[#f3c1d7] overflow-hidden relative ">
+        <p className="text-white pt-4 pb-2 bg-primary mb-2 text-center text-[16px] font-bold">IVF @ ₹94,999* | LIMITED VALIDITY</p>
 
-        <input
-          type="text"
-          id="phone"
-          name="mobileNo"
-          placeholder="+91"
-          className="w-full p-3 bg-white mb-3 xl:mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
-          value={userDetails.mobileNo}
-          maxLength={13}
-          minLength={13}
-          onChange={handleInputChange}
-        />
+        <form onSubmit={handleSubmit} className="">
 
-        <div className="flex space-x-4 mb-3 xl:mb-4">
-          <select
-            id="gender"
-            name="gender"
-            className="w-1/2 p-3 bg-white border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
-            value={userDetails.gender}
-            onChange={handleInputChange}
-          >
-            <option value="">Gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-          </select>
+          <div className="px-4 lg:px-5 xl:px-6">
+            {/* FORM HEADING */}
+            <div>
+              <p className="text-center text-primary font-semibold">Fill Up The Form To Get a</p>
+              <h2 className="text-[20px] md:text-[20px] lg:text-[24px] xl:text-[28px] !leading-[1.2] font-extrabold mb-3 xl:mb-4 text-center text-primary">
+                FREE CONSULTATION
+              </h2>
+            </div>
 
-          <select
-            id="age"
-            name="age"
-            className="w-1/2 p-3 bg-white border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
-            value={userDetails.age}
-            onChange={handleInputChange}
-            disabled={!userDetails.gender} // Disable if no gender is selected
-          >
-            <option value="">Age</option>
-            {ageOptions.map((age) => (
-              <option key={age} value={age}>
-                {age}
-              </option>
-            ))}
-          </select>
-        </div>
+            {/* INPUTS */}
+            <div className="relative mb-3 xl:mb-4">
+              <input
+                type="text"
+                id="fullName"
+                name="firstName"
+                placeholder="Full Name"
+                className="w-full p-3 bg-white border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                value={userDetails.firstName}
+                onChange={handleInputChange}
+                onFocus={() => setIsFocusedFullName(true)}
+                onBlur={() => setIsFocusedFullName(false)}
+              />
+              {!isFocusedFullName && !userDetails.firstName && (
+                <span className="absolute left-[88px] top-2 text-red-500 text-2xl">*</span>
+              )}
+            </div>
 
-        <div className="flex items-center justify-center mb-3 xl:mb-4 text-center">
-          <input
-            type="checkbox"
-            name="consent"
-            id="consent"
-            className="mr-2"
-            checked={userDetails.consent}
-            onChange={handleInputChange}
-          />
-          <label htmlFor="consent" className="text-sm lg:text-lg text-center">
-            I consent Oasis Fertility to contact me
-          </label>
-        </div>
+            <div className="flex space-x-4 mb-3 xl:mb-4">
+              <div className="relative w-1/2">
+                <select
+                  aria-label="gender"
+                  id="gender"
+                  name="gender"
+                  className="w-full p-3 bg-white border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                  value={userDetails.gender}
+                  onChange={handleInputChange}
+                  onFocus={() => setIsFocusedGender(true)}
+                  onBlur={() => setIsFocusedGender(false)}
+                >
+                  <option value="">Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+                {!isFocusedGender && !userDetails.gender && (
+                  <span className="absolute left-[72px] top-2 text-red-500 text-2xl">*</span>
+                )}
+              </div>
 
-        {errMsg && <p className="text-red-500 text-sm">{errMsg}</p>}
-        
-        <button
-          type="submit"
-          id="form-submit"
-          className={`w-full py-3 text-white text-lg rounded-lg font-semibold ${
-            loading || !formValid ? "bg-red-600 opacity-70 cursor-not-allowed" : "bg-red-600"
-          }`}
-          disabled={loading || !formValid}       
-        >
-           {loading ? "Submitting..." : "Request Call Back!"}
-        </button>
-      </form> */}
+              <div className="relative w-1/2">
+                <select
+                  aria-label="age"
+                  id="age"
+                  name="age"
+                  className="w-full p-3 bg-white border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                  value={userDetails.age}
+                  onChange={handleInputChange}
+                  disabled={!userDetails.gender} // Disable if no gender is selected
+                  onFocus={() => setIsFocusedAge(true)}
+                  onBlur={() => setIsFocusedAge(false)}
+                >
+                  <option value="">Age</option>
+                  {ageOptions.map((age) => (
+                    <option key={age} value={age}>
+                      {age}
+                    </option>
+                  ))}
+                </select>
+                {!isFocusedAge && !userDetails.age && (
+                  <span className="absolute left-[48px] top-2 text-red-500 text-2xl">*</span>
+                )}
+              </div>
+            </div>
 
-      <form onSubmit={handleSubmit} className="p-4 lg:p-5 xl:p-6">
-        <div>
-          <p className="text-center text-primary font-semibold">fill up the form to get a</p>
-          <h2 className="text-[20px] md:text-[2xl] lg:text-3xl xl:text-[40px] !leading-[1.2] font-extrabold mb-3 xl:mb-4 text-center text-primary">
-            FREE CONSULTATION
-          </h2>
-        </div>
+            <div className="relative mb-3 xl:mb-4">
+              <input
+                type="text"
+                id="phone"
+                name="mobileNo"
+                placeholder="+91"
+                className="w-full p-3 bg-white border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                value={userDetails.mobileNo}
+                maxLength={13}
+                minLength={13}
+                onChange={handleInputChange}
+                onFocus={() => setIsFocusedMobileNo(true)}
+                onBlur={() => setIsFocusedMobileNo(false)}
+              />
+              {/* Asterisk only if the input is empty or has only the prefix */}
+              {!isFocusedMobileNo &&
+                (userDetails.mobileNo.length <= 3 || userDetails.mobileNo === "+91") && (
+                  <span className="absolute left-[40px] top-2 text-red-500 text-2xl">*</span>
+                )}
+            </div>
 
-        <div className="relative mb-3 xl:mb-4">
-          <input
-            type="text"
-            id="fullName"
-            name="firstName"
-            placeholder="Full Name"
-            className="w-full p-3 bg-white border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
-            value={userDetails.firstName}
-            onChange={handleInputChange}
-            onFocus={() => setIsFocusedFullName(true)}
-            onBlur={() => setIsFocusedFullName(false)}
-          />
-          {!isFocusedFullName && !userDetails.firstName && (
-            <span className="absolute left-[88px] top-2 text-red-500 text-2xl">*</span>
-          )}
-        </div>
-           
+           {internal && <div className="relative mb-3 xl:mb-4">
+              <input
+                type="text"
+                id="notes"
+                name="notes"
+                placeholder="Notes"
+                className="w-full p-3 bg-white border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                value={userDetails.notes}
+                onChange={handleInputChange}
+                
+              />
+              
+            </div>}
 
-       
-
-        <div className="flex space-x-4 mb-3 xl:mb-4">
-          <div className="relative w-1/2">
-            <select
-            aria-label="gender"
-              id="gender"
-              name="gender"
-              className="w-full p-3 bg-white border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
-              value={userDetails.gender}
-              onChange={handleInputChange}
-              onFocus={() => setIsFocusedGender(true)}
-              onBlur={() => setIsFocusedGender(false)}
-            >
-              <option value="">Gender</option>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-            </select>
-            {!isFocusedGender && !userDetails.gender && (
-              <span className="absolute left-[72px] top-2 text-red-500 text-2xl">*</span>
-            )}
+            <div className="flex items-center justify-center mb-3 xl:mb-4 text-center">
+              <input
+                type="checkbox"
+                name="consent"
+                id="consent"
+                className="mr-2"
+                checked={userDetails.consent}
+                onChange={handleInputChange}
+              />
+              <label htmlFor="consent" className="text-sm lg:text-lg text-center">
+                I consent Oasis Fertility to contact me
+              </label>
+            </div>
           </div>
+          {/* ERROR MESSAGE */}
+          {errMsg && <p className="text-red-500 text-sm">{errMsg}</p>}
 
-          <div className="relative w-1/2">
-            <select
-            aria-label="age"
-              id="age"
-              name="age"
-              className="w-full p-3 bg-white border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
-              value={userDetails.age}
-              onChange={handleInputChange}
-              disabled={!userDetails.gender} // Disable if no gender is selected
-              onFocus={() => setIsFocusedAge(true)}
-              onBlur={() => setIsFocusedAge(false)}
+          <div className="bg-primary py-4 px-4">
+            <button
+              type="submit"
+              id="form-submit"
+              className={`w-full py-1 text-white text-[22px] rounded-lg leading-none font-medium ${loading || !formValid ? "bg-red-400 cursor-not-allowed" : "bg-[#D7052B]"
+                }`}
+              disabled={loading || !formValid}
             >
-              <option value="">Age</option>
-              {ageOptions.map((age) => (
-                <option key={age} value={age}>
-                  {age}
-                </option>
-              ))}
-            </select>
-            {!isFocusedAge && !userDetails.age && (
-              <span className="absolute left-[48px] top-2 text-red-500 text-2xl">*</span>
-            )}
+              {loading ? "Submitting..." : "Get A Call Back"}
+              {!loading && <p className="text-[12px] p-0 leading-none font-normal">within 5 minutes</p>}
+            </button>
+
+            <div className="flex items-center justify-center mt-2">
+              {/* <AiFillSafetyCertificate className="text-green-500 mr-2"/> */}
+              <Image
+                className="mr-2"
+                src='/images/lp/lp3/shield_icon.svg'
+                width={16}
+                height={16}
+                priority
+                alt="shield_icon"
+              />
+              <span className="text-white text-sm">Your data is 100% safe with us.</span>
+            </div>
           </div>
+        </form>
+
+        <div className="bg-[#DEDEDE] text-center py-3 px-3 text-black">
+          <p className="text-sm md:text-[18px] leading-[1.4]">
+            Get 0% interest on <strong>EMI</strong> | Starting ₹4,999* p/m
+            <br />
+            All Procedures | No Upper Limit
+          </p>
         </div>
-
-        <div className="relative mb-3 xl:mb-4">
-          <input
-            type="text"
-            id="phone"
-            name="mobileNo"
-            placeholder="+91"
-            className="w-full p-3 bg-white border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
-            value={userDetails.mobileNo}
-            maxLength={13}
-            minLength={13}
-            onChange={handleInputChange}
-            onFocus={() => setIsFocusedMobileNo(true)}
-            onBlur={() => setIsFocusedMobileNo(false)}
-          />
-          {/* Asterisk only if the input is empty or has only the prefix */}
-          {!isFocusedMobileNo &&
-            (userDetails.mobileNo.length <= 3 || userDetails.mobileNo === "+91") && (
-              <span className="absolute left-[40px] top-2 text-red-500 text-2xl">*</span>
-            )}
-        </div>
-
-        <div className="flex items-center justify-center mb-3 xl:mb-4 text-center">
-          <input
-            type="checkbox"
-            name="consent"
-            id="consent"
-            className="mr-2"
-            checked={userDetails.consent}
-            onChange={handleInputChange}
-          />
-          <label htmlFor="consent" className="text-sm lg:text-lg text-center">
-            I consent Oasis Fertility to contact me
-          </label>
-        </div>
-
-        {errMsg && <p className="text-red-500 text-sm">{errMsg}</p>}
-
-        <button
-          type="submit"
-          id="form-submit"
-          className={`w-full py-1 text-white text-[22px] rounded-lg leading-none font-medium ${loading || !formValid ? "bg-red-600 cursor-not-allowed" : "bg-red-600"
-            }`}
-          disabled={loading || !formValid}
-        >
-          {loading ? "Submitting..." : "Get A Call Back"}
-          {!loading && <p className="text-[12px] p-0 leading-none font-normal">within 5 minutes</p>}
-        </button>
-
-        <div className="flex items-center justify-center mt-2">
-          {/* <AiFillSafetyCertificate className="text-green-500 mr-2"/> */}
-          <Image
-            className="mr-2"
-            src='/images/lp/lp3/shield_icon.svg'
-            width={16}
-            height={16}
-            priority
-            alt="shield_icon"
-          />
-          <span className="text-green-800">Your data is 100% safe with us.</span>
-        </div>
-      </form>
-
-      <div className="bg-[#DEDEDE] text-center py-2 px-3 text-black">
-        <p className="text-sm md:text-[18px] leading-[1.4]">
-          Get 0% interest on <strong>EMI</strong> | Starting ₹4,999* p/m
-          <br />
-          All Procedures | No Upper Limit
-        </p>
       </div>
-    </div>
     </>
   );
 };

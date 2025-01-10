@@ -11,29 +11,29 @@ const FAQV2 = () => {
 
     const faqData = [
         {
-            question: "Can I conceive with IVF even after 35?",
+            question: "Why choose Oasis Fertility as your IVF clinic?",
             answer:
-                "Yes, IVF can help you conceive even after 35 with the help of advanced technologies like ERA & PGT-A.",
+                "Oasis offers advanced technology, expert specialists, personalized care, and high IVF success rates.",
         },
         {
-            question: "What is the duration of an IVF cycle?",
+            question: "What IVF treatments are available at Oasis?",
             answer:
-                "The duration of an IVF cycle may vary from 6 to 12 weeks.",
+                "The duration of an IVF cycle may vary from 6 to 12 weeks. Oasis provides IVF, ICSI, donor programs, fertility preservation, and tailored treatment plans for every patient.",
         },
         {
-            question: "Is the IVF procedure painful?",
+            question: "How much does IVF cost at Oasis Fertility?",
             answer:
-                "IVF is a painless procedure. You may experience minimal discomfort due to the injections that are used for IVF stimulation and egg pickup is done under anesthesia.",
+                "IVF costs at Oasis depend on individual needs. Transparent pricing ensures affordable, high-quality care.",
         },
         {
-            question: "How can I ensure a healthy baby with IVF?",
+            question: "What factors affect the cost of IVF at Oasis?",
             answer:
-                "PGT-A allows screening and selecting the best embryo without chromosomal abnormalities for embryo transfer. This helps you in having a healthy baby.",
+                "Costs depend on treatment type, tests, medications, and procedures. Transparent pricing helps you plan better.",
         },
         {
-            question: "Does IVF always result in twins?",
+            question: "What is the success rate of IVF at Oasis Fertility?",
             answer:
-                "No. Through SET (Single Embryo Transfer) an advanced technology, it is possible to have a single healthy baby through IVF.",
+                "Oasis Fertility has a high success rate of up to 70%, thanks to skilled specialists, advanced techniques, and personalized care.",
         },
     ];
 

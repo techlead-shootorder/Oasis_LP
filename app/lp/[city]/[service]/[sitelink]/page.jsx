@@ -31,9 +31,9 @@ const PlanInfolp3 = dynamic(() => import('../../../../(landingpages)/components/
     ssr: true,
 });
 
-const ChooseOasislp3 = dynamic(() => import('../../../../(landingpages)/components/ChooseOasis/ChooseOasislp3'), {
-    ssr: true,
-});
+// const ChooseOasislp3 = dynamic(() => import('../../../../(landingpages)/components/ChooseOasis/ChooseOasislp3'), {
+//     ssr: true,
+// });
 
 const SpeciaListslp3 = dynamic(() => import('../../../../(landingpages)/components/Specialists/SpeciaListslp3'), {
     ssr: true,
@@ -206,7 +206,7 @@ export default function Page({ params }) {
 
                 <Centerslp3 />
 
-                <ChooseOasislp3 center={filteredCity} />
+                {/* <ChooseOasislp3 center={filteredCity} /> */}
 
                 <AwardV2 service={service} />
 

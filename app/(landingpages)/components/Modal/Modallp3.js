@@ -12,7 +12,7 @@ const ModalV2 = ({ isOpen, onClose, center, service, isMeta = false }) => {
   
       <div className="md:bg-[#ffe9f3] w-full max-w-lg p-0 md:p-8 rounded-lg shadow-lg relative">
         <button
-          className="absolute top-2 right-2 text-gray-500 text-2xl z-50"
+          className="absolute top-2 right-2 text-white text-2xl z-50"
           onClick={onClose}
         >
           &times;

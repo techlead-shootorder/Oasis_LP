@@ -2,6 +2,7 @@
 import React, { memo, useMemo, Suspense } from 'react';
 import { normalizeCityParams, getFilteredData } from './helper';
 import masterlp3 from "@/util/lp/masterlp3";
+import nearByAreas from "@/util/lp/nearByAreas"
 import dynamic from 'next/dynamic';
 
 import HeaderTesting from "@/app/(landingpages)/components/Header/HeaderTesting";
@@ -65,6 +66,10 @@ const DynamicComponents = {
     () => import('@/app/(landingpages)/components/Faq/Faqlp3'),
     { loading: () => <ComponentLoader /> }
   ),
+  ExploreCenterslp3: dynamic(
+    () => import('@/app/(landingpages)/components/Centers/ExploreCenterslp3'),
+    { loading: () => <ComponentLoader /> }
+  ),
   FooterStickyButtonlp3: dynamic(
     () => import('@/app/(landingpages)/components/FooterStickyButtons/FooterStickyButtonlp3'),
     { loading: () => <MinimalLoader /> }
@@ -92,8 +97,9 @@ export async function generateStaticParams() {
 
 const Page = memo(({ params }) => {
   const { city: rawCity } = params;
-  const { city, isMeta, metanum } = normalizeCityParams(rawCity);
+  const { city, isMeta, metanum, internal } = normalizeCityParams(rawCity);
   const filteredCity = useMemo(() => masterlp3.find((center) => center.center_name === city), [city]);
+  const nearByCenters = useMemo(() => nearByAreas.find((center)=> center.center_name === city), [city]); 
   const { reviews: filteredReview, doctors: filteredDoctors, videos: cityVideos } =
     useMemo(() => getFilteredData(city, filteredCity), [city, filteredCity]);
 
@@ -109,7 +115,8 @@ const Page = memo(({ params }) => {
         </Suspense>
 
         <main>
-          <Herolp3 center={filteredCity} isMeta={isMeta} />
+
+          <Herolp3 center={filteredCity} isMeta={isMeta} internal={internal}  />
 
           <div className="mt-[20px] md:mt-0">
             <Suspense fallback={<ComponentLoader />}>
@@ -122,10 +129,11 @@ const Page = memo(({ params }) => {
             </Suspense>
 
             <Suspense fallback={<ComponentLoader />}>
-              <DynamicComponents.SpeciaListslp3 isMeta={isMeta} />
+              <DynamicComponents.SpeciaListslp3 isMeta={isMeta} internal={internal} />
             </Suspense>
 
             <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 py-10 lg:py-16 bg-[url(/images/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat mb-10 lg:mb-16 relative">
+            
               <Suspense fallback={<ComponentLoader />}>
                 <DynamicComponents.Reviewlp3
                   center={filteredCity}
@@ -141,9 +149,9 @@ const Page = memo(({ params }) => {
               <DynamicComponents.Centerslp3 />
             </Suspense>
 
-            <Suspense fallback={<ComponentLoader />}>
+            {/* <Suspense fallback={<ComponentLoader />}>
               <DynamicComponents.ChooseOasislp3 center={filteredCity} />
-            </Suspense>
+            </Suspense> */}
 
             <Suspense fallback={<ComponentLoader />}>
               <DynamicComponents.AwardV2 />
@@ -154,6 +162,7 @@ const Page = memo(({ params }) => {
                 center={filteredCity}
                 filteredDoctors={filteredDoctors}
                 isMeta={isMeta}
+                internal={internal}
               />
             </Suspense>
 
@@ -166,12 +175,16 @@ const Page = memo(({ params }) => {
 
 
             <Suspense fallback={<ComponentLoader />}>
-              <DynamicComponents.PlanInfolp3 isMeta={isMeta} />
+              <DynamicComponents.PlanInfolp3 isMeta={isMeta} internal={internal} />
             </Suspense>
 
             <Suspense fallback={<ComponentLoader />}>
               <DynamicComponents.Faqlp3 />
             </Suspense>
+
+           {city != 'india' && <Suspense fallback={<ComponentLoader />}>
+              <DynamicComponents.ExploreCenterslp3 nearByCenters={nearByCenters}/>
+            </Suspense>}
 
 
             <Suspense fallback={<MinimalLoader />}>

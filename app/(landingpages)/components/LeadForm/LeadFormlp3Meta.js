@@ -7,6 +7,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Cookies from "js-cookie";
 import { HiThumbUp } from "react-icons/hi";
 import { HiThumbDown } from "react-icons/hi";
+import Image from "next/image";
 
 
 
@@ -362,12 +363,14 @@ const LeadFormV2 = () => {
         <>
 
             <div className="rounded-[27px] bg-cover bg-center bg-[#f3c1d7] overflow-hidden relative">
-
-
-                <form onSubmit={handleSubmit} className="p-4 lg:p-5 xl:p-6">
+                <p className="text-white pt-4 pb-2 bg-primary mb-2 text-center text-[16px] font-bold">IVF @ ₹94,999* | LIMITED VALIDITY</p>
+                
+                <form onSubmit={handleSubmit} className="">
+                <div className="px-4 lg:px-5 xl:px-6">
+                    {/* FORM HEADING */}
                     <div>
-                        <p className="text-center text-primary font-semibold">fill up the form to get a</p>
-                        <h2 className="text-[20px] md:text-[2xl] lg:text-3xl xl:text-[40px] !leading-[1.2] font-extrabold mb-3 xl:mb-4 text-center text-primary">
+                        <p className="text-center text-primary font-semibold">Fill Up The Form To Get a</p>
+                        <h2 className="text-[20px] md:text-[20px] lg:text-[24px] xl:text-[28px] !leading-[1.2] font-extrabold mb-3 xl:mb-4 text-center text-primary">
                             FREE CONSULTATION
                         </h2>
                     </div>
@@ -395,7 +398,7 @@ const LeadFormV2 = () => {
                     <div className="flex space-x-4 mb-3 xl:mb-4">
                         <div className="relative w-1/2">
                             <select
-                            aria-label="gender"
+                                aria-label="gender"
                                 id="gender"
                                 name="gender"
                                 className="w-full p-3 bg-white border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
@@ -460,7 +463,7 @@ const LeadFormV2 = () => {
                         <button
                             type="button"
                             onClick={handleSendOtp}
-                            className={`absolute top-0 right-0 text-[16px] w-[100px] sm:w-[111px] h-full ${otpSent ? 'bg-purple-300 cursor-not-allowed' : 'bg-[#874487]'} text-white text-sm rounded-lg focus:outline-none`}
+                            className={`absolute top-0 right-0 text-[16px] w-[100px] sm:w-[111px] h-full ${otpSent ? 'bg-purple-300 cursor-not-allowed' : 'bg-primary'} text-white text-sm rounded-lg focus:outline-none`}
                             disabled={otpSent}
                         >
                             {otpButtonText}
@@ -470,27 +473,27 @@ const LeadFormV2 = () => {
                     {showOtpInput && (
                         <>
                             <div className={`flex xs:flex-col items-center justify-center gap-3 mb-3 xl:mb-4`}>
-                                <div className="flex gap-3 items-center">                               
-                                     {Array(4)
-                                    .fill(0)
-                                    .map((_, index) => (
-                                        <input
-                                            key={index}
-                                            ref={(el) => (inputRefs.current[index] = el)}
-                                            type="text"
-                                            maxLength={1}
-                                            inputMode="numeric" // Ensures number pad on mobile
-                                            className=" w-10 h-10 sm:w-12 sm:h-12 text-center text-lg border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none bg-white"
-                                            value={userDetails.otp[index] || ""}
-                                            onChange={(e) => handleOtpChange(e.target.value, index)}
-                                            onKeyDown={(e) => handleKeyDown(e, index)}
-                                        />
-                                    ))}
+                                <div className="flex gap-3 items-center">
+                                    {Array(4)
+                                        .fill(0)
+                                        .map((_, index) => (
+                                            <input
+                                                key={index}
+                                                ref={(el) => (inputRefs.current[index] = el)}
+                                                type="text"
+                                                maxLength={1}
+                                                inputMode="numeric" // Ensures number pad on mobile
+                                                className=" w-10 h-10 sm:w-12 sm:h-12 text-center text-lg border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none bg-white"
+                                                value={userDetails.otp[index] || ""}
+                                                onChange={(e) => handleOtpChange(e.target.value, index)}
+                                                onKeyDown={(e) => handleKeyDown(e, index)}
+                                            />
+                                        ))}
                                 </div>
 
                                 <button
                                     type="button"
-                                    className="w-[111px] px-1 sm:px-0 h-10 sm:h-12 text-[16px] bg-[#874487] text-white text-sm rounded-lg focus:outline-none"
+                                    className="w-[111px] px-1 sm:px-0 h-10 sm:h-12 text-[16px] bg-primary text-white text-sm rounded-lg focus:outline-none"
                                     onClick={handleSubmitOtp}
                                 >
                                     SUBMIT OTP
@@ -513,38 +516,57 @@ const LeadFormV2 = () => {
                         </label>
                     </div>
 
-                    {showThumbsUp && (
-                        <div className="flex items-center justify-center mb-3">
-                            <HiThumbUp className="text-green-500 text-2xl mr-2" />
-                            <p className="text-purple-500 text-xs">
-                                Thank you for the verification.<br /> Please click the button below.
-                            </p>
+                    </div>
+
+                    <div className="bg-primary py-4 px-4">
+
+                        {showThumbsUp && (
+                            <div className="flex items-center justify-center mb-3">
+                                <HiThumbUp className="text-green-500 text-2xl mr-2" />
+                                <p className="text-white text-xs">
+                                    Thank you for the verification.<br /> Please click the button below.
+                                </p>
+                            </div>
+                        )}
+                        {showThumbsDown && (
+                            <div className="flex items-center justify-center mb-3">
+                                <HiThumbDown className="text-red-500 text-2xl mr-2" />
+                                <p className="text-white text-xs">
+                                    Invalid input.<br />Please enter the correct phone number & OTP.
+                                </p>
+                            </div>
+                        )}
+
+                        {errMsg && <p className="text-red-500 text-sm">{errMsg}</p>}
+
+                        <button
+                            type="submit"
+                            id="form-submit"
+                            className={`${loading && 'py-2'} w-full py-1 text-white text-[22px] rounded-lg leading-none font-medium ${loading || !formValid || isCallBackDisable ? "bg-red-400 cursor-not-allowed" : "bg-[#D7052B]"
+                                }`}
+                            disabled={isCallBackDisable}
+                        >
+                            {loading ? "Submitting..." : "Get A Call Back"}
+
+                            {!loading && <p className="text-[12px] p-0 leading-none font-normal">within 5 minutes</p>}
+                        </button>
+
+                        <div className="flex items-center justify-center mt-2">
+                            {/* <AiFillSafetyCertificate className="text-green-500 mr-2"/> */}
+                            <Image
+                                className="mr-2"
+                                src='/images/lp/lp3/shield_icon.svg'
+                                width={16}
+                                height={16}
+                                priority
+                                alt="shield_icon"
+                            />
+                            <span className="text-white text-sm">Your data is 100% safe with us.</span>
                         </div>
-                    )}
-                    {showThumbsDown && (
-                        <div className="flex items-center justify-center mb-3">
-                            <HiThumbDown className="text-red-500 text-2xl mr-2" />
-                            <p className="text-purple-500 text-xs">
-                                Invalid input.<br />Please enter the correct phone number & OTP.
-                            </p>
-                        </div>
-                    )}
+
+                    </div>
 
 
-
-                    {errMsg && <p className="text-red-500 text-sm">{errMsg}</p>}
-
-                    <button
-                        type="submit"
-                        id="form-submit"
-                        className={`${loading && 'py-2'} w-full py-1 text-white text-[22px] rounded-lg leading-none font-medium ${loading || !formValid || isCallBackDisable ? "bg-red-400 cursor-not-allowed" : "bg-red-600"
-                            }`}
-                        disabled={isCallBackDisable}
-                    >
-                        {loading ? "Submitting..." : "Get A Call Back"}
-
-                        {!loading && <p className="text-[12px] p-0 leading-none font-normal">within 5 minutes</p>}
-                    </button>
                 </form>
 
                 <div className="bg-[#DEDEDE] text-center py-2 px-3 text-black">

@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState, useEffect, memo, Suspense } from "react";
+import React, { useState, useEffect, useRef, memo, Suspense } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import IVFTreatmentlp3 from './IVFTreatmentlp3';
 
 // Responsive configuration
 const responsive = {
@@ -23,9 +24,9 @@ const responsive = {
     },
     mobile: {
         breakpoint: { max: 639, min: 0 },
-        items: 1,
-        slidesToSlide: 1,
-        partialVisibilityGutter: 80
+        items: 2,
+        slidesToSlide: 2,
+        // partialVisibilityGutter: 80
     }
 };
 
@@ -101,9 +102,9 @@ const ButtonGroup = memo(({ next, previous, activeButton, setActiveButton }) => 
                 onClick={() => {
                     if (type === 'prev') {
                         previous();
-                      } else {
+                    } else {
                         next();
-                      }
+                    }
                     setActiveButton(type);
                 }}
                 className="relative group transform transition hover:scale-105"
@@ -134,7 +135,7 @@ ButtonGroup.displayName = 'ButtonGroup';
 
 // Carousel Item Component
 const CarouselItem = memo(({ item }) => (
-    <div className="flex flex-col p-4 bg-white rounded-[25px] mx-2 lg:mx-3 h-full transform hover:shadow-lg transition-all">
+    <div className=" flex flex-col p-4 bg-white rounded-[25px] mx-2 lg:mx-3 h-full transform hover:shadow-lg transition-all">
         <OptimizedImage
             src={item.image}
             alt={item.title}
@@ -142,7 +143,7 @@ const CarouselItem = memo(({ item }) => (
             height={199}
             className="rounded-lg mx-auto w-full h-auto object-cover"
         />
-        <h3 className="mt-3 lg:text-[26px] text-[22px] leading-[1.1]">
+        <h3 className="mt-3 lg:text-[26px] text-[18px] leading-[1.1]">
             {item.title}
         </h3>
         <p className="mt-2 lg:text-base text-xs font-lato">
@@ -159,12 +160,18 @@ const TreatmentsV2 = memo(({ center, service }) => {
     const [activeButton, setActiveButton] = useState('next');
     const [treatmentData, setTreatmentData] = useState({});
     const [isLoading, setIsLoading] = useState(true);
+    const [showOtherTreatments, setShowOtherTreatments] = useState(false);
+
+    const [selectedTreatment, setSelectedTreatment] = useState('Other Advanced Treatments');
+    const [showModal, setShowModal] = useState(false);
+
+    const modalRef = useRef(null);
 
     const tabs = [
         "Infertility Treatments",
         "Infertility Testing",
         "Advanced Treatments",
-        "Fertility Preservations"
+        // "Fertility Preservations"
     ];
 
     useEffect(() => {
@@ -191,8 +198,52 @@ const TreatmentsV2 = memo(({ center, service }) => {
         loadData();
     }, [activeTab]);
 
+    // Update the useEffect for click outside handling
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            // Check if click is on the button itself
+            const button = event.target.closest('button');
+            if (button && button.contains(event.target)) {
+                return; // Don't do anything if clicking the button
+            }
+
+            // Close modal if clicking outside
+            if (modalRef.current && !modalRef.current.contains(event.target)) {
+                setShowModal(false);
+            }
+        };
+
+        if (showModal) {
+            document.addEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [showModal]);
+
+    // const handleClickOutside = (event) => {
+    //     if (modalRef.current && !modalRef.current.contains(event.target)) {
+    //         setShowModal(false); // Close the modal if clicked outside
+    //     }
+    // };
+
+    const handleOptionClick = (e, index) => {
+        setSelectedTreatment(e.target.innerText);
+        setShowModal(false);
+        setActiveTab(index);
+        setShowOtherTreatments(true);
+
+    }
+
+    const handleButtonClick = (event) => {
+        console.log("hello");
+        setShowModal((prev) => !prev);
+        event.stopPropagation(); // Prevent the event from bubbling up
+    };
+
     return (
-        <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 py-10 lg:py-16 rounded-3xl bg-[url(/images/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat">
+        <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 mb-10 lg:mb-16 py-8 xl:py-10 rounded-3xl bg-[url(/images/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat">
             <h2 className="text-[22px] md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-[52px] font-bold leading-tight text-primary text-center tracking-wide">
                 <span className={service !== 'fertility' ? 'uppercase' : ''}>
                     {service ? service === 'fertility' ? 'Fertility' : service : "IVF"}
@@ -204,50 +255,108 @@ const TreatmentsV2 = memo(({ center, service }) => {
                     .join(" ")}
             </h2>
 
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-2.5 lg:gap-4 mt-6">
-                {tabs.map((tab, index) => (
+            <IVFTreatmentlp3 />
+
+            {/* TESTING */}
+
+            <div className="flex justify-center mt-6">
+                <div className="relative">
+                
                     <button
-                        key={index}
-                        className={`inline-block w-full py-2 xl:px-6 2xl:px-6 3xl:px-12 rounded-lg lg:rounded-xl border border-primary transition-all duration-300
-              ${activeTab === index ? "bg-[#874487] text-white" : "text-primary hover:bg-primary/10"}`}
-                        onClick={() => setActiveTab(index)}
+                        className="flex items-center justify-center gap-4 text-white bg-primary w-[280px] h-[40px] text-[16px] rounded-lg font-medium"
+                        onClick={handleButtonClick}
                     >
-                        {tab}
+                        {selectedTreatment}
+                        <span>
+                            {showModal ? <svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 7.92896L7.67713 1.25183C7.8947 1.03426 8.24744 1.03426 8.46501 1.25183L15.1421 7.92896" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                        </svg> : <svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.1426 1.07104L8.46545 7.74817C8.24788 7.96574 7.89514 7.96574 7.67757 7.74817L1.00044 1.07104" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>}
+                        </span>
                     </button>
-                ))}
+
+                    {showModal &&
+                        <div
+                            className="bg-white shadow-md rounded-lg absolute top-12 p-4  flex flex-col gap-4 w-full z-50"
+                            ref={modalRef}
+                        >
+                            {tabs.map((tab, index) => (
+                                <button
+                                    key={index}
+                                    className={`inline-block w-full py-2 xl:px-6 2xl:px-6 3xl:px-12 rounded-lg lg:rounded-xl border border-primary transition-all duration-300 
+                                ${selectedTreatment == tab ? 'bg-primary text-white' : 'text-primary hover:bg-primary/10'} `}
+                                    onClick={(e) => handleOptionClick(e, index)}
+                                >
+                                    {tab}
+                                </button>
+                            ))}
+                        </div>}
+
+
+                </div>
             </div>
 
-            <div className="w-full mt-8 lg:mt-10">
-                <Suspense fallback={<ResponsiveSkeleton />}>
-                    {isLoading ? (
-                        <ResponsiveSkeleton />
-                    ) : (
-                        <Carousel
-                            responsive={responsive}
-                            partialVisbile
-                            className="pb-16 lg:pb-20"
-                            infinite={true}
-                            showDots={false}
-                            ssr={false}
-                            arrows={false}
-                            swipeable={true}
-                            customButtonGroup={
-                                <ButtonGroup
-                                    activeButton={activeButton}
-                                    setActiveButton={setActiveButton}
-                                />
-                            }
+
+
+
+
+
+
+            {showOtherTreatments && <>
+
+                {/* Treaments Buttons */}
+
+                {/* <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-2.5 lg:gap-4 mt-6 justify-center justify-items-center">
+                    {tabs.map((tab, index) => (
+                        <button
+                            key={index}
+                            className={`inline-block w-full py-2 xl:px-6 2xl:px-6 3xl:px-12 rounded-lg lg:rounded-xl border border-primary transition-all duration-300 ${activeTab === index
+                                ? "bg-[#874487] text-white"
+                                : "text-primary hover:bg-primary/10"
+                                }`}
+                            onClick={() => setActiveTab(index)}
                         >
-                            {Array.isArray(treatmentData) && treatmentData.map((item, index) => (
-                                <CarouselItem
-                                    key={`${activeTab}-item-${index}`}
-                                    item={item}
-                                />
-                            ))}
-                        </Carousel>
-                    )}
-                </Suspense>
-            </div>
+                            {tab}
+                        </button>
+                    ))}
+                </div> */}
+
+                {/* Treatments Carousel */}
+                <div className="w-full mt-8 lg:mt-10">
+                      <div className="">
+                    <Suspense fallback={<ResponsiveSkeleton />}>
+                        {isLoading ? (
+                            <ResponsiveSkeleton />
+                        ) : (
+                            <Carousel
+                                responsive={responsive}
+                                partialVisbile
+                                className="pb-16 lg:pb-20 md:flex md:justify-center"
+                                infinite={true}
+                                showDots={false}
+                                ssr={false}
+                                arrows={false}
+                                swipeable={true}
+                                customButtonGroup={
+                                    <ButtonGroup
+                                        activeButton={activeButton}
+                                        setActiveButton={setActiveButton}
+                                    />
+                                }
+                            >
+                                {Array.isArray(treatmentData) && treatmentData.map((item, index) => (
+                                    <CarouselItem
+                                        key={`${activeTab}-item-${index}`}
+                                        item={item}
+                                    />
+                                ))}
+                            </Carousel>
+                        )}
+                    </Suspense>
+                    </div>
+                </div>
+            </>}
         </section>
     );
 });

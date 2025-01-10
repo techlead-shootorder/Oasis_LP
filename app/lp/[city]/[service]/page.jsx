@@ -2,6 +2,7 @@
 import masterlp3 from "@/util/lp/masterlp3";
 import newdoctorslp3 from "@/util/lp/newdoctorslp3";
 import testimonials from "@/util/lp/testimonials";
+import nearByAreas from "@/util/lp/nearByAreas";
 import { cityToVideos, videos } from "@/util/lp/videos";
 import dynamic from 'next/dynamic';
 
@@ -9,6 +10,7 @@ import dynamic from 'next/dynamic';
 import HeaderTesting from "@/app/(landingpages)/components/Header/HeaderTesting";
 
 import Herolp3 from "../../../(landingpages)/components/Hero/Herolp3";
+import { useMemo } from "react";
 
 
 // const StickyButtonScreenlp3 = dynamic(() => import('../../../(landingpages)/components/StickyButtonScreen/StickyButtonScreenlp3'), {
@@ -31,9 +33,9 @@ const PlanInfolp3 = dynamic(() => import('../../../(landingpages)/components/Pla
     ssr: true,
 });
 
-const ChooseOasislp3 = dynamic(() => import('../../../(landingpages)/components/ChooseOasis/ChooseOasislp3'), {
-    ssr: true,
-});
+// const ChooseOasislp3 = dynamic(() => import('../../../(landingpages)/components/ChooseOasis/ChooseOasislp3'), {
+//     ssr: true,
+// });
 
 const SpeciaListslp3 = dynamic(() => import('../../../(landingpages)/components/Specialists/SpeciaListslp3'), {
     ssr: true,
@@ -67,6 +69,10 @@ const AwardV2 = dynamic(() => import('../../../(landingpages)/components/Award/A
 const Faqlp3 = dynamic(() => import('../../../(landingpages)/components/Faq/Faqlp3'), {
     ssr: true,
 });
+
+const ExploreCenterslp3 = dynamic(() => import('../../../(landingpages)/components/Centers/ExploreCenterslp3'), {
+    ssr: true,
+})
 
 const FooterV2 = dynamic(() => import('../../../(landingpages)/components/Footer/FooterV2'), {
     ssr: true,
@@ -120,6 +126,9 @@ export default function Page({ params }) {
         }
         city = 'india';
     }
+    const nearByCenters = useMemo(() => nearByAreas.find((center)=> center.center_name === city), [city]); 
+    console.log("nearbycenters", nearByCenters);
+
     const filteredCity = masterlp3.find((center) => center.center_name === city);
     // const filteredTestimonials = doctors.filter((testimonial) => {
     //     return filteredCity?.id === testimonial.master_id;
@@ -169,13 +178,14 @@ export default function Page({ params }) {
                     <TrustedCliniclp3 center={filteredCity} service={service} />
                 </section>
                 <Centerslp3 />
-                <ChooseOasislp3 center={filteredCity} />
+                {/* <ChooseOasislp3 center={filteredCity} /> */}
                 <AwardV2 service={service} />
-                <BestDoctorslp3 center={filteredCity} filteredDoctors={filteredDoctors} isMeta={isMeta} />
+                <BestDoctorslp3 center={filteredCity} filteredDoctors={filteredDoctors} isMeta={isMeta} service={service} />
                 <IVFClinicSliderlp3 center={filteredCity} cityVideos={cityVideos} service={service} />
                 <PlanInfolp3 isMeta={isMeta} />
 
                 <Faqlp3 />
+                {city != 'india' && <ExploreCenterslp3 nearByCenters={nearByCenters} />}
                 <FooterStickyButtonlp3 center={filteredCity} />
             </main>
 

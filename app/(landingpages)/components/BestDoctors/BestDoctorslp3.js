@@ -31,6 +31,19 @@ const CAROUSEL_CONFIG = {
   },
 };
 
+const getSpecialist = (service) => {
+  switch (service) {
+    case 'ivf':
+      return 'IVF';
+    case 'iui':
+      return 'IUI';
+      case 'fertility':
+      return 'Fertility';
+    default:
+      return 'Fertility';
+  }
+}
+
 // Skeleton Component
 const CarouselSkeleton = () => {
   // Helper function to determine number of items based on screen width
@@ -112,8 +125,31 @@ const CarouselButton = memo(({ onClick, type, isActive }) => (
 
 CarouselButton.displayName = 'CarouselButton';
 
-const DoctorCard = memo(({ data, onBookClick }) => {
+
+
+const DoctorCard = memo(({ data, onBookClick, service }) => {
   const experience = data.experience?.match(/\d+/)?.[0] || '';
+
+  function removeFertilitySpecialist(input) {
+    const suffix = "Fertility Specialist";
+    if (input.endsWith(suffix)) {
+      return input.slice(0, -suffix.length).trim();
+    }
+    return input; // Return original string if it doesn't end with the suffix
+  }
+
+  const getSpecialist = (service) => {
+    switch (service) {
+      case 'ivf':
+        return 'IVF';
+      case 'iui':
+        return 'IUI';
+        case 'fertility':
+        return 'Fertility';
+      default:
+        return 'Fertility';
+    }
+  }
 
   return (
     <div className="font-lato relative group p-2 pb-4 h-full flex flex-col">
@@ -164,7 +200,7 @@ const DoctorCard = memo(({ data, onBookClick }) => {
           {data?.qualification}
         </h4>
         <p className="text-[10px] sm:text-sm md:text-base text-black">
-          {data?.designation}
+          {removeFertilitySpecialist(data?.designation)} <span className=''>{getSpecialist(service)}</span> Specialist
         </p>
       </div>
 
@@ -206,7 +242,7 @@ const ButtonGroup = memo(({ next, previous, activeButton, setActiveButton }) => 
 
 ButtonGroup.displayName = "ButtonGroup";
 
-const BestDoctors = ({ center, service, filteredDoctors, isMeta }) => {
+const BestDoctors = ({ center, filteredDoctors, isMeta, service, internal }) => {
   const [showModal, setShowModal] = useState(false);
   const [activeButton, setActiveButton] = useState("next");
   const [isLoading, setIsLoading] = useState(true);
@@ -233,9 +269,9 @@ const BestDoctors = ({ center, service, filteredDoctors, isMeta }) => {
 
   return (
     <>
-      <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 py-10 lg:py-4">
+      <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 mb-10 lg:mb-16">
         <h2 className="text-[22px] md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-[52px] font-bold leading-tight sm:leading-snug text-primary text-center tracking-wide mb-4 lg:mb-5">
-          Best Fertility Doctors in {displayName}
+          Best {getSpecialist(service)} Doctors in {displayName}
         </h2>
 
         <Carousel
@@ -255,6 +291,7 @@ const BestDoctors = ({ center, service, filteredDoctors, isMeta }) => {
                 key={doctor.id}
                 data={doctor}
                 onBookClick={handleOpenModal}
+                service={service}
               />
             )
           )}
@@ -267,6 +304,7 @@ const BestDoctors = ({ center, service, filteredDoctors, isMeta }) => {
           onClose={handleCloseModal}
           service={service}
           isMeta={isMeta}
+          internal={internal}
         />
       )}
     </>

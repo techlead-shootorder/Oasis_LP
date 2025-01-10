@@ -31,14 +31,14 @@ BannerSkeleton.displayName = "BannerSkeleton";
 // Constants
 const BANNER_IMAGES = {
   desktop: {
-    src: "/images/lp/lp3/Updated Desktop Banner.webp",
+    src: "/images/lp/lp3/desktop_banner_paidlp.webp",
     width: 1728,
     height: 787,
     className: "w-full object-cover absolute left-0 top-0 hidden md:block h-full",
     style: { objectPosition: "25% 0" }
   },
   mobile: {
-    src: "/images/lp/lp3/Mobile Banner.webp",
+    src: "/images/lp/lp3/mobile_banner_paidlp.webp",
     width: 428,
     height: 452,
     className: "w-full object-cover absolute left-0 -top-[40px] md:hidden h-full",
@@ -76,27 +76,27 @@ const InvisibleArticle = memo(() => (
 ));
 InvisibleArticle.displayName = "InvisibleArticle";
 
-const LeadFormWrapper = memo(({ isMeta, center, service }) => (
+const LeadFormWrapper = memo(({ isMeta, center, service, internal }) => (
   <>
   
   {isMeta ? 
        <LeadFormlp3Meta center={center} service={service} /> : 
-       <LeadFormV2 center={center} service={service} />
+       <LeadFormV2 center={center} service={service} internal={internal} />
      }
   </>
 ));
 LeadFormWrapper.displayName = "LeadFormWrapper";
 
-const MobileLeadForm = memo(({ center, service, isMeta }) => (
+const MobileLeadForm = memo(({ center, service, isMeta, internal }) => (
   <div id="leadformlp3" className="md:hidden flex items-center -mt-[152px] w-full">
     <div className="flex flex-col items-center w-full">
       <div className="flex justify-center w-full">
-        <div className="bg-[#874487] text-white w-[80%] text-center py-0.5 rounded-t-2xl font-semibold z-50">
+        {/* <div className="bg-[#874487] text-white w-[80%] text-center py-0.5 rounded-t-2xl font-semibold z-50">
           IVF @ 94,999* &nbsp; | &nbsp; LIMITED VALIDITY
-        </div>
+        </div> */}
       </div>
       <div className="w-[90%]">
-        <LeadFormWrapper isMeta={isMeta} center={center} service={service} />
+        <LeadFormWrapper isMeta={isMeta} center={center} service={service} internal={internal} />
       </div>
     </div>
   </div>
@@ -112,8 +112,9 @@ const formatCenterName = (name) => {
 };
 
 // Main Component
-const HeroV2 = ({ center, service, isMeta }) => {
+const HeroV2 = ({ center, service, isMeta, internal }) => {
   const centerName = formatCenterName(center?.center_name_heading);
+  console.log("internal value", internal);
 
   return (
     <Suspense fallback={
@@ -134,12 +135,12 @@ const HeroV2 = ({ center, service, isMeta }) => {
         <div className="relative pt-24 pb-14 sm:py-14 lg:py-16 xl:py-18 2xl:py-24 flex items-end justify-between h-full lg:flex ">
           <InvisibleArticle />
           <div className="hidden md:block md:mr-[0px] lg:mr-[50px] xl:mr-[100px] relative z-50">
-            <LeadFormWrapper isMeta={isMeta} center={center} service={service} />
+            <LeadFormWrapper isMeta={isMeta} center={center} service={service} internal={internal} />
           </div>
         </div>
       </section>
 
-      <MobileLeadForm center={center} service={service} isMeta={isMeta} />
+      <MobileLeadForm center={center} service={service} isMeta={isMeta} internal={internal} />
     </Suspense>
   );
 };
