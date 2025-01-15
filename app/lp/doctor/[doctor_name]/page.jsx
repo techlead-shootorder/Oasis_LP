@@ -20,7 +20,7 @@ const DynamicComponents = {
   ),
 
     DescriptionDoctor: dynamic(
-    () => import('@/app/(landingpages)/components/Description/DescriptionDoctor'),
+    () => import('@/app/(landingpages)/components/DoctorlpComponents/Description/DescriptionDoctor'),
     { loading: () => <ComponentLoader /> }
   ),
 
@@ -31,6 +31,31 @@ const DynamicComponents = {
 
   SuccessStories: dynamic(
     () => import('@/app/(landingpages)/components/DoctorlpComponents/SuccessStories/SuccessStories'),
+    { loading: () => <ComponentLoader /> }
+  ),
+
+  Review: dynamic(
+    () => import('@/app/(landingpages)/components/DoctorlpComponents/Review/Review'),
+    { loading: () => <ComponentLoader /> }
+  ),
+  TrustedClinic: dynamic(
+    () => import('@/app/(landingpages)/components/DoctorlpComponents/TrustedClinic/TrustedClinic'),
+    { loading: () => <ComponentLoader /> }
+  ),
+  PeopleStories : dynamic(
+    () => import('@/app/(landingpages)/components/DoctorlpComponents/PeopleStories/PeopleStories'),
+    { loading: () => <ComponentLoader /> }
+  ),
+  Media : dynamic(
+    () => import('@/app/(landingpages)/components/DoctorlpComponents/Media/Media'),
+    { loading: () => <ComponentLoader /> }
+  ),
+  Timings : dynamic(
+    () => import('@/app/(landingpages)/components/DoctorlpComponents/Timings/Timings'),
+    { loading: () => <ComponentLoader /> }
+  ),
+  Influencer : dynamic(
+    () => import('@/app/(landingpages)/components/DoctorlpComponents/Influencer/Influencer'),
     { loading: () => <ComponentLoader /> }
   ),
 //   StatisticBannerV2: dynamic(
@@ -133,7 +158,7 @@ const Page = memo(({ params }) => {
 
           <HeroDoctor  />
 
-          <div className="mt-[20px] md:mt-0">
+          <div className="">
             <Suspense fallback={<ComponentLoader />}>
               <DynamicComponents.DescriptionDoctor />
             </Suspense>
@@ -147,7 +172,34 @@ const Page = memo(({ params }) => {
             <Suspense fallback={<ComponentLoader />}>
               <DynamicComponents.SuccessStories />
             </Suspense>
+
+            <Suspense fallback={<ComponentLoader />}>
+              <DynamicComponents.Review />
+            </Suspense>
+
+            <Suspense fallback={<ComponentLoader />}>
+              <DynamicComponents.TrustedClinic />
+            </Suspense>
+
+            <Suspense fallback={<ComponentLoader />}>
+              <DynamicComponents.PeopleStories />
+            </Suspense>
+
+            <Suspense fallback={<ComponentLoader />}>
+              <DynamicComponents.Media />
+            </Suspense>
+
+            <Suspense fallback={<ComponentLoader />}>
+              <DynamicComponents.AwardV2 />
+            </Suspense>
+
+            <Suspense fallback={<ComponentLoader />}>
+              <DynamicComponents.Timings />
+            </Suspense>
          
+            <Suspense fallback={<ComponentLoader />}>
+              <DynamicComponents.Influencer />
+            </Suspense>
 
           {/* <div className="mt-[20px] md:mt-0">
             <Suspense fallback={<ComponentLoader />}>
@@ -186,9 +238,7 @@ const Page = memo(({ params }) => {
 
             
 
-            <Suspense fallback={<ComponentLoader />}>
-              <DynamicComponents.AwardV2 />
-            </Suspense>
+           
 
             {/* <Suspense fallback={<ComponentLoader />}>
               <DynamicComponents.BestDoctorslp3
