@@ -66,7 +66,6 @@ const HeroBanner = memo(({ type, ...props }) => (
     alt="Banner"
     priority={true}
     quality={85}
-    loading="eager"
     fetchPriority="high"
     decoding="async"
     {...props}

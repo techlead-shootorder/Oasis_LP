@@ -80,7 +80,7 @@ const DesktopHeader = memo(({ center, metanum }) => (
       width={375}
       height={100}
       className='object-cover'
-      loading="eager"
+      // loading="eager"
       priority={true}
       />
       </div>
@@ -103,7 +103,7 @@ const MobileHeader = memo(() => (
       width={375}
       height={100}
       className='object-cover'
-      loading="eager"
+      // loading="eager"
       priority={true}
       />
     </div>
