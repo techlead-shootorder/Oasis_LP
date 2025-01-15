@@ -27,7 +27,7 @@ const TrustedCliniclp3 = ({ center, service }) => {
           <Image className="w-auto mx-auto"
             src="/images/lp/campaign/ic-practo.webp" alt="practo" loading="lazy" width={288} height={67} />
           <div className="flex justify-center items-center gap-2 mt-2 lg:mt-5">
-            <Image className="h-[18px] lg:h-[26px]"
+            <Image className="h-[18px] lg:h-[26px] object-cover"
               src="/images/lp/campaign/Practo_Health_Logo.png" alt="practo logo" loading="lazy" width={26} height={26} objectFit="cover" />
             <h3 className="text-xs lg:text-[21px] text-black font-semibold">98%</h3>
             {/* <Image className="h-6 lg:h-10 w-auto" src="/images/lp/campaign/thumb.gif" alt="thumb" width={512} height={512} /> */}

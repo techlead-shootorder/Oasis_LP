@@ -4,6 +4,7 @@ import React, { Suspense, memo } from "react";
 import Image from "next/image";
 import LeadFormV2 from "../LeadForm/LeadFormV2";
 import LeadFormlp3Meta from "../LeadForm/LeadFormlp3Meta";
+
 // Skeleton Components
 const FormSkeleton = memo(() => (
   <div className="animate-pulse bg-white rounded-lg p-4 w-full max-w-md">
@@ -26,8 +27,6 @@ const BannerSkeleton = memo(() => (
 ));
 BannerSkeleton.displayName = "BannerSkeleton";
 
-
-
 // Constants
 const BANNER_IMAGES = {
   desktop: {
@@ -35,28 +34,43 @@ const BANNER_IMAGES = {
     width: 1728,
     height: 787,
     className: "w-full object-cover absolute left-0 top-0 hidden md:block h-full",
-    style: { objectPosition: "25% 0" }
+    style: { objectPosition: "25% 0" },
+    sizes: "(min-width: 768px) 100vw, 0vw"
   },
   mobile: {
     src: "/images/lp/lp3/mobile_banner_paidlp.webp",
     width: 428,
     height: 452,
     className: "w-full object-cover absolute left-0 -top-[40px] md:hidden h-full",
-    sizes: "(max-width: 768px) 100vw, (min-width: 768px) 50vw"
+    sizes: "(max-width: 767px) 100vw, 0vw"
   }
 };
 
+// Preload images for faster LCP
+const preloadImages = () => {
+  const link = document.createElement('link');
+  link.rel = 'preload';
+  link.as = 'image';
+  link.href = window.innerWidth >= 768 ? BANNER_IMAGES.desktop.src : BANNER_IMAGES.mobile.src;
+  document.head.appendChild(link);
+};
+
+if (typeof window !== 'undefined') {
+  preloadImages();
+}
+
 // Memoized Image Component
 const HeroBanner = memo(({ type, ...props }) => (
-  // <Suspense fallback={<BannerSkeleton />}>
-    <Image
-      {...BANNER_IMAGES[type]}
-      alt="Banner"
-      priority
-      loading="eager"
-      {...props}
-    />
-  // </Suspense>
+  <Image
+    {...BANNER_IMAGES[type]}
+    alt="Banner"
+    priority={true}
+    quality={85}
+    loading="eager"
+    fetchPriority="high"
+    decoding="async"
+    {...props}
+  />
 ));
 HeroBanner.displayName = "HeroBanner";
 
@@ -78,11 +92,10 @@ InvisibleArticle.displayName = "InvisibleArticle";
 
 const LeadFormWrapper = memo(({ isMeta, center, service, internal }) => (
   <>
-  
-  {isMeta ? 
-       <LeadFormlp3Meta center={center} service={service} /> : 
-       <LeadFormV2 center={center} service={service} internal={internal} />
-     }
+    {isMeta ? 
+      <LeadFormlp3Meta center={center} service={service} /> : 
+      <LeadFormV2 center={center} service={service} internal={internal} />
+    }
   </>
 ));
 LeadFormWrapper.displayName = "LeadFormWrapper";
@@ -113,7 +126,7 @@ const formatCenterName = (name) => {
 
 // Main Component
 const HeroV2 = ({ center, service, isMeta, internal }) => {
-  const centerName = formatCenterName(center?.center_name_heading);
+  const centerName = React.useMemo(() => formatCenterName(center?.center_name_heading), [center?.center_name_heading]);
   console.log("internal value", internal);
 
   return (
@@ -132,7 +145,7 @@ const HeroV2 = ({ center, service, isMeta, internal }) => {
           </div>
         </div>
 
-        <div className="relative pt-24 pb-14 sm:py-14 lg:py-16 xl:py-18 2xl:py-24 flex items-end justify-between h-full lg:flex ">
+        <div className="relative pt-24 pb-14 sm:py-14 lg:py-16 xl:py-18 2xl:py-24 flex items-end justify-between h-full lg:flex">
           <InvisibleArticle />
           <div className="hidden md:block md:mr-[0px] lg:mr-[50px] xl:mr-[100px] relative z-50">
             <LeadFormWrapper isMeta={isMeta} center={center} service={service} internal={internal} />
