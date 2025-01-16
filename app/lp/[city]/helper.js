@@ -4,9 +4,9 @@ import testimonials from "@/util/lp/testimonials";
 import { cityToVideos, videos } from "@/util/lp/videos";
 
 export const normalizeCityParams = (city) => {
-  // console.log("city is dynamic", city)
+ 
   const isMetaGoogle = ['meta', 'google', 'internal', 'meta1', 'google1'].includes(city);
-  // console.log("isMetaGoogle", isMetaGoogle);
+ 
   return {
     city: isMetaGoogle ? 'india' : city,
     isMeta: ['meta1', 'google1'].includes(city),

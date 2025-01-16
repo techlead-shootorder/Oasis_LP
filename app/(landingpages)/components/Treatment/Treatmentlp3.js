@@ -237,7 +237,7 @@ const TreatmentsV2 = memo(({ center, service }) => {
     }
 
     const handleButtonClick = (event) => {
-        console.log("hello");
+    
         setShowModal((prev) => !prev);
         event.stopPropagation(); // Prevent the event from bubbling up
     };
