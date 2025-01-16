@@ -313,7 +313,7 @@ const review = [
       "clinic_location": "miyapur",
       "rating": 4.9,
       "review": "Best IVF & IUI Fertility Center in Hyderabad... special thanks to Dr varalakshmi madam and Team and staff are very professional",
-      "name": "navaneethrao",
+      "name": "Navneeth Rao",
       "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocKTpj2xInuEhuIBMrsrTvhQl5zOMoPsdj4vFgl-ECbUlzqHBw=w56-h56-p-rp-mo-br100",
        
     },
@@ -720,7 +720,7 @@ const review = [
       "clinic_location": "guntur",
       "rating": 5,
       "review": "Who want to conceive, should consult oasis we got success, after marriage 7 years my dream fullfill with oasis guntur, thank you dr ramya mam, at first attempt in IVF .",
-      "name": "ISTIKHAR 340",
+      "name": "Istikhar",
       "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocKCWeHIGgh6u9isiJ-NQnop8nEDZ-uATxwK2auiAavA-xAFeA=w56-h56-p-rp-mo-br100",
        
     },
@@ -797,7 +797,7 @@ const review = [
       "clinic_location": "ongole",
       "rating": 5,
       "review": "Good IVF Center ,Ongole Dr.Deepika Madam very cool and knowledged Person .",
-      "name": "Upas Front Office",
+      "name": "Upas",
       "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocLqy1Ifrbz-sMhVQ8jOV4kLzs1tNvsuny5lgHISMeAbIUXX-Q=w56-h56-p-rp-mo-br100",
        
     },
@@ -958,7 +958,7 @@ const review = [
     {
       "id": 80,
       "review_link": "https://maps.app.goo.gl/kVN2F8wwg7fYwNfT9",
-      "center_name": "Bengaluru",
+      "center_name": "bengaluru",
       "clinic_location": "Bengaluru",
       "rating": 4.9,
       "review": "Really very gratitude and thank you so much Dr Rekha viswanath mam.she was really very help us .cool attitude and positive spirit.3 years of struggles and huddles finally our dream fullfill. Thank you so much Oasis fertility and team.",
@@ -969,7 +969,7 @@ const review = [
     {
       "id": 81,
       "review_link": "https://maps.app.goo.gl/DPJ64qNRhFqKev47A",
-      "center_name": "Bengaluru",
+      "center_name": "bengaluru",
       "clinic_location": "Bengaluru",
       "rating": 4.9,
       "review": "One of the best IVF hospital which I have been, and doctors are so good and well trained and matured. Staffs are good and polite. Very hygiene. We just started the treatment hoping for the best results.",
@@ -980,7 +980,7 @@ const review = [
     {
       "id": 82,
       "review_link": "https://maps.app.goo.gl/iqaeLBBEv51Rkx7n8",
-      "center_name": "Bengaluru",
+      "center_name": "bengaluru",
       "clinic_location": "Bengaluru",
       "rating": 4.9,
       "review": "It's very good IVF centre in bangalore.doctor Shalini is very experienced in good .thank you for entire team.",
@@ -991,7 +991,7 @@ const review = [
     {
       "id": 83,
       "review_link": "https://maps.app.goo.gl/rtq7m8fHqJfLSKif7",
-      "center_name": "Bengaluru",
+      "center_name": "bengaluru",
       "clinic_location": "Bengaluru",
       "rating": 4.9,
       "review": "Iam very happy to say that dr Shalini is very well experienced doctor.good spoke person and make u understand things after 10years of our marriage.we get satisfaction here.",
@@ -1002,7 +1002,7 @@ const review = [
     // {
     //   "id": 84,
     //   "review_link": "https://maps.app.goo.gl/PNwNJxNKAYBTghzcA",
-    //   "center_name": "Bengaluru",
+    //   "center_name": "bengaluru",
     //   "clinic_location": null,
     //   "rating": null,
     //   "review": null,
@@ -1013,7 +1013,7 @@ const review = [
     {
       "id": 85,
       "review_link": "https://maps.app.goo.gl/kVN2F8wwg7fYwNfT9",
-      "center_name": "HSR",
+      "center_name": "hsr",
       "clinic_location": "HSR",
       "rating": 4.9,
       "review": "Really very gratitude and thank you so much Dr Rekha viswanath mam.she was really very help us .cool attitude and positive spirit.3 years of struggles and huddles finally our dream fullfill. Thank you so much Oasis fertility and team.",
@@ -1024,7 +1024,7 @@ const review = [
     {
       "id": 86,
       "review_link": "https://maps.app.goo.gl/7XysC3Z1eyLz4qvk7",
-      "center_name": "HSR",
+      "center_name": "hsr",
       "clinic_location": "HSR",
       "rating": 4.9,
       "review": "Thanks to Dr. Rekha Vishwanath for the complete guidance and support. After years of struggle, we were finally able to get the results. Thanks to the staff for always being available and understanding the needs.",
@@ -1035,7 +1035,7 @@ const review = [
     {
       "id": 87,
       "review_link": "https://maps.app.goo.gl/5fX9pg83f7pnbLV66",
-      "center_name": "HSR",
+      "center_name": "hsr",
       "clinic_location": "HSR",
       "rating": 4.9,
       "review": "Thanks to oasis for all the support. We have gone through a lot before coming here. Since when we started taking treatment from oasis hospital really given me a positive vibe.We are really happy to share this review.",
@@ -1046,7 +1046,7 @@ const review = [
     {
       "id": 88,
       "review_link": "https://maps.app.goo.gl/DPJ64qNRhFqKev47A",
-      "center_name": "HSR",
+      "center_name": "hsr",
       "clinic_location": "HSR",
       "rating": 4.9,
       "review": "One of the best IVF hospital which I have been, and doctors are so good and well trained and matured. Staffs are good and polite. Very hygiene. We just started the treatment hoping for the best results.",
@@ -1057,7 +1057,7 @@ const review = [
     // {
     //   "id": 89,
     //   "review_link": "https://maps.app.goo.gl/rzKf7k5FTDLuQ1yr6",
-    //   "center_name": "HSR",
+    //   "center_name": "hsr",
     //   "clinic_location": null,
     //   "rating": null,
     //   "review": null,
@@ -1127,7 +1127,7 @@ const review = [
       "clinic_location": "hebbal",
       "rating": 4.9,
       "review": "It's very good IVF centre in bangalore.doctor Shalini is very experienced in good .thank you for entire team.",
-      "name": "NavithaM NavithaM",
+      "name": "Navitham",
       "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjUlN4o3xhycMK7e6eFmN5xobNFkvbzkMTttXJ8JZhIXa5DUcgw5lA=w56-h56-p-rp-mo-br100",
       "null": "https://maps.app.goo.gl/iqaeLBBEv51Rkx7n8"
     },
@@ -1153,21 +1153,21 @@ const review = [
       "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocLllXJDL20xxHz7E6T4CDm2Qpt1HFt9_b8e87_z55bbvr1a0A=w56-h56-p-rp-mo-br100",
       "null": "https://maps.app.goo.gl/rtq7m8fHqJfLSKif7"
     },
-    {
-      "id": 98,
-      "review_link": "https://maps.app.goo.gl/rtq7m8fHqJfLSKif7",
-      "center_name": "hebbal",
-      "clinic_location": "hebbal",
-      "rating": 4.9,
-      "review": "It's very good IVF centre in bangalore.doctor Shalini is very experienced in good .thank you for entire team.",
-      "name": "NavithaM NavithaM",
-      "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjUlN4o3xhycMK7e6eFmN5xobNFkvbzkMTttXJ8JZhIXa5DUcgw5lA=w56-h56-p-rp-mo-br100",
-      "null": "https://maps.app.goo.gl/wp3tDC7gv8cTLFT78"
-    },
+    // {
+    //   "id": 98,
+    //   "review_link": "https://maps.app.goo.gl/rtq7m8fHqJfLSKif7",
+    //   "center_name": "hebbal",
+    //   "clinic_location": "hebbal",
+    //   "rating": 4.9,
+    //   "review": "It's very good IVF centre in bangalore.doctor Shalini is very experienced in good .thank you for entire team.",
+    //   "name": "NavithaM NavithaM",
+    //   "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjUlN4o3xhycMK7e6eFmN5xobNFkvbzkMTttXJ8JZhIXa5DUcgw5lA=w56-h56-p-rp-mo-br100",
+    //   "null": "https://maps.app.goo.gl/wp3tDC7gv8cTLFT78"
+    // },
     {
       "id": 99,
       "review_link": "https://maps.app.goo.gl/wp3tDC7gv8cTLFT78",
-      "center_name": "hebbal",
+      "center_name": "belagavi",
       "clinic_location": "belagavi",
       "rating": 5,
       "review": "Best and first class ivf facility in belagavi.....thank u oasis",
@@ -1178,7 +1178,7 @@ const review = [
     {
       "id": 100,
       "review_link": "https://maps.app.goo.gl/2P4vyoUXe36x13Th9",
-      "center_name": "Belagavi",
+      "center_name": "belagavi",
       "clinic_location": "belagavi",
       "rating": 5,
       "review": "Very good hospital having all the facilities I visited and the hospital is very neat and clean and the services provided are very excellent",
@@ -1189,7 +1189,7 @@ const review = [
     {
       "id": 101,
       "review_link": "https://maps.app.goo.gl/LwBDgVkyo5UWqRWu8",
-      "center_name": "Belagavi",
+      "center_name": "belagavi",
       "clinic_location": "belagavi",
       "rating": 5,
       "review": "Very good hospital having all the facilities I visited and the hospital is very neat and clean and the services provided are very excellent",
@@ -1200,7 +1200,7 @@ const review = [
     {
       "id": 102,
       "review_link": "https://maps.app.goo.gl/LwBDgVkyo5UWqRWu8",
-      "center_name": "Belagavi",
+      "center_name": "belagavi",
       "clinic_location": "belagavi",
       "rating": 4.9,
       "review": "One of best meternity hospital in belagavi very caring and friendly staff's Im very thankful to Dr gajare sir thank you sir🙏",
@@ -1211,7 +1211,7 @@ const review = [
     {
       "id": 103,
       "review_link": "https://maps.app.goo.gl/j2QFgGtV4pyakmXa9",
-      "center_name": "Belagavi",
+      "center_name": "belagavi",
       "clinic_location": "belagavi",
       "rating": 5,
       "review": "Great experience really shweta mam is so corporate and she explain everything and positive results even all staffs are so supportive tq u all❤️",
@@ -1222,7 +1222,7 @@ const review = [
     {
       "id": 104,
       "review_link": "https://maps.app.goo.gl/JpQ7TYu5xBrm2apC9",
-      "center_name": "Belagavi",
+      "center_name": "belagavi",
       "clinic_location": "chennai",
       "rating": 4.9,
       "review": "Doctor and staffs are very kind Best fertility centre in chennai.",
@@ -1233,7 +1233,7 @@ const review = [
     {
       "id": 105,
       "review_link": "https://maps.app.goo.gl/NDCLK7VYLcgZVBnA8",
-      "center_name": "Chennai",
+      "center_name": "chennai",
       "clinic_location": "chennai",
       "rating": 4.9,
       "review": "Thanks for Nova IVF and thank you so much for dr.ajantha mam .she is very friendly and ans all enquiries.she give good confident for pts .all staff are pt guidance well.",
@@ -1244,7 +1244,7 @@ const review = [
     {
       "id": 106,
       "review_link": "https://maps.app.goo.gl/b1CGoUBEr8zYh8n48",
-      "center_name": "Chennai",
+      "center_name": "chennai",
       "clinic_location": "chennai",
       "rating": 4.9,
       "review": "Thanks to Oasis 😊 we got positive result in this treatment given by Dr Maheswari and team😊",
@@ -1255,7 +1255,7 @@ const review = [
     {
       "id": 107,
       "review_link": "https://maps.app.goo.gl/h1ZmAxvok1WrEVkVA",
-      "center_name": "Chennai",
+      "center_name": "chennai",
       "clinic_location": "chennai",
       "rating": 4.9,
       "review": "Very professional and friendly atmosphere. Dr. Maheswasri ma'am is an expert in this field and patient enough to hear and clear all our doubts. All the staffs are very sincere and co operative.",
@@ -1266,7 +1266,7 @@ const review = [
     {
       "id": 108,
       "review_link": "https://maps.app.goo.gl/irFpmGjYgJMW2shk9",
-      "center_name": "Chennai",
+      "center_name": "chennai",
       "clinic_location": "chennai",
       "rating": 4.9,
       "review": "Excellent care. Good fertility centre Thank you for your exceptional kindness and the positive impact throughout/during my pregnancy.",
@@ -1387,7 +1387,7 @@ const review = [
     {
       "id": 119,
       "review_link": "https://maps.app.goo.gl/nRSAEvdAn47dfL828",
-      "center_name": "Nashik",
+      "center_name": "nashik",
       "clinic_location": "kharadi",
       "rating": 4.7,
       "review": "Nice service at oasis fertility kharadi staff are well professional",
@@ -1398,7 +1398,7 @@ const review = [
     {
       "id": 120,
       "review_link": "https://maps.app.goo.gl/Ap4DHNNqNFF3de9p8",
-      "center_name": "Raipur",
+      "center_name": "raipur",
       "clinic_location": "kharadi",
       "rating": 5,
       "review": "Positive results, very nice treatment by Dr.Pratibha ma'am... Nice and clean hospital premises.. Thanks to the Oasis Fertility..",
@@ -1409,7 +1409,7 @@ const review = [
     {
       "id": 121,
       "review_link": "https://maps.app.goo.gl/3APNiiqWCYJCQi579",
-      "center_name": "Raipur",
+      "center_name": "raipur",
       "clinic_location": "kharadi",
       "rating": 4.7,
       "review": "Excellent service at oasis fertility.. Thanks every one giving us positive results thankyou dr nilesh sir sayali mam. Dr sneha. And all staff.",
@@ -1420,7 +1420,7 @@ const review = [
     {
       "id": 122,
       "review_link": "https://maps.app.goo.gl/5g7weWndF8spoivY9",
-      "center_name": "Raipur",
+      "center_name": "raipur",
       "clinic_location": "kharadi",
       "rating": 4.7,
       "review": "Oasis fertility has really helped us to achieve parenthood. Great positive environment and friendly behavior of the Staff and Doctors available there.",
@@ -1431,7 +1431,7 @@ const review = [
     {
       "id": 123,
       "review_link": "https://maps.app.goo.gl/d9ZW1eKKzSV9BxaY6",
-      "center_name": "Raipur",
+      "center_name": "raipur",
       "clinic_location": "kharadi",
       "rating": 4.7,
       "review": "Good service at oasis fertility Very professional treatment at Oasis fertility.. cooperative staff . Dr are understanding",
@@ -1442,7 +1442,7 @@ const review = [
     {
       "id": 124,
       "review_link": "https://maps.app.goo.gl/WjhFNwQUAyF96tFs5",
-      "center_name": "Raipur",
+      "center_name": "raipur",
       "clinic_location": "nashik",
       "rating": 5,
       "review": "Best ivf centre in nashik city dr pallavi dr is most exprienced gynaecologist who ensured that every pt gt result in firt attempt only thank oasis team and dr pallavi untwal for the greatest joy anyone can ever gift",
