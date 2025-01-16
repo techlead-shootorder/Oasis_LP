@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 const ExploreCenterslp3 = ({ nearByCenters }) => {
 
-    console.log('nearbycenters', nearByCenters)
+    
 
     const scrollToForm = () => {
         const formElement = document.getElementById("heroBannerHeading");

@@ -313,7 +313,7 @@ const review = [
       "clinic_location": "miyapur",
       "rating": 4.9,
       "review": "Best IVF & IUI Fertility Center in Hyderabad... special thanks to Dr varalakshmi madam and Team and staff are very professional",
-      "name": "navaneethrao 2211",
+      "name": "navaneethrao",
       "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocKTpj2xInuEhuIBMrsrTvhQl5zOMoPsdj4vFgl-ECbUlzqHBw=w56-h56-p-rp-mo-br100",
        
     },
@@ -588,7 +588,7 @@ const review = [
       "clinic_location": "karimnagar",
       "rating": 5,
       "review": "Hlo Oasis. am here to Thank you all the staff and management for your treatment & the way you cared to give us such a beautiful twin boys and made our lives more colourful.we wish you to grow more and have a happy journey ahead...once again thank you soo much each and everyone 🙏.",
-      "name": "Hari Photography Hari Photography",
+      "name": "Hari",
       "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjVxY-cxqfttf7WPYFG_uJ8lu3TQbQB_-JSKsUndoyS1XJuT0c7QzA=w56-h56-p-rp-mo-br100",
        
     },

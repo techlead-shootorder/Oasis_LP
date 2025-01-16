@@ -31,6 +31,13 @@ const ReviewV2 = ({ center, service, filteredReview }) => {
     return rating % 1 >= 0.5;
   };
 
+  function capitalizeFirstLetter(inputString) {
+    if (typeof inputString !== 'string' || inputString.length === 0) {
+        return '';
+    }
+    return inputString.charAt(0).toUpperCase() + inputString.slice(1);
+}
+
   const ButtonGroup = ({ next, previous }) => {
     return (
       <div className="carousel-button-group absolute left-[50%] translate-x-[-50%] bottom-0 flex gap-2 lg:gap-3 xl:gap-5">
@@ -154,7 +161,7 @@ const ReviewV2 = ({ center, service, filteredReview }) => {
             </div>
             <p className="font-lato mt-4 text-black">{testimonial.review}</p>
             <h3 className="text-xl lg:text-[28px] mt-3 text-black">
-              {testimonial.name}
+              {capitalizeFirstLetter(testimonial.name)}
             </h3>
             <p className="text-black">
               {testimonial.clinic_location

@@ -127,16 +127,16 @@ const newdoctorslp3 = [
         "second qualification degree": "MBBS FROM GUNTUR MEDICAL COLLEGE",
         "areaOfSpecialization": "#N/A"
     },
-    {
-        "id": 13,
-        "fullname": "Dr. A Tejashree",
-        "designation": "Junior Consultant",
-        "experience": "12 Yrs",
-        "docterImage": "Dr. A Tejashree.webp",
-        "master_id": "4",
-        "qualification": "MBBS, MS - OBG \n",
-        "areaOfSpecialization": "Fellowship in reproductive medicine"
-    },
+    // {
+    //     "id": 13,
+    //     "fullname": "Dr. A Tejashree",
+    //     "designation": "Junior Consultant",
+    //     "experience": "12 Yrs",
+    //     "docterImage": "Dr. A Tejashree.webp",
+    //     "master_id": "4",
+    //     "qualification": "MBBS, MS - OBG \n",
+    //     "areaOfSpecialization": "Fellowship in reproductive medicine"
+    // },
     {
         "id": 14,
         "fullname": "Dr. A Tejashree",

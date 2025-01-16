@@ -127,8 +127,7 @@ export default function Page({ params }) {
         city = 'india';
     }
     const nearByCenters = useMemo(() => nearByAreas.find((center)=> center.center_name === city), [city]); 
-    console.log("nearbycenters", nearByCenters);
-
+   
     const filteredCity = masterlp3.find((center) => center.center_name === city);
     // const filteredTestimonials = doctors.filter((testimonial) => {
     //     return filteredCity?.id === testimonial.master_id;
@@ -157,7 +156,7 @@ export default function Page({ params }) {
 
     const cityVideos = getVideosForCity(city);
 
-    // console.log("city videos", cityVideos);
+   
 
     return (
         <div className="relative overflow-y-auto">

@@ -126,7 +126,7 @@ const formatCenterName = (name) => {
 // Main Component
 const HeroV2 = ({ center, service, isMeta, internal }) => {
   const centerName = React.useMemo(() => formatCenterName(center?.center_name_heading), [center?.center_name_heading]);
-  // console.log("internal value", internal);
+
 
   return (
     <Suspense fallback={

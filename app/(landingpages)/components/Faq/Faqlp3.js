@@ -18,7 +18,7 @@ const FAQV2 = () => {
         {
             question: "What IVF treatments are available at Oasis?",
             answer:
-                "The duration of an IVF cycle may vary from 6 to 12 weeks. Oasis provides IVF, ICSI, donor programs, fertility preservation, and tailored treatment plans for every patient.",
+                "Oasis provides IVF, ICSI, donor programs, fertility preservation, and tailored treatment plans for every patient.",
         },
         {
             question: "How much does IVF cost at Oasis Fertility?",

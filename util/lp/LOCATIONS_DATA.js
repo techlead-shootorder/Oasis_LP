@@ -38,7 +38,8 @@ const LOCATIONS_DATA = {
     { area: 'Kharadi', address: 'Chandan Nagar' },
     { area: 'Wakad', address: 'Kaspate Vasti' }
   ],
-  'Bhubaneswar': [{ area: 'Jaydev Vihar', address: 'Gangadhar Meher Marg' }]
+  'Bhubaneswar': [{ area: 'Jaydev Vihar', address: 'Gangadhar Meher Marg' }],
+  'Nashik': [{area: 'Mumbai Naka', address: 'Vedas Spaces' }],
  };
 
  export default LOCATIONS_DATA;

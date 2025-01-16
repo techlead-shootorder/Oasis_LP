@@ -149,8 +149,6 @@ export default function Page({ params }) {
 
     const cityVideos = getVideosForCity(city);
 
-    // console.log("city videos", cityVideos);
-
     function extractAfterFirstDash(input) {
         // Split the string into parts using the first '-' as the separator
         const parts = input.split('-');
@@ -158,7 +156,6 @@ export default function Page({ params }) {
         // Check if the string contains at least one '-'
         if (parts.length > 1) {
           // Return the part after the first '-'
-          console.log("sitelink dash", parts.slice(1).join('-'));
           return parts.slice(1).join('-');
         }
         
