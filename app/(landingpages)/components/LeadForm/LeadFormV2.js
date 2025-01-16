@@ -216,7 +216,7 @@ const LeadFormV2 = ({ internal = false}) => {
             {/* FORM HEADING */}
             <div>
               <p className="text-center text-primary font-semibold">Fill Up The Form To Get a</p>
-              <h2 className="text-[20px] md:text-[20px] lg:text-[24px] xl:text-[28px] !leading-[1.2] font-extrabold mb-3 xl:mb-4 text-center text-primary">
+              <h2 className="text-[20px] md:text-[20px] lg:text-[24px] xl:text-[24px] !leading-[1.2] font-extrabold mb-3 xl:mb-4 text-center text-primary">
                 FREE CONSULTATION
               </h2>
             </div>
