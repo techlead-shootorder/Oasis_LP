@@ -235,7 +235,8 @@ const LeadFormV2 = () => {
         if (randomOtp == userDetails.otp) {
             setThumbsUp(true);
             setThumbsDown(false);
-            setShowRecaptcha(true);
+            // setShowRecaptcha(true);
+            setIsCallBackDisable(false);
 
         } else {
             setThumbsDown(true);
