@@ -519,7 +519,7 @@ const LeadFormV2 = () => {
 
 
                         <div className="mb-3">
-                            <div className="text-black">Testing</div>
+                            {/* <div className="text-black">Testing</div> */}
                             <ReCAPTCHA
                                 sitekey="6Le2YroqAAAAALVhH2JUGDn9ZO9cIvxgiwn29g8H" // Replace with your reCAPTCHA site key
                                 // secretkey="6Le2YroqAAAAALmMSzxYIxNo2v1wGpIU5bE4SCky"
