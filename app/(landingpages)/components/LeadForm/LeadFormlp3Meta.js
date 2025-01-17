@@ -8,6 +8,7 @@ import Cookies from "js-cookie";
 import { HiThumbUp } from "react-icons/hi";
 import { HiThumbDown } from "react-icons/hi";
 import Image from "next/image";
+import ReCAPTCHA from "react-google-recaptcha";
 
 
 
@@ -39,7 +40,7 @@ const LeadFormV2 = () => {
     const [showThumbsDown, setThumbsDown] = useState(false);
     const [showOtpInput, setOtpInput] = useState(false);
     const [isCallBackDisable, setIsCallBackDisable] = useState(true);
-
+    const [showRecaptcha, setShowRecaptcha] = useState(false);
 
     // astrix
     const [isFocusedFullName, setIsFocusedFullName] = useState(false);
@@ -211,6 +212,19 @@ const LeadFormV2 = () => {
 
     };
 
+    const onRecaptchaSuccess = (token) => {
+        console.log("reCAPTCHA token:", token);
+        // Proceed with your button action here, e.g., send OTP
+        // setShowRecaptcha(false); // Hide reCAPTCHA
+        setIsCallBackDisable(false);
+    };
+
+    const onRecaptchaError = () => {
+        alert("Please complete the reCAPTCHA!");
+        setShowRecaptcha(false); // Hide reCAPTCHA
+        setIsCallBackDisable(true);
+    };
+
     const handleSubmitOtp = () => {
         // const correctOtp = ['1', '2', '3', '4']; // Replace with actual OTP logic
         // if (JSON.stringify(userDetails.otp) === JSON.stringify(correctOtp)) {
@@ -221,12 +235,13 @@ const LeadFormV2 = () => {
         if (randomOtp == userDetails.otp) {
             setThumbsUp(true);
             setThumbsDown(false);
-            setIsCallBackDisable(false);
+            setShowRecaptcha(true);
 
         } else {
             setThumbsDown(true);
             setThumbsUp(false);
             setIsCallBackDisable(true);
+
 
         }
     };
@@ -364,157 +379,169 @@ const LeadFormV2 = () => {
 
             <div className="rounded-[27px] bg-cover bg-center bg-[#f3c1d7] overflow-hidden relative">
                 <p className="text-white pt-4 pb-2 bg-primary mb-2 text-center text-[16px] font-bold">IVF @ ₹94,999* | LIMITED VALIDITY</p>
-                
+
                 <form onSubmit={handleSubmit} className="">
-                <div className="px-4 lg:px-5 xl:px-6">
-                    {/* FORM HEADING */}
-                    <div>
-                        <p className="text-center text-primary font-semibold">Fill Up The Form To Get a</p>
-                        <h2 className="text-[20px] md:text-[20px] lg:text-[24px] xl:text-[28px] !leading-[1.2] font-extrabold mb-3 xl:mb-4 text-center text-primary">
-                            FREE CONSULTATION
-                        </h2>
-                    </div>
+                    <div className="px-4 lg:px-5 xl:px-6">
+                        {/* FORM HEADING */}
+                        <div>
+                            <p className="text-center text-primary font-semibold">Fill Up The Form To Get a</p>
+                            <h2 className="text-[20px] md:text-[20px] lg:text-[24px] xl:text-[28px] !leading-[1.2] font-extrabold mb-3 xl:mb-4 text-center text-primary">
+                                FREE CONSULTATION
+                            </h2>
+                        </div>
 
-                    <div className="relative mb-3 xl:mb-4">
-                        <input
-                            type="text"
-                            id="fullName"
-                            name="firstName"
-                            placeholder="Full Name"
-                            className="w-full p-3 bg-white border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
-                            value={userDetails.firstName}
-                            onChange={handleInputChange}
-                            onFocus={() => setIsFocusedFullName(true)}
-                            onBlur={() => setIsFocusedFullName(false)}
-                        />
-                        {!isFocusedFullName && !userDetails.firstName && (
-                            <span className="absolute left-[88px] top-2 text-red-500 text-2xl">*</span>
-                        )}
-                    </div>
-
-
-
-
-                    <div className="flex space-x-4 mb-3 xl:mb-4">
-                        <div className="relative w-1/2">
-                            <select
-                                aria-label="gender"
-                                id="gender"
-                                name="gender"
+                        <div className="relative mb-3 xl:mb-4">
+                            <input
+                                type="text"
+                                id="fullName"
+                                name="firstName"
+                                placeholder="Full Name"
                                 className="w-full p-3 bg-white border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
-                                value={userDetails.gender}
+                                value={userDetails.firstName}
                                 onChange={handleInputChange}
-                                onFocus={() => setIsFocusedGender(true)}
-                                onBlur={() => setIsFocusedGender(false)}
-                            >
-                                <option value="">Gender</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                            </select>
-                            {!isFocusedGender && !userDetails.gender && (
-                                <span className="absolute left-[72px] top-2 text-red-500 text-2xl">*</span>
+                                onFocus={() => setIsFocusedFullName(true)}
+                                onBlur={() => setIsFocusedFullName(false)}
+                            />
+                            {!isFocusedFullName && !userDetails.firstName && (
+                                <span className="absolute left-[88px] top-2 text-red-500 text-2xl">*</span>
                             )}
                         </div>
 
-                        <div className="relative w-1/2">
-                            <select
-                                id="age"
-                                name="age"
-                                className="w-full p-3 bg-white border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
-                                value={userDetails.age}
-                                onChange={handleInputChange}
-                                disabled={!userDetails.gender} // Disable if no gender is selected
-                                onFocus={() => setIsFocusedAge(true)}
-                                onBlur={() => setIsFocusedAge(false)}
-                                aria-label="Age"
-                            >
-                                <option value="">Age</option>
-                                {ageOptions.map((age) => (
-                                    <option key={age} value={age}>
-                                        {age}
-                                    </option>
-                                ))}
-                            </select>
-                            {!isFocusedAge && !userDetails.age && (
-                                <span className="absolute left-[48px] top-2 text-red-500 text-2xl">*</span>
-                            )}
-                        </div>
-                    </div>
 
-                    <div className="relative mb-3 xl:mb-4">
-                        <input
-                            type="text"
-                            id="phone"
-                            name="mobileNo"
-                            placeholder="+91"
-                            className="w-full p-3 bg-white border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
-                            value={userDetails.mobileNo}
-                            maxLength={13}
-                            minLength={13}
-                            onChange={handleInputChange}
-                            onFocus={() => setIsFocusedMobileNo(true)}
-                            onBlur={() => setIsFocusedMobileNo(false)}
-                        />
-                        {/* Asterisk only if the input is empty or has only the prefix */}
-                        {!isFocusedMobileNo &&
-                            (userDetails.mobileNo.length <= 3 || userDetails.mobileNo === "+91") && (
-                                <span className="absolute left-[40px] top-2 text-red-500 text-2xl">*</span>
-                            )}
-                        <button
-                            type="button"
-                            onClick={handleSendOtp}
-                            className={`absolute top-0 right-0 text-[16px] w-[100px] sm:w-[111px] h-full ${otpSent ? 'bg-purple-300 cursor-not-allowed' : 'bg-primary'} text-white text-sm rounded-lg focus:outline-none`}
-                            disabled={otpSent}
-                        >
-                            {otpButtonText}
-                        </button>
-                    </div>
 
-                    {showOtpInput && (
-                        <>
-                            <div className={`flex xs:flex-col items-center justify-center gap-3 mb-3 xl:mb-4`}>
-                                <div className="flex gap-3 items-center">
-                                    {Array(4)
-                                        .fill(0)
-                                        .map((_, index) => (
-                                            <input
-                                                key={index}
-                                                ref={(el) => (inputRefs.current[index] = el)}
-                                                type="text"
-                                                maxLength={1}
-                                                inputMode="numeric" // Ensures number pad on mobile
-                                                className=" w-10 h-10 sm:w-12 sm:h-12 text-center text-lg border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none bg-white"
-                                                value={userDetails.otp[index] || ""}
-                                                onChange={(e) => handleOtpChange(e.target.value, index)}
-                                                onKeyDown={(e) => handleKeyDown(e, index)}
-                                            />
-                                        ))}
-                                </div>
 
-                                <button
-                                    type="button"
-                                    className="w-[111px] px-1 sm:px-0 h-10 sm:h-12 text-[16px] bg-primary text-white text-sm rounded-lg focus:outline-none"
-                                    onClick={handleSubmitOtp}
+                        <div className="flex space-x-4 mb-3 xl:mb-4">
+                            <div className="relative w-1/2">
+                                <select
+                                    aria-label="gender"
+                                    id="gender"
+                                    name="gender"
+                                    className="w-full p-3 bg-white border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                                    value={userDetails.gender}
+                                    onChange={handleInputChange}
+                                    onFocus={() => setIsFocusedGender(true)}
+                                    onBlur={() => setIsFocusedGender(false)}
                                 >
-                                    SUBMIT OTP
-                                </button>
+                                    <option value="">Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                                {!isFocusedGender && !userDetails.gender && (
+                                    <span className="absolute left-[72px] top-2 text-red-500 text-2xl">*</span>
+                                )}
                             </div>
-                        </>
-                    )}
 
-                    <div className="flex items-center justify-center mb-2 xl:mb-2 text-center">
-                        <input
-                            type="checkbox"
-                            name="consent"
-                            id="consent"
-                            className="mr-2"
-                            checked={userDetails.consent}
-                            onChange={handleInputChange}
-                        />
-                        <label htmlFor="consent" className="text-sm lg:text-lg text-center">
-                            I consent Oasis Fertility to contact me
-                        </label>
-                    </div>
+                            <div className="relative w-1/2">
+                                <select
+                                    id="age"
+                                    name="age"
+                                    className="w-full p-3 bg-white border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                                    value={userDetails.age}
+                                    onChange={handleInputChange}
+                                    disabled={!userDetails.gender} // Disable if no gender is selected
+                                    onFocus={() => setIsFocusedAge(true)}
+                                    onBlur={() => setIsFocusedAge(false)}
+                                    aria-label="Age"
+                                >
+                                    <option value="">Age</option>
+                                    {ageOptions.map((age) => (
+                                        <option key={age} value={age}>
+                                            {age}
+                                        </option>
+                                    ))}
+                                </select>
+                                {!isFocusedAge && !userDetails.age && (
+                                    <span className="absolute left-[48px] top-2 text-red-500 text-2xl">*</span>
+                                )}
+                            </div>
+                        </div>
+
+                        <div className="relative mb-3 xl:mb-4">
+                            <input
+                                type="text"
+                                id="phone"
+                                name="mobileNo"
+                                placeholder="+91"
+                                className="w-full p-3 bg-white border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                                value={userDetails.mobileNo}
+                                maxLength={13}
+                                minLength={13}
+                                onChange={handleInputChange}
+                                onFocus={() => setIsFocusedMobileNo(true)}
+                                onBlur={() => setIsFocusedMobileNo(false)}
+                            />
+                            {/* Asterisk only if the input is empty or has only the prefix */}
+                            {!isFocusedMobileNo &&
+                                (userDetails.mobileNo.length <= 3 || userDetails.mobileNo === "+91") && (
+                                    <span className="absolute left-[40px] top-2 text-red-500 text-2xl">*</span>
+                                )}
+                            <button
+                                type="button"
+                                onClick={handleSendOtp}
+                                className={`absolute top-0 right-0 text-[16px] w-[100px] sm:w-[111px] h-full ${otpSent ? 'bg-purple-300 cursor-not-allowed' : 'bg-primary'} text-white text-sm rounded-lg focus:outline-none`}
+                                disabled={otpSent}
+                            >
+                                {otpButtonText}
+                            </button>
+                        </div>
+
+                        {showOtpInput && (
+                            <>
+                                <div className={`flex xs:flex-col items-center justify-center gap-3 mb-3 xl:mb-4`}>
+                                    <div className="flex gap-3 items-center">
+                                        {Array(4)
+                                            .fill(0)
+                                            .map((_, index) => (
+                                                <input
+                                                    key={index}
+                                                    ref={(el) => (inputRefs.current[index] = el)}
+                                                    type="text"
+                                                    maxLength={1}
+                                                    inputMode="numeric" // Ensures number pad on mobile
+                                                    className=" w-10 h-10 sm:w-12 sm:h-12 text-center text-lg border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none bg-white"
+                                                    value={userDetails.otp[index] || ""}
+                                                    onChange={(e) => handleOtpChange(e.target.value, index)}
+                                                    onKeyDown={(e) => handleKeyDown(e, index)}
+                                                />
+                                            ))}
+                                    </div>
+
+                                    <button
+                                        type="button"
+                                        className="w-[111px] px-1 sm:px-0 h-10 sm:h-12 text-[16px] bg-primary text-white text-sm rounded-lg focus:outline-none"
+                                        onClick={handleSubmitOtp}
+                                    >
+                                        SUBMIT OTP
+                                    </button>
+                                </div>
+                            </>
+                        )}
+
+
+                        <div className="mb-3">
+                            <div className="text-black">Testing</div>
+                            <ReCAPTCHA
+                                sitekey="6Le2YroqAAAAALVhH2JUGDn9ZO9cIvxgiwn29g8H" // Replace with your reCAPTCHA site key
+                                // secretkey="6Le2YroqAAAAALmMSzxYIxNo2v1wGpIU5bE4SCky"
+                                onChange={onRecaptchaSuccess}
+                                onErrored={onRecaptchaError}
+                            />
+                        </div>
+                       
+
+                        <div className="flex items-center justify-center mb-2 xl:mb-2 text-center">
+                            <input
+                                type="checkbox"
+                                name="consent"
+                                id="consent"
+                                className="mr-2"
+                                checked={userDetails.consent}
+                                onChange={handleInputChange}
+                            />
+                            <label htmlFor="consent" className="text-sm lg:text-lg text-center">
+                                I consent Oasis Fertility to contact me
+                            </label>
+                        </div>
 
                     </div>
 
@@ -536,6 +563,8 @@ const LeadFormV2 = () => {
                                 </p>
                             </div>
                         )}
+
+
 
                         {errMsg && <p className="text-red-500 text-sm">{errMsg}</p>}
 

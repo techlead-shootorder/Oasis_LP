@@ -31,11 +31,16 @@ const ReviewV2 = ({ center, service, filteredReview }) => {
     return rating % 1 >= 0.5;
   };
 
-  function capitalizeFirstLetter(inputString) {
-    if (typeof inputString !== 'string' || inputString.length === 0) {
-        return '';
-    }
-    return inputString.charAt(0).toUpperCase() + inputString.slice(1);
+  function capitalizeName(name) {
+    // Trim leading and trailing spaces and ensure there's only one space between words
+    const lower = name.toLowerCase();
+    let cleanedName = lower.trim().replace(/\s+/g, ' ');
+
+    // Capitalize the first letter of each word
+    return cleanedName
+        .split(' ')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+        .join(' ');
 }
 
   const ButtonGroup = ({ next, previous }) => {
@@ -91,6 +96,7 @@ const ReviewV2 = ({ center, service, filteredReview }) => {
 
   return (
     <div className="pb-10 lg:pb-16">
+
       <h2 className="text-[22px] md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-[52px] !leading-[1.2] font-bold text-primary text-center tracking-wide">
         Best Reviewed <span className={service != 'fertility' ? 'uppercase' : '' }>{service ? service : "IVF"}</span> Clinic in{" "}
         {center?.center_name
@@ -161,7 +167,7 @@ const ReviewV2 = ({ center, service, filteredReview }) => {
             </div>
             <p className="font-lato mt-4 text-black">{testimonial.review}</p>
             <h3 className="text-xl lg:text-[28px] mt-3 text-black">
-              {capitalizeFirstLetter(testimonial.name)}
+              {capitalizeName(testimonial.name)}
             </h3>
             <p className="text-black">
               {testimonial.clinic_location

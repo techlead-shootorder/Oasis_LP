@@ -11,6 +11,18 @@ const MobileReview = ({ center }) => {
     // Ensure activeIndex is within bounds
     const isValidIndex = activeIndex >= 0 && activeIndex < filterReview.length;
 
+    function capitalizeName(name) {
+        // Trim leading and trailing spaces and ensure there's only one space between words
+        const lower = name.toLowerCase();
+        let cleanedName = lower.trim().replace(/\s+/g, ' ');
+    
+        // Capitalize the first letter of each word
+        return cleanedName
+            .split(' ')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+            .join(' ');
+    }
+
     return (
         <div className="flex max-w-md mx-auto mt-6">
             {/* PROFILE IMAGES */}
@@ -79,7 +91,7 @@ const MobileReview = ({ center }) => {
                                 {filterReview[activeIndex].review}
                             </p>
                             <div className="text-gray-900 font-medium">
-                                {filterReview[activeIndex].name}
+                                {capitalizeName(filterReview[activeIndex].name)}
                             </div>
                             <div className="text-gray-500 text-sm">
                                 {filterReview[activeIndex].clinic_location}

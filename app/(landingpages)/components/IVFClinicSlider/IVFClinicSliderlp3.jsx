@@ -72,13 +72,13 @@ function IVFClinicSliderV2({ center, userAgentString, cityVideos, service }) {
     const result = parser.getResult();
     const deviceType = (result.device && result.device.type) || 'desktop';
 
-    const ivfClinicVideos = [
-        { videoId: 'TSUFeOgscYM', VideoTitleText: "Everything about pregnancy planning", videoImage: '/images/home/pregnancyplan1.png', youTubeVideoUrl: 'https://youtube.com/shorts/TSUFeOgscYM', isSelected: false },
-        { videoId: 'KDz_mfG1AEo', VideoTitleText: "What are the factors that affect the success rate of egg freezing?", videoImage: '/images/home/pregnancyplan2.png', youTubeVideoUrl: 'https://youtu.be/KDz_mfG1AEo', isSelected: false },
-        { videoId: 'HARgKEK7ihA', VideoTitleText: "Kids Planning", videoImage: '/images/home/pregnancyplan3.png', youTubeVideoUrl: 'https://youtube.com/shorts/HARgKEK7ihA', isSelected: false },
-        { videoId: 'p6W3t5FcIyQ', VideoTitleText: "Does the use of cosmetics, perfume, and deo affect fertility in women?", videoImage: '/images/home/pregnancyplan5.png', youTubeVideoUrl: 'https://youtube.com/shorts/p6W3t5FcIyQ', isSelected: false },
-        { videoId: '9qT8zaJV56U', VideoTitleText: "Get Ready for Parenthood with Advanced Infertility Treatments in 2024 With Oasis Fertility", videoImage: '/images/home/Rohit_Marina.png', youTubeVideoUrl: 'https://youtube.com/shorts/9qT8zaJV56U', isSelected: false }
-    ];
+    // const ivfClinicVideos = [
+    //     { videoId: 'TSUFeOgscYM', VideoTitleText: "Everything about pregnancy planning", videoImage: '/images/home/pregnancyplan1.png', youTubeVideoUrl: 'https://youtube.com/shorts/TSUFeOgscYM', isSelected: false },
+    //     { videoId: 'KDz_mfG1AEo', VideoTitleText: "What are the factors that affect the success rate of egg freezing?", videoImage: '/images/home/pregnancyplan2.png', youTubeVideoUrl: 'https://youtu.be/KDz_mfG1AEo', isSelected: false },
+    //     { videoId: 'HARgKEK7ihA', VideoTitleText: "Kids Planning", videoImage: '/images/home/pregnancyplan3.png', youTubeVideoUrl: 'https://youtube.com/shorts/HARgKEK7ihA', isSelected: false },
+    //     { videoId: 'p6W3t5FcIyQ', VideoTitleText: "Does the use of cosmetics, perfume, and deo affect fertility in women?", videoImage: '/images/home/pregnancyplan5.png', youTubeVideoUrl: 'https://youtube.com/shorts/p6W3t5FcIyQ', isSelected: false },
+    //     { videoId: '9qT8zaJV56U', VideoTitleText: "Get Ready for Parenthood with Advanced Infertility Treatments in 2024 With Oasis Fertility", videoImage: '/images/home/Rohit_Marina.png', youTubeVideoUrl: 'https://youtube.com/shorts/9qT8zaJV56U', isSelected: false }
+    // ];
 
     const startVideoPlayer = useVideoStore(state => state?.startVideoPlayer);
     const currentVideoRef = useRef();
@@ -94,11 +94,11 @@ function IVFClinicSliderV2({ center, userAgentString, cityVideos, service }) {
         { disconnectOnLeave: true }
     );
 
-    const opts = {
-        playerVars: {
-            autoplay: 1,
-        },
-    };
+    // const opts = {
+    //     playerVars: {
+    //         autoplay: 1,
+    //     },
+    // };
 
     useEffect(() => {
         if (cityVideos?.length) {
@@ -224,7 +224,7 @@ function IVFClinicSliderV2({ center, userAgentString, cityVideos, service }) {
                                             }}
                                             id="player"
                                             style={{ width: "100%", height: "100%" }}
-                                            src={`https://www.youtube.com/embed/${video?.videoId}?autoplay=${inViewport ? '1' : '0'}`}
+                                            src={`https://www.youtube.com/embed/${video?.videoId}?autoplay=${inViewport ? '1' : '1'}`}
                                             allow="autoplay"
                                             className="aspect-[9/16] w-full h-full rounded-xl"
                                         />
