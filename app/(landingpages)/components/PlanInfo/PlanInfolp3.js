@@ -235,7 +235,7 @@ const PlanInfo = ({ isMeta, internal }) => {
                         </button> */}
 
                         <button onClick={handleOpenModal} className="hidden lg:block mt-2 bg-accent px-8 py-3 rounded-lg text-base lg:text-xl font-semibold text-white">
-                            CHOOSE PLAN
+                            UNLOCK OFFER
                         </button>
 
                         <div className={`lg:mt-5 ${isSection2Expanded ? 'block' : 'hidden'} lg:block lg:group`}>
@@ -308,12 +308,12 @@ const PlanInfo = ({ isMeta, internal }) => {
                                 </div>
                             </div>
                             <button onClick={handleOpenModal} className="block lg:hidden mt-2 bg-accent px-8 py-3 rounded-lg text-base lg:text-xl font-semibold text-white w-full">
-                                CHOOSE PLAN
+                                UNLOCK OFFER
                             </button>
                         </div>
 
                         <button onClick={handleOpenModal} className="hidden bg-accent px-8 py-3 w-full text-center rounded-xl lg:hidden mt-2 text-base lg:text-xl font-semibold text-white">
-                            CHOOSE PLAN
+                            UNLOCK OFFER
                         </button>
                     </div>
                 </div>
@@ -372,7 +372,7 @@ const PlanInfo = ({ isMeta, internal }) => {
                         </button> */}
 
                         <button onClick={handleOpenModal} className="hidden lg:block mt-2 bg-accent px-8 py-3 rounded-lg text-base lg:text-xl font-semibold text-white">
-                            CHOOSE PLAN
+                            UNLOCK OFFER
                         </button>
 
                         <div className={`lg:mt-5 ${isSection3Expanded ? 'block' : 'hidden'} lg:block text-gray-200 lg:group`}>
@@ -433,12 +433,12 @@ const PlanInfo = ({ isMeta, internal }) => {
                                 </div>
                             </div>
                             <button onClick={handleOpenModal} className="block lg:hidden mt-2 bg-accent px-8 py-3 rounded-lg text-base lg:text-xl font-semibold text-white w-full">
-                                CHOOSE PLAN
+                            UNLOCK OFFER
                             </button>
                         </div>
 
                         <button onClick={handleOpenModal} className="hidden bg-accent px-8 py-3 w-full text-center rounded-xl lg:hidden mt-2 text-base lg:text-xl font-semibold text-white">
-                            CHOOSE PLAN
+                        UNLOCK OFFER
                         </button>
                     </div>
                 </div>
@@ -497,7 +497,7 @@ const PlanInfo = ({ isMeta, internal }) => {
                         </button> */}
 
                         <button onClick={handleOpenModal} className="hidden lg:block mt-2 bg-accent px-8 py-3 rounded-lg text-base lg:text-xl font-semibold text-white">
-                            CHOOSE PLAN
+                        UNLOCK OFFER
                         </button>
 
                         <div className={`lg:mt-5 ${isSection4Expanded ? 'block' : 'hidden'} lg:block text-white lg:group`}>
@@ -546,12 +546,12 @@ const PlanInfo = ({ isMeta, internal }) => {
                                 </div>
                             </div>
                             <button onClick={handleOpenModal} className="block lg:hidden mt-2 bg-accent px-8 py-3 rounded-lg text-base lg:text-xl font-semibold text-white w-full">
-                                CHOOSE PLAN
+                            UNLOCK OFFER
                             </button>
                         </div>
 
                         <button onClick={handleOpenModal} className="hidden bg-accent px-8 py-3 w-full text-center rounded-xl lg:hidden mt-2 text-base lg:text-xl font-semibold text-white">
-                            CHOOSE PLAN
+                        UNLOCK OFFER
                         </button>
                     </div>
                 </div>
