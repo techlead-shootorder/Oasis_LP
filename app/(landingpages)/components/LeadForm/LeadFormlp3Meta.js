@@ -40,7 +40,7 @@ const LeadFormV2 = () => {
     const [showThumbsDown, setThumbsDown] = useState(false);
     const [showOtpInput, setOtpInput] = useState(false);
     const [isCallBackDisable, setIsCallBackDisable] = useState(true);
-    const [showRecaptcha, setShowRecaptcha] = useState(false);
+    // const [showRecaptcha, setShowRecaptcha] = useState(false);
 
     // astrix
     const [isFocusedFullName, setIsFocusedFullName] = useState(false);
@@ -221,7 +221,7 @@ const LeadFormV2 = () => {
 
     const onRecaptchaError = () => {
         alert("Please complete the reCAPTCHA!");
-        setShowRecaptcha(false); // Hide reCAPTCHA
+        // setShowRecaptcha(false); // Hide reCAPTCHA
         setIsCallBackDisable(true);
     };
 

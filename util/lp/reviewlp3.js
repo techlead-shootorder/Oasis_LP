@@ -1167,7 +1167,7 @@ const review = [
     {
       "id": 99,
       "review_link": "https://maps.app.goo.gl/wp3tDC7gv8cTLFT78",
-      "center_name": "belagavi",
+      "center_name": "Belagavi",
       "clinic_location": "belagavi",
       "rating": 5,
       "review": "Best and first class ivf facility in belagavi.....thank u oasis",
@@ -1178,7 +1178,7 @@ const review = [
     {
       "id": 100,
       "review_link": "https://maps.app.goo.gl/2P4vyoUXe36x13Th9",
-      "center_name": "belagavi",
+      "center_name": "Belagavi",
       "clinic_location": "belagavi",
       "rating": 5,
       "review": "Very good hospital having all the facilities I visited and the hospital is very neat and clean and the services provided are very excellent",
@@ -1189,7 +1189,7 @@ const review = [
     {
       "id": 101,
       "review_link": "https://maps.app.goo.gl/LwBDgVkyo5UWqRWu8",
-      "center_name": "belagavi",
+      "center_name": "Belagavi",
       "clinic_location": "belagavi",
       "rating": 5,
       "review": "Very good hospital having all the facilities I visited and the hospital is very neat and clean and the services provided are very excellent",
@@ -1200,7 +1200,7 @@ const review = [
     {
       "id": 102,
       "review_link": "https://maps.app.goo.gl/LwBDgVkyo5UWqRWu8",
-      "center_name": "belagavi",
+      "center_name": "Belagavi",
       "clinic_location": "belagavi",
       "rating": 4.9,
       "review": "One of best meternity hospital in belagavi very caring and friendly staff's Im very thankful to Dr gajare sir thank you sir🙏",
@@ -1211,7 +1211,7 @@ const review = [
     {
       "id": 103,
       "review_link": "https://maps.app.goo.gl/j2QFgGtV4pyakmXa9",
-      "center_name": "belagavi",
+      "center_name": "Belagavi",
       "clinic_location": "belagavi",
       "rating": 5,
       "review": "Great experience really shweta mam is so corporate and she explain everything and positive results even all staffs are so supportive tq u all❤️",
@@ -1222,7 +1222,7 @@ const review = [
     {
       "id": 104,
       "review_link": "https://maps.app.goo.gl/JpQ7TYu5xBrm2apC9",
-      "center_name": "belagavi",
+      "center_name": "Belagavi",
       "clinic_location": "chennai",
       "rating": 4.9,
       "review": "Doctor and staffs are very kind Best fertility centre in chennai.",
