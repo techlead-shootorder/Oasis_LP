@@ -10,7 +10,7 @@ import review from '@/util/lp/reviewlp3';
 const ReviewV2 = ({ center, service, filteredReview }) => {
   const totalStars = 5;
   const [activeButton, setActiveButton] = useState('next');
-  const filterReview = review.filter((item) => item.center_name === center?.center_name);
+  const filterReview = review.filter((item) => item?.center_name?.toLowerCase() === center?.center_name.toLowerCase());
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -113,7 +113,7 @@ const ReviewV2 = ({ center, service, filteredReview }) => {
       
 
       <div className="sm:hidden">
-      <MobileReview center={center} filteredReview={filteredReview}/>
+      <MobileReview center={center} />
       </div>
 
       <div className="hidden sm:block">

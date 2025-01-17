@@ -6,7 +6,7 @@ import review from '@/util/lp/reviewlp3';
 const MobileReview = ({ center }) => {
     const [activeIndex, setActiveIndex] = useState(0);
 
-    const filterReview = review.filter((item) => item.center_name === center?.center_name);
+    const filterReview = review.filter((item) => item?.center_name?.toLowerCase() === center?.center_name?.toLowerCase());
 
     // Ensure activeIndex is within bounds
     const isValidIndex = activeIndex >= 0 && activeIndex < filterReview.length;
