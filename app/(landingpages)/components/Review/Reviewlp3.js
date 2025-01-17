@@ -7,7 +7,7 @@ import MobileReview from "./MobileReview";
 import { FaRegStar, FaStar, FaStarHalfStroke } from "react-icons/fa6";
 import review from '@/util/lp/reviewlp3';
 
-const ReviewV2 = ({ center, service, filteredReview }) => {
+const ReviewV2 = ({ center, service }) => {
   const totalStars = 5;
   const [activeButton, setActiveButton] = useState('next');
   const filterReview = review.filter((item) => item?.center_name?.toLowerCase() === center?.center_name.toLowerCase());
