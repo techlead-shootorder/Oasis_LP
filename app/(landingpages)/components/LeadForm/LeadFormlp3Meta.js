@@ -40,7 +40,7 @@ const LeadFormV2 = () => {
     const [showThumbsDown, setThumbsDown] = useState(false);
     const [showOtpInput, setOtpInput] = useState(false);
     const [isCallBackDisable, setIsCallBackDisable] = useState(true);
-    const [showRecaptcha, setShowRecaptcha] = useState(false);
+    // const [showRecaptcha, setShowRecaptcha] = useState(false);
 
     // astrix
     const [isFocusedFullName, setIsFocusedFullName] = useState(false);
@@ -212,18 +212,18 @@ const LeadFormV2 = () => {
 
     };
 
-    const onRecaptchaSuccess = (token) => {
-        console.log("reCAPTCHA token:", token);
-        // Proceed with your button action here, e.g., send OTP
-        // setShowRecaptcha(false); // Hide reCAPTCHA
-        setIsCallBackDisable(false);
-    };
+    // const onRecaptchaSuccess = (token) => {
+    //     console.log("reCAPTCHA token:", token);
+    //     // Proceed with your button action here, e.g., send OTP
+    //     // setShowRecaptcha(false); // Hide reCAPTCHA
+    //     setIsCallBackDisable(false);
+    // };
 
-    const onRecaptchaError = () => {
-        alert("Please complete the reCAPTCHA!");
-        // setShowRecaptcha(false); // Hide reCAPTCHA
-        setIsCallBackDisable(true);
-    };
+    // const onRecaptchaError = () => {
+    //     alert("Please complete the reCAPTCHA!");
+    //     // setShowRecaptcha(false); // Hide reCAPTCHA
+    //     setIsCallBackDisable(true);
+    // };
 
     const handleSubmitOtp = () => {
         // const correctOtp = ['1', '2', '3', '4']; // Replace with actual OTP logic
@@ -235,14 +235,14 @@ const LeadFormV2 = () => {
         if (randomOtp == userDetails.otp) {
             setThumbsUp(true);
             setThumbsDown(false);
-            setShowRecaptcha(true);
+            // setShowRecaptcha(true);
             setIsCallBackDisable(false);
 
         } else {
             setThumbsDown(true);
             setThumbsUp(false);
             setIsCallBackDisable(true);
-            setShowRecaptcha(false);
+            // setShowRecaptcha(false);
 
 
         }
