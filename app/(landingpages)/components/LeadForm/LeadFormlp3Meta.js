@@ -8,7 +8,7 @@ import Cookies from "js-cookie";
 import { HiThumbUp } from "react-icons/hi";
 import { HiThumbDown } from "react-icons/hi";
 import Image from "next/image";
-import ReCAPTCHA from "react-google-recaptcha";
+// import ReCAPTCHA from "react-google-recaptcha";
 
 
 
@@ -40,7 +40,7 @@ const LeadFormV2 = () => {
     const [showThumbsDown, setThumbsDown] = useState(false);
     const [showOtpInput, setOtpInput] = useState(false);
     const [isCallBackDisable, setIsCallBackDisable] = useState(true);
-    // const [showRecaptcha, setShowRecaptcha] = useState(false);
+    const [showRecaptcha, setShowRecaptcha] = useState(false);
 
     // astrix
     const [isFocusedFullName, setIsFocusedFullName] = useState(false);
@@ -235,13 +235,14 @@ const LeadFormV2 = () => {
         if (randomOtp == userDetails.otp) {
             setThumbsUp(true);
             setThumbsDown(false);
-            // setShowRecaptcha(true);
+            setShowRecaptcha(true);
             setIsCallBackDisable(false);
 
         } else {
             setThumbsDown(true);
             setThumbsUp(false);
             setIsCallBackDisable(true);
+            setShowRecaptcha(false);
 
 
         }
@@ -518,17 +519,19 @@ const LeadFormV2 = () => {
                             </>
                         )}
 
-
+                        {/* <ReCAPTCHA
+                                    sitekey={process.env.NEXT_GOOGLE_RECAPTCHA_SITE_KEY} // Replace with your reCAPTCHA site key
+                                    // secretkey="6Le2YroqAAAAALmMSzxYIxNo2v1wGpIU5bE4SCky"
+                                    onChange={onRecaptchaSuccess}
+                                    onErrored={onRecaptchaError}
+                                /> */}
+                        {/* {showRecaptcha &&  */}
                         <div className="mb-3">
-                            {/* <div className="text-black">Testing</div> */}
-                            <ReCAPTCHA
-                                sitekey="6Le2YroqAAAAALVhH2JUGDn9ZO9cIvxgiwn29g8H" // Replace with your reCAPTCHA site key
-                                // secretkey="6Le2YroqAAAAALmMSzxYIxNo2v1wGpIU5bE4SCky"
-                                onChange={onRecaptchaSuccess}
-                                onErrored={onRecaptchaError}
-                            />
+                        {/* <div className="text-black">Testing</div> */}
+                            <div class="g-recaptcha" data-sitekey="6LdcQrsqAAAAAG576F3Q8vyNkRiBpjSHrAUyq2hQ"> </div>
                         </div>
-                       
+                        {/* } */}
+
 
                         <div className="flex items-center justify-center mb-2 xl:mb-2 text-center">
                             <input
