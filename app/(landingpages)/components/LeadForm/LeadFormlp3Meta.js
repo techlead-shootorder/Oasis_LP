@@ -375,6 +375,57 @@ const LeadFormV2 = () => {
         }
     };
 
+
+    // Testing below funcitons
+      // Callback function for reCAPTCHA
+
+      const handleRecaptcha = (response) => {
+        if (response) {
+          console.log('User verified reCAPTCHA!');
+          console.log('reCAPTCHA Response Token:', response);
+    
+          // Optionally, send the token to your backend for verification
+          verifyRecaptchaOnServer(response);
+        } else {
+          console.log('reCAPTCHA not verified.');
+        }
+      };
+    
+      // Verify reCAPTCHA response on the server
+      const verifyRecaptchaOnServer = async (token) => {
+        try {
+          const res = await fetch('/api/verify-recaptcha', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ token }),
+          });
+          const data = await res.json();
+          console.log('Server verification result:', data);
+        } catch (error) {
+          console.error('Error verifying reCAPTCHA on server:', error);
+        }
+      };
+    
+      // Load Google reCAPTCHA script dynamically
+      useEffect(() => {
+        const script = document.createElement('script');
+        script.src = 'https://www.google.com/recaptcha/api.js';
+        script.async = true;
+        script.defer = true;
+        document.head.appendChild(script);
+    
+        // Define the global callback function
+        window.correctCaptcha = handleRecaptcha;
+    
+        return () => {
+          // Cleanup script and callback
+          document.head.removeChild(script);
+          delete window.correctCaptcha;
+        };
+      }, []);
+  
+  
+
     return (
         // bg-[url(https://images.oasisindia.in/website/lp/campaign/Form_bg.png)]
         <>
@@ -528,7 +579,7 @@ const LeadFormV2 = () => {
                         {/* {showRecaptcha &&  */}
                         <div className="mb-3">
                         {/* <div className="text-black">Testing</div> */}
-                            <div class="g-recaptcha" data-sitekey="6LdcQrsqAAAAAG576F3Q8vyNkRiBpjSHrAUyq2hQ"> </div>
+                            <div class="g-recaptcha" data-sitekey="6LdcQrsqAAAAAG576F3Q8vyNkRiBpjSHrAUyq2hQ" data-callback="correctCaptcha"> </div>
                         </div>
                         {/* } */}
 

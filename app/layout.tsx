@@ -43,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${questrial.variable} ${pattaya.variable}`}>
       <head>
-      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+      {/* <script src="https://www.google.com/recaptcha/api.js" async defer></script> */}
         {/* <noscript>
           <img
             height="1"
