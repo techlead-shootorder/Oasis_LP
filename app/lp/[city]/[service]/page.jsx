@@ -98,7 +98,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
     // read route params
     let { city, service } = params;
-
+  
     if (city == 'meta' || city == 'google' || city == 'meta1' || city == 'google1') {
         city = 'india';
 
@@ -117,6 +117,7 @@ export default function Page({ params }) {
     let { city, service } = params;
     let isMeta = false;
     let metanum = false;
+      let isGoogle = city == 'google1'
     if (city == 'meta' || city == 'google' || city == 'meta1' || city == 'google1') {
         if (city == 'meta1' || city == 'google1') {
             isMeta = true;
@@ -162,7 +163,7 @@ export default function Page({ params }) {
         <div className="relative overflow-y-auto">
 
             <header id="headerlp3" className="">
-                <HeaderTesting center={filteredCity} metanum={metanum} />
+                <HeaderTesting center={filteredCity} metanum={metanum} googel1num={isGoogle}/>
             </header>
             {/* <StickyButtonScreenlp3 center={filteredCity} /> */}
             <main>
@@ -211,7 +212,7 @@ export default function Page({ params }) {
         </Link>
       </div> */}
 
-            <PhoneCall center={filteredCity} />
+           {!isGoogle && <PhoneCall center={filteredCity} />}
 
 
 

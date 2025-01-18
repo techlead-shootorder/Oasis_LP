@@ -11,6 +11,7 @@ export const normalizeCityParams = (city) => {
     city: isMetaGoogle ? 'india' : city,
     isMeta: ['meta1', 'google1'].includes(city),
     metanum: ['meta1', 'meta'].includes(city),
+    googel1num: ['google1'].includes(city),
     internal: ['internal'].includes(city)
   };
 };

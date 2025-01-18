@@ -69,7 +69,7 @@ const PhoneSection = memo(({ center, metanum }) => {
 PhoneSection.displayName = 'PhoneSection';
 
 // Desktop Header
-const DesktopHeader = memo(({ center, metanum }) => (
+const DesktopHeader = memo(({ center, metanum, googel1num }) => (
   <nav className="hidden md:block max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 bg-primary">
     <div className="px-2 lg:px-4 xl:px-4 2xl:px-8 flex justify-between ">
       <div className="flex items-center">
@@ -84,7 +84,7 @@ const DesktopHeader = memo(({ center, metanum }) => (
       priority={true}
       />
       </div>
-      <PhoneSection center={center} metanum={metanum} />
+      {!googel1num && <PhoneSection center={center} metanum={metanum} />}
     </div>
   </nav>
 ));
@@ -113,14 +113,14 @@ const MobileHeader = memo(() => (
 MobileHeader.displayName = 'MobileHeader';
 
 // Main Header Component
-const HeaderTesting = ({ center, metanum,}) => {
+const HeaderTesting = ({ center, metanum, googel1num}) => {
 
-
+console.log("is google", googel1num)
  
 
   return (
     <>
-      <DesktopHeader center={center} metanum={metanum} />
+      <DesktopHeader center={center} metanum={metanum} googel1num={googel1num}/>
       <MobileHeader />
      
     </>

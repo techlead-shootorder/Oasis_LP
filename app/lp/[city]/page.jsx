@@ -97,7 +97,7 @@ export async function generateStaticParams() {
 
 const Page = memo(({ params }) => {
   const { city: rawCity } = params;
-  const { city, isMeta, metanum, internal } = normalizeCityParams(rawCity);
+  const { city, isMeta, metanum, googel1num, internal  } = normalizeCityParams(rawCity);
   const filteredCity = useMemo(() => masterlp3.find((center) => center.center_name === city), [city]);
   const nearByCenters = useMemo(() => nearByAreas.find((center)=> center.center_name === city), [city]); 
   const { reviews: filteredReview, doctors: filteredDoctors, videos: cityVideos } =
@@ -107,7 +107,7 @@ const Page = memo(({ params }) => {
     <>
       <section className="relative overflow-y-auto">
         <header id="headerlp3">
-          <HeaderTesting center={filteredCity} metanum={metanum} />
+          <HeaderTesting center={filteredCity} metanum={metanum} googel1num={googel1num}/>
         </header>
 
         <Suspense fallback={<MinimalLoader />}>
@@ -197,9 +197,9 @@ const Page = memo(({ params }) => {
               <DynamicComponents.FooterV2 />
             </Suspense>
 
-            <Suspense fallback={<MinimalLoader />}>
+            {!googel1num && <Suspense fallback={<MinimalLoader />}>
               <DynamicComponents.PhoneCall center={filteredCity} metanum={metanum} />
-            </Suspense>
+            </Suspense>}
 
 
           
