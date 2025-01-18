@@ -4,7 +4,7 @@ export default async function handler(req, res) {
     }
   
     const { token } = req.body;
-    const secretKey = '6LdcQrsqAAAAAG576F3Q8vyNkRiBpjSHrAUyq2hQ'; // Replace with your secret key from Google reCAPTCHA
+    const secretKey = '6Ld-zaMqAAAAAGu_oVb0S8fB5naUyFWNK7mb3MkE'; // Replace with your secret key from Google reCAPTCHA
   
     try {
       const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {

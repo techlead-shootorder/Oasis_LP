@@ -8,7 +8,7 @@ import Cookies from "js-cookie";
 import { HiThumbUp } from "react-icons/hi";
 import { HiThumbDown } from "react-icons/hi";
 import Image from "next/image";
-// import ReCAPTCHA from "react-google-recaptcha";
+import ReCAPTCHA from "react-google-recaptcha";
 
 
 
@@ -40,7 +40,7 @@ const LeadFormV2 = () => {
     const [showThumbsDown, setThumbsDown] = useState(false);
     const [showOtpInput, setOtpInput] = useState(false);
     const [isCallBackDisable, setIsCallBackDisable] = useState(true);
-    // const [showRecaptcha, setShowRecaptcha] = useState(false);
+    const [showRecaptcha, setShowRecaptcha] = useState(false);
 
     // astrix
     const [isFocusedFullName, setIsFocusedFullName] = useState(false);
@@ -212,18 +212,18 @@ const LeadFormV2 = () => {
 
     };
 
-    // const onRecaptchaSuccess = (token) => {
-    //     console.log("reCAPTCHA token:", token);
-    //     // Proceed with your button action here, e.g., send OTP
-    //     // setShowRecaptcha(false); // Hide reCAPTCHA
-    //     setIsCallBackDisable(false);
-    // };
+    const onRecaptchaSuccess = (token) => {
+        console.log("reCAPTCHA token:", token);
+        // Proceed with your button action here, e.g., send OTP
+        // setShowRecaptcha(false); // Hide reCAPTCHA
+        setIsCallBackDisable(false);
+    };
 
-    // const onRecaptchaError = () => {
-    //     alert("Please complete the reCAPTCHA!");
-    //     // setShowRecaptcha(false); // Hide reCAPTCHA
-    //     setIsCallBackDisable(true);
-    // };
+    const onRecaptchaError = () => {
+        alert("Please complete the reCAPTCHA!");
+        // setShowRecaptcha(false); // Hide reCAPTCHA
+        setIsCallBackDisable(true);
+    };
 
     const handleSubmitOtp = () => {
         // const correctOtp = ['1', '2', '3', '4']; // Replace with actual OTP logic
@@ -235,14 +235,12 @@ const LeadFormV2 = () => {
         if (randomOtp == userDetails.otp) {
             setThumbsUp(true);
             setThumbsDown(false);
-            // setShowRecaptcha(true);
-            setIsCallBackDisable(false);
+            setShowRecaptcha(true);
 
         } else {
             setThumbsDown(true);
             setThumbsUp(false);
             setIsCallBackDisable(true);
-            // setShowRecaptcha(false);
 
 
         }
@@ -376,55 +374,7 @@ const LeadFormV2 = () => {
     };
 
 
-    // Testing below funcitons
-      // Callback function for reCAPTCHA
 
-      const handleRecaptcha = (response) => {
-        if (response) {
-          console.log('User verified reCAPTCHA!');
-          console.log('reCAPTCHA Response Token:', response);
-    
-          // Optionally, send the token to your backend for verification
-          verifyRecaptchaOnServer(response);
-        } else {
-          console.log('reCAPTCHA not verified.');
-        }
-      };
-    
-      // Verify reCAPTCHA response on the server
-      const verifyRecaptchaOnServer = async (token) => {
-        try {
-          const res = await fetch('/api/verify-recaptcha', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ token }),
-          });
-          const data = await res.json();
-          console.log('Server verification result:', data);
-        } catch (error) {
-          console.error('Error verifying reCAPTCHA on server:', error);
-        }
-      };
-    
-      // Load Google reCAPTCHA script dynamically
-      useEffect(() => {
-        const script = document.createElement('script');
-        script.src = 'https://www.google.com/recaptcha/api.js';
-        script.async = true;
-        script.defer = true;
-        document.head.appendChild(script);
-    
-        // Define the global callback function
-        window.correctCaptcha = handleRecaptcha;
-    
-        return () => {
-          // Cleanup script and callback
-          document.head.removeChild(script);
-          delete window.correctCaptcha;
-        };
-      }, []);
-  
-  
 
     return (
         // bg-[url(https://images.oasisindia.in/website/lp/campaign/Form_bg.png)]
@@ -570,18 +520,33 @@ const LeadFormV2 = () => {
                             </>
                         )}
 
-                        {/* <ReCAPTCHA
-                                    sitekey={process.env.NEXT_GOOGLE_RECAPTCHA_SITE_KEY} // Replace with your reCAPTCHA site key
-                                    // secretkey="6Le2YroqAAAAALmMSzxYIxNo2v1wGpIU5bE4SCky"
+                        {showThumbsUp && (
+                            <div className="flex items-center justify-center mb-3">
+                                <HiThumbUp className="text-green-500 text-2xl mr-2" />
+                                <p className="text-primary text-xs">
+                                    Thank you for the verification.<br /> Please click the button below.
+                                </p>
+                            </div>
+                        )}
+                        {showThumbsDown && (
+                            <div className="flex items-center justify-center mb-3">
+                                <HiThumbDown className="text-red-500 text-2xl mr-2" />
+                                <p className="text-primary text-xs">
+                                    Invalid input.<br />Please enter the correct phone number & OTP.
+                                </p>
+                            </div>
+                        )}
+
+                        {showRecaptcha && (
+                            <div className="mb-3">
+                                {/* <div className="text-black">Testing</div> */}
+                                <ReCAPTCHA
+                                    sitekey="6Ld-zaMqAAAAAGu_oVb0S8fB5naUyFWNK7mb3MkE" // Replace with your reCAPTCHA site key
                                     onChange={onRecaptchaSuccess}
                                     onErrored={onRecaptchaError}
-                                /> */}
-                        {/* {showRecaptcha &&  */}
-                        <div className="mb-3">
-                        {/* <div className="text-black">Testing</div> */}
-                            <div class="g-recaptcha" data-sitekey="6LdcQrsqAAAAAG576F3Q8vyNkRiBpjSHrAUyq2hQ" data-callback="correctCaptcha"> </div>
-                        </div>
-                        {/* } */}
+                                />
+                            </div>
+                        )}
 
 
                         <div className="flex items-center justify-center mb-2 xl:mb-2 text-center">
@@ -602,22 +567,7 @@ const LeadFormV2 = () => {
 
                     <div className="bg-primary py-4 px-4">
 
-                        {showThumbsUp && (
-                            <div className="flex items-center justify-center mb-3">
-                                <HiThumbUp className="text-green-500 text-2xl mr-2" />
-                                <p className="text-white text-xs">
-                                    Thank you for the verification.<br /> Please click the button below.
-                                </p>
-                            </div>
-                        )}
-                        {showThumbsDown && (
-                            <div className="flex items-center justify-center mb-3">
-                                <HiThumbDown className="text-red-500 text-2xl mr-2" />
-                                <p className="text-white text-xs">
-                                    Invalid input.<br />Please enter the correct phone number & OTP.
-                                </p>
-                            </div>
-                        )}
+
 
 
 

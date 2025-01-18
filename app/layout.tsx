@@ -3,7 +3,7 @@
 import type { Metadata } from "next";
 import { Questrial, Pattaya } from "next/font/google";
 import "./globals.css";
-// import AnalyticsProvider, { PageViewTracker } from '@/app/(landingpages)/components/Analytics/Analytics';
+import AnalyticsProvider, { PageViewTracker } from '@/app/(landingpages)/components/Analytics/Analytics';
 
 const questrial = Questrial({
   subsets: ["latin"],
@@ -44,23 +44,23 @@ export default function RootLayout({
     <html lang="en" className={`${questrial.variable} ${pattaya.variable}`}>
       <head>
       {/* <script src="https://www.google.com/recaptcha/api.js" async defer></script> */}
-        {/* <noscript>
+        <noscript>
           <img
             height="1"
             width="1"
             style={{ display: "none" }}
             src={`https://www.facebook.com/tr?id=${process.env.NEXT_PUBLIC_META_PIXEL_ID}&ev=PageView&noscript=1`}
           />
-        </noscript> */}
+        </noscript>
       </head>
       <body className="text-neutral bg-white font-questrial">
-        {/* <AnalyticsProvider
+        <AnalyticsProvider
           gtmId={process.env.NEXT_PUBLIC_GTM_ID}
           metaPixelId={process.env.NEXT_PUBLIC_META_PIXEL_ID}
-        > */}
-          {/* <PageViewTracker /> */}
+        >
+          <PageViewTracker />
           {children}
-        {/* </AnalyticsProvider> */}
+        </AnalyticsProvider>
       </body>
     </html>
   );
