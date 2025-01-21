@@ -8,16 +8,7 @@ const nextConfig = {
           headers: [
             {
               key: 'Content-Security-Policy',
-              value: `
-                script-src 'self' 'unsafe-inline' 'unsafe-eval' 
-                https://www.googletagmanager.com 
-                https://connect.facebook.net 
-                https://www.google.com 
-                https://www.gstatic.com;
-                frame-src 'self' https://www.google.com;
-                img-src 'self' https://www.facebook.com data:;
-                connect-src 'self' https://www.google.com https://www.gstatic.com;
-              `.replace(/\s{2,}/g, ' ').trim(), // Clean up whitespace for better readability
+              value: `frame-ancestors 'self' https://www.youtube.com https://youtube.com`
             },
           ],
         }
