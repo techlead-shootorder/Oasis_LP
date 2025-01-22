@@ -1,21 +1,33 @@
 'use client'
 import React, { useState } from 'react'
 
-const ExploreCenterslp3 = ({ nearByCenters }) => {
+const ExploreCenterslp3 = ({ nearByCenters, service }) => {
 
     
-
+    const [showCentre, setShowCentre] = useState(false);
     const scrollToForm = () => {
         const formElement = document.getElementById("heroBannerHeading");
         formElement.scrollIntoView({ behavior: "smooth" });
     };
-
-    const [showCentre, setShowCentre] = useState(false);
+   
+    const getService = (service)=>{
+        switch(service){
+            case 'iui':
+                return 'IUI'
+                 case 'ivf':
+                return 'IVF'
+                 case 'fertility':
+                return 'Fertility'
+                 default :
+                return 'IVF'
+        }
+    }
+    
     return (
         <div className='pb-8'>
             <div className='flex justify-center'>
                 <button className='bg-[#9678B6] font-medium py-2 px-6 text-white flex items-center gap-6 rounded-[7px]' onClick={() => setShowCentre(!showCentre)}>
-                    Explore IVF Centre Near You
+                    Explore {getService(service)} Centre Near You
                     <span>
                         {showCentre ? <svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 7.92896L7.67713 1.25183C7.8947 1.03426 8.24744 1.03426 8.46501 1.25183L15.1421 7.92896" stroke="white" stroke-width="1.5" stroke-linecap="round" />
@@ -42,7 +54,7 @@ const ExploreCenterslp3 = ({ nearByCenters }) => {
           key={index}
           onClick={scrollToForm}
         >
-          Best IVF Centre in {item}
+          Best {getService(service)} Centre in {item}
         </li>
       ))}
 </ul>

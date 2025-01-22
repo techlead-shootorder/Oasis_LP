@@ -29,6 +29,10 @@ const Treatmentlp3 = dynamic(() => import('../../../(landingpages)/components/Tr
     ssr: true,
 });
 
+const IUITreatmentlp3 = dynamic(() => import('../../../(landingpages)/components/Treatment/IUITreatmentlp3'), {
+    ssr: true,
+});
+
 const PlanInfolp3 = dynamic(() => import('../../../(landingpages)/components/PlanInfo/PlanInfolp3'), {
     ssr: true,
 });
@@ -169,9 +173,10 @@ export default function Page({ params }) {
             <main>
                 <Herolp3 center={filteredCity} service={service} isMeta={isMeta} />
                 <div className={`mt-[20px] md:mt-0`}>
-                    <StatisticBannerV2 />
+                    <StatisticBannerV2 center={filteredCity} service={service}/>
                 </div>
-                <Treatmentlp3 center={filteredCity} service={service} />
+                {service != 'iui' && <Treatmentlp3 center={filteredCity} service={service} />}
+               {service == 'iui' && <IUITreatmentlp3 center={filteredCity} service={service} />}
                 <SpeciaListslp3 service={service} isMeta={isMeta} />
                 <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 py-10 lg:py-16 bg-[url(/images/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat mb-10 lg:mb-16 relative">
                     <Reviewlp3 center={filteredCity} filteredReview={filteredReview} service={service} />
@@ -182,10 +187,10 @@ export default function Page({ params }) {
                 <AwardV2 service={service} />
                 <BestDoctorslp3 center={filteredCity} filteredDoctors={filteredDoctors} isMeta={isMeta} service={service} />
                 <IVFClinicSliderlp3 center={filteredCity} cityVideos={cityVideos} service={service} />
-                <PlanInfolp3 isMeta={isMeta} />
+                {service != 'iui' && <PlanInfolp3 isMeta={isMeta} />}
 
-                <Faqlp3 />
-                {city != 'india' && <ExploreCenterslp3 nearByCenters={nearByCenters} />}
+                <Faqlp3 service={service} />
+                {city != 'india' && <ExploreCenterslp3 nearByCenters={nearByCenters} service={service} />}
                 <FooterStickyButtonlp3 center={filteredCity} />
             </main>
 
