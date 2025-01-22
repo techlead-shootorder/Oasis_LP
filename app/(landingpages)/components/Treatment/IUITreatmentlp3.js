@@ -1,35 +1,35 @@
 "use client";
 
-import React, { useState, useEffect, useRef, memo, Suspense } from "react";
+import React, { useState, useEffect, useRef, memo } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import IUIInitialCards from "./IUIInitialCards";
 
 
 // Responsive configuration
-const responsive = {
-    superLargeDesktop: {
-        breakpoint: { max: 3000, min: 1280 },
-        items: 4,
-        slidesToSlide: 4
-    },
-    desktop: {
-        breakpoint: { max: 1219, min: 768 },
-        items: 3,
-        slidesToSlide: 3
-    },
-    tablet: {
-        breakpoint: { max: 767, min: 640 },
-        items: 2,
-        slidesToSlide: 2
-    },
-    mobile: {
-        breakpoint: { max: 639, min: 0 },
-        items: 2,
-        slidesToSlide: 2,
-        // partialVisibilityGutter: 80
-    }
-};
+// const responsive = {
+//     superLargeDesktop: {
+//         breakpoint: { max: 3000, min: 1280 },
+//         items: 4,
+//         slidesToSlide: 4
+//     },
+//     desktop: {
+//         breakpoint: { max: 1219, min: 768 },
+//         items: 3,
+//         slidesToSlide: 3
+//     },
+//     tablet: {
+//         breakpoint: { max: 767, min: 640 },
+//         items: 2,
+//         slidesToSlide: 2
+//     },
+//     mobile: {
+//         breakpoint: { max: 639, min: 0 },
+//         items: 2,
+//         slidesToSlide: 2,
+//         // partialVisibilityGutter: 80
+//     }
+// };
 
 // Loading Skeleton Component
 const CardSkeleton = memo(() => (
@@ -69,13 +69,13 @@ const ResponsiveSkeleton = memo(() => (
 
 ResponsiveSkeleton.displayName = 'ResponsiveSkeleton';
 // Dynamic carousel import with responsive loading
-const Carousel = dynamic(
-    () => import("react-multi-carousel").then(mod => mod.default),
-    {
-        ssr: false,
-        loading: () => <ResponsiveSkeleton />
-    }
-);
+// const Carousel = dynamic(
+//     () => import("react-multi-carousel").then(mod => mod.default),
+//     {
+//         ssr: false,
+//         loading: () => <ResponsiveSkeleton />
+//     }
+// );
 
 // Optimized Image Component
 const OptimizedImage = memo(({ src, alt, ...props }) => (
@@ -158,26 +158,26 @@ CarouselItem.displayName = 'CarouselItem';
 // Main Component
 const IUITreatmentlp3 = memo(({ center, service }) => {
     const [activeTab, setActiveTab] = useState(0);
-    const [activeButton, setActiveButton] = useState('next');
-    const [treatmentData, setTreatmentData] = useState({});
-    const [isLoading, setIsLoading] = useState(true);
+    // const [activeButton, setActiveButton] = useState('next');
+    // const [treatmentData, setTreatmentData] = useState({});
+    // const [isLoading, setIsLoading] = useState(true);
     const [showOtherTreatments, setShowOtherTreatments] = useState(false);
 
-    const [selectedTreatment, setSelectedTreatment] = useState('Other Advanced Treatments');
+    // const [selectedTreatment, setSelectedTreatment] = useState('Other Advanced Treatments');
     const [showModal, setShowModal] = useState(false);
 
     const modalRef = useRef(null);
 
-    const tabs = [
-        "Infertility Treatments",
-        "Infertility Testing",
-        "Advanced Treatments",
-        // "Fertility Preservations"
-    ];
+    // const tabs = [
+    //     "Infertility Treatments",
+    //     "Infertility Testing",
+    //     "Advanced Treatments",
+    //     // "Fertility Preservations"
+    // ];
 
     useEffect(() => {
         const loadData = async () => {
-            setIsLoading(true);
+            // setIsLoading(true);
             const dataMap = {
                 0: 'iuiInfertilityTreatment',
                 1: 'infertilityTesting',
@@ -187,12 +187,12 @@ const IUITreatmentlp3 = memo(({ center, service }) => {
 
             try {
                 const data = await import(`@/util/lp/${dataMap[activeTab]}Data`);
-                setTreatmentData(data.default);
+                // setTreatmentData(data.default);
             } catch (error) {
                 console.error('Error loading treatment data:', error);
-                setTreatmentData([]);
+                // setTreatmentData([]);
             } finally {
-                setIsLoading(false);
+                // setIsLoading(false);
             }
         };
 
@@ -229,19 +229,19 @@ const IUITreatmentlp3 = memo(({ center, service }) => {
     //     }
     // };
 
-    const handleOptionClick = (e, index) => {
-        setSelectedTreatment(e.target.innerText);
-        setShowModal(false);
-        setActiveTab(index);
-        setShowOtherTreatments(true);
+    // const handleOptionClick = (e, index) => {
+    //     // setSelectedTreatment(e.target.innerText);
+    //     setShowModal(false);
+    //     setActiveTab(index);
+    //     setShowOtherTreatments(true);
 
-    }
+    // }
 
-    const handleButtonClick = (event) => {
+    // const handleButtonClick = (event) => {
     
-        setShowModal((prev) => !prev);
-        event.stopPropagation(); // Prevent the event from bubbling up
-    };
+    //     setShowModal((prev) => !prev);
+    //     event.stopPropagation(); // Prevent the event from bubbling up
+    // };
 
     return (
         <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 mb-10 lg:mb-16 py-8 xl:py-10 rounded-3xl bg-[url(/images/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat">
