@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef, memo } from "react";
 import Image from "next/image";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import IUIInitialCards from "./IUIInitialCards";
 
 
@@ -157,11 +157,11 @@ CarouselItem.displayName = 'CarouselItem';
 
 // Main Component
 const IUITreatmentlp3 = memo(({ center, service }) => {
-    const [activeTab, setActiveTab] = useState(0);
+    // const [activeTab, setActiveTab] = useState(0);
     // const [activeButton, setActiveButton] = useState('next');
     // const [treatmentData, setTreatmentData] = useState({});
     // const [isLoading, setIsLoading] = useState(true);
-    const [showOtherTreatments, setShowOtherTreatments] = useState(false);
+    // const [showOtherTreatments, setShowOtherTreatments] = useState(false);
 
     // const [selectedTreatment, setSelectedTreatment] = useState('Other Advanced Treatments');
     const [showModal, setShowModal] = useState(false);
@@ -178,26 +178,26 @@ const IUITreatmentlp3 = memo(({ center, service }) => {
     useEffect(() => {
         const loadData = async () => {
             // setIsLoading(true);
-            const dataMap = {
-                0: 'iuiInfertilityTreatment',
-                1: 'infertilityTesting',
-                2: 'advancedTreatments',
-                3: 'fertilityPreservations'
-            };
+            // const dataMap = {
+            //     0: 'iuiInfertilityTreatment',
+            //     1: 'infertilityTesting',
+            //     2: 'advancedTreatments',
+            //     3: 'fertilityPreservations'
+            // };
 
-            try {
-                const data = await import(`@/util/lp/${dataMap[activeTab]}Data`);
+            // try {
+                // const data = await import(`@/util/lp/${dataMap[activeTab]}Data`);
                 // setTreatmentData(data.default);
-            } catch (error) {
+            // } catch (error) {
                 console.error('Error loading treatment data:', error);
                 // setTreatmentData([]);
-            } finally {
+            // } finally {
                 // setIsLoading(false);
-            }
+            // }
         };
 
         loadData();
-    }, [activeTab]);
+    }, []);
 
     // Update the useEffect for click outside handling
     useEffect(() => {
@@ -305,60 +305,7 @@ const IUITreatmentlp3 = memo(({ center, service }) => {
 
 
 
-            {showOtherTreatments && <>
-
-                {/* Treaments Buttons */}
-
-                {/* <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-2.5 lg:gap-4 mt-6 justify-center justify-items-center">
-                    {tabs.map((tab, index) => (
-                        <button
-                            key={index}
-                            className={`inline-block w-full py-2 xl:px-6 2xl:px-6 3xl:px-12 rounded-lg lg:rounded-xl border border-primary transition-all duration-300 ${activeTab === index
-                                ? "bg-[#874487] text-white"
-                                : "text-primary hover:bg-primary/10"
-                                }`}
-                            onClick={() => setActiveTab(index)}
-                        >
-                            {tab}
-                        </button>
-                    ))}
-                </div> */}
-
-                {/* Treatments Carousel */}
-                {/* <div className="w-full mt-8 lg:mt-10">
-                      <div className="">
-                    <Suspense fallback={<ResponsiveSkeleton />}>
-                        {isLoading ? (
-                            <ResponsiveSkeleton />
-                        ) : (
-                            <Carousel
-                                responsive={responsive}
-                                partialVisbile
-                                className="pb-16 lg:pb-20 md:flex md:justify-center"
-                                infinite={true}
-                                showDots={false}
-                                ssr={false}
-                                arrows={false}
-                                swipeable={true}
-                                customButtonGroup={
-                                    <ButtonGroup
-                                        activeButton={activeButton}
-                                        setActiveButton={setActiveButton}
-                                    />
-                                }
-                            >
-                                {Array.isArray(treatmentData) && treatmentData.map((item, index) => (
-                                    <CarouselItem
-                                        key={`${activeTab}-item-${index}`}
-                                        item={item}
-                                    />
-                                ))}
-                            </Carousel>
-                        )}
-                    </Suspense>
-                    </div>
-                </div> */}
-            </>}
+           
         </section>
     );
 });
