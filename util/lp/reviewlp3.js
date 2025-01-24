@@ -1254,9 +1254,9 @@ const review = [
     "profile_picture": null
   },
   {
-    "id": 100,
+    "id": 100,  
     "null": null,
-    "review_link": "https://maps.app.goo.gl/2P4vyoUXe36x13Th9",
+    "review_link": "https://maps.app.goo.gl/2P4vyoUXe36x13Th9", 
     "center_name": "Belagavi",
     "clinic_location": "belagavi",
     "rating": 5,
