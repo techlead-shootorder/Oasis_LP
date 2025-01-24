@@ -7,14 +7,14 @@ const data = [
     title: "Increase Sperm Count",
     description:
       "Focused treatments and lifestyle guidance are provided to naturally or medically enhance sperm count, helping men with low sperm production achieve better fertility outcomes.",
-    image: "/images/lp/treatments/updated/Infertility_Treatments/IVF.jpg",
+    image: "/images/lp/treatments/updated/Male_Fertility_Treatments/Improve Sperm Count.png",
   },
   {
     id: 2,
     title: "Improve Sperm Quality",
     description:
       "Advanced therapies and techniques aim to improve sperm motility, morphology, and DNA integrity, boosting the chances of successful fertilization and healthy pregnancy outcomes.",
-    image: "/images/lp/treatments/updated/Infertility_Treatments/IVM.png",
+    image: "/images/lp/treatments/updated/Male_Fertility_Treatments/Improve Sperm Quality.png",
   }
 ]
 

@@ -30,7 +30,7 @@ BannerSkeleton.displayName = "BannerSkeleton";
 // Constants
 const BANNER_IMAGES = {
   desktop: {
-    src: "/images/lp/lp3/desktop_banner_paidlp.webp",
+    src: "/images/lp/lp3/male-fertility-banner.png",
     width: 1728,
     height: 787,
     className: "w-full object-cover absolute left-0 top-0 hidden md:block h-full",
@@ -61,23 +61,25 @@ if (typeof window !== 'undefined') {
 
 // Memoized Image Component
 const HeroBanner = memo(({ type, ...props }) => (
-  <Image
-    {...BANNER_IMAGES[type]}
-    alt="Banner"
-    priority={true}
-    quality={85}
-    fetchPriority="high"
-    decoding="async"
-    {...props}
-  />
+  // <div className="relative">
+    <Image
+      {...BANNER_IMAGES[type]}
+      alt="Banner"
+      priority={true}
+      quality={85}
+      fetchPriority="high"
+      decoding="async"
+      {...props}
+    />
+   /* <div className="absolute inset-0 bg-black opacity-50 z-10" /> */
+  //  </div>
 ));
 HeroBanner.displayName = "HeroBanner";
 
 // Memoized Content Components
-const HeroHeading = memo(({ service, centerName }) => (
-  <h1 id="heroBannerHeading" className="absolute text-[26px] top-[10px] left-0 md:text-[26px] lg:text-4xl xl:text-5xl md:top-12 md:left-[24px] lg:left-[40px] xl:left-[60px] 2xl:left-[100px] z-10 font-semibold text-primary py-2 text-center md:text-left w-full md:w-auto">
-    Best <span className={service !== 'fertility' ? 'uppercase' : ''}>{service || "IVF"}</span> Clinic in{" "}
-    {centerName}
+const HeroHeading = memo(({}) => (
+  <h1 id="heroBannerHeading" className="absolute text-[26px] top-[10px] left-0 md:text-[26px] lg:text-4xl xl:text-5xl md:top-12 md:left-[24px] lg:left-[40px] xl:left-[60px] 2xl:left-[100px] z-20 font-semibold text-[#f3c1d7] py-2 text-center md:text-left w-full md:w-auto">
+   Best Male Fertility Clinic in India
   </h1>
 ));
 HeroHeading.displayName = "HeroHeading";
@@ -127,7 +129,6 @@ const formatCenterName = (name) => {
 const HeroV2 = ({ center, service, isMeta, internal }) => {
   const centerName = React.useMemo(() => formatCenterName(center?.center_name_heading), [center?.center_name_heading]);
 
-
   return (
     <Suspense fallback={
       <div className="animate-pulse bg-[#fde9f2] h-screen">
@@ -135,11 +136,12 @@ const HeroV2 = ({ center, service, isMeta, internal }) => {
         {/* <FormSkeleton /> */}
       </div>
     }>
-      <section id="herolp3" className="bg-[#fde9f2] lg:h-screen relative max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 md:mb-6 lg:mb-10">
+      <section id="herolp3" className="lg:h-screen relative max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 md:mb-6 lg:mb-10">
         <div>
           <HeroHeading service={service} centerName={centerName} />
           <div>
             <HeroBanner type="desktop" />
+            <div className="absolute inset-0 bg-black opacity-50 z-10 hidden sm:block" />
             <HeroBanner type="mobile" />
           </div>
         </div>

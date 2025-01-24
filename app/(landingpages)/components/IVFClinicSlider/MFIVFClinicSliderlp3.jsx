@@ -51,18 +51,18 @@ const VideoReelSkeleton = () => {
 const responsive = {
     desktop: {
         breakpoint: { max: 3000, min: 1024 },
-        items: 4,
-        slidesToSlide: 4
+        items: 1,
+        slidesToSlide: 1
     },
     tablet: {
         breakpoint: { max: 1024, min: 768 },
-        items: 3,
-        slidesToSlide: 3
+        items: 1,
+        slidesToSlide: 1
     },
     mobile: {
         breakpoint: { max: 767, min: 0 },
-        items: 2,
-        slidesToSlide: 2
+        items: 1,
+        slidesToSlide: 1
     }
 };
 
@@ -198,7 +198,7 @@ function IVFClinicSliderV2({ userAgentString, cityVideos }) {
                                                 className="w-10 sm:w-[114px]" 
                                             />
                                         </button>
-                                        <div className="relative z-10 aspect-[9/16] flex flex-col justify-end p-5 lg:py-8 bg-custom-gradient">
+                                        <div className="relative z-10 aspect-[9/16] sm:aspect-[16/9] flex flex-col justify-end p-5 lg:py-8 bg-custom-gradient">
                                             <div>
                                                 <h4 className="lg:text-xl text-white text-center">
                                                     {video?.VideoTitleText}
@@ -207,7 +207,7 @@ function IVFClinicSliderV2({ userAgentString, cityVideos }) {
                                         </div>
                                     </div> 
                                     : 
-                                    <div className="aspect-[9/16]">
+                                    <div className="aspect-[9/16] sm:aspect-[16/9]">
                                         <iframe 
                                             onClick={(event) => {
                                                 console.log('youEmbedVideoref', setYoutubeEvent(event?.target));

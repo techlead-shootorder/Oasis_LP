@@ -155,7 +155,7 @@ const CarouselItem = memo(({ item }) => (
 CarouselItem.displayName = 'CarouselItem';
 
 // Main Component
-const TreatmentsV2 = memo(({ center, service }) => {
+const TreatmentsV2 = memo(({ }) => {
     const [activeTab, setActiveTab] = useState(0);
     const [activeButton, setActiveButton] = useState('next');
     const [treatmentData, setTreatmentData] = useState({});
@@ -245,14 +245,15 @@ const TreatmentsV2 = memo(({ center, service }) => {
     return (
         <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 mb-10 lg:mb-16 py-8 xl:py-10 rounded-3xl bg-[url(/images/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat">
             <h2 className="text-[22px] md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-[52px] font-bold leading-tight text-primary text-center tracking-wide">
-                <span className={service !== 'fertility' ? 'uppercase' : ''}>
+                {/* <span className={service !== 'fertility' ? 'uppercase' : ''}>
                     {service ? service === 'fertility' ? 'Fertility' : service : "IVF"}
                 </span>{" "}
                 Treatment in{" "}
                 {center?.center_name
                     ?.split("-")
                     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-                    .join(" ")}
+                    .join(" ")} */}
+                    Male Fertility Treatment in India
             </h2>
 
             <MFIVFTreatmentlp3 />
@@ -263,7 +264,7 @@ const TreatmentsV2 = memo(({ center, service }) => {
                 <div className="relative">
                 
                     <button
-                        className="flex items-center justify-center gap-4 text-white bg-primary w-[280px] h-[40px] text-[16px] rounded-lg font-medium"
+                        className="flex items-center justify-center gap-4 text-white bg-primary px-6 py-2 text-[16px] rounded-lg font-medium"
                         onClick={handleButtonClick}
                     >
                         {selectedTreatment}
@@ -278,7 +279,7 @@ const TreatmentsV2 = memo(({ center, service }) => {
 
                     {showModal &&
                         <div
-                            className="bg-white shadow-md rounded-lg absolute top-12 p-4  flex flex-col gap-4 w-full z-50"
+                             className="bg-white shadow-md rounded-lg absolute top-12 left-1/2 transform -translate-x-1/2 p-4 flex flex-col gap-4 w-[300px] z-50"
                             ref={modalRef}
                         >
                             {tabs.map((tab, index) => (

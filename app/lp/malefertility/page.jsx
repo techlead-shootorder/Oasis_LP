@@ -46,8 +46,8 @@ const DynamicComponents = {
     () => import('@/app/(landingpages)/components/ChooseOasis/ChooseOasislp3'),
     { loading: () => <ComponentLoader /> }
   ),
-  AwardV2: dynamic(
-    () => import('@/app/(landingpages)/components/Award/AwardV2'),
+  MFAwardV2: dynamic(
+    () => import('@/app/(landingpages)/components/Award/MFAwardV2'),
     { loading: () => <ComponentLoader /> }
   ),
   MFBestDoctorslp3: dynamic(
@@ -106,7 +106,7 @@ const Page = memo(() => {
   return (
     <>
       <section className="relative overflow-y-auto">
-        <header id="headerlp3">
+        <header id="headerlp3 " className='h-[73px] sm:h-auto' >
     
           <HeaderTesting center={filteredCity} metanum={metanum} googel1num={googel1num}/>
         </header>
@@ -155,7 +155,7 @@ const Page = memo(() => {
             </Suspense> */}
 
             <Suspense fallback={<ComponentLoader />}>
-              <DynamicComponents.AwardV2 />
+              <DynamicComponents.MFAwardV2 />
             </Suspense>
 
             <Suspense fallback={<ComponentLoader />}>

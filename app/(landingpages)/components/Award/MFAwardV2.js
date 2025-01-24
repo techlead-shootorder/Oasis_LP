@@ -111,14 +111,13 @@ const CarouselButtons = memo(({ next, previous }) => (
 
 CarouselButtons.displayName = "CarouselButtons";
 
-const AwardSectionV2 = memo(({ service }) => {
- const serviceTitle = service?.toUpperCase() || 'IVF';
+const AwardSectionV2 = memo(() => {
+//  const serviceTitle = service?.toUpperCase() || 'IVF';
 
  return (
    <div className='max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 mb-10 lg:mb-16'>
      <h2 className='text-[22px] md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-[52px] !leading-[1.2] font-bold text-primary text-center tracking-wide'>
-       Highly Awarded {serviceTitle} Healthcare Clinic Chain in India
-      
+     Highly Awarded Male Fertility Healthcare Clinic Chain in India
      </h2>
 
      <div className='sm:hidden'>
