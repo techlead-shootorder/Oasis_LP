@@ -38,7 +38,7 @@ const BANNER_IMAGES = {
     sizes: "(min-width: 768px) 100vw, 0vw"
   },
   mobile: {
-    src: "/images/lp/lp3/mobile_banner_paidlp.webp",
+    src: "/images/lp/lp3/male-fertility-mobile.webp",
     width: 428,
     height: 452,
     className: "w-full object-cover absolute left-0 -top-[40px] md:hidden h-full",
@@ -136,13 +136,13 @@ const HeroV2 = ({ center, service, isMeta, internal }) => {
         {/* <FormSkeleton /> */}
       </div>
     }>
-      <section id="herolp3" className="lg:h-screen relative max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 md:mb-6 lg:mb-10">
+      <section id="herolp3" className="lg:h-screen relative max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 ">
         <div>
           <HeroHeading service={service} centerName={centerName} />
           <div>
             <HeroBanner type="desktop" />
-            <div className="absolute inset-0 bg-black opacity-50 z-10 hidden sm:block" />
             <HeroBanner type="mobile" />
+            <div className="absolute inset-0 h-[430px] sm:h-auto bg-black opacity-50 sm:z-10" />
           </div>
         </div>
 
