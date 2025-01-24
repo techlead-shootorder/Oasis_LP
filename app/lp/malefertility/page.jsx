@@ -106,7 +106,7 @@ const Page = memo(() => {
   return (
     <>
       <section className="relative overflow-y-auto">
-        <header id="headerlp3 " className='h-[73px] sm:h-auto' >
+        <header id="headerlp3" className='' >
     
           <HeaderTesting center={filteredCity} metanum={metanum} googel1num={googel1num}/>
         </header>

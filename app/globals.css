@@ -3,9 +3,14 @@
 @tailwind utilities;
 
 
-#headerlp3{
-    height: 72px;
-}
+
+
+@media (max-width: 639px) {
+    /* Your styles here */
+    #headerlp3{
+        height: 72px;
+    }
+  }
 .logow{
     width: 120px;
 }
