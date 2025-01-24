@@ -1252,7 +1252,7 @@ const review = [
     "review": null,
     "name": null,
     "profile_picture": null
-  },
+  }, 
   {
     "id": 100,  
     "null": null,
