@@ -71,11 +71,11 @@ function IVFClinicSliderV2({ userAgentString }) {
     const cityVideos = [
         {
             "id": "10",
-            "influencer_name": "Nisha",
-            "videoId": "8JGUqEfB0dM",
-            "VideoTitleText": "Creating Families: A Day in the Life at Oasis Fertility | Nisha",
+            "influencer_name": "Anchor Ravi",
+            "videoId": "V8CmRVweEd8",
+            "VideoTitleText": "Misconceptions about Male Infertility",
             "videoImage": "/images/home/influencers/Ravi.webp",
-            "youTubeVideoUrl": "https://www.youtube.com/shorts/8JGUqEfB0dM",
+            "youTubeVideoUrl": "https://www.youtube.com/shorts/V8CmRVweEd8",
             "isSelected": false,
         }
     ]
@@ -155,7 +155,7 @@ function IVFClinicSliderV2({ userAgentString }) {
     if (isLoading) return <VideoReelSkeleton />;
 
     return (
-        <div className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 mb-10 lg:mb-16">
+        <div className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 ">
             <div className="pb-16 lg:pb-16 mb-6 relative">
                 <div className="flex justify-center">
                     <h2 className='text-[22px] mb-[1rem] md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-[52px] !leading-[1.2] font-bold text-primary text-center tracking-wide'>
@@ -168,7 +168,7 @@ function IVFClinicSliderV2({ userAgentString }) {
                     className="my-6 lg:my-12 font-lato position-unset" 
                     partialVisbile 
                     itemClass="px-2"
-                    customButtonGroup={<ButtonGroup />}
+                    // customButtonGroup={<ButtonGroup />}
                     arrows={false}
                     swipeable={true}
                     ssr={true}
@@ -181,7 +181,7 @@ function IVFClinicSliderV2({ userAgentString }) {
                                 {video.isSelected == false ? 
                                     <div className="relative rounded-xl overflow-hidden">
                                         <Image 
-                                            className="absolute top-0 left-0 h-full w-full object-cover" 
+                                            className="absolute top-0 left-0 h-full w-full object-contain" 
                                             src={video?.videoImage} 
                                             width={359} 
                                             height={0} 

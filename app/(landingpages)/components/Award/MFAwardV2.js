@@ -64,7 +64,7 @@ const CarouselSkeleton = memo(() => (
 CarouselSkeleton.displayName = "CarouselSkeleton";
 
 const AwardCard = memo(({ data, isLast }) => (
- <div className={`lg:flex px-8 items-center text-center lg:text-start font-lato text-2xl gap-8 ${!isLast && 'border-[#9678B6] sm:border-r'}`}>
+ <div className={`lg:flex px-8 items-center text-center lg:text-start font-lato text-2xl gap-8  ${!isLast && 'border-[#9678B6] sm:border-r'}`}>
    <div className="lg:w-1/2">
      <Image
        src={data.awardImage.src}
@@ -115,7 +115,7 @@ const AwardSectionV2 = memo(() => {
 //  const serviceTitle = service?.toUpperCase() || 'IVF';
 
  return (
-   <div className='max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 mb-10 lg:mb-16'>
+   <div className='max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 mb-10 lg:mb-16 bg-[url(/images/lp/campaign/treatment_bg_img_cropped.png)] py-10 sm:py-14'>
      <h2 className='text-[22px] md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-[52px] !leading-[1.2] font-bold text-primary text-center tracking-wide'>
      Highly Awarded Male Fertility Healthcare Clinic Chain in India
      </h2>

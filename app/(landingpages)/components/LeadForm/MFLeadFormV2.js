@@ -208,7 +208,7 @@ const LeadFormV2 = ({ internal = false}) => {
     <>
 
       <div className="rounded-[27px] bg-cover bg-center bg-[#f3c1d7] overflow-hidden relative ">
-        <p className="text-white pt-4 px-2 pb-2 bg-primary mb-2 text-center text-[14px] sm:text-[16px] font-bold">Male Fertility Treatment @ ₹X4,999* | LIMITED VALIDITY</p>
+        <p className="text-white py-1 px-2 bg-primary mb-2 text-center text-[14px] sm:text-[16px] font-bold">Male Fertility Treatment @ ₹X4,999* <br/>LIMITED VALIDITY</p>
 
         <form onSubmit={handleSubmit} className="">
 
