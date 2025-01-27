@@ -66,7 +66,20 @@ const responsive = {
     }
 };
 
-function IVFClinicSliderV2({ userAgentString, cityVideos }) {
+function IVFClinicSliderV2({ userAgentString }) {
+      
+    const cityVideos = [
+        {
+            "id": "10",
+            "influencer_name": "Nisha",
+            "videoId": "8JGUqEfB0dM",
+            "VideoTitleText": "Creating Families: A Day in the Life at Oasis Fertility | Nisha",
+            "videoImage": "/images/home/influencers/Ravi.webp",
+            "youTubeVideoUrl": "https://www.youtube.com/shorts/8JGUqEfB0dM",
+            "isSelected": false,
+        }
+    ]
+     
     const [isLoading, setIsLoading] = useState(true);
     let parser = new UAParser(userAgentString);
     const result = parser.getResult();
