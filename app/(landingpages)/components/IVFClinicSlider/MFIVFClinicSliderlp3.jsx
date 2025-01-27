@@ -137,20 +137,20 @@ function IVFClinicSliderV2({ userAgentString }) {
         }
     }, [inViewport]);
 
-    const ButtonGroup = ({ next, previous }) => {
-        return (
-            <div className="py-10">
-                <div className="carousel-button-group absolute left-[50%] translate-x-[-50%] bottom-0 flex 2xl:gap-8 gap-4">
-                    <button onClick={previous}>
-                        <Image className="w-10 2xl:w-[60px] h-10 2xl:h-[60px]" src="/images/ic-prev2.png" width={60} height={60} alt="prev" />
-                    </button>
-                    <button onClick={next}>
-                        <Image className="w-10 2xl:w-[60px] h-10 2xl:h-[60px]" src="/images/ic-next2.png" width={60} height={60} alt="next" />
-                    </button>
-                </div>
-            </div>
-        );
-    };
+    // const ButtonGroup = ({ next, previous }) => {
+    //     return (
+    //         <div className="py-10">
+    //             <div className="carousel-button-group absolute left-[50%] translate-x-[-50%] bottom-0 flex 2xl:gap-8 gap-4">
+    //                 <button onClick={previous}>
+    //                     <Image className="w-10 2xl:w-[60px] h-10 2xl:h-[60px]" src="/images/ic-prev2.png" width={60} height={60} alt="prev" />
+    //                 </button>
+    //                 <button onClick={next}>
+    //                     <Image className="w-10 2xl:w-[60px] h-10 2xl:h-[60px]" src="/images/ic-next2.png" width={60} height={60} alt="next" />
+    //                 </button>
+    //             </div>
+    //         </div>
+    //     );
+    // };
 
     if (isLoading) return <VideoReelSkeleton />;
 
