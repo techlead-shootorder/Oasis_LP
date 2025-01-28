@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #874587;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        font-family: Poppins-Bold, Poppins;
+        font-size: 34.99px;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="28" cy="28" r="28"/>
+  <text class="cls-2" transform="translate(17.24 38.87)"><tspan x="0" y="0">S</tspan></text>
+</svg>

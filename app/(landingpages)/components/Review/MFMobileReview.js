@@ -93,7 +93,7 @@ const MobileReview = () => {
                                 }`}
                             ></div>
                             <img
-                                src={`/images/lp/review/profiles/profile_image_id_${review.id}.png`}
+                                src={`/images/lp/review/profiles/male-fertility/profile_image_id_${review.id}.svg`}
                                 alt={`${review.name}'s profile`}
                                 className="w-12 h-12 rounded-full object-cover"
                                 width={48}
