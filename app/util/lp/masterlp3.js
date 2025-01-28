@@ -8,7 +8,7 @@ const master = [
       hero_title: "Your Journey to Parenthood Starts Here",
       location: "Hyderabad",
       phone: "tel:+91 9513736432",
-      our_center: "hyderabad, Hyderabad",
+      our_center: "hyderabad, Hyderabad", 
       status: "1",
     },
     {
