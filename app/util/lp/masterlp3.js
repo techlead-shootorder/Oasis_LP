@@ -44,7 +44,7 @@ const master = [
       hero_title: "Your Journey to Parenthood Starts Here",
       location: "Hyderabad",
       phone: "tel:+91 9513736432",
-      our_center: "Dilsuknagar, Hyderabad",
+      our_center: "Dilsuknagar, Hyderabad", 
       status: "1",
     },
     {
