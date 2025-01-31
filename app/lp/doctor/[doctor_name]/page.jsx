@@ -1,8 +1,8 @@
 
-import React, { memo, useMemo, Suspense } from 'react';
-import { normalizeCityParams, getFilteredData } from '../../[city]/helper';
-import masterlp3 from "@/util/lp/masterlp3";
-import nearByAreas from "@/util/lp/nearByAreas"
+import React, { memo, Suspense } from 'react';
+// import { normalizeCityParams, getFilteredData } from '../../[city]/helper';
+// import masterlp3 from "@/util/lp/masterlp3";
+// import nearByAreas from "@/util/lp/nearByAreas"
 import dynamic from 'next/dynamic';
 
 import HeaderDoctor from "@/app/(landingpages)/components/Header/HeaderDoctor";
@@ -135,7 +135,7 @@ const DynamicComponents = {
 // }
 
 
-const Page = memo(({ params }) => {
+const Page = memo(() => {
 //   const { city: rawCity } = params;
 //   const { city, isMeta, metanum, internal } = normalizeCityParams(rawCity);
 //   const filteredCity = useMemo(() => masterlp3.find((center) => center.center_name === city), [city]);

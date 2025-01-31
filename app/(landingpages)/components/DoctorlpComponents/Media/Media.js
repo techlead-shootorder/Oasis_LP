@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { FaRegStar, FaStar, FaStarHalfStroke } from "react-icons/fa6";
+// import { FaRegStar, FaStar, FaStarHalfStroke } from "react-icons/fa6";
 
 const stories = [
   { videoId: 'TSUFeOgscYM', text: "Everything about pregnancy planning", image: '/images/lp/doctors/updated/gallery_image_dr.jpg', },
