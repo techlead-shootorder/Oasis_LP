@@ -34,7 +34,7 @@ const master = [
       phone: "tel:+91 9513736432",
       our_center: "Gachibowli, Hyderabad",
       status: "1",
-    }, 
+    },  
     {
       id: "4",
       center_name: "dilshuknagar",
