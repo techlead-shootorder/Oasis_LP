@@ -47,7 +47,7 @@ const FooterStickyButtonsLang = ({ center, service, refferal = false, meta = fal
                     className={`w-full py-[10px] text-white text-[22px] leading-none font-medium bg-red-600`}           
                 >
                   Get A Call Back
-                  <p className="text-[12px] p-0 leading-none font-normal">within 5 minutes</p>
+                  <p className="text-[12px] p-0 leading-none font-normal">within 1 minute</p>
                 </button>
 
             </div>
