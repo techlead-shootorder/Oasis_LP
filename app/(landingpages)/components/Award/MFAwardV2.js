@@ -28,30 +28,33 @@ const CAROUSEL_CONFIG = {
 };
 
 const AWARDS_DATA = [
+  {
+    id: 1,
+    desc: "Oasis Fertility awarded as one of the Best Healthcare Brands 2023 by The Economic Times.",
+    awardImage: {
+      src: "/images/lp/campaign/award2.webp",
+      alt: "award2"
+    },
+    brandImage: { 
+      src: "/images/lp/campaign/ic-economic-times.webp",
+      alt: "economic times" 
+       
+     }
+  },
  {
-   id: 1,
+   id: 2,
    desc: "Recognized as The IVF Chain of the Year (South) 2023 by ET Healthworld National Fertility Awards.",
    awardImage: {
      src: "/images/lp/campaign/award1.webp",
      alt: "award1"
    },
    brandImage: {
-     src: "/images/lp/campaign/ic-healthworld.webp", 
+    src: "/images/lp/campaign/ic-healthworld.webp",
      alt: "healthworld"
    }
+   
  },
- {
-   id: 2,
-   desc: "Oasis Fertility awarded as one of the Best Healthcare Brands 2023 by The Economic Times.",
-   awardImage: {
-     src: "/images/lp/campaign/award2.webp",
-     alt: "award2"
-   },
-   brandImage: {
-     src: "/images/lp/campaign/ic-economic-times.webp",
-     alt: "economic times" 
-   }
- }
+
 ];
 
 const CarouselSkeleton = memo(() => (

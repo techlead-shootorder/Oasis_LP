@@ -381,7 +381,7 @@ const LeadFormV2 = () => {
         <>
 
             <div className="rounded-[27px] bg-cover bg-center bg-[#f3c1d7] overflow-hidden relative">
-                <p className="text-white pt-4 pb-2 bg-primary mb-2 text-center text-[16px] font-bold">IVF @ ₹94,999* | LIMITED VALIDITY</p>
+                <p className="text-white pt-4 pb-2 bg-primary mb-2 text-center text-[16px] font-bold">IVF @ ₹94,999* | Limited Period Offer</p>
 
                 <form onSubmit={handleSubmit} className="">
                     <div className="px-4 lg:px-5 xl:px-6">
@@ -582,7 +582,7 @@ const LeadFormV2 = () => {
                         >
                             {loading ? "Submitting..." : "Get A Call Back"}
 
-                            {!loading && <p className="text-[12px] p-0 leading-none font-normal">within 5 minutes</p>}
+                            {!loading && <p className="text-[12px] p-0 leading-none font-normal">within 60 Seconds</p>}
                         </button>
 
                         <div className="flex items-center justify-center mt-2">

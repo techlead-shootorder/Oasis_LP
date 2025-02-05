@@ -6,7 +6,7 @@ import nearByAreas from "@/util/lp/nearByAreas"
 import dynamic from 'next/dynamic';
 
 
-import HeaderTesting from "@/app/(landingpages)/components/Header/HeaderTesting";
+import MFHeader from "@/app/(landingpages)/components/Header/MFHeader";
 import HeroMaleFertility from "@/app/(landingpages)/components/Hero/HeroMaleFertility";
 
 const MinimalLoader = () => <div className="animate-pulse bg-gray-200 h-10" />;
@@ -79,8 +79,8 @@ const DynamicComponents = {
     () => import('@/app/(landingpages)/components/Footer/FooterV2'),
     { loading: () => <ComponentLoader /> }
   ),
-  PhoneCall: dynamic(
-    () => import('@/app/(landingpages)/components/PhoneCall/PhoneCall'),
+  MFPhoneCall: dynamic(
+    () => import('@/app/(landingpages)/components/PhoneCall/MFPhoneCall'),
     { loading: () => <MinimalLoader /> }
   )
 }
@@ -110,7 +110,7 @@ const Page = memo(() => {
       <section className="relative overflow-y-auto">
         <header id="headerlp3" className='' >
     
-          <HeaderTesting center={filteredCity} metanum={metanum} googel1num={googel1num}/>
+          <MFHeader center={filteredCity} metanum={metanum} googel1num={googel1num}/>
         </header>
 
         <Suspense fallback={<MinimalLoader />}>
@@ -201,7 +201,7 @@ const Page = memo(() => {
             </Suspense>
 
             {!googel1num && <Suspense fallback={<MinimalLoader />}>
-              <DynamicComponents.PhoneCall center={filteredCity} metanum={metanum} />
+              <DynamicComponents.MFPhoneCall center={filteredCity} metanum={metanum} />
             </Suspense>}
 
 

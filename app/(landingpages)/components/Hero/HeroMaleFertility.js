@@ -30,7 +30,7 @@ BannerSkeleton.displayName = "BannerSkeleton";
 // Constants
 const BANNER_IMAGES = {
   desktop: {
-    src: "/images/lp/lp3/male-fertility-banner.png",
+    src: "/images/lp/lp3/male-fertility-banner.webp",
     width: 1728,
     height: 787,
     className: "w-full object-cover absolute left-0 top-0 hidden md:block h-full",
@@ -78,7 +78,7 @@ HeroBanner.displayName = "HeroBanner";
 
 // Memoized Content Components
 const HeroHeading = memo(({}) => (
-  <h1 id="heroBannerHeading" className="absolute text-[26px] top-[10px] left-0 md:text-[26px] lg:text-4xl xl:text-5xl md:top-12 md:left-[24px] lg:left-[40px] xl:left-[60px] 2xl:left-[100px] z-20 font-semibold text-white py-2 text-center md:text-left w-full md:w-auto">
+  <h1 id="heroBannerHeading" className="absolute text-[26px] top-[10px] left-0 md:text-[26px] lg:text-4xl xl:text-5xl md:top-12 md:left-[24px] lg:left-[40px] xl:left-[60px] 2xl:left-[100px] z-20 font-semibold text-primary py-2 text-center md:text-left w-full md:w-auto">
    Best Male Fertility Clinic in India
   </h1>
 ));
@@ -142,7 +142,7 @@ const HeroV2 = ({ center, service, isMeta, internal }) => {
           <div>
             <HeroBanner type="desktop" />
             <HeroBanner type="mobile" />
-            <div className="absolute inset-0 h-[430px] sm:h-auto bg-black opacity-50 sm:z-10" />
+            {/* <div className="absolute inset-0 h-[430px] sm:h-auto bg-black opacity-50 sm:z-10" /> */}
           </div>
         </div>
 

@@ -6,7 +6,7 @@ const STATISTICS = [
     {
         id: 'healthy-babies',
         icon: "/images/lp/campaign/ic-Healthy-Babies.webp",
-        value: "50,000+",
+        value: "1,000+",
         label: "Successful Male Fertility Cases Treated",
         alt: "Success"
     },
