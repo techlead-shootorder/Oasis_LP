@@ -2,7 +2,7 @@
 
 import React, { Suspense, memo } from "react";
 import Image from "next/image";
-import MFLeadFormV2 from "../LeadForm/MFLeadFormV2";
+// import MFLeadFormV2 from "../LeadForm/MFLeadFormV2";
 import MFLeadFormlp3Meta from "../LeadForm/MFLeadFormlp3Meta";
 
 // Skeleton Components
@@ -91,7 +91,7 @@ const InvisibleArticle = memo(() => (
 ));
 InvisibleArticle.displayName = "InvisibleArticle";
 
-const LeadFormWrapper = memo(({ isMeta, center, service, internal }) => (
+const LeadFormWrapper = memo(({ center, service }) => (
   <>
     {/* {isMeta ?  */}
       <MFLeadFormlp3Meta center={center} service={service} /> 

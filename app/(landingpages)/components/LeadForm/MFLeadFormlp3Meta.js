@@ -5,7 +5,7 @@ import { ToastComponent } from "@/app/(general)/widgets/components/client/toast/
 import { AppConstant } from "@/lib/constant/AppConstant";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Cookies from "js-cookie";
-import { HiThumbUp } from "react-icons/hi";
+// import { HiThumbUp } from "react-icons/hi";
 import { HiThumbDown } from "react-icons/hi";
 import Image from "next/image";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -36,7 +36,7 @@ const LeadFormV2 = () => {
     const [otpButtonText, setOtpButtonText] = useState("SEND OTP");
     // const [otpValid, setOtpValid] = useState(false);
     const [randomOtp, setRandomOtp] = useState(null);
-    const [showThumbsUp, setThumbsUp] = useState(false);
+    // const [showThumbsUp, setThumbsUp] = useState(false);
     const [showThumbsDown, setThumbsDown] = useState(false);
     const [showOtpInput, setOtpInput] = useState(false);
     const [isCallBackDisable, setIsCallBackDisable] = useState(true);
@@ -233,13 +233,13 @@ const LeadFormV2 = () => {
         //     setOtpValid(false);
         // }
         if (randomOtp == userDetails.otp) {
-            setThumbsUp(true);
+            // setThumbsUp(true);
             setThumbsDown(false);
             setShowRecaptcha(true);
 
         } else {
             setThumbsDown(true);
-            setThumbsUp(false);
+            // setThumbsUp(false);
             setIsCallBackDisable(true);
 
 
@@ -348,7 +348,7 @@ const LeadFormV2 = () => {
                 });
                 setOtpSent(false);
                 setRandomOtp(false);
-                setThumbsUp(false);
+                // setThumbsUp(false);
                 setOtpInput(false);
                 setIsCallBackDisable(true)
                 if (typeof window !== "undefined") {
