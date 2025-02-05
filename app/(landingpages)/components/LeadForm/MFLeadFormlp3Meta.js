@@ -380,8 +380,8 @@ const LeadFormV2 = () => {
         // bg-[url(https://images.oasisindia.in/website/lp/campaign/Form_bg.png)]
         <>
 
-            <div className="rounded-[27px] bg-cover bg-center bg-[#f3c1d7] overflow-hidden relative">
-                <p className="text-white pt-4 pb-2 bg-primary mb-2 text-center text-[16px] font-bold">IVF @ ₹94,999* | Limited Period Offer</p>
+            <div className="rounded-[27px] bg-cover bg-center bg-[#f3c1d7] overflow-hidden relative ">
+                <p className="text-white py-1 px-2 bg-primary mb-2 text-center text-[14px] sm:text-[16px] font-bold">Male Fertility Treatment @ ₹X4,999* <br />Limited Period Offer</p>
 
                 <form onSubmit={handleSubmit} className="">
                     <div className="px-4 lg:px-5 xl:px-6">
@@ -490,7 +490,7 @@ const LeadFormV2 = () => {
 
                         {showOtpInput && (
                             <>
-                                <div className={`flex xs:flex-col items-center justify-center gap-3 mb-3 xl:mb-4`}>
+                                <div className={`flex xs:flex-col items-center justify-center gap-3 mb-2`}>
                                     <div className="flex gap-3 items-center">
                                         {Array(4)
                                             .fill(0)
@@ -501,7 +501,7 @@ const LeadFormV2 = () => {
                                                     type="text"
                                                     maxLength={1}
                                                     inputMode="numeric" // Ensures number pad on mobile
-                                                    className=" w-10 h-10 sm:w-12 sm:h-12 text-center text-lg border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none bg-white"
+                                                    className=" w-10 h-10 sm:w-10 sm:h-10 text-center text-lg border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none bg-white"
                                                     value={userDetails.otp[index] || ""}
                                                     onChange={(e) => handleOtpChange(e.target.value, index)}
                                                     onKeyDown={(e) => handleKeyDown(e, index)}
@@ -520,14 +520,14 @@ const LeadFormV2 = () => {
                             </>
                         )}
 
-                        {showThumbsUp && (
+                        {/* {showThumbsUp && (
                             <div className="flex items-center justify-center mb-3">
                                 <HiThumbUp className="text-green-500 text-2xl mr-2" />
                                 <p className="text-primary text-xs">
                                     Thank you for the verification.<br /> Please click the button below.
                                 </p>
                             </div>
-                        )}
+                        )} */}
                         {showThumbsDown && (
                             <div className="flex items-center justify-center mb-3">
                                 <HiThumbDown className="text-red-500 text-2xl mr-2" />

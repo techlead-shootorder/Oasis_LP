@@ -93,10 +93,10 @@ InvisibleArticle.displayName = "InvisibleArticle";
 
 const LeadFormWrapper = memo(({ isMeta, center, service, internal }) => (
   <>
-    {isMeta ? 
-      <MFLeadFormlp3Meta center={center} service={service} /> : 
-      <MFLeadFormV2 center={center} service={service} internal={internal} />
-    }
+    {/* {isMeta ?  */}
+      <MFLeadFormlp3Meta center={center} service={service} /> 
+      {/* <MFLeadFormV2 center={center} service={service} internal={internal} /> */}
+    {/* } */}
   </>
 ));
 LeadFormWrapper.displayName = "LeadFormWrapper";
@@ -137,7 +137,7 @@ const HeroV2 = ({ center, service, isMeta, internal }) => {
       </div>
     }>
       <section id="herolp3" className="lg:h-screen relative max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 ">
-        <div>
+        <div className="">
           <HeroHeading service={service} centerName={centerName} />
           <div>
             <HeroBanner type="desktop" />
@@ -146,9 +146,9 @@ const HeroV2 = ({ center, service, isMeta, internal }) => {
           </div>
         </div>
 
-        <div className="relative pt-24 pb-14 sm:py-14 lg:py-16 xl:py-18 2xl:py-24 flex items-end justify-between h-full lg:flex">
+        <div className=" relative pt-24  flex items-end justify-between h-full lg:flex">
           <InvisibleArticle />
-          <div className="hidden md:block md:mr-[0px] lg:mr-[50px] xl:mr-[100px] relative z-50">
+          <div className=" hidden md:block md:mr-[0px] lg:mr-[50px] xl:mr-[100px] relative z-50 mb-6">
             <LeadFormWrapper isMeta={isMeta} center={center} service={service} internal={internal} />
           </div>
         </div>

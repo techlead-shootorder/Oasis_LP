@@ -253,7 +253,7 @@ const TreatmentsV2 = memo(({ }) => {
                     ?.split("-")
                     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
                     .join(" ")} */}
-                    Male Fertility Treatment in India<br/>
+                   
                     How can we help?
             </h2>
 
