@@ -115,7 +115,7 @@ MobileHeader.displayName = 'MobileHeader';
 // Main Header Component
 const HeaderTesting = ({ center, metanum, googel1num}) => {
 
-console.log("is google", googel1num)
+// console.log("is google", googel1num)
  
 
   return (

@@ -1,7 +1,7 @@
 'use client';
 import { MdCall } from "react-icons/md";
 
-const PhoneCall = ({ refferal = false, center, metanum }) => {
+const PhoneCall = ({ metanum }) => {
     let isDragging = false;
 
     const handleClick = (e) => {
