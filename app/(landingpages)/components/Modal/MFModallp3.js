@@ -18,7 +18,7 @@ const ModalV2 = ({ isOpen, onClose, center, service, isMeta = false }) => {
           &times;
         </button>
         <Suspense>
-        {isMeta ? <MFLeadFormlp3Meta center={center} service={service} />: <MFLeadFormV2 center={center} service={service} /> }
+       <MFLeadFormlp3Meta center={center} service={service} />
         </Suspense>
       </div>
     </div>

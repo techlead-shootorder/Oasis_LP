@@ -11,24 +11,25 @@ const MFModallp3 = dynamic(() => import("../Modal/MFModallp3"), {
 });
 
 const SPECIALISTS_DATA = [
+  {
+    id: 1, 
+    name: "Dr. Krishna Chaitanya",
+    image: "/images/lp/doctors/updated/Krishna_Chaithanya.webp",
+    qualifications: "MS (Clinical Embryology)",
+    role: "Scientific Head and Clinical Embryologist",
+    rating: "99%",
+    experience: "20 yrs exp"
+  },
  {
-   id: 1,
-   name: "Dr. Durga.G.Rao",
-   image: "/images/lp/doctors/updated/Dr.Durga_G _rao.webp",
-   qualifications: "MBBS, DGO, MRCOG (UK)",
-   role: "Co-founder & Medical Director",
+   id: 2,
+   name: "Dr. Raghuveer Karne",
+   image: "/images/doctor/newDoctors/Dr. Raghuveer Karne.webp",
+   qualifications: "MS (General Surgery), \nDNB (Genitourinary Surgery)",
+   role: "Consultant",
    rating: "99%",
-   experience: "20 yrs exp"
- },
- {
-   id: 2, 
-   name: "Dr. Krishna Chaitanya",
-   image: "/images/lp/doctors/updated/Krishna_Chaithanya.webp",
-   qualifications: "MS (Clinical Embryology)",
-   role: "Scientific Head and Clinical Embryologist",
-   rating: "99%",
-   experience: "20 yrs exp"
+   experience: "8 yrs exp"
  }
+ 
 ];
 
 const DoctorCard = memo(({ doctor, onBookClick }) => (
@@ -37,7 +38,7 @@ const DoctorCard = memo(({ doctor, onBookClick }) => (
      <Image 
        src={doctor.image}
        alt={doctor.name}
-       className="w-auto mx-auto h-[270px] lg:h-[190px] xl:h-[290px] 2xl:h-[350px]"
+       className="w-auto mx-auto h-[270px] lg:h-[190px] xl:h-[290px] 2xl:h-[350px] object-contain"
        width={239}
        height={290}
        loading="lazy"

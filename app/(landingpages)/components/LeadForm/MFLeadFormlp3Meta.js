@@ -5,10 +5,10 @@ import { ToastComponent } from "@/app/(general)/widgets/components/client/toast/
 import { AppConstant } from "@/lib/constant/AppConstant";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Cookies from "js-cookie";
-// import { HiThumbUp } from "react-icons/hi";
+import { HiThumbUp } from "react-icons/hi";
 import { HiThumbDown } from "react-icons/hi";
 import Image from "next/image";
-import ReCAPTCHA from "react-google-recaptcha";
+// import ReCAPTCHA from "react-google-recaptcha";
 
 
 
@@ -36,11 +36,11 @@ const LeadFormV2 = () => {
     const [otpButtonText, setOtpButtonText] = useState("SEND OTP");
     // const [otpValid, setOtpValid] = useState(false);
     const [randomOtp, setRandomOtp] = useState(null);
-    // const [showThumbsUp, setThumbsUp] = useState(false);
+    const [showThumbsUp, setThumbsUp] = useState(false);
     const [showThumbsDown, setThumbsDown] = useState(false);
     const [showOtpInput, setOtpInput] = useState(false);
     const [isCallBackDisable, setIsCallBackDisable] = useState(true);
-    const [showRecaptcha, setShowRecaptcha] = useState(false);
+    // const [showRecaptcha, setShowRecaptcha] = useState(false);
 
     // astrix
     const [isFocusedFullName, setIsFocusedFullName] = useState(false);
@@ -212,18 +212,18 @@ const LeadFormV2 = () => {
 
     };
 
-    const onRecaptchaSuccess = (token) => {
-        console.log("reCAPTCHA token:", token);
-        // Proceed with your button action here, e.g., send OTP
-        // setShowRecaptcha(false); // Hide reCAPTCHA
-        setIsCallBackDisable(false);
-    };
+    // const onRecaptchaSuccess = (token) => {
+    //     console.log("reCAPTCHA token:", token);
+    //     // Proceed with your button action here, e.g., send OTP
+    //     // setShowRecaptcha(false); // Hide reCAPTCHA
+    //     setIsCallBackDisable(false);
+    // };
 
-    const onRecaptchaError = () => {
-        alert("Please complete the reCAPTCHA!");
-        // setShowRecaptcha(false); // Hide reCAPTCHA
-        setIsCallBackDisable(true);
-    };
+    // const onRecaptchaError = () => {
+    //     alert("Please complete the reCAPTCHA!");
+    //     // setShowRecaptcha(false); // Hide reCAPTCHA
+    //     setIsCallBackDisable(true);
+    // };
 
     const handleSubmitOtp = () => {
         // const correctOtp = ['1', '2', '3', '4']; // Replace with actual OTP logic
@@ -233,13 +233,14 @@ const LeadFormV2 = () => {
         //     setOtpValid(false);
         // }
         if (randomOtp == userDetails.otp) {
-            // setThumbsUp(true);
+            setThumbsUp(true);
             setThumbsDown(false);
-            setShowRecaptcha(true);
+            setIsCallBackDisable(false);
+            // setShowRecaptcha(true);
 
         } else {
             setThumbsDown(true);
-            // setThumbsUp(false);
+            setThumbsUp(false);
             setIsCallBackDisable(true);
 
 
@@ -348,7 +349,7 @@ const LeadFormV2 = () => {
                 });
                 setOtpSent(false);
                 setRandomOtp(false);
-                // setThumbsUp(false);
+                setThumbsUp(false);
                 setOtpInput(false);
                 setIsCallBackDisable(true)
                 if (typeof window !== "undefined") {
@@ -381,16 +382,18 @@ const LeadFormV2 = () => {
         <>
 
             <div className="rounded-[27px] bg-cover bg-center bg-[#f3c1d7] overflow-hidden relative ">
-                <p className="text-white py-1 px-2 bg-primary mb-2 text-center text-[14px] sm:text-[16px] font-bold">Male Fertility Treatment @ ₹X4,999* <br />Limited Period Offer</p>
+                {/* <p className="text-white py-1 px-2 bg-primary mb-2 text-center text-[14px] sm:text-[16px] font-bold">Male Fertility Treatment @ ₹X4,999* <br />Limited Period Offer</p> */}
+                <p className="text-white py-2 px-2 bg-primary mb-2 text-center text-[16px] sm:text-[18px] font-bold">FREE CONSULTATION</p>
+
 
                 <form onSubmit={handleSubmit} className="">
                     <div className="px-4 lg:px-5 xl:px-6">
                         {/* FORM HEADING */}
                         <div>
-                            <p className="text-center text-primary font-semibold">Fill Up The Form To Get a</p>
-                            <h2 className="text-[20px] md:text-[20px] lg:text-[24px] xl:text-[28px] !leading-[1.2] font-extrabold mb-3 xl:mb-4 text-center text-primary">
+                            <p className="text-center text-primary font-semibold mb-2">Please Share Your Details Below</p>
+                            {/* <h2 className="text-[20px] md:text-[20px] lg:text-[24px] xl:text-[28px] !leading-[1.2] font-extrabold mb-3 xl:mb-4 text-center text-primary">
                                 FREE CONSULTATION
-                            </h2>
+                            </h2> */}
                         </div>
 
                         <div className="relative mb-3 xl:mb-4">
@@ -520,31 +523,20 @@ const LeadFormV2 = () => {
                             </>
                         )}
 
-                        {/* {showThumbsUp && (
+                        {showThumbsUp && (
                             <div className="flex items-center justify-center mb-3">
                                 <HiThumbUp className="text-green-500 text-2xl mr-2" />
                                 <p className="text-primary text-xs">
                                     Thank you for the verification.<br /> Please click the button below.
                                 </p>
                             </div>
-                        )} */}
+                        )}
                         {showThumbsDown && (
                             <div className="flex items-center justify-center mb-3">
                                 <HiThumbDown className="text-red-500 text-2xl mr-2" />
                                 <p className="text-primary text-xs">
                                     Invalid input.<br />Please enter the correct phone number & OTP.
                                 </p>
-                            </div>
-                        )}
-
-                        {showRecaptcha && (
-                            <div className="mb-3">
-                                {/* <div className="text-black">Testing</div> */}
-                                <ReCAPTCHA
-                                    sitekey="6Ld-zaMqAAAAAGu_oVb0S8fB5naUyFWNK7mb3MkE" // Replace with your reCAPTCHA site key
-                                    onChange={onRecaptchaSuccess}
-                                    onErrored={onRecaptchaError}
-                                />
                             </div>
                         )}
 
