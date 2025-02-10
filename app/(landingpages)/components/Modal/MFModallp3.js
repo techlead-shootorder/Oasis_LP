@@ -1,10 +1,10 @@
 "use client";
 import React, { Suspense } from "react";
-import MFLeadFormV2 from "../LeadForm/MFLeadFormV2";
+// import MFLeadFormV2 from "../LeadForm/MFLeadFormV2";
 import MFLeadFormlp3Meta from "../LeadForm/MFLeadFormlp3Meta";
 
 
-const ModalV2 = ({ isOpen, onClose, center, service, isMeta = false }) => {
+const ModalV2 = ({ isOpen, onClose, center, service }) => {
   if (!isOpen) return null;
 
   return (
