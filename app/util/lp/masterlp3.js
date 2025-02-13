@@ -37,7 +37,7 @@ const master = [
     }, 
     {
       id: "4",
-      center_name: "dilshuknagar",  
+      center_name: "dilshuknagar",   
       center_name_heading: "Dilshuknagar",
       additional_content: "Avail Our Special Offer",
       title: "Valid From 25th July&nbsp;Till&nbsp;27th&nbsp;July",
