@@ -2,7 +2,7 @@
 import React, { memo, useMemo, Suspense } from 'react';
 import { normalizeCityParams, getFilteredData } from './helper';
 import masterlp3 from "@/util/lp/masterlp3";
-import nearByAreas from "@/util/lp/nearByAreas"
+// import nearByAreas from "@/util/lp/nearByAreas"
 import dynamic from 'next/dynamic';
 
 
@@ -98,14 +98,14 @@ export async function generateStaticParams() {
 
 const Page = memo(({ params }) => {
     const { city: rawCity } = params;
-    console.log("testing city", rawCity);
+    // console.log("testing city", rawCity);
     
   const { city, isMeta, metanum, googel1num, internal  } = normalizeCityParams(rawCity);
   const filteredCity = useMemo(() => masterlp3.find((center) => center.center_name === city), [city]);
-  const nearByCenters = useMemo(() => nearByAreas.find((center)=> center.center_name === city), [city]); 
+//   const nearByCenters = useMemo(() => nearByAreas.find((center)=> center.center_name === city), [city]); 
   const { reviews: filteredReview, doctors: filteredDoctors, videos: cityVideos } =
     useMemo(() => getFilteredData(city, filteredCity), [city, filteredCity]);
-  console.log("filltered city", filteredCity);
+//   console.log("filltered city", filteredCity);
   return (
     <>
    
