@@ -128,7 +128,7 @@ CarouselButton.displayName = 'CarouselButton';
 
 
 const DoctorCard = memo(({ data, onBookClick, service }) => {
-  const experience = data.experience?.match(/\d+/)?.[0] || '';
+  const experience = data?.experience?.match(/\d+/)?.[0] || '';
 
   function removeFertilitySpecialist(input) {
     const suffix = "Fertility Specialist";
@@ -158,8 +158,9 @@ const DoctorCard = memo(({ data, onBookClick, service }) => {
       <div className="text-center relative flex-grow">
         <div className="relative">
           <Image
-            src={`/images/doctor/newDoctors/${data.docterImage}`}
-            alt={data.fullName || "Doctor Image"}
+            // src={`/images/doctor/newDoctors/${data.docterImage}`}
+            src={`/images/doctor/newDoctors/Dr. Raghuveer Karne.webp`}
+            alt={data?.fullName || "Doctor Image"}
             width={691}
             height={775}
             className="w-auto mx-auto mb-2 lg:mb-4"
@@ -168,7 +169,7 @@ const DoctorCard = memo(({ data, onBookClick, service }) => {
         </div>
 
         <div className="inline-flex items-center gap-2 min-h-6">
-          {data.practoRating && (
+          {data?.practoRating && (
             <>
               <Image
                 className="h-4 lg:h-5 w-auto"
@@ -179,7 +180,7 @@ const DoctorCard = memo(({ data, onBookClick, service }) => {
                 loading="lazy"
               />
               <h3 className="text-xs sm:text-base lg:text-lg text-black">
-                {data.practoRating}
+                {data?.practoRating}
               </h3>
             </>
           )}
@@ -242,7 +243,18 @@ const ButtonGroup = memo(({ next, previous, activeButton, setActiveButton }) => 
 
 ButtonGroup.displayName = "ButtonGroup";
 
-const BestDoctors = ({ filteredDoctors, isMeta, service, internal }) => {
+  // Helper Functions
+  const formatCenterName = (name) => {
+    return name
+      ?.split("-")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  };
+
+const BestDoctors = ({ center, filteredDoctors, isMeta, service, internal }) => {
+    const centerName = React.useMemo(() => formatCenterName(center?.center_name_heading), [center?.center_name_heading]);
+  
+  // console.log("filltered male fertility dr", filteredDoctors);
   const [showModal, setShowModal] = useState(false);
   const [activeButton, setActiveButton] = useState("next");
   const [isLoading, setIsLoading] = useState(true);
@@ -267,11 +279,13 @@ const BestDoctors = ({ filteredDoctors, isMeta, service, internal }) => {
   if (!filteredDoctors?.length) return null;
   if (isLoading) return <CarouselSkeleton />;
 
+
+
   return (
     <>
       <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 mb-10 lg:mb-16">
         <h2 className="text-[22px] md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-[52px] font-bold leading-tight sm:leading-snug text-primary text-center tracking-wide mb-4 lg:mb-5">
-        Best Male Fertility Doctors in India
+        Best Male Fertility Doctors in {centerName}
         </h2>
 
         <Carousel
@@ -286,14 +300,14 @@ const BestDoctors = ({ filteredDoctors, isMeta, service, internal }) => {
           }
         >
           {filteredDoctors.map(doctor =>
-            doctor.docterImage && (
+            // doctor?.docterImage && (
               <DoctorCard
                 key={doctor.id}
                 data={doctor}
                 onBookClick={handleOpenModal}
                 service={service}
               />
-            )
+            // )
           )}
         </Carousel>
       </section>

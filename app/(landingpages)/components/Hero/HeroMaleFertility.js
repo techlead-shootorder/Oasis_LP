@@ -62,24 +62,25 @@ if (typeof window !== 'undefined') {
 // Memoized Image Component
 const HeroBanner = memo(({ type, ...props }) => (
   // <div className="relative">
-    <Image
-      {...BANNER_IMAGES[type]}
-      alt="Banner"
-      priority={true}
-      quality={85}
-      fetchPriority="high"
-      decoding="async"
-      {...props}
-    />
-   /* <div className="absolute inset-0 bg-black opacity-50 z-10" /> */
+  <Image
+    {...BANNER_IMAGES[type]}
+    alt="Banner"
+    priority={true}
+    quality={85}
+    fetchPriority="high"
+    decoding="async"
+    {...props}
+  />
+  /* <div className="absolute inset-0 bg-black opacity-50 z-10" /> */
   //  </div>
 ));
 HeroBanner.displayName = "HeroBanner";
 
 // Memoized Content Components
-const HeroHeading = memo(({}) => (
+const HeroHeading = memo(({ centerName }) => (
+  
   <h1 id="heroBannerHeading" className="absolute text-[26px] top-[10px] left-0 md:text-[26px] lg:text-4xl xl:text-5xl md:top-12 md:left-[24px] lg:left-[40px] xl:left-[60px] 2xl:left-[100px] z-20 font-semibold text-primary py-2 text-center md:text-left w-full md:w-auto">
-   Best Male Fertility Clinic in India
+    Best Male Fertility Clinic in{" "}  {centerName}
   </h1>
 ));
 HeroHeading.displayName = "HeroHeading";
@@ -94,8 +95,8 @@ InvisibleArticle.displayName = "InvisibleArticle";
 const LeadFormWrapper = memo(({ center, service }) => (
   <>
     {/* {isMeta ?  */}
-      <MFLeadFormlp3Meta center={center} service={service} /> 
-      {/* <MFLeadFormV2 center={center} service={service} internal={internal} /> */}
+    <MFLeadFormlp3Meta center={center} service={service} />
+    {/* <MFLeadFormV2 center={center} service={service} internal={internal} /> */}
     {/* } */}
   </>
 ));

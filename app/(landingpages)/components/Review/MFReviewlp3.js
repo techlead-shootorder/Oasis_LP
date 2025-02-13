@@ -223,10 +223,11 @@ const ReviewV2 = ({ center }) => {
               {capitalizeName(testimonial.name)}
             </h3>
             <p className="text-black">
-              {testimonial.clinic_location
+              {/* {testimonial.clinic_location
                 .split(" ")
                 .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                .join(" ")}
+                .join(" ")} */}
+                {center?.center_name}
             </p>
           </div>
         ))}

@@ -55,7 +55,7 @@ const MFReview = [
       },
 ]
 
-const MobileReview = () => {
+const MobileReview = ({center}) => {
     const [activeIndex, setActiveIndex] = useState(0);
 
     // const filterReview = review.filter((item) => item?.center_name?.toLowerCase() === center?.center_name?.toLowerCase());
@@ -146,7 +146,8 @@ const MobileReview = () => {
                                 {capitalizeName(MFReview[activeIndex].name)}
                             </div>
                             <div className="text-gray-500 text-sm">
-                                {MFReview[activeIndex].clinic_location}
+                                {/* {MFReview[activeIndex].clinic_location} */}
+                                {center?.center_name}
                             </div>
                         </div>
                     </>

@@ -2,12 +2,23 @@ import React from "react";
 import Image from "next/image";
 import { FaStar, FaStarHalfStroke } from "react-icons/fa6";
 
-const TrustedCliniclp3 = () => {
+// Helper Functions
+const formatCenterName = (name) => {
+  return name
+    ?.split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+};
+
+
+const TrustedCliniclp3 = ({center}) => {
+    const centerName = React.useMemo(() => formatCenterName(center?.center_name_heading), [center?.center_name_heading]);
+  
   return (
     <div className="flex flex-col lg:flex-row gap-5 lg:gap-10">
       <div className="w-full lg:w-[30%] text-center lg:text-left">
         <h2 className="text-[18px] md:text-xl lg:text-2xl xl:text-4xl 2xl:text-[42px] font-bold leading-tight text-primary text-center tracking-wide">
-          Most Trusted Male Fertility Clinic in India
+          Most Trusted Male Fertility Clinic in {centerName}
          
         </h2>
       </div>
