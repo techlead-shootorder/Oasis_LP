@@ -42,6 +42,7 @@ const StickyButtonScreenV2 = () => {
             onClick={scrollToHeroSection}
             className="rounded-tl-[1.25rem] rounded-tr-[1.25rem] rounded-br-none rounded-bl-none rotate-[270deg] font-lato rounded-md bg-red-600 text-white uppercase text-xs md:text-sm 2xl:text-xl px-2 md:px-6 py-2"
           >
+            
             Get a Call Back 60 Seconds
           </button>
         </div>

@@ -1499,7 +1499,28 @@ const newdoctorslp3 = [
         "qualification": "MBBS DGO DNB FRM",
         "areaOfSpecialization": "Fellowship in Assisted Reproductive Techniques \n\nICOG & UKSH Germany",
         "practoRating": ""
-    }
+    },
+    {
+        "id": 140,
+        "fullname": "Dr. Jalagam Kavya Rao",
+        "designation": "Regional Medical Head & Fertility Specialist",
+        "experience": "10 Years",
+        "docterImage": "Dr. Jalagam Kavya Rao.webp",
+        "master_id": "34",
+        "qualification": "MBBS, MS OBG, FRM, FIGL",
+        "areaOfSpecialization": "Fellowship in Reproductive Medicine fro m OSHREM- 2017-2018, Fellowship in Gynecological Laproscopy- KEIL- Germany-2020-2021",
+        "practoRating": "100%"
+    },
+    {
+        "id": 141,
+        "fullname": "Dr. Venkata Sujatha Vellanki",
+        "designation": "Clinical Head & Fertility Specialist",
+        "experience": "21 Years",
+        "docterImage": "Dr. Venkata Sujatha Vellanki.webp",
+        "master_id": "34",
+        "qualification": "MBBS, OBG MS, MICOG, FAIMER",
+        "practoRating": "98%"
+    },
 ]
 
 export default newdoctorslp3;
