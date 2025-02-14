@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { useState } from 'react';
+import React, { useState } from 'react';
 // import review from '@/util/lp/reviewlp3';
 const MFReview = [
     {
@@ -55,7 +55,16 @@ const MFReview = [
       },
 ]
 
+    // Helper Functions
+    const formatCenterName = (name) => {
+        return name
+          ?.split("-")
+          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(" ");
+      };
+
 const MobileReview = ({center}) => {
+      const centerName = React.useMemo(() => formatCenterName(center?.center_name_heading), [center?.center_name_heading]);
     const [activeIndex, setActiveIndex] = useState(0);
 
     // const filterReview = review.filter((item) => item?.center_name?.toLowerCase() === center?.center_name?.toLowerCase());
@@ -74,6 +83,8 @@ const MobileReview = ({center}) => {
             .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
             .join(' ');
     }
+
+
 
     return (
         <div className="flex max-w-md mx-auto mt-6">
@@ -147,7 +158,7 @@ const MobileReview = ({center}) => {
                             </div>
                             <div className="text-gray-500 text-sm">
                                 {/* {MFReview[activeIndex].clinic_location} */}
-                                {center?.center_name}
+                                {centerName}
                             </div>
                         </div>
                     </>

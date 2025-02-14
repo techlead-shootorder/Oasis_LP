@@ -60,7 +60,16 @@ const MFReview = [
       },
 ]
 
+ // Helper Functions
+ const formatCenterName = (name) => {
+  return name
+    ?.split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+};
+
 const ReviewV2 = ({ center }) => {
+   const centerName = React.useMemo(() => formatCenterName(center?.center_name_heading), [center?.center_name_heading]);
   const totalStars = 5;
   const [activeButton, setActiveButton] = useState('next');
 //   const filterReview = review.filter((item) => item?.center_name?.toLowerCase() === center?.center_name.toLowerCase());
@@ -227,7 +236,8 @@ const ReviewV2 = ({ center }) => {
                 .split(" ")
                 .map(word => word.charAt(0).toUpperCase() + word.slice(1))
                 .join(" ")} */}
-                {center?.center_name}
+                {/* {center?.center_name} */}
+                {centerName}
             </p>
           </div>
         ))}

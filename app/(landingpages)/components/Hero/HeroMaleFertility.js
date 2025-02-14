@@ -79,7 +79,7 @@ HeroBanner.displayName = "HeroBanner";
 // Memoized Content Components
 const HeroHeading = memo(({ centerName }) => (
   
-  <h1 id="heroBannerHeading" className="absolute text-[26px] top-[10px] left-0 md:text-[26px] lg:text-4xl xl:text-5xl md:top-12 md:left-[24px] lg:left-[40px] xl:left-[60px] 2xl:left-[100px] z-20 font-semibold text-primary py-2 text-center md:text-left w-full md:w-auto">
+  <h1 id="heroBannerHeading" className="absolute xs:text-[20px] text-[20px] sm:text-[24px] top-[10px] left-0 md:text-[26px] lg:text-4xl xl:text-5xl md:top-12 md:left-[24px] lg:left-[40px] xl:left-[60px] 2xl:left-[100px] z-20 font-semibold text-primary py-2 text-center md:text-left w-full md:w-auto">
     Best Male Fertility Clinic in{" "}  {centerName}
   </h1>
 ));

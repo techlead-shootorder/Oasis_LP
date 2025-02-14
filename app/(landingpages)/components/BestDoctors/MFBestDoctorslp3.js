@@ -159,7 +159,7 @@ const DoctorCard = memo(({ data, onBookClick, service }) => {
         <div className="relative">
           <Image
             // src={`/images/doctor/newDoctors/${data.docterImage}`}
-            src={`/images/doctor/newDoctors/Dr. Raghuveer Karne.webp`}
+            src={data.fullname == 'Dr Raghuveer Karne' ? `/images/doctor/newDoctors/Dr. Raghuveer Karne.webp` : `/images/doctor/newDoctors/Dummy_Doctor_Image.webp`}
             alt={data?.fullName || "Doctor Image"}
             width={691}
             height={775}
