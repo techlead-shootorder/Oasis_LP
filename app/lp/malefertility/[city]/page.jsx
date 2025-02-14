@@ -162,14 +162,14 @@ const Page = memo(({ params }) => {
               <DynamicComponents.MFAwardV2 />
             </Suspense>
 
-            <Suspense fallback={<ComponentLoader />}>
+           {filteredDoctors?.length > 0  && filteredDoctors[0]?.fullname && <Suspense fallback={<ComponentLoader />}>
               <DynamicComponents.MFBestDoctorslp3
                 center={filteredCity}
                 filteredDoctors={filteredDoctors}
                 isMeta={isMeta}
                 internal={internal}
               />
-            </Suspense>
+            </Suspense>}
 
             <Suspense fallback={<ComponentLoader />}>
               <DynamicComponents.MFIVFClinicSliderlp3

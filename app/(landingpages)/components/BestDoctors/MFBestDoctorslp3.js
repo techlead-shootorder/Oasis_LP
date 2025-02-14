@@ -16,20 +16,7 @@ const MFModallp3 = dynamic(() => import("../Modal/MFModallp3"), {
 });
 
 // Constants
-const CAROUSEL_CONFIG = {
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 4,
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 768 },
-    items: 3,
-  },
-  mobile: {
-    breakpoint: { max: 767, min: 0 },
-    items: 2,
-  },
-};
+
 
 // const getSpecialist = (service) => {
 //   switch (service) {
@@ -152,18 +139,18 @@ const DoctorCard = memo(({ data, onBookClick, service }) => {
   }
 
   return (
-    <div className="font-lato relative group p-2 pb-4 h-full flex flex-col">
-      <div className="hidden lg:block absolute z-[-1] inset-0 transform scale-0 border border-solid border-primary rounded-3xl transition-transform duration-700 origin-center bg-[#FFE9F3] group-hover:scale-100" />
+    <div className="font-lato relative group p-2 pb-4 h-full flex flex-col items-center">
+      <div className=" hidden lg:block absolute z-[-1] inset-0 transform scale-0 border border-solid border-primary rounded-3xl transition-transform duration-700 origin-center bg-[#FFE9F3] group-hover:scale-100" />
 
-      <div className="text-center relative flex-grow">
+      <div className="w-fit text-center relative flex-grow">
         <div className="relative">
           <Image
             // src={`/images/doctor/newDoctors/${data.docterImage}`}
             src={data.fullname == 'Dr Raghuveer Karne' ? `/images/doctor/newDoctors/Dr. Raghuveer Karne.webp` : `/images/doctor/newDoctors/Dummy_Doctor_Image.webp`}
             alt={data?.fullName || "Doctor Image"}
-            width={691}
-            height={775}
-            className="w-auto mx-auto mb-2 lg:mb-4"
+            width={281}
+            height={281}
+            className="w-[281px] mx-auto mb-2 lg:mb-4"
             loading="lazy"
           />
         </div>
@@ -205,7 +192,7 @@ const DoctorCard = memo(({ data, onBookClick, service }) => {
         </p>
       </div>
 
-      <div className="mt-3 lg:mt-6 text-center lg:transition lg:ease-in-out lg:duration-500 lg:opacity-0 lg:group-hover:opacity-100">
+      <div className="w-fit mt-3 lg:mt-6 text-center lg:transition lg:ease-in-out lg:duration-500 lg:opacity-0 lg:group-hover:opacity-100">
         <button
           onClick={onBookClick}
           className="p-2 sm:px-4 2xl:px-8 sm:py-3 leading-none rounded-lg sm:rounded-[10px] bg-orange-500 text-[8px] sm:text-xs lg:text-sm xl:text-base whitespace-nowrap font-semibold text-white uppercase w-full"
@@ -253,6 +240,21 @@ ButtonGroup.displayName = "ButtonGroup";
 
 const BestDoctors = ({ center, filteredDoctors, isMeta, service, internal }) => {
     const centerName = React.useMemo(() => formatCenterName(center?.center_name_heading), [center?.center_name_heading]);
+
+    const CAROUSEL_CONFIG = {
+      desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: filteredDoctors?.length == 1 ? 1 : 4,
+      },
+      tablet: {
+        breakpoint: { max: 1024, min: 768 },
+        items: filteredDoctors?.length == 1 ? 1 : 3,
+      },
+      mobile: {
+        breakpoint: { max: 767, min: 0 },
+        items: filteredDoctors?.length == 1 ? 1 : 2,
+      },
+    };
   
   // console.log("filltered male fertility dr", filteredDoctors);
   const [showModal, setShowModal] = useState(false);
