@@ -15,8 +15,8 @@ const ComponentLoader = () => <div className="animate-pulse bg-gray-200 h-64 rou
 
 // Dynamic components with single import pattern
 const DynamicComponents = {
-  StickyButtonScreenlp3: dynamic(
-    () => import('@/app/(landingpages)/components/StickyButtonScreen/StickyButtonScreenlp3'),
+  MFStickyButtonScreen: dynamic(
+    () => import('@/app/(landingpages)/components/StickyButtonScreen/MFStickyButtonScreen'),
     { loading: () => <MinimalLoader /> }
   ),
   MFStatisticsBanner: dynamic(
@@ -71,8 +71,8 @@ const DynamicComponents = {
     () => import('@/app/(landingpages)/components/Centers/ExploreCenterslp3'),
     { loading: () => <ComponentLoader /> }
   ),
-  FooterStickyButtonlp3: dynamic(
-    () => import('@/app/(landingpages)/components/FooterStickyButtons/FooterStickyButtonlp3'),
+  MFFooterStickyButton: dynamic(
+    () => import('@/app/(landingpages)/components/FooterStickyButtons/MFFooterStickyButton'),
     { loading: () => <MinimalLoader /> }
   ),
   FooterV2: dynamic(
@@ -116,7 +116,7 @@ const Page = memo(({ params }) => {
         </header>
 
         <Suspense fallback={<MinimalLoader />}>
-          <DynamicComponents.StickyButtonScreenlp3 center={filteredCity} />
+          <DynamicComponents.MFStickyButtonScreen center={filteredCity} />
         </Suspense>
 
         <main>
@@ -193,7 +193,7 @@ const Page = memo(({ params }) => {
 
 
             <Suspense fallback={<MinimalLoader />}>
-              <DynamicComponents.FooterStickyButtonlp3 center={filteredCity} />
+              <DynamicComponents.MFFooterStickyButton center={filteredCity} />
             </Suspense>
             </main>
             

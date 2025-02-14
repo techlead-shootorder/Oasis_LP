@@ -574,7 +574,7 @@ const LeadFormV2 = () => {
                         >
                             {loading ? "Submitting..." : "Get A Call Back"}
 
-                            {!loading && <p className="text-[12px] p-0 leading-none font-normal">within 60 Seconds</p>}
+                            {!loading && <p className="text-[12px] p-0 leading-none font-normal">within 5 Minutes</p>}
                         </button>
 
                         <div className="flex items-center justify-center mt-2">
