@@ -72,10 +72,10 @@ function IVFClinicSliderV2({ userAgentString }) {
         {
             "id": "10",
             "influencer_name": "Anchor Ravi",
-            "videoId": "V8CmRVweEd8",
+            "videoId": "FAwKVRrUDaM",
             "VideoTitleText": "Misconceptions about Male Infertility",
             "videoImage": "/images/home/influencers/Ravi.webp",
-            "youTubeVideoUrl": "https://www.youtube.com/shorts/V8CmRVweEd8",
+            "youTubeVideoUrl": "https://www.youtube.com/shorts/FAwKVRrUDaM",
             "isSelected": false,
         }
     ]
