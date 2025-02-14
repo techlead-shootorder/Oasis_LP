@@ -36,7 +36,7 @@ const master = [
       status: "1",
     }, 
     {
-      id: "4",
+      id: "4",  
       center_name: "dilshuknagar",   
       center_name_heading: "Dilshuknagar",
       additional_content: "Avail Our Special Offer",
