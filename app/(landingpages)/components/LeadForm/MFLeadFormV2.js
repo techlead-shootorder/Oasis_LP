@@ -346,7 +346,7 @@ const LeadFormV2 = ({ internal = false}) => {
               disabled={loading || !formValid}
             >
               {loading ? "Submitting..." : "Get A Call Back"}
-              {!loading && <p className="text-[12px] p-0 leading-none font-normal">within 60 Seconds</p>}
+              {!loading && <p className="text-[12px] p-0 leading-none font-normal">within 60 seconds</p>}
             </button>
 
             <div className="flex items-center justify-center mt-2">
