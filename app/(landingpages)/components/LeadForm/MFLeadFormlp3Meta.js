@@ -598,8 +598,7 @@ const LeadFormV2 = () => {
                 <div className="bg-[#DEDEDE] text-center py-2 px-3 text-black">
                     <p className="text-sm md:text-[18px] leading-[1.4]">
                         Get 0% interest on <strong>EMI</strong> | Starting ₹4,999* p/m
-                        <br />
-                        All Procedures | No Upper Limit
+                       
                     </p>
                 </div>
             </div>

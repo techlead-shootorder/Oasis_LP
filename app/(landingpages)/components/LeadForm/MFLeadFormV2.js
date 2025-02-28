@@ -215,7 +215,7 @@ const LeadFormV2 = ({ internal = false}) => {
           <div className="px-4 lg:px-5 xl:px-6">
             {/* FORM HEADING */}
             <div>
-              <p className="text-center text-primary font-semibold">Fill Up The Form To Get a</p>
+              {/* <p className="text-center text-primary font-semibold">Fill Up The Form To Get a</p> */}
               <h2 className="text-[20px] md:text-[20px] lg:text-[24px] xl:text-[24px] !leading-[1.2] font-extrabold mb-3 xl:mb-4 text-center text-primary">
                 FREE CONSULTATION
               </h2>
@@ -367,8 +367,7 @@ const LeadFormV2 = ({ internal = false}) => {
         <div className="bg-[#DEDEDE] text-center py-3 px-3 text-black">
           <p className="text-sm md:text-[18px] leading-[1.4]">
             Get 0% interest on <strong>EMI</strong>
-            <br />
-            All Procedures | No Upper Limit
+           
           </p>
         </div>
       </div>

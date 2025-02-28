@@ -7,7 +7,7 @@ const FooterStickyButtonsLang = ({ center, service, refferal = false, meta = fal
     const [isVisible, setIsVisible] = useState(false);
 
     const handleScroll = () => {
-        if (window.scrollY > 100) { // Adjust scroll threshold as needed
+        if (window.scrollY > 650) { // Adjust scroll threshold as needed
             setIsVisible(true);
         } else {
             setIsVisible(false);

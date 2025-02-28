@@ -46,6 +46,42 @@ const BANNER_IMAGES = {
   }
 };
 
+const CHENNAI_IMAGES = {
+  desktop: {
+    src: "/images/lp/lp3/chennai-desk.webp",
+    width: 1728,
+    height: 787,
+    className: "w-full object-cover absolute left-0 top-0 hidden md:block h-full",
+    style: { objectPosition: "25% 0" },
+    sizes: "(min-width: 768px) 100vw, 0vw"
+  },
+  mobile: {
+    src: "/images/lp/lp3/chennai-mob.webp",
+    width: 428,
+    height: 452,
+    className: "w-full object-cover absolute left-0 -top-[40px] md:hidden h-full",
+    sizes: "(max-width: 767px) 100vw, 0vw"
+  }
+};
+
+const FEMALE = {
+  desktop: {
+    src: "/images/lp/lp3/female-desktop.webp",
+    width: 1728,
+    height: 787,
+    className: "w-full object-cover absolute left-0 top-0 hidden md:block h-full",
+    style: { objectPosition: "25% 0" },
+    sizes: "(min-width: 768px) 100vw, 0vw"
+  },
+  mobile: {
+    src: "/images/lp/lp3/female-mobile.webp",
+    width: 428,
+    height: 452,
+    className: "w-full object-cover absolute left-0 -top-[40px] md:hidden h-full",
+    sizes: "(max-width: 767px) 100vw, 0vw"
+  }
+};
+
 // Preload images for faster LCP
 const preloadImages = () => {
   const link = document.createElement('link');
@@ -60,22 +96,49 @@ if (typeof window !== 'undefined') {
 }
 
 // Memoized Image Component
-const HeroBanner = memo(({ type, ...props }) => (
-  <Image
-    {...BANNER_IMAGES[type]}
-    alt="Banner"
-    priority={true}
-    quality={85}
-    fetchPriority="high"
-    decoding="async"
-    {...props}
-  />
+const HeroBanner = memo(({ type, centerName, isfemaleAssessment }) => (
+  // console.log("centername", centerName)
+
+  <>
+    {isfemaleAssessment &&
+      <Image
+        {...FEMALE[type]}
+        alt="Banner"
+        priority={true}
+        quality={85}
+        fetchPriority="high"
+        decoding="async"
+
+      />}
+
+    {!isfemaleAssessment && centerName.toLowerCase() == 'chennai' ?
+      <Image
+        {...CHENNAI_IMAGES[type]}
+        alt="Banner"
+        priority={true}
+        quality={85}
+        fetchPriority="high"
+        decoding="async"
+
+      />
+      : <Image
+        {...BANNER_IMAGES[type]}
+        alt="Banner"
+        priority={true}
+        quality={85}
+        fetchPriority="high"
+        decoding="async"
+
+      />}
+
+  </>
+
 ));
 HeroBanner.displayName = "HeroBanner";
 
 // Memoized Content Components
-const HeroHeading = memo(({ service, centerName }) => (
-  <h1 id="heroBannerHeading" className="absolute text-[26px] top-[10px] left-0 md:text-[26px] lg:text-4xl xl:text-5xl md:top-12 md:left-[24px] lg:left-[40px] xl:left-[60px] 2xl:left-[100px] z-10 font-semibold text-primary py-2 text-center md:text-left w-full md:w-auto">
+const HeroHeading = memo(({ service, centerName, isfemaleAssessment }) => (
+  !isfemaleAssessment && <h1 id="heroBannerHeading" className="absolute text-[26px] top-[10px] left-0 md:text-[26px] lg:text-4xl xl:text-5xl md:top-12 md:left-[24px] lg:left-[40px] xl:left-[60px] 2xl:left-[100px] z-10 font-semibold text-primary py-2 text-center md:text-left w-full md:w-auto">
     Best <span className={service !== 'fertility' ? 'uppercase' : ''}>{service || "IVF"}</span> Clinic in{" "}
     {centerName}
   </h1>
@@ -91,8 +154,8 @@ InvisibleArticle.displayName = "InvisibleArticle";
 
 const LeadFormWrapper = memo(({ isMeta, center, service, internal }) => (
   <>
-    {isMeta ? 
-      <LeadFormlp3Meta center={center} service={service} /> : 
+    {isMeta ?
+      <LeadFormlp3Meta center={center} service={service} /> :
       <LeadFormV2 center={center} service={service} internal={internal} />
     }
   </>
@@ -115,8 +178,14 @@ const MobileLeadForm = memo(({ center, service, isMeta, internal }) => (
 ));
 MobileLeadForm.displayName = "MobileLeadForm";
 
+let globalCenterName;
 // Helper Functions
 const formatCenterName = (name) => {
+  globalCenterName = name
+    ?.split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+
   return name
     ?.split("-")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
@@ -124,9 +193,9 @@ const formatCenterName = (name) => {
 };
 
 // Main Component
-const HeroV2 = ({ center, service, isMeta, internal }) => {
+const HeroV2 = ({ center, service, isMeta, internal, isfemaleAssessment }) => {
   const centerName = React.useMemo(() => formatCenterName(center?.center_name_heading), [center?.center_name_heading]);
-
+  console.log("female", isfemaleAssessment)
 
   return (
     <Suspense fallback={
@@ -137,10 +206,11 @@ const HeroV2 = ({ center, service, isMeta, internal }) => {
     }>
       <section id="herolp3" className="bg-[#fde9f2] lg:h-screen relative max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 md:mb-6 lg:mb-10">
         <div>
-          <HeroHeading service={service} centerName={centerName} />
+          {console.log("center name in hero", centerName)}
+          <HeroHeading service={service} centerName={centerName} isfemaleAssessment={isfemaleAssessment} />
           <div>
-            <HeroBanner type="desktop" />
-            <HeroBanner type="mobile" />
+            <HeroBanner type="desktop" centerName={centerName} isfemaleAssessment={isfemaleAssessment} />
+            <HeroBanner type="mobile" centerName={centerName} isfemaleAssessment={isfemaleAssessment} />
           </div>
         </div>
 

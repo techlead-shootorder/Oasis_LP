@@ -33,7 +33,7 @@ const ReviewV2 = ({ center, service }) => {
 
   function capitalizeName(name) {
     // Trim leading and trailing spaces and ensure there's only one space between words
-    const lower = name.toLowerCase();
+    const lower = name?.toLowerCase();
     let cleanedName = lower.trim().replace(/\s+/g, ' ');
 
     // Capitalize the first letter of each word
