@@ -100,7 +100,7 @@ const HeroBanner = memo(({ type, centerName, isfemaleAssessment }) => (
   // console.log("centername", centerName)
 
   <>
-    {isfemaleAssessment &&
+    {isfemaleAssessment ?
       <Image
         {...FEMALE[type]}
         alt="Banner"
@@ -109,9 +109,9 @@ const HeroBanner = memo(({ type, centerName, isfemaleAssessment }) => (
         fetchPriority="high"
         decoding="async"
 
-      />}
-
-    {!isfemaleAssessment && centerName.toLowerCase() == 'chennai' ?
+      />
+      :
+      centerName.toLowerCase() == 'chennai' ?
       <Image
         {...CHENNAI_IMAGES[type]}
         alt="Banner"
