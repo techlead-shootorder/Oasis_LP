@@ -178,13 +178,10 @@ const MobileLeadForm = memo(({ center, service, isMeta, internal }) => (
 ));
 MobileLeadForm.displayName = "MobileLeadForm";
 
-let globalCenterName;
+
 // Helper Functions
 const formatCenterName = (name) => {
-  globalCenterName = name
-    ?.split("-")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
+ 
 
   return name
     ?.split("-")

@@ -95,7 +95,7 @@ export async function generateStaticParams() {
 }
 
 
-const Page = memo(({ params }) => {
+const Page = memo(() => {
 //   const { city: rawCity } = params;
 const isfemaleAssessment = true;
   const { city, isMeta, metanum, googel1num, internal  } = normalizeCityParams('india');
