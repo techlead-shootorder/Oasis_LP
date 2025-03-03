@@ -35,7 +35,7 @@ const master = [
       our_center: "Gachibowli, Hyderabad",
       status: "1",
     }, 
-    {
+    {   
       id: "4",  
       center_name: "dilshuknagar",   
       center_name_heading: "Dilshuknagar",
