@@ -29,9 +29,9 @@ const Treatmentlp3 = dynamic(() => import('../../../(landingpages)/components/Tr
     ssr: true,
 });
 
-const PlanInfolp3 = dynamic(() => import('../../../(landingpages)/components/PlanInfo/PlanInfolp3'), {
-    ssr: true,
-});
+// const PlanInfolp3 = dynamic(() => import('../../../(landingpages)/components/PlanInfo/PlanInfolp3'), {
+//     ssr: true,
+// });
 
 // const ChooseOasislp3 = dynamic(() => import('../../../(landingpages)/components/ChooseOasis/ChooseOasislp3'), {
 //     ssr: true,
