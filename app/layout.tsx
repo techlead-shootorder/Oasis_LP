@@ -43,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${questrial.variable} ${pattaya.variable}`}>
       <head>
-      {/* <script src="https://www.google.com/recaptcha/api.js" async defer></script> */}
+        {/* <script src="https://www.google.com/recaptcha/api.js" async defer></script> */}
         <noscript>
           <img
             height="1"
@@ -52,6 +52,8 @@ export default function RootLayout({
             src={`https://www.facebook.com/tr?id=${process.env.NEXT_PUBLIC_META_PIXEL_ID}&ev=PageView&noscript=1`}
           />
         </noscript>
+
+
       </head>
       <body className="text-neutral bg-white font-questrial">
         <AnalyticsProvider
@@ -61,6 +63,8 @@ export default function RootLayout({
           <PageViewTracker />
           {children}
         </AnalyticsProvider>
+        <script defer src="https://www.pushfomo.com/pixel/bMxNlcQcipyuLSdPGvfg7sk1ffaJPPNv"></script>
+
       </body>
     </html>
   );
