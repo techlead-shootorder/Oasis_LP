@@ -198,10 +198,7 @@ const Page = memo(({ params }) => {
             {!googel1num && <Suspense fallback={<MinimalLoader />}>
               <DynamicComponents.PhoneCall center={filteredCity} metanum={metanum} />
             </Suspense>}
-
-
-          
-        
+               
       </section>
     </>
   );

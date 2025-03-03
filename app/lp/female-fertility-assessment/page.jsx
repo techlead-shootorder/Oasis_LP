@@ -126,12 +126,20 @@ const isfemaleAssessment = true;
             </Suspense>
           </div>
 
-            <Suspense fallback={<ComponentLoader />}>
-              <DynamicComponents.Treatmentlp3 center={filteredCity} />
+          <Suspense fallback={<ComponentLoader />}>
+              <DynamicComponents.BestDoctorslp3
+                center={filteredCity}
+                filteredDoctors={filteredDoctors}
+                isMeta={isMeta}
+                internal={internal}
+              />
             </Suspense>
 
             <Suspense fallback={<ComponentLoader />}>
-              <DynamicComponents.SpeciaListslp3 isMeta={isMeta} internal={internal} />
+              <DynamicComponents.IVFClinicSliderlp3
+                center={filteredCity}
+                cityVideos={cityVideos}
+              />
             </Suspense>
 
             <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 py-10 lg:py-16 bg-[url(/images/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat mb-10 lg:mb-16 relative">
@@ -148,41 +156,47 @@ const isfemaleAssessment = true;
             </section>
 
             <Suspense fallback={<ComponentLoader />}>
-              <DynamicComponents.Centerslp3 />
-            </Suspense>
-
-            {/* <Suspense fallback={<ComponentLoader />}>
-              <DynamicComponents.ChooseOasislp3 center={filteredCity} />
-            </Suspense> */}
-
-            <Suspense fallback={<ComponentLoader />}>
               <DynamicComponents.AwardV2 />
             </Suspense>
 
             <Suspense fallback={<ComponentLoader />}>
-              <DynamicComponents.BestDoctorslp3
-                center={filteredCity}
-                filteredDoctors={filteredDoctors}
-                isMeta={isMeta}
-                internal={internal}
-              />
+              <DynamicComponents.Centerslp3 />
             </Suspense>
 
             <Suspense fallback={<ComponentLoader />}>
-              <DynamicComponents.IVFClinicSliderlp3
-                center={filteredCity}
-                cityVideos={cityVideos}
-              />
+              <DynamicComponents.SpeciaListslp3 isMeta={isMeta} internal={internal} />
             </Suspense>
 
-
             <Suspense fallback={<ComponentLoader />}>
-              <DynamicComponents.PlanInfolp3 isMeta={isMeta} internal={internal} />
+              <DynamicComponents.Treatmentlp3 center={filteredCity} />
             </Suspense>
 
             <Suspense fallback={<ComponentLoader />}>
               <DynamicComponents.Faqlp3 />
             </Suspense>
+
+           
+
+            
+
+            
+
+            {/* <Suspense fallback={<ComponentLoader />}>
+              <DynamicComponents.ChooseOasislp3 center={filteredCity} />
+            </Suspense> */}
+
+            
+
+            
+
+           
+
+{/* 
+            <Suspense fallback={<ComponentLoader />}>
+              <DynamicComponents.PlanInfolp3 isMeta={isMeta} internal={internal} />
+            </Suspense> */}
+
+            
 
            {city != 'india' && <Suspense fallback={<ComponentLoader />}>
               <DynamicComponents.ExploreCenterslp3 nearByCenters={nearByCenters}/>
