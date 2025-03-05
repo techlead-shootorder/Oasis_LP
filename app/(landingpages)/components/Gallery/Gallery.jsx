@@ -28,7 +28,7 @@ export default function Gallery() {
 
   return (
     <div className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 mb-10 lg:mb-16">
-      <h2 className="text-[22px] md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-[52px] font-bold leading-tight sm:leading-snug text-primary text-center tracking-wide mb-4 lg:mb-8">See the Smiles We've Helped Create</h2>
+      <h2 className="text-[22px] md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-[52px] font-bold leading-tight sm:leading-snug text-primary text-center tracking-wide mb-4 lg:mb-8">See the Smiles We&apos;ve Helped Create</h2>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {images.slice(0, visibleImages).map((src, index) => (
           <img key={index} src={`/images/home/gallery/${index+1}.webp`} alt={`Gallery ${index + 1}`} className="w-full h-auto rounded-lg" />
