@@ -175,26 +175,14 @@ const isfemaleAssessment = true;
               <DynamicComponents.Faqlp3 />
             </Suspense>
 
-           
-
-            
-
-            
 
             {/* <Suspense fallback={<ComponentLoader />}>
               <DynamicComponents.ChooseOasislp3 center={filteredCity} />
             </Suspense> */}
 
-            
-
-            
-
-           
-
-{/* 
-            <Suspense fallback={<ComponentLoader />}>
-              <DynamicComponents.PlanInfolp3 isMeta={isMeta} internal={internal} />
-            </Suspense> */}
+{/* <Suspense fallback={<ComponentLoader />}>
+      <DynamicComponents.PlanInfolp3 isMeta={isMeta} internal={internal} />
+      </Suspense> */}
 
             
 

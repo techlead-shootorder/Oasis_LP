@@ -54,6 +54,10 @@ const DynamicComponents = {
     () => import('@/app/(landingpages)/components/BestDoctors/BestDoctorslp3'),
     { loading: () => <ComponentLoader /> }
   ),
+  Gallery: dynamic(
+    () => import('@/app/(landingpages)/components/Gallery/Gallery'),
+    { loading: () => <ComponentLoader /> }
+  ),
   IVFClinicSliderlp3: dynamic(
     () => import('@/app/(landingpages)/components/IVFClinicSlider/IVFClinicSliderlp3'),
     { loading: () => <ComponentLoader /> }
@@ -126,6 +130,15 @@ const Page = memo(({ params }) => {
 
           <Suspense fallback={<ComponentLoader />}>
               <DynamicComponents.BestDoctorslp3
+                center={filteredCity}
+                filteredDoctors={filteredDoctors}
+                isMeta={isMeta}
+                internal={internal}
+              />
+            </Suspense>
+
+            <Suspense fallback={<ComponentLoader />}>
+              <DynamicComponents.Gallery
                 center={filteredCity}
                 filteredDoctors={filteredDoctors}
                 isMeta={isMeta}
