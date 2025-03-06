@@ -35,27 +35,25 @@ const FooterStickyButtonsLang = ({ center, service, refferal = false, meta = fal
         <div className={`fixed bottom-0 left-0 w-full z-50 md:hidden transition-all duration-300 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
             {/* <NotificationBarlp3 hide={false} /> */}
             <div className="flex text-white">
-                {/* <button
+                <button
 
                     onClick={scrollToForm}
-                    className={`w-full py-2 text-white text-xl font-medium bg-red-600`}
+                    className={`flex flex-col w-full py-2 text-white text-xl font-medium bg-red-600`}
                 >
                     Get A Call Back <></> <sub> Within 5 Minutes</sub>
-                </button> */}
-                <button            
+                </button>
+                {/* <button            
                     onClick={scrollToForm}
                     className={`border-2 border-r-black w-full py-[10px] text-white text-[18px] leading-none font-medium bg-red-600`}           
                 >
                   Book Now
-                  {/* <p className="text-[12px] p-0 leading-none font-normal">within 1 minute</p> */}
                 </button>
-                <button            
+                 <button            
                     onClick={scrollToForm}
                     className={`w-full py-[10px] text-white text-[18px] leading-none font-medium bg-red-600`}           
                 >
                   Whatsapp Us
-                  {/* <p className="text-[12px] p-0 leading-none font-normal">within 1 minute</p> */}
-                </button>
+                </button>  */}
 
             </div>
             <ModalV2 isOpen={isModalOpen} onClose={handleCloseModal} center={center} service={service} refferal={refferal} meta={meta} />

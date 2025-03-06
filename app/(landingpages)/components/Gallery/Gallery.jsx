@@ -1,49 +1,67 @@
-'use client'
-import { useState } from "react";
+"use client"
+import React, { useRef, useState, useEffect } from "react";
 
-const images = [
-  "/images/home/gallery/1.webp",
-  "/images/home/gallery/2.webp",
-  "/images/home/gallery/3.webp",
-  "/images/home/gallery/4.webp",
-  "/images/home/gallery/5.webp",
-  "/images/home/gallery/6.webp",
-  "/images/home/gallery/7.webp",
-  "/images/home/gallery/8.webp",
-  "/images/home/gallery/9.webp",
-  "/images/home/gallery/10.webp",
-  "/images/home/gallery/11.webp",
-  "/images/home/gallery/12.webp",
-  "/images/home/gallery/13.webp",
- 
+const imagePairs = [
+  ["/images/home/gallery/1.webp", "/images/home/gallery/2.webp"],
+  ["/images/home/gallery/3.webp", "/images/home/gallery/4.webp"],
+  ["/images/home/gallery/5.webp", "/images/home/gallery/6.webp"],
+  ["/images/home/gallery/7.webp", "/images/home/gallery/8.webp"],
+  ["/images/home/gallery/9.webp", "/images/home/gallery/10.webp"],
+  ["/images/home/gallery/11.webp", "/images/home/gallery/12.webp"],
 ];
 
-export default function Gallery() {
-  const [visibleImages, setVisibleImages] = useState(6);
+const Gallery = () => {
+  const sliderRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const loadMore = () => {
-    const isMobile = window.innerWidth < 768;
-    setVisibleImages((prev) => prev + (isMobile ? 2 : 3));
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (sliderRef.current) {
+        const scrollLeft = sliderRef.current.scrollLeft;
+        const totalWidth = sliderRef.current.scrollWidth - sliderRef.current.clientWidth;
+        const index = Math.round((scrollLeft / totalWidth) * (imagePairs.length - 1));
+        setActiveIndex(index);
+      }
+    };
+
+    if (sliderRef.current) {
+      sliderRef.current.addEventListener("scroll", handleScroll);
+    }
+
+    return () => {
+      if (sliderRef.current) {
+        sliderRef.current.removeEventListener("scroll", handleScroll);
+      }
+    };
+  }, []);
 
   return (
-    <div className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 mb-10 lg:mb-16">
-      <h2 className="text-[22px] md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-[52px] font-bold leading-tight sm:leading-snug text-primary text-center tracking-wide mb-4 lg:mb-8">See the Smiles We&apos;ve Helped Create</h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-        {images.slice(0, visibleImages).map((src, index) => (
-          <img key={index} src={`/images/home/gallery/${index+1}.webp`} alt={`Gallery ${index + 1}`} className="w-full h-auto rounded-lg" />
-        ))}
-      </div>
-      {visibleImages < images.length && (
-        <div className="flex justify-center">
-        <button
-          onClick={loadMore}
-          className="mt-4 px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary-50"
-        >
-          Load More
-        </button>
+    <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 mb-10 lg:mb-16">
+      <h2 className="text-[22px] md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-[52px] font-bold leading-tight sm:leading-snug text-primary text-center tracking-wide mb-4 lg:mb-12">
+        See the Smiles We&apos;ve Helped Create
+      </h2>
+      <div className="w-full max-w-6xl mx-auto px-4 relative">
+        <div ref={sliderRef} className="flex gap-4 overflow-x-auto scroll-smooth scrollbar-none no-scrollbar">
+          {imagePairs.map((pair, index) => (
+            <div key={index} className="flex flex-col gap-2 min-w-[45%] md:min-w-[22%]">
+              <img src={pair[0]} alt={`Image ${index * 2 + 1}`} className="w-full h-50 object-cover rounded-lg shadow-md" />
+              <img src={pair[1]} alt={`Image ${index * 2 + 2}`} className="w-full h-50 object-cover rounded-lg shadow-md" />
+            </div>
+          ))}
         </div>
-      )}
-    </div>
+        <div className="flex justify-center mt-8">
+          {imagePairs.map((_, index) => (
+            <span
+              key={index}
+              className={`w-2 h-2 mx-1 rounded-full transition-all duration-300 ${
+                activeIndex === index ? "bg-primary scale-110" : "bg-gray-400"
+              }`}
+            ></span>
+          ))}
+        </div>
+      </div>
+    </section>
   );
-}
+};
+
+export default Gallery;
