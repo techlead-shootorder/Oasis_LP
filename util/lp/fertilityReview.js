@@ -2,7 +2,7 @@ const fertilityReview = [
     {
       "id": 1,
       "center_name": "hyderabad",
-      "clinic_location": "miyapur",
+      "clinic_location": "banjara hills",
       "city": "Hyderabad",
       "rating": 4.9,
       "name": "Renuka",
@@ -13,7 +13,7 @@ const fertilityReview = [
     {
       "id": 2,
       "center_name": "hyderabad",
-      "clinic_location": "miyapur",
+      "clinic_location": "gachibowli",
       "city": "Hyderabad",
       "rating": 4.9,
       "name": "Navaneeth Rao",
@@ -24,7 +24,7 @@ const fertilityReview = [
     {
       "id": 3,
       "center_name": "hyderabad",
-      "clinic_location": "miyapur",
+      "clinic_location": "dilshuknagar",
       "city": "Hyderabad",
       "rating": 4.9,
       "name": "Bhagya Sri",
@@ -706,7 +706,7 @@ const fertilityReview = [
     {
       "id": 65,
       "center_name": "Bengaluru",
-      "clinic_location": "Bengaluru",
+      "clinic_location": "HSR",
       "city": "Bengaluru",
       "rating": 4.9,
       "name": "Haribabu Tata",
@@ -717,7 +717,7 @@ const fertilityReview = [
     {
       "id": 66,
       "center_name": "Bengaluru",
-      "clinic_location": "Bengaluru",
+      "clinic_location": "HSR",
       "city": "Bengaluru",
       "rating": 4.9,
       "name": "Sumon Laskar",
@@ -728,7 +728,7 @@ const fertilityReview = [
     {
       "id": 67,
       "center_name": "Bengaluru",
-      "clinic_location": "Bengaluru",
+      "clinic_location": "banashankari",
       "city": "Bengaluru",
       "rating": 4.9,
       "name": "Navitham",
@@ -739,7 +739,7 @@ const fertilityReview = [
     {
       "id": 68,
       "center_name": "Bengaluru",
-      "clinic_location": "Bengaluru",
+      "clinic_location": "hebbal",
       "city": "Bengaluru",
       "rating": 4.9,
       "name": "Shireen Shariff",
