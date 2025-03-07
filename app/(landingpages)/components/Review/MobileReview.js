@@ -30,7 +30,7 @@ const MobileReview = ({ review }) => {
             {/* PROFILE IMAGES */}
             <div className="flex flex-col gap-4 mb-6">
                 {review.map((review, index) => (
-                    <div key={review.id} className={`${activeIndex === index ? 'bg-[#fff]' : ''} w-[70px] h-[48px]`}>
+                    <div key={review.id} className={`${activeIndex === index ? 'bg-[url(/images/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat' : ''} w-[70px] h-[48px]`}>
                         <button
                             onClick={() => setActiveIndex(index)}
                             className={`relative rounded-full transition-all duration-300 ${
@@ -39,7 +39,7 @@ const MobileReview = ({ review }) => {
                         >
                             <div
                                 className={`absolute inset-0 rounded-full transition-opacity duration-300 ${
-                                    activeIndex === index ? 'bg-white opacity-20' : 'opacity-0'
+                                    activeIndex === index ? 'bg-[url(/images/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat opacity-20' : 'opacity-0'
                                 }`}
                             ></div>
                             <img
@@ -55,7 +55,7 @@ const MobileReview = ({ review }) => {
             </div>
 
             {/* REVIEWS */}
-            <div className={`bg-white rounded-[14px] ${activeIndex == 0 && 'rounded-tl-none'} px-6 py-4`}>
+            <div className={`bg-[url(/images/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat rounded-[14px] ${activeIndex == 0 && 'rounded-tl-none'} px-6 py-4`}>
                 {isValidIndex ? (
                     <>
                         <div className="flex items-center justify-center mb-4 gap-2">
