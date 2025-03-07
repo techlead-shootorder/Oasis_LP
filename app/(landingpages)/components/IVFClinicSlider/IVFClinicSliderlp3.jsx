@@ -142,7 +142,7 @@ function IVFClinicSliderV2({ center, userAgentString, cityVideos, service }) {
     if (isLoading) return <VideoReelSkeleton />;
 
     return (
-        <div className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 mb-10 lg:mb-16">
+        <div className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20  py-8 xl:py-10 rounded-3xl bg-[url(/images/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat">
             <div className="pb-16 lg:pb-16 mb-6 relative">
                 <div className="flex justify-center">
                     <h2 className='text-[22px] mb-[1rem] md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-[52px] !leading-[1.2] font-bold text-primary text-center tracking-wide'>
@@ -208,10 +208,13 @@ function IVFClinicSliderV2({ center, userAgentString, cityVideos, service }) {
                                                 className="w-10 sm:w-[114px]" 
                                             />
                                         </button>
-                                        <div className="relative z-10 aspect-[9/16] flex flex-col justify-end p-5 lg:py-8 bg-custom-gradient">
+                                        <div className="relative z-10 aspect-[9/16] flex flex-col justify-end px-2 pb-2 bg-custom-gradient">
                                             <div>
-                                                <h4 className="text-xs lg:text-xl text-white text-center">
+                                                <h4 className="mb-2 text-xs lg:text-xl text-white text-center">
                                                     {video?.VideoTitleText}
+                                                </h4>
+                                                <h4 className="text-xs  lg:text-lg font-extrabold text-white text-center">
+                                                    {video?.language}
                                                 </h4>
                                             </div>
                                         </div>

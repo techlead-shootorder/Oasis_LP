@@ -153,7 +153,7 @@ const Page = memo(({ params }) => {
               />
             </Suspense>
 
-            <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 py-10 lg:py-16 bg-[url(/images/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat mb-10 lg:mb-16 relative">
+            <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 py-10 lg:py-16  relative">
             
             <Suspense fallback={<ComponentLoader />}>
               <DynamicComponents.Reviewlp3

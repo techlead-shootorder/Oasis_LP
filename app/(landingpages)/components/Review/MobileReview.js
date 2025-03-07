@@ -3,10 +3,10 @@ import Image from 'next/image';
 import { useState } from 'react';
 // import review from '@/util/lp/reviewlp3';
 
-const MobileReview = ({ center, review }) => {
+const MobileReview = ({ review }) => {
 
-    if(!review) return null;
     const [activeIndex, setActiveIndex] = useState(0);
+    if(!review) return null;
 
    console.log("mobile", review);
 
