@@ -4,7 +4,7 @@ import { FaStar, FaStarHalfStroke } from "react-icons/fa6";
 
 const TrustedCliniclp3 = ({ center, service }) => {
   return (
-    <div className="flex flex-col lg:flex-row gap-5 lg:gap-10">
+    <div className="flex flex-col lg:flex-row gap-5 lg:gap-10 py-10 lg-py-16">
       <div className="w-full lg:w-[30%] text-center lg:text-left">
         <h2 className="text-[22px] md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-[52px] font-bold leading-tight text-primary text-center tracking-wide">
           Most Trusted <span className={service != 'fertility' ? 'uppercase' : '' }>{service ? service : "IVF"}</span> Clinic in{" "}

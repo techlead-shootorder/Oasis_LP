@@ -153,7 +153,7 @@ const Page = memo(({ params }) => {
               />
             </Suspense>
 
-            <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 py-10 lg:py-16  relative">
+           
             
             <Suspense fallback={<ComponentLoader />}>
               <DynamicComponents.Reviewlp3
@@ -164,7 +164,7 @@ const Page = memo(({ params }) => {
             <Suspense fallback={<ComponentLoader />}>
               <DynamicComponents.TrustedCliniclp3 center={filteredCity} />
             </Suspense>
-          </section>
+      
 
           
           <Suspense fallback={<ComponentLoader />}>
