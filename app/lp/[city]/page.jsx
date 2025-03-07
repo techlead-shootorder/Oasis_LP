@@ -106,7 +106,7 @@ const Page = memo(({ params }) => {
   const nearByCenters = useMemo(() => nearByAreas.find((center)=> center.center_name === city), [city]); 
   const { reviews: filteredReview, doctors: filteredDoctors, videos: cityVideos } =
     useMemo(() => getFilteredData(city, filteredCity), [city, filteredCity]);
-
+// City page
   return (
     <>
       <section className="relative overflow-y-auto">
