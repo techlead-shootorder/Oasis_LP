@@ -58,6 +58,10 @@ const DynamicComponents = {
     () => import('@/app/(landingpages)/components/IVFClinicSlider/IVFClinicSliderlp3'),
     { loading: () => <ComponentLoader /> }
   ),
+  Gallery: dynamic(
+      () => import('@/app/(landingpages)/components/Gallery/Gallery'),
+      { loading: () => <ComponentLoader /> }
+    ),
   PlanInfolp3: dynamic(
     () => import('@/app/(landingpages)/components/PlanInfo/PlanInfolp3'),
     { loading: () => <ComponentLoader /> }
@@ -136,13 +140,22 @@ const isfemaleAssessment = true;
             </Suspense>
 
             <Suspense fallback={<ComponentLoader />}>
+                          <DynamicComponents.Gallery
+                            center={filteredCity}
+                            filteredDoctors={filteredDoctors}
+                            isMeta={isMeta}
+                            internal={internal}
+                          />
+                        </Suspense>
+
+            <Suspense fallback={<ComponentLoader />}>
               <DynamicComponents.IVFClinicSliderlp3
                 center={filteredCity}
                 cityVideos={cityVideos}
               />
             </Suspense>
 
-            <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 py-10 lg:py-16 bg-[url(/images/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat mb-10 lg:mb-16 relative">
+            {/* <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 py-10 lg:py-16 bg-[url(/images/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat mb-10 lg:mb-16 relative"> */}
             
               <Suspense fallback={<ComponentLoader />}>
                 <DynamicComponents.Reviewlp3
@@ -150,10 +163,11 @@ const isfemaleAssessment = true;
                   filteredReview={filteredReview}
                 />
               </Suspense>
+              
               <Suspense fallback={<ComponentLoader />}>
                 <DynamicComponents.TrustedCliniclp3 center={filteredCity} />
               </Suspense>
-            </section>
+            {/* </section> */}
 
             <Suspense fallback={<ComponentLoader />}>
               <DynamicComponents.AwardV2 />

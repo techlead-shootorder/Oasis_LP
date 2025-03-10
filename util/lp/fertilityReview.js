@@ -1384,7 +1384,62 @@ const fertilityReview = [
       "reviews": "Struggling with infertility was difficult, but finding the best IVF center in ranchi gave me hope. Dr. Musunuru Rajani, knowledgeable, and ensured I received the best treatment. So grateful for her care!",
       "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocLHQ4AeF9R3sXJ6knv6QVhYF8IXVCm40yodoycGfpWVT_4ZEw=w56-h56-p-rp-mo-br100",
       "review_link": "https://maps.app.goo.gl/whdkLHy86bK6XrHV9"
-    }
+    },
+    {
+      "id": 127,
+      "null": null,
+      "review_link": "https://maps.app.goo.gl/Z2iVz6dH84txkRag7",
+      "center_name": "india",
+      "clinic_location": "Hyderabad",
+      "rating": 5,
+      "reviews": "\"I recently visited Oasis for my prenatal care, and I must say, I was thoroughly impressed. Dr. MeeraJindal and Tejashree was extremely knowledgeable, kind, and took the time to answer all my questions.",
+      "name": "Sai Singh",
+      "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjWjG9wHNIcDGy4OTnfpUpwQWolqPfV3q2B4LCY8NsAJGa91ZUjXcQ=w60-h60-p-rp-mo-br100"
+    },
+    {
+      "id": 128,
+      "null": null,
+      "review_link": "https://maps.app.goo.gl/5fX9pg83f7pnbLV66",
+      "center_name": "india",
+      "clinic_location": "Bengaluru",
+      "rating": 4.9,
+      "reviews": "Thanks to oasis for all the support. We have gone through a lot before coming here. Since when we started taking treatment from oasis hospital really given me a positive vibe.We are really happy to share this review.",
+      "name": "Manikeshwari K",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocKLdL9IMtSrXEVOoE-h0Vwf9ghAlLbVbkdoF1nn8GV6koWaS5Jv=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 129,
+      "null": null,
+      "review_link": "https://maps.app.goo.gl/VmJGRjP3hsAggU16A",
+      "center_name": "india",
+      "clinic_location": "Pune",
+      "rating": 4.9,
+      "reviews": "Excellent facilities and compassionate care at OASIS Hospital, making a significant difference in our journey to parenthood. THANKS TO COMPLETE OASIS TEAM.",
+      "name": "Rajendra Mothe",
+      "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjWMEgexjQ1nlN0b41jXtSpkfz-QhplE6yNT7VJpMO4sYBuyNPHddQ=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 130,
+      "null": null,
+      "review_link": "https://maps.app.goo.gl/NDCLK7VYLcgZVBnA8",
+      "center_name": "india",
+      "clinic_location": "chennai",
+      "rating": 4.9,
+      "reviews": "Thanks for Nova IVF and thank you so much for dr.ajantha mam .she is very friendly and ans all enquiries.she give good confident for pts .all staff are pt guidance well.",
+      "name": "Sathiya Sathiya",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocJo2e2MAmX1H1FJQABYQZ1i-b6FRw_EKJaAvoACCmyWWcV4zw=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 131,
+      "null": null,
+      "review_link": "https://maps.app.goo.gl/WFzNBZkSXGWHvo4T9",
+      "center_name": "india",
+      "clinic_location": "Vadodara",
+      "rating": 5,
+      "reviews": "We want to Jalgaon manmad but we didn't find what we came for but in nashik oasis fertility dr pallavi dr Meenakshi centre manager pre full staff support guide a lot are hopes and dreams came true all credit to dr pallavi highly recommend",
+      "name": "Usha Patil",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocKd6EMo8mfe_nwnc21KCZEyjyUTAEJkj7uzQmqzHdBUJ3kqGw=w56-h56-p-rp-mo-br100"
+    },
   ]
 
   export default fertilityReview;
