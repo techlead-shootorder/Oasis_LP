@@ -1440,6 +1440,150 @@ const iuiReview = [
       "name": "Usha Patil",
       "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocKd6EMo8mfe_nwnc21KCZEyjyUTAEJkj7uzQmqzHdBUJ3kqGw=w56-h56-p-rp-mo-br100"
     },
+    {
+      "id": 132,
+      "center_name": "kakinada",
+      "clinic_location": "kakinada",
+      "city": "kakinada",
+      "rating": 5,
+      "name": "Srikanth Sri",
+      "reviews": "Finding the best IUI center near me was a challenge, but once we stepped into this clinic, we knew we made the right choice. The team was professional, the environment was comforting, and the entire process was well-managed from start to finish.",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocJV0CbscHMoi8u1hCrFTgJe-jBE18h7cyY7tZAba3nO6IjjY96z=w56-h56-p-rp-mo-br100",
+      "review_link": null
+    },
+    {
+      "id": 133,
+      "center_name": "kakinada",
+      "clinic_location": "kakinada",
+      "city": "kakinada",
+      "rating": 5,
+      "name": "Madhusudan Naidu Pathipati",
+      "reviews": "We wanted to consult a top IUI specialist for expert guidance. The doctor explained everything clearly, making us feel confident. The treatment process was smooth, and the staff ensured we felt supported throughout our journey.",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocJJqeZyvFm1fC9s5Wy35_EqRjG5jAHujaRg7SDrqIg-u9dblw=w56-h56-p-rp-mo-br100",
+      "review_link": null
+    },
+    {
+      "id": 134,
+      "center_name": "kakinada",
+      "clinic_location": "kakinada",
+      "city": "kakinada",
+      "rating": 5,
+      "name": "Vasanth Appapogu",
+      "reviews": "Choosing the best IUI center near me felt overwhelming at first, but this clinic stood out with its advanced facilities and compassionate care. From consultation to treatment, everything was handled with expertise and kindness.",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocKqcRkT75CGLsu44io3o73xFfGLta_9biNXnBfuaOYo0LszSw=w56-h56-p-rp-mo-br100",
+      "review_link": null
+    },
+    {
+      "id": 135,
+      "center_name": "kakinada",
+      "clinic_location": "kakinada",
+      "city": "kakinada",
+      "rating": 4.9,
+      "name": "Gowthami Gowni",
+      "reviews": "Dr. Ramineedi was incredibly patient and understanding. As a top IUI specialist, she provided clear guidance and reassurance throughout our treatment. The care we received here gave us renewed hope in our journey.",
+      "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjWIfG_ONIOQqjrx7OExlhmR__iP_5KVoJ6Jw9tZC2dbJzJqMbCu=w56-h56-p-rp-mo-br100",
+      "review_link": null
+    },
+    {
+      "id": 136,
+      "center_name": "tolichowki",
+      "clinic_location": "tolichowki",
+      "city": "tolichowki",
+      "rating": 4.9,
+      "name": "Aaliya Sheikh",
+      "reviews": "The emotional toll of infertility was heavy. Dr. Keerthana V made us feel seen and understood. Her approach to IUI treatment was both scientific and compassionate, creating a truly positive experience.",
+      "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjVaryLP-qAbGfBXYjLtdaQi58njQC1hz2T-zOdhn2tyV9pptEe2Tw=w56-h56-p-rp-mo-br100",
+      "review_link": null
+    },
+    {
+      "id": 137,
+      "center_name": "tolichowki",
+      "clinic_location": "tolichowki",
+      "city": "tolichowki",
+      "rating": 4.9,
+      "name": "Lekhan Naga",
+      "reviews": "The road to parenthood was difficult. The specialist’s warm approach and deep knowledge of IUI treatment made a huge difference. We felt genuinely cared for.",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocI5mA_d95nPa0fHlv9ncDPrqwECj6JM2LGpP8wrGZ7B46HdXA=w56-h56-p-rp-mo-br100",
+      "review_link": null
+    },
+    {
+      "id": 138,
+      "center_name": "tolichowki",
+      "clinic_location": "tolichowki",
+      "city": "tolichowki",
+      "rating": 4.9,
+      "name": "Kaniki Shekar",
+      "reviews": "When natural conception didn’t work, IUI seemed like the next step. The doctor’s approach was detailed, reassuring, and well-planned. We couldn’t have asked for better guidance.",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocLipXYIcAPExyu_HZLcNechNkVeyScHkmBmOeiAm_22ckyP=w56-h56-p-rp-mo-br100",
+      "review_link": null
+    },
+    {
+      "id": 139,
+      "center_name": "tolichowki",
+      "clinic_location": "tolichowki",
+      "city": "tolichowki",
+      "rating": 4.9,
+      "name": "Lakshmi Sarada",
+      "reviews": "We struggled with fertility treatments before, but this IUI experience was different. The specialist’s dedication and step-by-step guidance gave us confidence and peace of mind.",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocJdA5mFa1KosgA1bVPQqhMPUKmCwtPMxHRivQiwfUSABq-FTA=w56-h56-p-rp-mo-br100",
+      "review_link": null
+    },
+    {
+      "id": 140,
+      "center_name": "bhubaneswar",
+      "clinic_location": "bhubaneswar",
+      "city": "bhubaneswar",
+      "rating": 5,
+      "name": "Bharat Pahuja",
+      "reviews": "Finding an IUI specialist near me who is both experienced and compassionate was not easy. This clinic provided excellent care, and the doctor explained the entire process in detail. We felt supported throughout our journey.",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocJcQsAWo41KeW8Uq7SI18ytKZNgvGF6bua3uiqzVq2d-nrprg=w56-h56-p-rp-mo-br100",
+      "review_link": null
+    },
+    {
+      "id": 141,
+      "center_name": "bhubaneswar",
+      "clinic_location": "bhubaneswar",
+      "city": "bhubaneswar",
+      "rating": 5,
+      "name": "Tanushree Barua",
+      "reviews": "We wanted the best IUI center near me with advanced facilities and expert doctors. The clinic exceeded our expectations with personalized care and a smooth treatment process. We felt hopeful again!",
+      "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjUtTTGVmqP73WWZ5MI01q8SV7jYGyGBlnn-ANITA5kFj7olbFbe=w56-h56-p-rp-mo-br100",
+      "review_link": null
+    },
+    {
+      "id": 142,
+      "center_name": "bhubaneswar",
+      "clinic_location": "bhubaneswar",
+      "city": "bhubaneswar",
+      "rating": 5,
+      "name": "Komal Dewangan",
+      "reviews": "Starting IUI treatment was a big decision, but this clinic made everything easy. The staff was friendly, and the doctor provided the right guidance. We truly felt like we were in safe hands.",
+      "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjXh2W7mJ0GXx9C6OcuCCZM5rVVOowYiZbJ5bH4BHkMQm0odSxtrDA=w56-h56-p-rp-mo-br100",
+      "review_link": null
+    },
+    {
+      "id": 143,
+      "center_name": "bhubaneswar",
+      "clinic_location": "bhubaneswar",
+      "city": "bhubaneswar",
+      "rating": 5,
+      "name": "Kumar Gaurav",
+      "reviews": "Dr. Prasanta Kumar Nayak was kind and thorough in explaining our treatment plan. She answered all our concerns and gave us confidence in our IUI treatment journey. The care we received was exceptional.",
+      "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjWnkuovrXnz1mjY51aCuYlk9bY9m-ikCtwQVDkQIm5hbwmeRya7=w56-h56-p-rp-mo-br100",
+      "review_link": null
+    },
+    {
+      "id": 144,
+      "center_name": "bhubaneswar",
+      "clinic_location": "bhubaneswar",
+      "city": "bhubaneswar",
+      "rating": 5,
+      "name": "Deepali",
+      "reviews": "Searching for the best IUI center near me led us to this clinic, and we are grateful. The process was stress-free, the staff was supportive, and the doctor’s expertise made all the difference. Highly recommended!",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocJNdu8TzMyiCufxfy050DJ4Ahbj5ZFbwQnKiLELXgCFMg2Xlw=w56-h56-p-rp-mo-br100",
+      "review_link": null
+    }
+    
   ]
 
   export default iuiReview;

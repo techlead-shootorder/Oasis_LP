@@ -1566,6 +1566,136 @@ const ivfReview = [
       "name": "Usha Patil",
       "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocKd6EMo8mfe_nwnc21KCZEyjyUTAEJkj7uzQmqzHdBUJ3kqGw=w56-h56-p-rp-mo-br100"
     },
+    {
+      "id": 127,
+      "center_name": "kakinada",
+      "center_location": "kakinada",
+      "city": "kakinada",
+      "rating": 5,
+      "name": "Srikanth Sri",
+      "reviews": "Dr. Ramineedi at the best IVF hospital in kakinada changed our lives. Her expertise and the team’s care made our IVF treatment successful. Forever grateful!",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocJV0CbscHMoi8u1hCrFTgJe-jBE18h7cyY7tZAba3nO6IjjY96z=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 128,
+      "center_name": "kakinada",
+      "center_location": "kakinada",
+      "city": null,
+      "rating": 5,
+      "name": "Madhusudan Naidu Pathipati",
+      "reviews": "After years of disappointment, we found hope at kakinada IVF Centres. The staff was supportive, and the treatment was effective. We are now proud parents. Highly recommend!",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocJJqeZyvFm1fC9s5Wy35_EqRjG5jAHujaRg7SDrqIg-u9dblw=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 129,
+      "center_name": "kakinada",
+      "center_location": "kakinada",
+      "city": "kakinada",
+      "rating": 5,
+      "name": "Vasanth Appapogu",
+      "reviews": "Dr. Ramineedi is amazing! The best IVF hospital in kakinada with a team that feels like family. The process was smooth, and the results were life-changing.",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocKqcRkT75CGLsu44io3o73xFfGLta_9biNXnBfuaOYo0LszSw=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 130,
+      "center_name": "kakinada",
+      "center_location": "kakinada",
+      "city": "kakinada",
+      "rating": 4.9,
+      "name": "Gowthami Gowni",
+      "reviews": "Looking for IVF treatment in kakinada ? This is the place! The staff was kind, and the care was exceptional. Our dream of parenthood finally came true. Thank you!",
+      "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjWIfG_ONIOQqjrx7OExlhmR__iP_5KVoJ6Jw9tZC2dbJzJqMbCu=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 131,
+      "center_name": "tolichowki",
+      "center_location": "tolichowki",
+      "city": "tolichowki",
+      "rating": 4.9,
+      "name": "Aaliya Sheikh",
+      "reviews": "We found the best IVF center in Hyderabad. The process was smooth, and the staff made us feel at ease. Highly recommend!",
+      "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjVaryLP-qAbGfBXYjLtdaQi58njQC1hz2T-zOdhn2tyV9pptEe2Tw=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 132,
+      "center_name": "tolichowki",
+      "center_location": "tolichowki",
+      "city": "tolichowki",
+      "rating": 4.9,
+      "name": "Lekhan Naga",
+      "reviews": "Dr. Keerthana V is amazing! The IVF center in Hyderabad has a warm environment, and the treatment was successful. Thank you!",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocI5mA_d95nPa0fHlv9ncDPrqwECj6JM2LGpP8wrGZ7B46HdXA=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 133,
+      "center_name": "tolichowki",
+      "center_location": "tolichowki",
+      "city": "tolichowki",
+      "rating": 4.9,
+      "name": "Kaniki Shekar",
+      "reviews": "The best IVF doctor in Hyderabad! Dr. Keerthana V explained everything clearly, and the staff was very supportive.",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocLipXYIcAPExyu_HZLcNechNkVeyScHkmBmOeiAm_22ckyP=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 134,
+      "center_name": "tolichowki",
+      "center_location": "tolichowki",
+      "city": "tolichowki",
+      "rating": 4.9,
+      "name": "Lakshmi Sarada",
+      "reviews": "We are so grateful to this IVF center in Hyderabad. The cost was transparent, and the care was exceptional. Highly recommend!",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocJdA5mFa1KosgA1bVPQqhMPUKmCwtPMxHRivQiwfUSABq-FTA=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 135,
+      "center_name": "bhubaneswar",
+      "center_location": "bhubaneswar",
+      "city": "bhubaneswar",
+      "rating": 5,
+      "name": "Bharat Pahuja",
+      "reviews": "After years of disappointment, Dr. Suprava Jena at the IVF centre in Raipur gave us hope. The staff was supportive, and the treatment was successful. Highly recommend!\"",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocJcQsAWo41KeW8Uq7SI18ytKZNgvGF6bua3uiqzVq2d-nrprg=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 136,
+      "center_name": "bhubaneswar",
+      "center_location": "bhubaneswar",
+      "city": "bhubaneswar",
+      "rating": 5,
+      "name": "Tanushree Barua",
+      "reviews": "Looking for IVF doctors near me in bhubaneswar? This is the place! The team was caring, and the process was smooth. We are now proud parents. Thank you!",
+      "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjUtTTGVmqP73WWZ5MI01q8SV7jYGyGBlnn-ANITA5kFj7olbFbe=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 137,
+      "center_name": "bhubaneswar",
+      "center_location": "bhubaneswar",
+      "city": "bhubaneswar",
+      "rating": 5,
+      "name": "Komal Dewangan",
+      "reviews": "The best IVF centre in bhubaneswar with a kind and professional team. The treatment was effective, and we are forever grateful for this experience.",
+      "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjXh2W7mJ0GXx9C6OcuCCZM5rVVOowYiZbJ5bH4BHkMQm0odSxtrDA=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 138,
+      "center_name": "bhubaneswar",
+      "center_location": "bhubaneswar",
+      "city": "bhubaneswar",
+      "rating": 5,
+      "name": "Kumar Gaurav",
+      "reviews": "Facing fertility challenges? This IVF centre in bhubaneswar changed our lives. The staff was amazing, and the results were beyond our expectations. Highly recommend!",
+      "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjWnkuovrXnz1mjY51aCuYlk9bY9m-ikCtwQVDkQIm5hbwmeRya7=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 139,
+      "center_name": "bhubaneswar",
+      "center_location": "bhubaneswar",
+      "city": "bhubaneswar",
+      "rating": 5,
+      "name": "Deepali",
+      "reviews": "Our IVF journey in bhubaneswar was stress-free, thanks to the supportive team. The treatment was successful, and we are now a happy family. Thank you!",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocJNdu8TzMyiCufxfy050DJ4Ahbj5ZFbwQnKiLELXgCFMg2Xlw=w56-h56-p-rp-mo-br100"
+    }
    
   ]
 
