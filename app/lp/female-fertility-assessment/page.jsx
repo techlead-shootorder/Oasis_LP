@@ -88,6 +88,8 @@ const DynamicComponents = {
   )
 }
 
+
+
 export async function generateStaticParams() {
   const params = [];
 

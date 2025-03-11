@@ -18,6 +18,8 @@ const VideoReelSkeleton = () => {
     return 4;
   };
 
+//   Below is video skeleton
+
   return (
     <div className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 mb-10 lg:mb-16">
       <div className="flex justify-center mb-6 lg:mb-12">
