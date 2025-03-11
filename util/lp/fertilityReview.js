@@ -1325,7 +1325,7 @@ const fertilityReview = [
       "clinic_location": "vadodara",
       "city": "Vadodara",
       "rating": 4.9,
-      "name": "Suresh Rathod",
+      "name": "Mahesh Sharma",
       "reviews": "Infertility was emotionally draining, but visiting the best IVF fertility clinic gave me hope. specially Dr. Baxi Sushma!",
       "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocIIAsTF_7X4PRqAp7QGO2k--v3InJzvgxvFaSfjJxHya7VImA=w56-h56-p-rp-mo-br100",
       "review_link": "https://maps.app.goo.gl/aycBs9hiZbk76zjp9"
@@ -1380,7 +1380,7 @@ const fertilityReview = [
       "clinic_location": "ranchi",
       "city": "Ranchi",
       "rating": 4.9,
-      "name": "Rahul Singh",
+      "name": "Rahul Kumar",
       "reviews": "Struggling with infertility was difficult, but finding the best IVF center in ranchi gave me hope. Dr. Musunuru Rajani, knowledgeable, and ensured I received the best treatment. So grateful for her care!",
       "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocLHQ4AeF9R3sXJ6knv6QVhYF8IXVCm40yodoycGfpWVT_4ZEw=w56-h56-p-rp-mo-br100",
       "review_link": "https://maps.app.goo.gl/whdkLHy86bK6XrHV9"

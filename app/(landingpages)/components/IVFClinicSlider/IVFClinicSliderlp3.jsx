@@ -7,7 +7,7 @@ import { useInViewport } from 'react-in-viewport';
 import { useEffect, useRef, useState } from "react";
 import { UAParser } from 'ua-parser-js';
 
-// Video Reel Skeleton Component
+// Video Reel Skeleton Component Comment
 const VideoReelSkeleton = () => {
   const getSkeletonCount = () => {
     if (typeof window !== 'undefined') {

@@ -1325,7 +1325,7 @@ const iuiReview = [
       "clinic_location": "vadodara",
       "city": "Vadodara",
       "rating": 4.9,
-      "name": "Suresh Rathod",
+      "name": "Mahesh Sharma",
       "reviews": "We were unsure about the IUI treatment cost, but the clinic provided clear details and options. The quality of care we received made every step worth it. The doctor’s expertise gave us hope and confidence.",
       "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocIIAsTF_7X4PRqAp7QGO2k--v3InJzvgxvFaSfjJxHya7VImA=w56-h56-p-rp-mo-br100",
       "review_link": "https://maps.app.goo.gl/aycBs9hiZbk76zjp9"
@@ -1380,7 +1380,7 @@ const iuiReview = [
       "clinic_location": "ranchi",
       "city": "Ranchi",
       "rating": 4.9,
-      "name": "Rahul Singh",
+      "name": "Rahul Kumar",
       "reviews": "We wanted an expert for IUI treatment, and this clinic exceeded our expectations. The process was well-organized, and the doctor’s support made all the difference. We truly felt like we were in good hands.",
       "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocLHQ4AeF9R3sXJ6knv6QVhYF8IXVCm40yodoycGfpWVT_4ZEw=w56-h56-p-rp-mo-br100",
       "review_link": "https://maps.app.goo.gl/whdkLHy86bK6XrHV9"
