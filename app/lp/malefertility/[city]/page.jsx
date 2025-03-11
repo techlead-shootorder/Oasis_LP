@@ -129,12 +129,20 @@ const Page = memo(({ params }) => {
             </Suspense>
           </div>
 
-            <Suspense fallback={<ComponentLoader />}>
-              <DynamicComponents.MFTreatmentlp3 center={filteredCity} />
-            </Suspense>
+          {filteredDoctors?.length > 0  && filteredDoctors[0]?.fullname && <Suspense fallback={<ComponentLoader />}>
+              <DynamicComponents.MFBestDoctorslp3
+                center={filteredCity}
+                filteredDoctors={filteredDoctors}
+                isMeta={isMeta}
+                internal={internal}
+              />
+            </Suspense>}
 
             <Suspense fallback={<ComponentLoader />}>
-              <DynamicComponents.MFSpeciaListslp3 isMeta={isMeta} internal={internal} />
+              <DynamicComponents.MFIVFClinicSliderlp3
+                center={filteredCity}
+                cityVideos={cityVideos}
+              />
             </Suspense>
 
             <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 py-10 lg:py-16 bg-[url(/images/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat mb-10 lg:mb-16 relative">
@@ -151,33 +159,24 @@ const Page = memo(({ params }) => {
             </section>
 
             <Suspense fallback={<ComponentLoader />}>
+              <DynamicComponents.MFAwardV2 />
+            </Suspense>
+
+            <Suspense fallback={<ComponentLoader />}>
               <DynamicComponents.Centerslp3 />
+            </Suspense>
+
+            <Suspense fallback={<ComponentLoader />}>
+              <DynamicComponents.MFSpeciaListslp3 isMeta={isMeta} internal={internal} />
+            </Suspense>
+
+            <Suspense fallback={<ComponentLoader />}>
+              <DynamicComponents.MFTreatmentlp3 center={filteredCity} />
             </Suspense>
 
             {/* <Suspense fallback={<ComponentLoader />}>
               <DynamicComponents.ChooseOasislp3 center={filteredCity} />
             </Suspense> */}
-
-            <Suspense fallback={<ComponentLoader />}>
-              <DynamicComponents.MFAwardV2 />
-            </Suspense>
-
-           {filteredDoctors?.length > 0  && filteredDoctors[0]?.fullname && <Suspense fallback={<ComponentLoader />}>
-              <DynamicComponents.MFBestDoctorslp3
-                center={filteredCity}
-                filteredDoctors={filteredDoctors}
-                isMeta={isMeta}
-                internal={internal}
-              />
-            </Suspense>}
-
-            <Suspense fallback={<ComponentLoader />}>
-              <DynamicComponents.MFIVFClinicSliderlp3
-                center={filteredCity}
-                cityVideos={cityVideos}
-              />
-            </Suspense>
-
 
             {/* <Suspense fallback={<ComponentLoader />}>
               <DynamicComponents.PlanInfolp3 isMeta={isMeta} internal={internal} />
@@ -205,9 +204,6 @@ const Page = memo(({ params }) => {
             {!googel1num && <Suspense fallback={<MinimalLoader />}>
               <DynamicComponents.MFPhoneCall center={filteredCity} metanum={metanum} />
             </Suspense>}
-
-
-          
         
       </section>
     </>

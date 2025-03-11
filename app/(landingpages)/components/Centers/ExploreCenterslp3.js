@@ -12,7 +12,7 @@ const ExploreCenterslp3 = ({ nearByCenters }) => {
 
     const [showCentre, setShowCentre] = useState(false);
     return (
-        <div className='pb-8'>
+        <div className='py-8'>
             <div className='flex justify-center'>
                 <button className='bg-[#9678B6] font-medium py-2 px-6 text-white flex items-center gap-6 rounded-[7px]' onClick={() => setShowCentre(!showCentre)}>
                     Explore IVF Centre Near You

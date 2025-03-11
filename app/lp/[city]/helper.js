@@ -1,7 +1,7 @@
 import doctors from "@/util/lp/doctors";
 import newdoctorslp3 from "@/util/lp/newdoctorslp3";
 import testimonials from "@/util/lp/testimonials";
-import { cityToVideos, videos } from "@/util/lp/videos";
+import { cityToVideos, videos } from "@/util/lp/videoTestimonial";
 
 export const normalizeCityParams = (city) => {
  

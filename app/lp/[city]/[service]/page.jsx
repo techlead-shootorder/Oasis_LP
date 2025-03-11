@@ -3,7 +3,7 @@ import masterlp3 from "@/util/lp/masterlp3";
 import newdoctorslp3 from "@/util/lp/newdoctorslp3";
 import testimonials from "@/util/lp/testimonials";
 import nearByAreas from "@/util/lp/nearByAreas";
-import { cityToVideos, videos } from "@/util/lp/videos";
+import { cityToVideos, videos } from "@/util/lp/videoTestimonial";
 import dynamic from 'next/dynamic';
 
 
@@ -11,6 +11,7 @@ import HeaderTesting from "@/app/(landingpages)/components/Header/HeaderTesting"
 
 import Herolp3 from "../../../(landingpages)/components/Hero/Herolp3";
 import { useMemo } from "react";
+import Gallery from "@/app/(landingpages)/components/Gallery/Gallery";
 
 
 // const StickyButtonScreenlp3 = dynamic(() => import('../../../(landingpages)/components/StickyButtonScreen/StickyButtonScreenlp3'), {
@@ -29,9 +30,9 @@ const Treatmentlp3 = dynamic(() => import('../../../(landingpages)/components/Tr
     ssr: true,
 });
 
-const PlanInfolp3 = dynamic(() => import('../../../(landingpages)/components/PlanInfo/PlanInfolp3'), {
-    ssr: true,
-});
+// const PlanInfolp3 = dynamic(() => import('../../../(landingpages)/components/PlanInfo/PlanInfolp3'), {
+//     ssr: true,
+// });
 
 // const ChooseOasislp3 = dynamic(() => import('../../../(landingpages)/components/ChooseOasis/ChooseOasislp3'), {
 //     ssr: true,
@@ -143,7 +144,7 @@ export default function Page({ params }) {
 
 
     // Function to get videos for a city
-    function getVideosForCity(city) {
+    function   getVideosForCity(city) {
         const videoOrder = cityToVideos[city.toLowerCase()];
 
         if (!videoOrder) {
@@ -156,6 +157,8 @@ export default function Page({ params }) {
     }
 
     const cityVideos = getVideosForCity(city);
+
+    console.log("city videos", cityVideos);
 
    
 
@@ -171,20 +174,27 @@ export default function Page({ params }) {
                 <div className={`mt-[20px] md:mt-0`}>
                     <StatisticBannerV2 />
                 </div>
-                <Treatmentlp3 center={filteredCity} service={service} />
-                <SpeciaListslp3 service={service} isMeta={isMeta} />
-                <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 py-10 lg:py-16 bg-[url(/images/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat mb-10 lg:mb-16 relative">
+                <BestDoctorslp3 center={filteredCity} filteredDoctors={filteredDoctors} isMeta={isMeta} service={service} />
+                <Gallery center={filteredCity} filteredDoctors={filteredDoctors} isMeta={isMeta} service={service} />
+
+                
+
+                <IVFClinicSliderlp3 center={filteredCity} cityVideos={cityVideos} service={service} />
+                {/* <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 py-10 lg:py-16 bg-[url(/images/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat mb-10 lg:mb-16 relative"> */}
+                {/* </section> */}
                     <Reviewlp3 center={filteredCity} filteredReview={filteredReview} service={service} />
                     <TrustedCliniclp3 center={filteredCity} service={service} />
-                </section>
-                <Centerslp3 />
-                {/* <ChooseOasislp3 center={filteredCity} /> */}
                 <AwardV2 service={service} />
-                <BestDoctorslp3 center={filteredCity} filteredDoctors={filteredDoctors} isMeta={isMeta} service={service} />
-                <IVFClinicSliderlp3 center={filteredCity} cityVideos={cityVideos} service={service} />
-                <PlanInfolp3 isMeta={isMeta} />
+                <Centerslp3 />
+                <SpeciaListslp3 service={service} isMeta={isMeta} />
 
+                <Treatmentlp3 center={filteredCity} service={service} />
                 <Faqlp3 />
+                
+                {/* <ChooseOasislp3 center={filteredCity} /> */}
+                
+                {/* <PlanInfolp3 isMeta={isMeta} /> */}
+
                 {city != 'india' && <ExploreCenterslp3 nearByCenters={nearByCenters} />}
                 <FooterStickyButtonlp3 center={filteredCity} />
             </main>

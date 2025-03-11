@@ -1,34 +1,39 @@
 'use client';
 import Image from 'next/image';
 import { useState } from 'react';
-import review from '@/util/lp/reviewlp3';
 
-const MobileReview = ({ center }) => {
+const MobileReview = ({ review }) => {
     const [activeIndex, setActiveIndex] = useState(0);
+    if(!review) return null;
 
-    const filterReview = review.filter((item) => item?.center_name?.toLowerCase() === center?.center_name?.toLowerCase());
+    console.log("mobile", review);
 
-    // Ensure activeIndex is within bounds
-    const isValidIndex = activeIndex >= 0 && activeIndex < filterReview.length;
+    const isValidIndex = activeIndex >= 0 && activeIndex < review.length;
 
     function capitalizeName(name) {
-        // Trim leading and trailing spaces and ensure there's only one space between words
         const lower = name.toLowerCase();
         let cleanedName = lower.trim().replace(/\s+/g, ' ');
-    
-        // Capitalize the first letter of each word
         return cleanedName
             .split(' ')
             .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
             .join(' ');
     }
 
+    function getInitials(name) {
+        return name ? name.charAt(0).toUpperCase() : '';
+    }
+
+    function getBgColor(index) {
+        const colors = ['bg-red-500', 'bg-blue-500', 'bg-green-500', 'bg-yellow-500', 'bg-purple-500'];
+        return colors[index % colors.length];
+    }
+
     return (
         <div className="flex max-w-md mx-auto mt-6">
             {/* PROFILE IMAGES */}
             <div className="flex flex-col gap-4 mb-6">
-                {filterReview.map((review, index) => (
-                    <div key={review.id} className={`${activeIndex === index ? 'bg-[#fff]' : ''} w-[70px] h-[48px]`}>
+                {review.map((review, index) => (
+                    <div key={review.id} className={`${activeIndex === index ? 'bg-[url(/images/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat' : ''} w-[70px] h-[48px]`}>
                         <button
                             onClick={() => setActiveIndex(index)}
                             className={`relative rounded-full transition-all duration-300 ${
@@ -37,23 +42,21 @@ const MobileReview = ({ center }) => {
                         >
                             <div
                                 className={`absolute inset-0 rounded-full transition-opacity duration-300 ${
-                                    activeIndex === index ? 'bg-white opacity-20' : 'opacity-0'
+                                    activeIndex === index ? 'bg-[url(/images/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat opacity-20' : 'opacity-0'
                                 }`}
                             ></div>
-                            <img
-                                src={`/images/lp/review/profiles/profile_image_id_${review.id}.png`}
-                                alt={`${review.name}'s profile`}
-                                className="w-12 h-12 rounded-full object-cover"
-                                width={48}
-                                height={48}
-                            />
+                            <div
+                                className={`w-12 h-12 flex items-center justify-center rounded-full text-white text-lg font-bold ${getBgColor(index)}`}
+                            >
+                                {getInitials(review.name)}
+                            </div>
                         </button>
                     </div>
                 ))}
             </div>
 
             {/* REVIEWS */}
-            <div className={`bg-white rounded-[14px] ${activeIndex == 0 && 'rounded-tl-none'} px-6 py-4`}>
+            <div className={`bg-[url(/images/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat rounded-[14px] ${activeIndex == 0 && 'rounded-tl-none'} px-6 py-4`}>
                 {isValidIndex ? (
                     <>
                         <div className="flex items-center justify-center mb-4 gap-2">
@@ -70,7 +73,7 @@ const MobileReview = ({ center }) => {
                                     <svg
                                         key={i}
                                         className={`w-4 h-4 ${
-                                            i < Math.floor(filterReview[activeIndex].rating)
+                                            i < Math.floor(review[activeIndex].rating)
                                                 ? 'text-yellow-400'
                                                 : 'text-gray-300'
                                         }`}
@@ -81,20 +84,20 @@ const MobileReview = ({ center }) => {
                                     </svg>
                                 ))}
                                 <span className="ml-1 text-gray-600">
-                                    {filterReview[activeIndex].rating}
+                                    {review[activeIndex].rating}
                                 </span>
                             </div>
                         </div>
 
                         <div className="transition-opacity duration-300 text-center">
                             <p className="text-gray-700 mb-4">
-                                {filterReview[activeIndex].review}
+                                {review[activeIndex].reviews}
                             </p>
                             <div className="text-gray-900 font-medium">
-                                {capitalizeName(filterReview[activeIndex].name)}
+                                {capitalizeName(review[activeIndex].name)}
                             </div>
                             <div className="text-gray-500 text-sm">
-                                {filterReview[activeIndex].clinic_location}
+                                {review[activeIndex].clinic_location}
                             </div>
                         </div>
                     </>
