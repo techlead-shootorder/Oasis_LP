@@ -1,28 +1,31 @@
 'use client';
 import Image from 'next/image';
 import { useState } from 'react';
-// import review from '@/util/lp/reviewlp3';
 
 const MobileReview = ({ review }) => {
-
     const [activeIndex, setActiveIndex] = useState(0);
     if(!review) return null;
 
-   console.log("mobile", review);
+    console.log("mobile", review);
 
-    // Ensure activeIndex is within bounds
     const isValidIndex = activeIndex >= 0 && activeIndex < review.length;
 
     function capitalizeName(name) {
-        // Trim leading and trailing spaces and ensure there's only one space between words
         const lower = name.toLowerCase();
         let cleanedName = lower.trim().replace(/\s+/g, ' ');
-    
-        // Capitalize the first letter of each word
         return cleanedName
             .split(' ')
             .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
             .join(' ');
+    }
+
+    function getInitials(name) {
+        return name ? name.charAt(0).toUpperCase() : '';
+    }
+
+    function getBgColor(index) {
+        const colors = ['bg-red-500', 'bg-blue-500', 'bg-green-500', 'bg-yellow-500', 'bg-purple-500'];
+        return colors[index % colors.length];
     }
 
     return (
@@ -42,13 +45,11 @@ const MobileReview = ({ review }) => {
                                     activeIndex === index ? 'bg-[url(/images/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat opacity-20' : 'opacity-0'
                                 }`}
                             ></div>
-                            <img
-                                src={`/images/lp/review/profiles/profile_image_id_${review.id}.png`}
-                                alt={`${review.name}'s profile`}
-                                className="w-12 h-12 rounded-full object-cover"
-                                width={48}
-                                height={48}
-                            />
+                            <div
+                                className={`w-12 h-12 flex items-center justify-center rounded-full text-white text-lg font-bold ${getBgColor(index)}`}
+                            >
+                                {getInitials(review.name)}
+                            </div>
                         </button>
                     </div>
                 ))}
