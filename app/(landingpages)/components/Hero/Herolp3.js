@@ -141,7 +141,7 @@ const HeroHeading = memo(({ isfemaleAssessment }) => (
   !isfemaleAssessment && <h1 id="heroBannerHeading" className="absolute text-[26px] top-[10px] left-0 md:text-[26px] lg:text-4xl xl:text-5xl md:top-12 md:left-[24px] lg:left-[40px] xl:left-[60px] 2xl:left-[100px] z-10 font-semibold text-white py-2 text-center md:text-left w-full md:w-auto">
     {/* Best <span className={service !== 'fertility' ? 'uppercase' : ''}>{service || "IVF"}</span> Clinic in{" "}
     {centerName} */}
-    In the Good Hands of Science, <br/> 100,000+ Healthy Babies <br/> and Counting. 
+    In the Good Hands of Science, <br/> <span className="bg-primary px-2">100,000+ Healthy Babies</span> <br/> and Counting. 
     <p className="hidden sm:block text-lg  p-2 w-fit">70% IVF success rate, trusted by 10000+ Gynaecologists and helped deliver 100000+ babies</p>
   </h1>
 ));
