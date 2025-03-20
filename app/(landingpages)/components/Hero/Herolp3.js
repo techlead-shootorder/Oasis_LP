@@ -27,43 +27,83 @@ const BannerSkeleton = memo(() => (
 ));
 BannerSkeleton.displayName = "BannerSkeleton";
 
-// Constants
-const BANNER_IMAGES = {
-  desktop: {
-    src: "/images/lp/lp3/desktop_banner_paidlp.webp",
-    width: 1728,
-    height: 787,
-    className: "w-full object-cover absolute left-0 top-0 hidden md:block h-full",
-    style: { objectPosition: "25% 0" },
-    sizes: "(min-width: 768px) 100vw, 0vw"
+// Dynamic Banner Configuration
+const LOCATION_BANNERS = {
+  // Default banner
+  default: {
+    desktop: {
+      src: "/images/lp/lp3/desktop_banner_paidlp.webp",
+      width: 1728,
+      height: 787,
+      className: "w-full object-cover absolute left-0 top-0 hidden md:block h-full",
+      style: { objectPosition: "25% 0" },
+      sizes: "(min-width: 768px) 100vw, 0vw"
+    },
+    mobile: {
+      src: "/images/lp/lp3/mobile_banner_paidlp.webp",
+      width: 428,
+      height: 452,
+      className: "w-full object-cover absolute left-0 -top-[40px] md:hidden h-full",
+      sizes: "(max-width: 767px) 100vw, 0vw"
+    }
   },
-  mobile: {
-    src: "/images/lp/lp3/mobile_banner_paidlp.webp",
-    width: 428,
-    height: 452,
-    className: "w-full object-cover absolute left-0 -top-[40px] md:hidden h-full",
-    sizes: "(max-width: 767px) 100vw, 0vw"
+  // Chennai specific banner
+  chennai: {
+    desktop: {
+      src: "/images/lp/lp3/chenn-desk.webp",
+      width: 1728,
+      height: 787,
+      className: "w-full object-cover absolute left-0 top-0 hidden md:block h-full",
+      style: { objectPosition: "25% 0" },
+      sizes: "(min-width: 768px) 100vw, 0vw"
+    },
+    mobile: {
+      src: "/images/lp/lp3/chenn-mob.webp",
+      width: 428,
+      height: 452,
+      className: "w-full object-cover absolute left-0 -top-[40px] md:hidden h-full",
+      sizes: "(max-width: 767px) 100vw, 0vw"
+    }
+  },
+  // Pune specific banner
+  pune: {
+    desktop: {
+      src: "/images/lp/lp3/pune-nashik-desk.webp",
+      width: 1728,
+      height: 787,
+      className: "w-full object-cover absolute left-0 top-0 hidden md:block h-full",
+      style: { objectPosition: "25% 0" },
+      sizes: "(min-width: 768px) 100vw, 0vw"
+    },
+    mobile: {
+      src: "/images/lp/lp3/pune-nashik-mob.webp",
+      width: 428,
+      height: 452,
+      className: "w-full object-cover absolute left-0 -top-[40px] md:hidden h-full",
+      sizes: "(max-width: 767px) 100vw, 0vw"
+    }
+  },
+  // Nashik specific banner
+  nashik: {
+    desktop: {
+      src: "/images/lp/lp3/pune-nashik-desk.webp",
+      width: 1728,
+      height: 787,
+      className: "w-full object-cover absolute left-0 top-0 hidden md:block h-full",
+      style: { objectPosition: "25% 0" },
+      sizes: "(min-width: 768px) 100vw, 0vw"
+    },
+    mobile: {
+      src: "/images/lp/lp3/pune-nashik-mob.webp",
+      width: 428,
+      height: 452,
+      className: "w-full object-cover absolute left-0 -top-[40px] md:hidden h-full",
+      sizes: "(max-width: 767px) 100vw, 0vw"
+    }
   }
 };
 
-const CHENNAI_IMAGES = {
-  desktop: {
-    src: "/images/lp/lp3/chennai-desk.webp",
-    width: 1728,
-    height: 787,
-    className: "w-full object-cover absolute left-0 top-0 hidden md:block h-full",
-    style: { objectPosition: "25% 0" },
-    sizes: "(min-width: 768px) 100vw, 0vw"
-  },
-  mobile: {
-    src: "/images/lp/lp3/chennai-mob.webp",
-    width: 428,
-    height: 452,
-    className: "w-full object-cover absolute left-0 -top-[40px] md:hidden h-full",
-    sizes: "(max-width: 767px) 100vw, 0vw"
-  }
-};
-
+// Female assessment banners (remain unchanged)
 const FEMALE = {
   desktop: {
     src: "/images/lp/lp3/female-desktop.webp",
@@ -83,24 +123,31 @@ const FEMALE = {
 };
 
 // Preload images for faster LCP
-const preloadImages = () => {
+const preloadImages = (centerName, isFemaleAssessment) => {
   const link = document.createElement('link');
   link.rel = 'preload';
   link.as = 'image';
-  link.href = window.innerWidth >= 768 ? BANNER_IMAGES.desktop.src : BANNER_IMAGES.mobile.src;
+  
+  if (isFemaleAssessment) {
+    link.href = window.innerWidth >= 768 ? FEMALE.desktop.src : FEMALE.mobile.src;
+  } else {
+    const location = centerName?.toLowerCase() || 'default';
+    const bannerConfig = LOCATION_BANNERS[location] || LOCATION_BANNERS.default;
+    link.href = window.innerWidth >= 768 ? bannerConfig.desktop.src : bannerConfig.mobile.src;
+  }
+  
   document.head.appendChild(link);
 };
 
 if (typeof window !== 'undefined') {
+  // Initial preload will use default, actual preload happens in component
   preloadImages();
 }
 
 // Memoized Image Component
-const HeroBanner = memo(({ type, centerName, isfemaleAssessment }) => (
-  // console.log("centername", centerName)
-
-  <>
-    {isfemaleAssessment ?
+const HeroBanner = memo(({ type, centerName, isfemaleAssessment }) => {
+  if (isfemaleAssessment) {
+    return (
       <Image
         {...FEMALE[type]}
         alt="Banner"
@@ -108,32 +155,29 @@ const HeroBanner = memo(({ type, centerName, isfemaleAssessment }) => (
         quality={85}
         fetchPriority="high"
         decoding="async"
-
       />
-      :
-      centerName.toLowerCase() == 'chennai' ?
-      <Image
-        {...CHENNAI_IMAGES[type]}
-        alt="Banner"
-        priority={true}
-        quality={85}
-        fetchPriority="high"
-        decoding="async"
+    );
+  }
 
-      />
-      : <Image
-        {...BANNER_IMAGES[type]}
-        alt="Banner"
-        priority={true}
-        quality={85}
-        fetchPriority="high"
-        decoding="async"
+  // Normalize center name and get corresponding banner config
+  const normalizedCenterName = centerName?.toLowerCase() || '';
+  const locationKey = Object.keys(LOCATION_BANNERS).find(key => 
+    normalizedCenterName.includes(key)
+  ) || 'default';
+  
+  const bannerConfig = LOCATION_BANNERS[locationKey];
 
-      />}
-
-  </>
-
-));
+  return (
+    <Image
+      {...bannerConfig[type]}
+      alt={`${centerName} Banner`}
+      priority={true}
+      quality={85}
+      fetchPriority="high"
+      decoding="async"
+    />
+  );
+});
 HeroBanner.displayName = "HeroBanner";
 
 // Memoized Content Components
@@ -181,10 +225,10 @@ MobileLeadForm.displayName = "MobileLeadForm";
 
 // Helper Functions
 const formatCenterName = (name) => {
- 
-
+  if (!name) return '';
+  
   return name
-    ?.split("-")
+    .split("-")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 };
@@ -192,18 +236,22 @@ const formatCenterName = (name) => {
 // Main Component
 const HeroV2 = ({ center, service, isMeta, internal, isfemaleAssessment }) => {
   const centerName = React.useMemo(() => formatCenterName(center?.center_name_heading), [center?.center_name_heading]);
-  console.log("female", isfemaleAssessment)
+  
+  // Preload correct banner after component mounts
+  React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      preloadImages(centerName, isfemaleAssessment);
+    }
+  }, [centerName, isfemaleAssessment]);
 
   return (
     <Suspense fallback={
       <div className="animate-pulse bg-[#fde9f2] h-screen">
         <BannerSkeleton />
-        {/* <FormSkeleton /> */}
       </div>
     }>
       <section id="herolp3" className="bg-[#fde9f2] lg:h-screen relative max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 md:mb-6 lg:mb-10">
         <div>
-          {console.log("center name in hero", centerName)}
           <HeroHeading service={service} centerName={centerName} isfemaleAssessment={isfemaleAssessment} />
           <div>
             <HeroBanner type="desktop" centerName={centerName} isfemaleAssessment={isfemaleAssessment} />
