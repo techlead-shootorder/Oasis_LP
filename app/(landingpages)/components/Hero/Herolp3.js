@@ -104,6 +104,7 @@ const LOCATION_BANNERS = {
 };
 
 // Female assessment banners (remain unchanged)
+// below female banner
 const FEMALE = {
   desktop: {
     src: "/images/lp/lp3/female-desktop.webp",
