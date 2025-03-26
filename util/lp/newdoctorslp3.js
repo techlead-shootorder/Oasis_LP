@@ -416,17 +416,17 @@ const newdoctorslp3 = [
         "qualification": "MBBS, DGO \n",
         "Awards": "karimnagar\n"
     },
-    {
-        "id": 40,
-        "fullname": "Dr. Mathi Harika",
-        "designation": "Consultant Fertility Specialist",
-        "experience": "11 Years",
-        "docterImage": "Dr. Mathi Harika.webp",
-        "master_id": "12",
-        "qualification": "MS - OBGYN, FRM",
-        "areaOfSpecialization": "Fellowship in Reproductive Medicine",
-        "practoRating": ""
-    },
+    // {
+    //     "id": 40,
+    //     "fullname": "Dr. Mathi Harika",
+    //     "designation": "Consultant Fertility Specialist",
+    //     "experience": "11 Years",
+    //     "docterImage": "Dr. Mathi Harika.webp",
+    //     "master_id": "12",
+    //     "qualification": "MS - OBGYN, FRM",
+    //     "areaOfSpecialization": "Fellowship in Reproductive Medicine",
+    //     "practoRating": ""
+    // },
     {
         "id": 41,
         "fullname": "Dr. Radhika Potluri",
@@ -610,17 +610,17 @@ const newdoctorslp3 = [
         "qualification": "MBBS,DNB (OBG)",
         "practoRating": ""
     },
-    {
-        "id": 58,
-        "fullname": "Dr. Mathi Harika",
-        "designation": "Consultant Fertility Specialist",
-        "experience": "11 Years",
-        "docterImage": "Dr. Mathi Harika.webp",
-        "master_id": "17",
-        "qualification": "MS - OBGYN, FRM",
-        "areaOfSpecialization": "Fellowship in Reproductive Medicine",
-        "practoRating": ""
-    },
+    // {
+    //     "id": 58,
+    //     "fullname": "Dr. Mathi Harika",
+    //     "designation": "Consultant Fertility Specialist",
+    //     "experience": "11 Years",
+    //     "docterImage": "Dr. Mathi Harika.webp",
+    //     "master_id": "17",
+    //     "qualification": "MS - OBGYN, FRM",
+    //     "areaOfSpecialization": "Fellowship in Reproductive Medicine",
+    //     "practoRating": ""
+    // },
     {
         "id": 59,
         "fullname": "Dr. Vijayalakshmi D",
@@ -1000,17 +1000,17 @@ const newdoctorslp3 = [
         "areaOfSpecialization": "Fellowship in reproductive medicine \nFellowship in sexual medicine",
         "practoRating": "86%"
     },
-    {
-        "id": 94,
-        "fullname": "Dr. Mathi Harika",
-        "designation": "Consultant Fertility Specialist",
-        "experience": "11 Years",
-        "docterImage": "Dr. Mathi Harika.webp",
-        "master_id": "32",
-        "qualification": "MS - OBGYN, FRM",
-        "areaOfSpecialization": "Fellowship in Reproductive Medicine",
-        "practoRating": ""
-    },
+    // {
+    //     "id": 94,
+    //     "fullname": "Dr. Mathi Harika",
+    //     "designation": "Consultant Fertility Specialist",
+    //     "experience": "11 Years",
+    //     "docterImage": "Dr. Mathi Harika.webp",
+    //     "master_id": "32",
+    //     "qualification": "MS - OBGYN, FRM",
+    //     "areaOfSpecialization": "Fellowship in Reproductive Medicine",
+    //     "practoRating": ""
+    // },
     {
         "id": 95,
         "fullname": "Dr. Ramya Vicharapu",
@@ -1217,17 +1217,17 @@ const newdoctorslp3 = [
         "qualification": "DGO, PGDCC",
         "practoRating": ""
     },
-    {
-        "id": 114,
-        "fullname": "Dr. Mathi Harika",
-        "designation": "Consultant Fertility Specialist",
-        "experience": "11 Years",
-        "docterImage": "Dr. Mathi Harika.webp",
-        "master_id": "36",
-        "qualification": "MS - OBGYN, FRM",
-        "areaOfSpecialization": "Fellowship in Reproductive Medicine",
-        "practoRating": ""
-    },
+    // {
+    //     "id": 114,
+    //     "fullname": "Dr. Mathi Harika",
+    //     "designation": "Consultant Fertility Specialist",
+    //     "experience": "11 Years",
+    //     "docterImage": "Dr. Mathi Harika.webp",
+    //     "master_id": "36",
+    //     "qualification": "MS - OBGYN, FRM",
+    //     "areaOfSpecialization": "Fellowship in Reproductive Medicine",
+    //     "practoRating": ""
+    // },
     {
         "id": 115,
         "fullname": "Dr. Radhika Potluri",

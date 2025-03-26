@@ -1,16 +1,11 @@
 "use client"
 import React, { useRef, useState, useEffect } from "react";
+import { getGalleryImages } from "@/util/lp/galleryImages";
 
-const imagePairs = [
-  ["/images/home/gallery/1.webp", "/images/home/gallery/2.webp"],
-  ["/images/home/gallery/3.webp", "/images/home/gallery/4.webp"],
-  ["/images/home/gallery/5.webp", "/images/home/gallery/6.webp"],
-  ["/images/home/gallery/7.webp", "/images/home/gallery/8.webp"],
-  ["/images/home/gallery/9.webp", "/images/home/gallery/10.webp"],
-  ["/images/home/gallery/11.webp", "/images/home/gallery/12.webp"],
-];
+const Gallery = ({center}) => {
+  // Get images based on center, fallback to default
+  const imagePairs = getGalleryImages(center?.center_name);
 
-const Gallery = () => {
   const sliderRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -33,7 +28,7 @@ const Gallery = () => {
         sliderRef.current.removeEventListener("scroll", handleScroll);
       }
     };
-  }, []);
+  }, [imagePairs]);
 
   return (
     <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 py-10 xl:py-16 rounded-3xl">
@@ -44,8 +39,16 @@ const Gallery = () => {
         <div ref={sliderRef} className="flex gap-4 overflow-x-auto scroll-smooth scrollbar-none no-scrollbar">
           {imagePairs.map((pair, index) => (
             <div key={index} className="flex flex-col gap-2 min-w-[45%] md:min-w-[22%]">
-              <img src={pair[0]} alt={`Image ${index * 2 + 1}`} className="w-full h-50 object-cover rounded-lg shadow-md" />
-              <img src={pair[1]} alt={`Image ${index * 2 + 2}`} className="w-full h-50 object-cover rounded-lg shadow-md" />
+              <img 
+                src={pair[0]} 
+                alt={`${center?.center_name || 'City'} Gallery Image ${index * 2 + 1}`} 
+                className="w-full h-50 object-cover rounded-lg shadow-md" 
+              />
+              <img 
+                src={pair[1]} 
+                alt={`${center?.center_name || 'City'} Gallery Image ${index * 2 + 2}`} 
+                className="w-full h-50 object-cover rounded-lg shadow-md" 
+              />
             </div>
           ))}
         </div>
