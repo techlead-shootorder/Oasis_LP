@@ -172,7 +172,7 @@ const Page = memo(({ params }) => {
             </Suspense>
 
             <Suspense fallback={<ComponentLoader />}>
-              <DynamicComponents.Centerslp3 />
+              <DynamicComponents.Centerslp3 center={filteredCity}/>
             </Suspense>
 
             <Suspense fallback={<ComponentLoader />}>
