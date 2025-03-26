@@ -185,7 +185,7 @@ export default function Page({ params }) {
                     <Reviewlp3 center={filteredCity} filteredReview={filteredReview} service={service} />
                     <TrustedCliniclp3 center={filteredCity} service={service} />
                 <AwardV2 service={service} />
-                <Centerslp3 />
+                <Centerslp3 center={filteredCity}/>
                 <SpeciaListslp3 service={service} isMeta={isMeta} />
 
                 <Treatmentlp3 center={filteredCity} service={service} />
