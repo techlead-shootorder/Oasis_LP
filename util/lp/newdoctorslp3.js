@@ -815,17 +815,17 @@ const newdoctorslp3 = [
         "areaOfSpecialization": "Fellowship in Reproductive Medicine",
         "practoRating": "100%"
     },
-    {
-        "id": 77,
-        "fullname": "Dr. Ashwini Vikram Wagh",
-        "designation": "Consultant Fertility Specialist",
-        "experience": "3 Years",
-        "docterImage": "Dr. Ashwini Vikram Wagh.webp",
-        "master_id": "24",
-        "qualification": "DNB-OBG",
-        "areaOfSpecialization": "Fellowship in Minimal Access Surgery",
-        "practoRating": ""
-    },
+    // {
+    //     "id": 77,
+    //     "fullname": "Dr. Ashwini Vikram Wagh",
+    //     "designation": "Consultant Fertility Specialist",
+    //     "experience": "3 Years",
+    //     "docterImage": "Dr. Ashwini Vikram Wagh.webp",
+    //     "master_id": "24",
+    //     "qualification": "DNB-OBG",
+    //     "areaOfSpecialization": "Fellowship in Minimal Access Surgery",
+    //     "practoRating": ""
+    // },
     {
         "id": 78,
         "fullname": "Dr. Nilesh Unmesh Balkawade",
@@ -848,17 +848,17 @@ const newdoctorslp3 = [
         "areaOfSpecialization": "Fellowship in Assisted Reproductive Techniques \n\nICOG & UKSH Germany",
         "practoRating": ""
     },
-    {
-        "id": 80,
-        "fullname": "Dr. Ashwini Vikram Wagh",
-        "designation": "Consultant Fertility Specialist",
-        "experience": "3 Years",
-        "docterImage": "Dr. Ashwini Vikram Wagh.webp",
-        "master_id": "25",
-        "qualification": "DNB-OBG",
-        "areaOfSpecialization": "Fellowship in Minimal Access Surgery",
-        "practoRating": ""
-    },
+    // {
+    //     "id": 80,
+    //     "fullname": "Dr. Ashwini Vikram Wagh",
+    //     "designation": "Consultant Fertility Specialist",
+    //     "experience": "3 Years",
+    //     "docterImage": "Dr. Ashwini Vikram Wagh.webp",
+    //     "master_id": "25",
+    //     "qualification": "DNB-OBG",
+    //     "areaOfSpecialization": "Fellowship in Minimal Access Surgery",
+    //     "practoRating": ""
+    // },
     {
         "id": 81,
         "fullname": "Dr. Nilesh Unmesh Balkawade",
@@ -881,17 +881,17 @@ const newdoctorslp3 = [
         "areaOfSpecialization": "Fellowship in Assisted Reproductive Techniques \n\nICOG & UKSH Germany",
         "practoRating": ""
     },
-    {
-        "id": 83,
-        "fullname": "Dr. Ashwini Vikram Wagh",
-        "designation": "Consultant Fertility Specialist",
-        "experience": "3 Years",
-        "docterImage": "Dr. Ashwini Vikram Wagh.webp",
-        "master_id": "26",
-        "qualification": "DNB-OBG",
-        "areaOfSpecialization": "Fellowship in Minimal Access Surgery",
-        "practoRating": ""
-    },
+    // {
+    //     "id": 83,
+    //     "fullname": "Dr. Ashwini Vikram Wagh",
+    //     "designation": "Consultant Fertility Specialist",
+    //     "experience": "3 Years",
+    //     "docterImage": "Dr. Ashwini Vikram Wagh.webp",
+    //     "master_id": "26",
+    //     "qualification": "DNB-OBG",
+    //     "areaOfSpecialization": "Fellowship in Minimal Access Surgery",
+    //     "practoRating": ""
+    // },
     {
         "id": 84,
         "fullname": "Dr. Sneha Govind Balki",
