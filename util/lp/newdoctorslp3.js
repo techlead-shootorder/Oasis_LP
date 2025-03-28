@@ -329,17 +329,17 @@ const newdoctorslp3 = [
         "qualification": "MBBS, DGO",
         "areaOfSpecialization": "#N/A"
     },
-    {
-        "id": 32,
-        "fullname": "Dr. B S Bhavya",
-        "designation": "Fertility Specialist",
-        "experience": "5 Years",
-        "docterImage": "Dr. B S Bhavya.webp",
-        "master_id": "10",
-        "qualification": "MBBS, MS OBG",
-        "areaOfSpecialization": "FRM",
-        "practoRating": ""
-    },
+    // {
+    //     "id": 32,
+    //     "fullname": "Dr. B S Bhavya",
+    //     "designation": "Fertility Specialist",
+    //     "experience": "5 Years",
+    //     "docterImage": "Dr. B S Bhavya.webp",
+    //     "master_id": "10",
+    //     "qualification": "MBBS, MS OBG",
+    //     "areaOfSpecialization": "FRM",
+    //     "practoRating": ""
+    // },
     {
         "id": 33,
         "fullname": "Dr. Jalagam Kavya Rao",
@@ -351,28 +351,28 @@ const newdoctorslp3 = [
         "areaOfSpecialization": "Fellowship in Reproductive Medicine fro m OSHREM- 2017-2018, Fellowship in Gynecological Laproscopy- KEIL- Germany-2020-2021",
         "practoRating": "100%"
     },
-    {
-        "id": 34,
-        "fullname": "Dr. M V D Aruna",
-        "designation": "Consultant Fertility Specialist",
-        "experience": "29 Years",
-        "docterImage": "Dr. M V D Aruna.webp",
-        "master_id": "10",
-        "qualification": "MBBS,MD DGO",
-        "areaOfSpecialization": "Dimploma in aMinimal Acess surgery,ICOG Fellowship in Reproductiv medicine,Fellowship in Infertiltiy",
-        "practoRating": "100%"
-    },
-    {
-        "id": 35,
-        "fullname": "Dr. Meera Jindal",
-        "designation": "Consultant Fertility Specialist",
-        "experience": "13 Years",
-        "docterImage": "Dr. Meera Jindal.webp",
-        "master_id": "10",
-        "qualification": "MS - OBGYN, DNB, FNB",
-        "areaOfSpecialization": "Fellowship in Gynecologic Laparoscopy",
-        "practoRating": "100%"
-    },
+    // {
+    //     "id": 34,
+    //     "fullname": "Dr. M V D Aruna",
+    //     "designation": "Consultant Fertility Specialist",
+    //     "experience": "29 Years",
+    //     "docterImage": "Dr. M V D Aruna.webp",
+    //     "master_id": "10",
+    //     "qualification": "MBBS,MD DGO",
+    //     "areaOfSpecialization": "Dimploma in aMinimal Acess surgery,ICOG Fellowship in Reproductiv medicine,Fellowship in Infertiltiy",
+    //     "practoRating": "100%"
+    // },
+    // {
+    //     "id": 35,
+    //     "fullname": "Dr. Meera Jindal",
+    //     "designation": "Consultant Fertility Specialist",
+    //     "experience": "13 Years",
+    //     "docterImage": "Dr. Meera Jindal.webp",
+    //     "master_id": "10",
+    //     "qualification": "MS - OBGYN, DNB, FNB",
+    //     "areaOfSpecialization": "Fellowship in Gynecologic Laparoscopy",
+    //     "practoRating": "100%"
+    // },
     {
         "id": 36,
         "fullname": "Dr. B S Bhavya",
