@@ -115,7 +115,7 @@ export const galleryImages = {
       ],
       [
         "/images/lp/gallery/Hanamkonda/11.webp", 
-        "/images/lp/gallery/Hanamkonda/12.webp"
+        // "/images/lp/gallery/Hanamkonda/12.webp"
       ],
     ],
     Kharadi: [

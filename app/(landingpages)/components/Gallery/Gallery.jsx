@@ -39,16 +39,16 @@ const Gallery = ({center}) => {
         <div ref={sliderRef} className="flex gap-4 overflow-x-auto scroll-smooth scrollbar-none no-scrollbar">
           {imagePairs.map((pair, index) => (
             <div key={index} className="flex flex-col gap-2 min-w-[45%] md:min-w-[22%]">
-              <img 
+             {pair.length > 0 && <img 
                 src={pair[0]} 
                 alt={`${center?.center_name || 'City'} Gallery Image ${index * 2 + 1}`} 
                 className="w-full h-50 object-cover rounded-lg shadow-md" 
-              />
-              <img 
+              />}
+              {pair.length > 1 && <img 
                 src={pair[1]} 
                 alt={`${center?.center_name || 'City'} Gallery Image ${index * 2 + 2}`} 
                 className="w-full h-50 object-cover rounded-lg shadow-md" 
-              />
+              />}
             </div>
           ))}
         </div>
