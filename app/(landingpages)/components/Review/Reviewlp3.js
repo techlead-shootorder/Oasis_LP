@@ -74,7 +74,7 @@ const ReviewV2 = ({ center, service }) => {
   );
 
   return (
-    <div className="pb-10 lg:pb-16">
+    <div className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 py-10 xl:py-16 rounded-3xl ">
       <h2 className="text-[22px] md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-[52px] font-bold text-primary text-center tracking-wide">
         Best Reviewed {service !== "fertility" ? service?.toUpperCase() : service} Clinic in {capitalizeName(center?.center_name.replace("-", " "))}
       </h2>

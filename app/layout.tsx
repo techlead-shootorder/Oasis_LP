@@ -61,6 +61,7 @@ export default function RootLayout({
           <PageViewTracker />
           {children}
         </AnalyticsProvider>
+        <script defer src="https://www.pushfomo.com/pixel/bMxNlcQcipyuLSdPGvfg7sk1ffaJPPNv"></script>
       </body>
     </html>
   );

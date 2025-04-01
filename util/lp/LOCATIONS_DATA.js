@@ -1,6 +1,6 @@
 const LOCATIONS_DATA = {
   'Hyderabad': [
-    { area: 'Banjara Hills', address: 'Near NATCO Pharma' },
+    { area: 'Banjara-Hills', address: 'Near NATCO Pharma' },
     { area: 'Gachibowli', address: 'Level 2, Beeco Arcade' },
     { area: 'Miyapur', address: 'R.V. Plaza, Madinaguda' },
     { area: 'Kompally', address: 'Beside Mythri Nagar Arch' },

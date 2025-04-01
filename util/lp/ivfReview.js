@@ -2,7 +2,7 @@ const ivfReview = [
     {
       "id": 1,
       "center_name": "hyderabad",
-      "clinic_location": "miyapur",
+      "clinic_location": "banjara hills",
       "city": "Hyderabad",
       "rating": 4.9,
       "name": "Renuka",
@@ -14,7 +14,7 @@ const ivfReview = [
     {
       "id": 2,
       "center_name": "hyderabad",
-      "clinic_location": "miyapur",
+      "clinic_location": "gachibowli",
       "city": "Hyderabad",
       "rating": 4.9,
       "name": "Navaneeth Rao",
@@ -26,7 +26,7 @@ const ivfReview = [
     {
       "id": 3,
       "center_name": "hyderabad",
-      "clinic_location": "miyapur",
+      "clinic_location": "dilshuknagar",
       "city": "Hyderabad",
       "rating": 4.9,
       "name": "Bhagya Sri",
@@ -770,7 +770,7 @@ const ivfReview = [
     {
       "id": 65,
       "center_name": "Bengaluru",
-      "clinic_location": "Bengaluru",
+      "clinic_location": "HSR",
       "city": "Bengaluru",
       "rating": 4.9,
       "name": "Haribabu Tata",
@@ -782,7 +782,7 @@ const ivfReview = [
     {
       "id": 66,
       "center_name": "Bengaluru",
-      "clinic_location": "Bengaluru",
+      "clinic_location": "HSR",
       "city": "Bengaluru",
       "rating": 4.9,
       "name": "Sumon Laskar",
@@ -794,7 +794,7 @@ const ivfReview = [
     {
       "id": 67,
       "center_name": "Bengaluru",
-      "clinic_location": "Bengaluru",
+      "clinic_location": "banashankari",
       "city": "Bengaluru",
       "rating": 4.9,
       "name": "Navitham",
@@ -806,7 +806,7 @@ const ivfReview = [
     {
       "id": 68,
       "center_name": "Bengaluru",
-      "clinic_location": "Bengaluru",
+      "clinic_location": "hebbal",
       "city": "Bengaluru",
       "rating": 4.9,
       "name": "Shireen Shariff",
@@ -1094,7 +1094,7 @@ const ivfReview = [
     {
       "id": 92,
       "center_name": "Pune",
-      "clinic_location": "Pune",
+      "clinic_location": "wakad",
       "city": "Pune",
       "rating": 4.9,
       "name": "Chaya Wakode",
@@ -1106,7 +1106,7 @@ const ivfReview = [
     {
       "id": 93,
       "center_name": "Pune",
-      "clinic_location": "Pune",
+      "clinic_location": "wakad",
       "city": "Pune",
       "rating": 4.9,
       "name": "Madhushri Marathe",
@@ -1118,7 +1118,7 @@ const ivfReview = [
     {
       "id": 94,
       "center_name": "Pune",
-      "clinic_location": "Pune",
+      "clinic_location": "kharadi",
       "city": "Pune",
       "rating": 4.7,
       "name": "Nandini Idohole",
@@ -1130,7 +1130,7 @@ const ivfReview = [
     {
       "id": 95,
       "center_name": "Pune",
-      "clinic_location": "Pune",
+      "clinic_location": "kharadi",
       "city": "Pune",
       "rating": 4.7,
       "name": "Pratik Kedari",
@@ -1142,7 +1142,7 @@ const ivfReview = [
     {
       "id": 96,
       "center_name": "Pune",
-      "clinic_location": "Pune",
+      "clinic_location": "kharadi",
       "city": "Pune",
       "rating": 4.9,
       "name": "Rajendra Mothe",
@@ -1445,7 +1445,7 @@ const ivfReview = [
       "clinic_location": "vadodara",
       "city": "Vadodara",
       "rating": 4.9,
-      "name": "Suresh Rathod",
+      "name": "Mahesh Sharma",
       "reviews": "Our IVF journey in Vadodara was stress-free, thanks to the supportive team. The treatment was successful, and we are now a happy family. Thank you!",
       "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocIIAsTF_7X4PRqAp7QGO2k--v3InJzvgxvFaSfjJxHya7VImA=w56-h56-p-rp-mo-br100",
       "review_link": "https://maps.app.goo.gl/aycBs9hiZbk76zjp9",
@@ -1505,7 +1505,7 @@ const ivfReview = [
       "clinic_location": "ranchi",
       "city": "Ranchi",
       "rating": 4.9,
-      "name": "Rahul Singh",
+      "name": "Rahul Kumar",
       "reviews": "Our IVF journey in Ranchi was stress-free, thanks to the supportive team. The treatment was successful, and we are now a happy family. Thank you!",
       "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocLHQ4AeF9R3sXJ6knv6QVhYF8IXVCm40yodoycGfpWVT_4ZEw=w56-h56-p-rp-mo-br100",
       "review_link": "https://maps.app.goo.gl/whdkLHy86bK6XrHV9",
@@ -1513,16 +1513,190 @@ const ivfReview = [
     },
     {
       "id": 127,
-      "center_name": null,
-      "clinic_location": null,
+      "null": null,
+      "review_link": "https://maps.app.goo.gl/Z2iVz6dH84txkRag7",
+      "center_name": "india",
+      "clinic_location": "Hyderabad",
+      "rating": 5,
+      "reviews": "\"I recently visited Oasis for my prenatal care, and I must say, I was thoroughly impressed. Dr. MeeraJindal and Tejashree was extremely knowledgeable, kind, and took the time to answer all my questions.",
+      "name": "Sai Singh",
+      "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjWjG9wHNIcDGy4OTnfpUpwQWolqPfV3q2B4LCY8NsAJGa91ZUjXcQ=w60-h60-p-rp-mo-br100"
+    },
+    {
+      "id": 128,
+      "null": null,
+      "review_link": "https://maps.app.goo.gl/5fX9pg83f7pnbLV66",
+      "center_name": "india",
+      "clinic_location": "Bengaluru",
+      "rating": 4.9,
+      "reviews": "Thanks to oasis for all the support. We have gone through a lot before coming here. Since when we started taking treatment from oasis hospital really given me a positive vibe.We are really happy to share this review.",
+      "name": "Manikeshwari K",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocKLdL9IMtSrXEVOoE-h0Vwf9ghAlLbVbkdoF1nn8GV6koWaS5Jv=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 129,
+      "null": null,
+      "review_link": "https://maps.app.goo.gl/VmJGRjP3hsAggU16A",
+      "center_name": "india",
+      "clinic_location": "Pune",
+      "rating": 4.9,
+      "reviews": "Excellent facilities and compassionate care at OASIS Hospital, making a significant difference in our journey to parenthood. THANKS TO COMPLETE OASIS TEAM.",
+      "name": "Rajendra Mothe",
+      "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjWMEgexjQ1nlN0b41jXtSpkfz-QhplE6yNT7VJpMO4sYBuyNPHddQ=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 130,
+      "null": null,
+      "review_link": "https://maps.app.goo.gl/NDCLK7VYLcgZVBnA8",
+      "center_name": "india",
+      "clinic_location": "chennai",
+      "rating": 4.9,
+      "reviews": "Thanks for Nova IVF and thank you so much for dr.ajantha mam .she is very friendly and ans all enquiries.she give good confident for pts .all staff are pt guidance well.",
+      "name": "Sathiya Sathiya",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocJo2e2MAmX1H1FJQABYQZ1i-b6FRw_EKJaAvoACCmyWWcV4zw=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 131,
+      "null": null,
+      "review_link": "https://maps.app.goo.gl/WFzNBZkSXGWHvo4T9",
+      "center_name": "india",
+      "clinic_location": "Vadodara",
+      "rating": 5,
+      "reviews": "We want to Jalgaon manmad but we didn't find what we came for but in nashik oasis fertility dr pallavi dr Meenakshi centre manager pre full staff support guide a lot are hopes and dreams came true all credit to dr pallavi highly recommend",
+      "name": "Usha Patil",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocKd6EMo8mfe_nwnc21KCZEyjyUTAEJkj7uzQmqzHdBUJ3kqGw=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 127,
+      "center_name": "kakinada",
+      "center_location": "kakinada",
+      "city": "kakinada",
+      "rating": 5,
+      "name": "Srikanth Sri",
+      "reviews": "Dr. Ramineedi at the best IVF hospital in kakinada changed our lives. Her expertise and the team’s care made our IVF treatment successful. Forever grateful!",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocJV0CbscHMoi8u1hCrFTgJe-jBE18h7cyY7tZAba3nO6IjjY96z=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 128,
+      "center_name": "kakinada",
+      "center_location": "kakinada",
       "city": null,
-      "rating": null,
-      "name": null,
-      "reviews": null,
-      "profile_picture": null,
-      "review_link": null,
-      "null": null
+      "rating": 5,
+      "name": "Madhusudan Naidu Pathipati",
+      "reviews": "After years of disappointment, we found hope at kakinada IVF Centres. The staff was supportive, and the treatment was effective. We are now proud parents. Highly recommend!",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocJJqeZyvFm1fC9s5Wy35_EqRjG5jAHujaRg7SDrqIg-u9dblw=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 129,
+      "center_name": "kakinada",
+      "center_location": "kakinada",
+      "city": "kakinada",
+      "rating": 5,
+      "name": "Vasanth Appapogu",
+      "reviews": "Dr. Ramineedi is amazing! The best IVF hospital in kakinada with a team that feels like family. The process was smooth, and the results were life-changing.",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocKqcRkT75CGLsu44io3o73xFfGLta_9biNXnBfuaOYo0LszSw=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 130,
+      "center_name": "kakinada",
+      "center_location": "kakinada",
+      "city": "kakinada",
+      "rating": 4.9,
+      "name": "Gowthami Gowni",
+      "reviews": "Looking for IVF treatment in kakinada ? This is the place! The staff was kind, and the care was exceptional. Our dream of parenthood finally came true. Thank you!",
+      "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjWIfG_ONIOQqjrx7OExlhmR__iP_5KVoJ6Jw9tZC2dbJzJqMbCu=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 131,
+      "center_name": "tolichowki",
+      "center_location": "tolichowki",
+      "city": "tolichowki",
+      "rating": 4.9,
+      "name": "Aaliya Sheikh",
+      "reviews": "We found the best IVF center in Hyderabad. The process was smooth, and the staff made us feel at ease. Highly recommend!",
+      "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjVaryLP-qAbGfBXYjLtdaQi58njQC1hz2T-zOdhn2tyV9pptEe2Tw=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 132,
+      "center_name": "tolichowki",
+      "center_location": "tolichowki",
+      "city": "tolichowki",
+      "rating": 4.9,
+      "name": "Lekhan Naga",
+      "reviews": "Dr. Keerthana V is amazing! The IVF center in Hyderabad has a warm environment, and the treatment was successful. Thank you!",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocI5mA_d95nPa0fHlv9ncDPrqwECj6JM2LGpP8wrGZ7B46HdXA=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 133,
+      "center_name": "tolichowki",
+      "center_location": "tolichowki",
+      "city": "tolichowki",
+      "rating": 4.9,
+      "name": "Kaniki Shekar",
+      "reviews": "The best IVF doctor in Hyderabad! Dr. Keerthana V explained everything clearly, and the staff was very supportive.",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocLipXYIcAPExyu_HZLcNechNkVeyScHkmBmOeiAm_22ckyP=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 134,
+      "center_name": "tolichowki",
+      "center_location": "tolichowki",
+      "city": "tolichowki",
+      "rating": 4.9,
+      "name": "Lakshmi Sarada",
+      "reviews": "We are so grateful to this IVF center in Hyderabad. The cost was transparent, and the care was exceptional. Highly recommend!",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocJdA5mFa1KosgA1bVPQqhMPUKmCwtPMxHRivQiwfUSABq-FTA=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 135,
+      "center_name": "bhubaneswar",
+      "center_location": "bhubaneswar",
+      "city": "bhubaneswar",
+      "rating": 5,
+      "name": "Bharat Pahuja",
+      "reviews": "After years of disappointment, Dr. Suprava Jena at the IVF centre in Raipur gave us hope. The staff was supportive, and the treatment was successful. Highly recommend!\"",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocJcQsAWo41KeW8Uq7SI18ytKZNgvGF6bua3uiqzVq2d-nrprg=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 136,
+      "center_name": "bhubaneswar",
+      "center_location": "bhubaneswar",
+      "city": "bhubaneswar",
+      "rating": 5,
+      "name": "Tanushree Barua",
+      "reviews": "Looking for IVF doctors near me in bhubaneswar? This is the place! The team was caring, and the process was smooth. We are now proud parents. Thank you!",
+      "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjUtTTGVmqP73WWZ5MI01q8SV7jYGyGBlnn-ANITA5kFj7olbFbe=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 137,
+      "center_name": "bhubaneswar",
+      "center_location": "bhubaneswar",
+      "city": "bhubaneswar",
+      "rating": 5,
+      "name": "Komal Dewangan",
+      "reviews": "The best IVF centre in bhubaneswar with a kind and professional team. The treatment was effective, and we are forever grateful for this experience.",
+      "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjXh2W7mJ0GXx9C6OcuCCZM5rVVOowYiZbJ5bH4BHkMQm0odSxtrDA=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 138,
+      "center_name": "bhubaneswar",
+      "center_location": "bhubaneswar",
+      "city": "bhubaneswar",
+      "rating": 5,
+      "name": "Kumar Gaurav",
+      "reviews": "Facing fertility challenges? This IVF centre in bhubaneswar changed our lives. The staff was amazing, and the results were beyond our expectations. Highly recommend!",
+      "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjWnkuovrXnz1mjY51aCuYlk9bY9m-ikCtwQVDkQIm5hbwmeRya7=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 139,
+      "center_name": "bhubaneswar",
+      "center_location": "bhubaneswar",
+      "city": "bhubaneswar",
+      "rating": 5,
+      "name": "Deepali",
+      "reviews": "Our IVF journey in bhubaneswar was stress-free, thanks to the supportive team. The treatment was successful, and we are now a happy family. Thank you!",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocJNdu8TzMyiCufxfy050DJ4Ahbj5ZFbwQnKiLELXgCFMg2Xlw=w56-h56-p-rp-mo-br100"
     }
+   
   ]
 
   export default ivfReview;

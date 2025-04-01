@@ -6,7 +6,9 @@ export const videos = [
         "VideoTitleText": "Real Fertility Story | PCOD And Infertility | IUI Babies | Fertility Treatment Testimonial",
         "videoImage": "/images/home/testimonials/Kishor Babu.jpg",
         "youTubeVideoUrl": "https://www.youtube.com/shorts/Xxfm_uXZa-Y",
+        "language": "Eng-Telugu",
         "isSelected": false,
+
     },
     {
         "id": "2",
@@ -15,6 +17,7 @@ export const videos = [
         "VideoTitleText": "Fertility Story | Advanced Maternal Age | IVF Success | IVF Success Testimonial",
         "videoImage": "/images/home/testimonials/Madhu Kiran.jpg",
         "youTubeVideoUrl": "https://www.youtube.com/shorts/2__vfnI8BF0",
+        "language": "Eng-Telugu",
         "isSelected": false,
     },
     {
@@ -24,6 +27,7 @@ export const videos = [
         "VideoTitleText": "Fertility Story | Fallopian Tube Blockage | IVF Success",
         "videoImage": "/images/home/testimonials/Deevi Prasad.jpg",
         "youTubeVideoUrl": "https://www.youtube.com/shorts/PqtmTf0iBc8",
+        "language": "Telugu",
         "isSelected": false,
     },
     {
@@ -33,6 +37,7 @@ export const videos = [
         "VideoTitleText": "IVF Success Story | Healthy IVF Twin Babies | Pregnancy After Recurrent Miscarriages",
         "videoImage": "/images/home/testimonials/Shekhar Almury.jpg",
         "youTubeVideoUrl": "https://www.youtube.com/shorts/7wwrDjGFaMY",
+        "language": "English",
         "isSelected": false,
     },
     {
@@ -42,6 +47,7 @@ export const videos = [
         "VideoTitleText": "Happy IVF Couple | Pregnancy After 12 Years | Advanced Maternal Age",
         "videoImage": "/images/home/testimonials/Vasudev & Swapna.jpg",
         "youTubeVideoUrl": "https://www.youtube.com/shorts/qDRWwc0iFgc",
+        "language": "Hindi",
         "isSelected": false,
     }
 ];

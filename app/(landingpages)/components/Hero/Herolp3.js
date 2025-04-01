@@ -137,10 +137,12 @@ const HeroBanner = memo(({ type, centerName, isfemaleAssessment }) => (
 HeroBanner.displayName = "HeroBanner";
 
 // Memoized Content Components
-const HeroHeading = memo(({ service, centerName, isfemaleAssessment }) => (
-  !isfemaleAssessment && <h1 id="heroBannerHeading" className="absolute text-[26px] top-[10px] left-0 md:text-[26px] lg:text-4xl xl:text-5xl md:top-12 md:left-[24px] lg:left-[40px] xl:left-[60px] 2xl:left-[100px] z-10 font-semibold text-primary py-2 text-center md:text-left w-full md:w-auto">
-    Best <span className={service !== 'fertility' ? 'uppercase' : ''}>{service || "IVF"}</span> Clinic in{" "}
-    {centerName}
+const HeroHeading = memo(({ isfemaleAssessment }) => (
+  !isfemaleAssessment && <h1 id="heroBannerHeading" className="absolute text-[26px] top-[10px] left-0 md:text-[26px] lg:text-4xl xl:text-5xl md:top-12 md:left-[24px] lg:left-[40px] xl:left-[60px] 2xl:left-[100px] z-10 font-semibold text-white py-2 text-center md:text-left w-full md:w-auto">
+    {/* Best <span className={service !== 'fertility' ? 'uppercase' : ''}>{service || "IVF"}</span> Clinic in{" "}
+    {centerName} */}
+    In the Good Hands of Science, <span className="bg-primary px-2">100,000+ Healthy Babies</span> and Counting. 
+    <p className="hidden sm:block text-lg  p-2 w-fit">70% IVF success rate, trusted by 10000+ Gynaecologists and helped deliver 100000+ babies</p>
   </h1>
 ));
 HeroHeading.displayName = "HeroHeading";
@@ -210,6 +212,7 @@ const HeroV2 = ({ center, service, isMeta, internal, isfemaleAssessment }) => {
             <HeroBanner type="mobile" centerName={centerName} isfemaleAssessment={isfemaleAssessment} />
           </div>
         </div>
+      <div class="absolute inset-0 bg-black bg-opacity-30"></div>
 
         <div className="relative pt-24 pb-14 sm:py-14 lg:py-16 xl:py-18 2xl:py-24 flex items-end justify-between h-full lg:flex">
           <InvisibleArticle />
@@ -217,6 +220,7 @@ const HeroV2 = ({ center, service, isMeta, internal, isfemaleAssessment }) => {
             <LeadFormWrapper isMeta={isMeta} center={center} service={service} internal={internal} />
           </div>
         </div>
+        
       </section>
 
       <MobileLeadForm center={center} service={service} isMeta={isMeta} internal={internal} />

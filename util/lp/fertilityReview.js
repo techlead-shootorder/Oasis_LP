@@ -2,7 +2,7 @@ const fertilityReview = [
     {
       "id": 1,
       "center_name": "hyderabad",
-      "clinic_location": "miyapur",
+      "clinic_location": "banjara hills",
       "city": "Hyderabad",
       "rating": 4.9,
       "name": "Renuka",
@@ -13,7 +13,7 @@ const fertilityReview = [
     {
       "id": 2,
       "center_name": "hyderabad",
-      "clinic_location": "miyapur",
+      "clinic_location": "gachibowli",
       "city": "Hyderabad",
       "rating": 4.9,
       "name": "Navaneeth Rao",
@@ -24,7 +24,7 @@ const fertilityReview = [
     {
       "id": 3,
       "center_name": "hyderabad",
-      "clinic_location": "miyapur",
+      "clinic_location": "dilshuknagar",
       "city": "Hyderabad",
       "rating": 4.9,
       "name": "Bhagya Sri",
@@ -706,7 +706,7 @@ const fertilityReview = [
     {
       "id": 65,
       "center_name": "Bengaluru",
-      "clinic_location": "Bengaluru",
+      "clinic_location": "HSR",
       "city": "Bengaluru",
       "rating": 4.9,
       "name": "Haribabu Tata",
@@ -717,7 +717,7 @@ const fertilityReview = [
     {
       "id": 66,
       "center_name": "Bengaluru",
-      "clinic_location": "Bengaluru",
+      "clinic_location": "HSR",
       "city": "Bengaluru",
       "rating": 4.9,
       "name": "Sumon Laskar",
@@ -728,7 +728,7 @@ const fertilityReview = [
     {
       "id": 67,
       "center_name": "Bengaluru",
-      "clinic_location": "Bengaluru",
+      "clinic_location": "banashankari",
       "city": "Bengaluru",
       "rating": 4.9,
       "name": "Navitham",
@@ -739,7 +739,7 @@ const fertilityReview = [
     {
       "id": 68,
       "center_name": "Bengaluru",
-      "clinic_location": "Bengaluru",
+      "clinic_location": "hebbal",
       "city": "Bengaluru",
       "rating": 4.9,
       "name": "Shireen Shariff",
@@ -1325,7 +1325,7 @@ const fertilityReview = [
       "clinic_location": "vadodara",
       "city": "Vadodara",
       "rating": 4.9,
-      "name": "Suresh Rathod",
+      "name": "Mahesh Sharma",
       "reviews": "Infertility was emotionally draining, but visiting the best IVF fertility clinic gave me hope. specially Dr. Baxi Sushma!",
       "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocIIAsTF_7X4PRqAp7QGO2k--v3InJzvgxvFaSfjJxHya7VImA=w56-h56-p-rp-mo-br100",
       "review_link": "https://maps.app.goo.gl/aycBs9hiZbk76zjp9"
@@ -1380,10 +1380,208 @@ const fertilityReview = [
       "clinic_location": "ranchi",
       "city": "Ranchi",
       "rating": 4.9,
-      "name": "Rahul Singh",
+      "name": "Rahul Kumar",
       "reviews": "Struggling with infertility was difficult, but finding the best IVF center in ranchi gave me hope. Dr. Musunuru Rajani, knowledgeable, and ensured I received the best treatment. So grateful for her care!",
       "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocLHQ4AeF9R3sXJ6knv6QVhYF8IXVCm40yodoycGfpWVT_4ZEw=w56-h56-p-rp-mo-br100",
       "review_link": "https://maps.app.goo.gl/whdkLHy86bK6XrHV9"
+    },
+    {
+      "id": 127,
+      "null": null,
+      "review_link": "https://maps.app.goo.gl/Z2iVz6dH84txkRag7",
+      "center_name": "india",
+      "clinic_location": "Hyderabad",
+      "rating": 5,
+      "reviews": "\"I recently visited Oasis for my prenatal care, and I must say, I was thoroughly impressed. Dr. MeeraJindal and Tejashree was extremely knowledgeable, kind, and took the time to answer all my questions.",
+      "name": "Sai Singh",
+      "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjWjG9wHNIcDGy4OTnfpUpwQWolqPfV3q2B4LCY8NsAJGa91ZUjXcQ=w60-h60-p-rp-mo-br100"
+    },
+    {
+      "id": 128,
+      "null": null,
+      "review_link": "https://maps.app.goo.gl/5fX9pg83f7pnbLV66",
+      "center_name": "india",
+      "clinic_location": "Bengaluru",
+      "rating": 4.9,
+      "reviews": "Thanks to oasis for all the support. We have gone through a lot before coming here. Since when we started taking treatment from oasis hospital really given me a positive vibe.We are really happy to share this review.",
+      "name": "Manikeshwari K",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocKLdL9IMtSrXEVOoE-h0Vwf9ghAlLbVbkdoF1nn8GV6koWaS5Jv=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 129,
+      "null": null,
+      "review_link": "https://maps.app.goo.gl/VmJGRjP3hsAggU16A",
+      "center_name": "india",
+      "clinic_location": "Pune",
+      "rating": 4.9,
+      "reviews": "Excellent facilities and compassionate care at OASIS Hospital, making a significant difference in our journey to parenthood. THANKS TO COMPLETE OASIS TEAM.",
+      "name": "Rajendra Mothe",
+      "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjWMEgexjQ1nlN0b41jXtSpkfz-QhplE6yNT7VJpMO4sYBuyNPHddQ=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 130,
+      "null": null,
+      "review_link": "https://maps.app.goo.gl/NDCLK7VYLcgZVBnA8",
+      "center_name": "india",
+      "clinic_location": "chennai",
+      "rating": 4.9,
+      "reviews": "Thanks for Nova IVF and thank you so much for dr.ajantha mam .she is very friendly and ans all enquiries.she give good confident for pts .all staff are pt guidance well.",
+      "name": "Sathiya Sathiya",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocJo2e2MAmX1H1FJQABYQZ1i-b6FRw_EKJaAvoACCmyWWcV4zw=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 131,
+      "null": null,
+      "review_link": "https://maps.app.goo.gl/WFzNBZkSXGWHvo4T9",
+      "center_name": "india",
+      "clinic_location": "Vadodara",
+      "rating": 5,
+      "reviews": "We want to Jalgaon manmad but we didn't find what we came for but in nashik oasis fertility dr pallavi dr Meenakshi centre manager pre full staff support guide a lot are hopes and dreams came true all credit to dr pallavi highly recommend",
+      "name": "Usha Patil",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocKd6EMo8mfe_nwnc21KCZEyjyUTAEJkj7uzQmqzHdBUJ3kqGw=w56-h56-p-rp-mo-br100"
+    },
+    {
+      "id": 132,
+      "center_name": "kakinada",
+      "clinic_location": "kakinada",
+      "city": "kakinada",
+      "rating": 5,
+      "name": "Srikanth Sri",
+      "reviews": "Facing infertility was overwhelming, but finding the best fertility centre in kakinada gave me hope. Dr. Ramineedi , and I now feel positive about my journey ahead!",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocJV0CbscHMoi8u1hCrFTgJe-jBE18h7cyY7tZAba3nO6IjjY96z=w56-h56-p-rp-mo-br100",
+      "review_link": null
+    },
+    {
+      "id": 133,
+      "center_name": "kakinada",
+      "clinic_location": "kakinada",
+      "city": "kakinada",
+      "rating": 5,
+      "name": "Madhusudan Naidu Pathipati",
+      "reviews": "I was searching for an experienced fertility centre in kakinada, and Dr. Ramineedi , knowledgeable, and provided a well-planned treatment. The support I received was truly reassuring!",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocJJqeZyvFm1fC9s5Wy35_EqRjG5jAHujaRg7SDrqIg-u9dblw=w56-h56-p-rp-mo-br100",
+      "review_link": null
+    },
+    {
+      "id": 134,
+      "center_name": "kakinada",
+      "clinic_location": "kakinada",
+      "city": "kakinada",
+      "rating": 5,
+      "name": "Vasanth Appapogu",
+      "reviews": "Choosing the right fertility centre in kakinada was stressful, but meeting Dr. Ramineedi Deepthi Priyadarshini, making the process easy to understand. I’m thankful for her expertise and support!",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocKqcRkT75CGLsu44io3o73xFfGLta_9biNXnBfuaOYo0LszSw=w56-h56-p-rp-mo-br100",
+      "review_link": null
+    },
+    {
+      "id": 135,
+      "center_name": "kakinada",
+      "clinic_location": "kakinada",
+      "city": "kakinada",
+      "rating": 4.9,
+      "name": "Gowthami Gowni",
+      "reviews": "The journey to find the best fertility centre in kakinada was tough, but I’m glad I consulted Dr. Ramineedi , guided me well, and ensured I felt comfortable throughout the treatment.",
+      "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjWIfG_ONIOQqjrx7OExlhmR__iP_5KVoJ6Jw9tZC2dbJzJqMbCu=w56-h56-p-rp-mo-br100",
+      "review_link": null
+    },
+    {
+      "id": 136,
+      "center_name": "tolichowki",
+      "clinic_location": "tolichowki",
+      "city": "tolichowki",
+      "rating": 4.9,
+      "name": "Aaliya Sheikh",
+      "reviews": "I was looking for a best fertility hospital in hyderabad, and I found Dr. Keerthana V, and now I feel confident about my treatment. Highly recommended!",
+      "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjVaryLP-qAbGfBXYjLtdaQi58njQC1hz2T-zOdhn2tyV9pptEe2Tw=w56-h56-p-rp-mo-br100",
+      "review_link": null
+    },
+    {
+      "id": 137,
+      "center_name": "tolichowki",
+      "clinic_location": "tolichowki",
+      "city": "tolichowki",
+      "rating": 4.9,
+      "name": "Lekhan Naga",
+      "reviews": "The struggle of infertility led me to search for the best hyderabad fertility center. I found Dr. Keerthana V, and it was the best decision. The entire experience was smooth, and the personalized treatment gave me hope. So grateful for the support!",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocI5mA_d95nPa0fHlv9ncDPrqwECj6JM2LGpP8wrGZ7B46HdXA=w56-h56-p-rp-mo-br100",
+      "review_link": null
+    },
+    {
+      "id": 138,
+      "center_name": "tolichowki",
+      "clinic_location": "tolichowki",
+      "city": "tolichowki",
+      "rating": 4.9,
+      "name": "Kaniki Shekar",
+      "reviews": "Finding a trusted female infertility treatment in hyderabad was overwhelming. After meeting Dr. Keerthana V, I finally felt hopeful. She listened to my concerns, explained everything clearly, and guided me through the process. Grateful for her support and expertise!",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocLipXYIcAPExyu_HZLcNechNkVeyScHkmBmOeiAm_22ckyP=w56-h56-p-rp-mo-br100",
+      "review_link": null
+    },
+    {
+      "id": 139,
+      "center_name": "tolichowki",
+      "clinic_location": "tolichowki",
+      "city": "tolichowki",
+      "rating": 4.9,
+      "name": "Lakshmi Sarada",
+      "reviews": "Struggling with infertility, I searched for the fertility treatment in hyderabad. Dr. Keerthana V, I feel positive about my future. Highly recommend her!",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocJdA5mFa1KosgA1bVPQqhMPUKmCwtPMxHRivQiwfUSABq-FTA=w56-h56-p-rp-mo-br100",
+      "review_link": null
+    },
+    {
+      "id": 140,
+      "center_name": "bhubaneswar",
+      "clinic_location": "bhubaneswar",
+      "city": "bhubaneswar",
+      "rating": 5,
+      "name": "Bharat Pahuja",
+      "reviews": "I was searching for a best infertility doctor in bhubaneswar , and then i got to know about Dr. Suprava Jena satisfied!",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocJcQsAWo41KeW8Uq7SI18ytKZNgvGF6bua3uiqzVq2d-nrprg=w56-h56-p-rp-mo-br100",
+      "review_link": null
+    },
+    {
+      "id": 141,
+      "center_name": "bhubaneswar",
+      "clinic_location": "bhubaneswar",
+      "city": "bhubaneswar",
+      "rating": 5,
+      "name": "Tanushree Barua",
+      "reviews": "Choosing a best infertility doctor in bhubaneswar was overwhelming, but Dr. Prasanta Kumar Nayak what a incredible and knowlegable person she is !",
+      "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjUtTTGVmqP73WWZ5MI01q8SV7jYGyGBlnn-ANITA5kFj7olbFbe=w56-h56-p-rp-mo-br100",
+      "review_link": null
+    },
+    {
+      "id": 142,
+      "center_name": "bhubaneswar",
+      "clinic_location": "bhubaneswar",
+      "city": "bhubaneswar",
+      "rating": 5,
+      "name": "Komal Dewangan",
+      "reviews": "The journey to find the best infertility doctor in bhubaneswar was exhausting, but meeting Dr. Prasanta Kumar Nayak, kind, and ensured I was on the right path. I feel much more hopeful now!",
+      "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjXh2W7mJ0GXx9C6OcuCCZM5rVVOowYiZbJ5bH4BHkMQm0odSxtrDA=w56-h56-p-rp-mo-br100",
+      "review_link": null
+    },
+    {
+      "id": 143,
+      "center_name": "bhubaneswar",
+      "clinic_location": "bhubaneswar",
+      "city": "bhubaneswar",
+      "rating": 5,
+      "name": "Kumar Gaurav",
+      "reviews": "Finding a best skilled infertility doctor in bhubaneswar was crucial, and I’m so glad I chose Dr. Prasanta Kumar Nayak, support, and clear communication made the entire process smooth and stress-free!",
+      "profile_picture": "https://lh3.googleusercontent.com/a-/ALV-UjWnkuovrXnz1mjY51aCuYlk9bY9m-ikCtwQVDkQIm5hbwmeRya7=w56-h56-p-rp-mo-br100",
+      "review_link": null
+    },
+    {
+      "id": 144,
+      "center_name": "bhubaneswar",
+      "clinic_location": "bhubaneswar",
+      "city": "bhubaneswar",
+      "rating": 5,
+      "name": "Deepali",
+      "reviews": "Struggling with infertility was tough, but finding the best infertility doctor in bhubaneswar changed my outlook. Dr. Prasanta Kumar Nayak, patient, and provided the right treatment plan. Her support gave me the confidence to move forward!",
+      "profile_picture": "https://lh3.googleusercontent.com/a/ACg8ocJNdu8TzMyiCufxfy050DJ4Ahbj5ZFbwQnKiLELXgCFMg2Xlw=w56-h56-p-rp-mo-br100",
+      "review_link": null
     }
   ]
 
