@@ -44,6 +44,8 @@ export default function RootLayout({
     <html lang="en" className={`${questrial.variable} ${pattaya.variable}`}>
       <head>
       {/* <script src="https://www.google.com/recaptcha/api.js" async defer></script> */}
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
         <noscript>
           <img
             height="1"
