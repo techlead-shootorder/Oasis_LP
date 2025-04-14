@@ -18,7 +18,7 @@ export default function Step1({ onNext, onBack, formData }) {
 
   return (
     <div className="p-2 flex flex-col">
-      <label className="block mb-4 text-lg font-bold text-center">
+      <label className="block mb-4 text-2xl font-bold text-center">
         Are You Planning For A Baby?*
       </label>
 

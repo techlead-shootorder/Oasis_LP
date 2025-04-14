@@ -1,59 +1,57 @@
 import { useState, useEffect } from 'react';
 
 export default function Step4({ onNext, onBack, formData }) {
-  const [selection, setSelection] = useState('');
+  // This step only displays information and doesn't collect any specific data
+  // But we could track if the user has viewed this step
+  const [viewed, setViewed] = useState(false);
 
-  // Pre-fill selection if returning to this step
+  // Mark as viewed when component mounts
   useEffect(() => {
-    if (formData?.age) {
-      setSelection(formData.age);
-    }
-  }, [formData]);
+    setViewed(true);
+  }, []);
 
-  // Handle Next button click
+  // Handle next button click
   const handleNext = () => {
-    if (selection) {
-      onNext('age', selection); // Save under 'age' key
-    } else {
-      alert('Please select your age group');
-    }
+    // You can pass any data you want to store about this step
+    onNext('fertilityInfoViewed', true);
   };
 
   return (
-    <div className=" p-6 rounded-lg ">
-      <label className="block mb-4 text-lg font-medium flex items-center">
-        4 <span className="material-icons mr-2">arrow_forward</span> Your Age*
-      </label>
-
-      {/* Age Range Buttons */}
-      <div className="grid grid-cols-2 gap-4 mb-6">
-        {['18-24', '25-34', '35-44', '45+'].map((ageRange) => (
-          <button
-            key={ageRange}
-            type="button"
-            onClick={() => setSelection(ageRange)}
-            className={`px-4 py-2 rounded text-white transition 
-              ${selection === ageRange ? 'bg-purple-700' : 'bg-purple-500 hover:bg-purple-600'}`}
-          >
-            {ageRange}
-          </button>
-        ))}
+    <div className="p-2 flex flex-col h-full">
+      <div className="flex-grow">
+        {/* Title */}
+        <h2 className="text-center text-2xl font-bold mb-4">Did You Know?</h2>
+        
+        {/* Statistic Text */}
+        <div className="text-center mb-6">
+         
+          <p className="text-gray-700 ">
+            <span className='text-2xl font-bold'>1 in 6</span>  couples faces fertility challenges, and early consultation improves success rates!
+          </p>
+        </div>
+        
+        {/* Couple Icons Grid */}
+        <div className="grid grid-cols-2 gap-2 mb-8">
+          {/* First couple (highlighted) */}
+          <div className="bg-white shadow rounded-lg p-3 flex justify-center">
+            <img src="/images/google1/orangeCouple.png" alt="Orange couple" className="h-16" />
+          
+          </div>
+          
+          {/* Other couples - purple */}
+          {[...Array(5)].map((_, index) => (
+            <div key={index} className="bg-white shadow rounded-lg p-3 flex justify-center">
+              <img src="/images/google1/blueCouple.png" alt="Blue couple" className="h-16" />
+            </div>
+          ))}
+        </div>
       </div>
-
-      {/* Back and Next Buttons */}
-      <div className="flex justify-between">
+      
+      {/* Next Button */}
+      <div className="mt-auto">
         <button
-          type="button"
-          onClick={onBack}
-          className="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400"
-        >
-          Back
-        </button>
-
-        <button
-          type="button"
           onClick={handleNext}
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          className="w-full py-3 bg-purple-600 text-white rounded-md font-medium"
         >
           Next
         </button>

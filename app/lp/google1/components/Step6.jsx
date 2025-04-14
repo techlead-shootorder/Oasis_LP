@@ -1,64 +1,39 @@
 import { useState, useEffect } from 'react';
 
-export default function Step6({ onNext, onBack, formData }) {
-  const [selection, setSelection] = useState('');
-
-  // Pre-fill selection if returning to this step
-  useEffect(() => {
-    if (formData?.fertilityTreatment) {
-      setSelection(formData.fertilityTreatment);
-    }
-  }, [formData]);
-
+export default function Step6({ onNext, formData }) {
+  // Handle next button click
   const handleNext = () => {
-    if (selection) {
-      onNext('fertilityTreatment', selection);
-    } else {
-      alert('Please select Yes or No');
-    }
+    // You can pass any data you want to store about this step
+    onNext('fertilityInfoAcknowledged', true);
   };
 
   return (
-    <div className=" p-6 rounded-lg ">
-      <label className="block mb-4 text-lg font-medium flex items-center">
-        6 <span className="material-icons mr-2">arrow_forward</span> Have you undergone any fertility treatment before?*
-      </label>
-
-      {/* Yes / No Buttons */}
-      <div className="flex gap-4 mb-6">
-        <button
-          type="button"
-          onClick={() => setSelection('yes')}
-          className={`px-4 py-2 rounded text-white transition 
-            ${selection === 'yes' ? 'bg-green-700' : 'bg-green-500 hover:bg-green-600'}`}
-        >
-          Yes
-        </button>
-
-        <button
-          type="button"
-          onClick={() => setSelection('no')}
-          className={`px-4 py-2 rounded text-white transition 
-            ${selection === 'no' ? 'bg-red-700' : 'bg-red-500 hover:bg-red-600'}`}
-        >
-          No
-        </button>
+    <div className="flex flex-col items-center justify-between h-full p-4 bg-white">
+      {/* Title and message */}
+      <div className="text-center mb-4 mt-6">
+        <p className="text-gray-800 font-medium text-lg">
+          The early the better -
+          <br />
+          Fertility treatments yield higher chances
+          <br />
+          of success, if started early
+        </p>
       </div>
-
-      {/* Back and Next Buttons */}
-      <div className="flex justify-between">
+      
+      {/* Pregnant woman illustration */}
+      <div className="flex-grow flex items-center justify-center mt-6">
+        <img 
+          src="/images/google1/pregnant-woman.png" 
+          alt="Pregnant woman" 
+          className="w-auto h-[400px] md:h-72"
+        />
+      </div>
+      
+      {/* Next button */}
+      <div className="w-full mb-6">
         <button
-          type="button"
-          onClick={onBack}
-          className="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400"
-        >
-          Back
-        </button>
-
-        <button
-          type="button"
           onClick={handleNext}
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          className="w-full py-3 bg-purple-600 text-white rounded-md font-medium text-lg"
         >
           Next
         </button>

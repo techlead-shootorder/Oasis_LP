@@ -1,30 +1,32 @@
 import { useState, useEffect } from 'react';
 
-export default function Step3({ onNext, onBack, formData }) {
+export default function Step1({ onNext, onBack, formData }) {
   const [selection, setSelection] = useState('');
 
   // Pre-fill selection if returning to this step
   useEffect(() => {
-    if (formData?.married) {
-      setSelection(formData.married);
+    if (formData?.fertilityTreatment) {
+      setSelection(formData.fertilityTreatment);
     }
   }, [formData]);
 
-  // Handle selection and move to next step directly
+  // Handle selection and move to next step
   const handleSelection = (value) => {
     setSelection(value);
-    onNext('married', value);
+    onNext('fertilityTreatment', value);
   };
 
   return (
     <div className="p-2 flex flex-col">
       <label className="block mb-4 text-2xl font-bold text-center">
-        Are You Married?*
+      Have you undergone 
+      <br/>
+      any fertility treatment before?
       </label>
 
-      {/* Marriage Image */}
+      {/* Baby Image */}
       <div>
-        <img src="/images/google1/marriage.png" />
+      <img src='/images/google1/baby01.png'/>
       </div>
 
       {/* Yes / No Buttons */}

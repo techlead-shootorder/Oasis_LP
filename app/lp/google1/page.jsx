@@ -10,8 +10,15 @@ import Step5 from './components/Step5';
 import Step6 from './components/Step6';
 import Step7 from './components/Step7';
 import Step8 from './components/Step8';
+import Step9 from './components/Step9';
+import Step10 from './components/Step10';
+import Step11 from './components/Step11';
+import Step12 from './components/Step12';
+import Step13 from './components/Step13';
+import Step14 from './components/Step14';
+import Step15 from './components/Step15';
 
-const steps = [Step1, Step2, Step3, Step4, Step5, Step6, Step7, Step8];
+const steps = [Step1, Step2, Step3, Step4, Step5, Step6, Step7, Step8, Step9, Step10, Step11, Step12, Step13, Step14, Step15];
 
 export default function GoogleLpPage() {
   const [step, setStep] = useState(0);
@@ -35,9 +42,13 @@ export default function GoogleLpPage() {
       {/* ✅ Start Screen */}
       {showStartScreen ? (
         <div className="flex flex-col items-center text-center h-screen bg-white px-4 relative">
-         <div className='flex justify-end w-full text-2xl p-2'> 
-           Logo
-         </div>
+          <div className='flex justify-end w-full p-2'>
+            <img
+              src="/images/google1/oasis-purple-logo.png"
+              alt="Oasis IVF & Fertility"
+              className="h-8"
+            />
+          </div>
 
           <div className="max-w-md w-full mx-auto h-full flex flex-col justify-between p-2">
             <h1 className="text-[18px] md:text-3xl font-semibold mb-6">
@@ -45,23 +56,23 @@ export default function GoogleLpPage() {
             </h1>
 
             <div>
-            <p className="text-sm md:text-base mb-6 text-gray-800">
-              This will take two minutes, because the more we understand, the better we can help
-            </p>
+              <p className="text-sm md:text-base mb-6 text-gray-800">
+                This will take two minutes, because the more we understand, the better we can help
+              </p>
 
-            <button
-              className="bg-[#9C4A97] hover:bg-[#803a7f] text-white font-bold py-3 px-6 rounded-xl w-full text-sm md:text-base"
-              onClick={() => setShowStartScreen(false)}
-            >
-              Let’s begin!
-            </button>
+              <button
+                className="bg-[#9C4A97] hover:bg-[#803a7f] text-white font-bold py-3 px-6 rounded-xl w-full text-sm md:text-base"
+                onClick={() => setShowStartScreen(false)}
+              >
+                Let’s begin!
+              </button>
 
-            <p className="mt-4 text-xs text-gray-500">
-              By continuing, you confirm and guarantee that you have read, understood, and agreed to our{' '}
-              <a href="#" className="underline">Terms of Use</a>,{' '}
-              <a href="#" className="underline">Privacy Notice</a>, and{' '}
-              <a href="#" className="underline">Refund Policy</a>.
-            </p>
+              <p className="mt-4 text-xs text-gray-500">
+                By continuing, you confirm and guarantee that you have read, understood, and agreed to our{' '}
+                <a href="#" className="underline">Terms of Use</a>,{' '}
+                <a href="#" className="underline">Privacy Notice</a>, and{' '}
+                <a href="#" className="underline">Refund Policy</a>.
+              </p>
             </div>
           </div>
         </div>
@@ -70,22 +81,26 @@ export default function GoogleLpPage() {
         <div className="h-screen bg-white">
           {/* ✅ Fixed Header */}
           <div className="w-full z-10 p-2">
-            <div className="flex justify-between items-center max-w-5xl mx-auto">
+            <div className="flex justify-between items-center">
               {/* Show back button only from step 2 onwards (step >= 1) */}
               <div>
                 {step >= 1 && (
-                  <button
+                  <span
                     onClick={handleBack}
-                    className="text-[#9C4A97] font-medium text-sm md:text-base"
+                    className="text-[#9C4A97] font-medium text-md md:text-lg material-icons"
                   >
-                    ← Back
-                  </button>
+                    chevron_left
+                  </span>
                 )}
               </div>
 
               {/* Logo */}
-              <div className="text-2xl">
-                Logo
+              <div className="">
+                <img
+                  src="/images/google1/oasis-purple-logo.png"
+                  alt="Oasis IVF & Fertility"
+                  className="h-8"
+                />
               </div>
             </div>
 
