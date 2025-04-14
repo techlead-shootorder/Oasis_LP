@@ -1,30 +1,64 @@
-const options = [
-    "Get Pregnant",
-    "Tracking my period",
-    "Understanding my body",
-    "Decoding my discharge",
-    "Enhance my sexlife",
-    "None of the above",
-];
+import { useState, useEffect } from 'react';
 
-export default function Step2({ onNext, onBack }) {
-    return (
-        <div className="flex justify-center px-4 mt-16">
-            <div className="text-center">
+export default function StepGender({ onNext, onBack, formData }) {
+  const [selection, setSelection] = useState('');
 
-                <h2 className="text-xl font-semibold mb-6">What can we help you with?</h2>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    {options.map((opt, idx) => (
-                        <button
-                            key={idx}
-                            onClick={() => onNext({ helpNeeded: opt })}
-                            className="border border-gray-300 rounded-lg p-4 hover:bg-gray-100 transition-all"
-                        >
-                            {opt}
-                        </button>
-                    ))}
-                </div>
-            </div>
+  // Pre-fill selection if the user is returning to this step
+  useEffect(() => {
+    if (formData?.gender) {
+      setSelection(formData.gender);
+    }
+  }, [formData]);
+
+  // Handle Next button click
+  const handleNext = () => {
+    if (selection) {
+      onNext('gender', selection); // Save selection with key 'gender'
+    } else {
+      alert('Please select Male or Female');
+    }
+  };
+
+  const handleSelection = (value) =>{
+    setSelection(value);
+    onNext('gender', value);
+  }
+
+  return (
+    <div className=" p-2 flex flex-col">
+      <label className="block mb-4 text-lg font-bold text-center">
+        Select Your Gender
+      </label>
+
+      {/* Male / Female Buttons */}
+      <div className="flex justify-center gap-4 mt-10">
+
+        <div className=''>
+            <div className='h-20 bg-pink-200 rounded-t-md'></div>
+        <button
+          type="button"
+          onClick={() => handleSelection('Male')}
+          className={`px-4 py-2 w-[120px] text-white transition rounded-b-[20px] 
+            ${selection === 'Male' ? 'bg-primary-50' : 'bg-primary hover:bg-blue-600'}`}
+        >
+          Male
+        </button>
         </div>
-    );
+
+        <div className=''>
+        <div className='h-20 bg-pink-200 rounded-t-md'></div>
+        <button
+          type="button"
+          onClick={() => handleSelection('Female')}
+          className={`px-4 py-2 w-[120px]  text-white transition rounded-b-[20px] 
+            ${selection === 'Female' ? 'bg-primary-50' : 'bg-primary hover:bg-blue-600'}`}
+        >
+          Female
+        </button>
+        </div>
+      </div>
+
+     
+    </div>
+  );
 }
