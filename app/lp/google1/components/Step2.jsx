@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 export default function StepGender({ onNext, onBack, formData }) {
   const [selection, setSelection] = useState('');
-
+  //  Step 2
   // Pre-fill selection if the user is returning to this step
   useEffect(() => {
     if (formData?.gender) {
