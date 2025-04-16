@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function StepGender({ onNext, onBack, formData }) {
+export default function StepGender({ onNext, formData }) {
   const [selection, setSelection] = useState('');
   //  Step 2 Gender Step
   // Pre-fill selection if the user is returning to this step
@@ -11,13 +11,13 @@ export default function StepGender({ onNext, onBack, formData }) {
   }, [formData]);
 
   // Handle Next button click
-  const handleNext = () => {
-    if (selection) {
-      onNext('gender', selection); // Save selection with key 'gender'
-    } else {
-      alert('Please select Male or Female');
-    }
-  };
+  // const handleNext = () => {
+  //   if (selection) {
+  //     onNext('gender', selection); // Save selection with key 'gender'
+  //   } else {
+  //     alert('Please select Male or Female');
+  //   }
+  // };
 
   const handleSelection = (value) => {
     setSelection(value);

@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
 
-export default function Step8({ onNext, formData }) {
+export default function Step8({ onNext }) {
   // Handle next button click
   const handleNext = () => {
     // You can pass any data you want to store about this step

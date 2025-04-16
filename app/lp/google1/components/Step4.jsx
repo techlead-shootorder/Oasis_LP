@@ -1,14 +1,8 @@
-import { useState, useEffect } from 'react';
 
-export default function Step4({ onNext, onBack, formData }) {
+export default function Step4({ onNext}) {
   // This step only displays information and doesn't collect any specific data
   // But we could track if the user has viewed this step
-  const [viewed, setViewed] = useState(false);
-
-  // Mark as viewed when component mounts
-  useEffect(() => {
-    setViewed(true);
-  }, []);
+//   step 4
 
   // Handle next button click
   const handleNext = () => {

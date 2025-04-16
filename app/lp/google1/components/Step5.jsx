@@ -37,16 +37,20 @@ export default function Step5({ onNext, formData }) {
           <div 
             key={option.range}
             onClick={() => handleSelection(option.range)}
-            className="cursor-pointer transition-transform hover:scale-105"
+            className={`cursor-pointer transition-transform hover:scale-105 ${
+              selection === option.range ? 'ring-4 ring-purple-600 rounded-lg' : ''
+            }`}
           >
-            <div className="bg-pink-50 rounded-lg relative  -z-[5px] h-[200px] flex flex-col justify-end">
-              <div className="flex flex-col items-center ">
+            <div className="bg-pink-50 rounded-lg relative -z-[5px] h-[200px] flex flex-col justify-end">
+              <div className="flex flex-col items-center">
                 <img 
                   src={option.image} 
                   alt={`Age ${option.range}`} 
                   className="w-[150px] h-[200px] object-contain absolute -top-8 left-6 -z-[2px]"
                 />
-                <div className="bg-purple-600 rounded-b-lg w-full p-2 text-white text-center relative z-0">
+                <div className={`rounded-b-lg w-full p-2 text-white text-center relative z-0 ${
+                  selection === option.range ? 'bg-purple-800' : 'bg-purple-600'
+                }`}>
                   <span className="flex items-center justify-center">
                     Age: {option.range} 
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">

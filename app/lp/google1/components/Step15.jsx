@@ -23,7 +23,7 @@ export default function ThankYouScreen() {
         <p className="text-gray-700 mb-6">
           With science on your side, your dream
           <br />
-          is within reach, and we're with you all the way.
+          is within reach, and we&apos;re with you all the way.
         </p>
         
         {/* Oasis logo */}

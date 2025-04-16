@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function Step3({ onNext, onBack, formData }) {
+export default function Step3({ onNext, formData }) {
   const [selection, setSelection] = useState('');
 
   // Pre-fill selection if returning to this step
