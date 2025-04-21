@@ -19,7 +19,7 @@ export default function Step3({ onNext, formData }) {
   return (
     <div className="p-2 flex flex-col">
       <label className="block mb-4 text-2xl font-bold text-center">
-        Are You Married?*
+        Are You Married?
       </label>
 
       {/* Marriage Image */}
@@ -33,7 +33,7 @@ export default function Step3({ onNext, formData }) {
           type="button"
           onClick={() => handleSelection('yes')}
           className={`px-4 py-2 rounded text-white transition shadow-md
-            ${selection === 'yes' ? 'bg-primary' : 'bg-primary-50'}`}
+            ${selection === 'yes' ? 'bg-primary-50' : 'bg-primary'}`}
         >
           Yes
         </button>

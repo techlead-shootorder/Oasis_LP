@@ -47,7 +47,7 @@ export default function StepGender({ onNext, formData }) {
             type="button"
             
             className={`px-4 py-2 w-[120px] text-white transition rounded-b-[20px] 
-            ${selection === 'Male' ? 'bg-primary-50' : 'bg-primary hover:bg-blue-600'}`}
+            ${selection === 'Male' ? 'bg-primary-50' : 'bg-primary'}`}
           >
             Male
           </button>
@@ -65,7 +65,7 @@ export default function StepGender({ onNext, formData }) {
             type="button"
             
             className={`px-4 py-2 w-[120px]  text-white transition rounded-b-[20px] 
-            ${selection === 'Female' ? 'bg-primary-50' : 'bg-primary hover:bg-blue-600'}`}
+            ${selection === 'Female' ? 'bg-primary-50' : 'bg-primary'}`}
           >
             Female
           </button>

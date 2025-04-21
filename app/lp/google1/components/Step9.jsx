@@ -35,7 +35,7 @@ export default function Step1({ onNext, formData }) {
           type="button"
           onClick={() => handleSelection('yes')}
           className={`px-4 py-2 rounded text-white transition shadow-md
-            ${selection === 'yes' ? 'bg-primary' : 'bg-primary-50'}`}
+            ${selection === 'yes' ? 'bg-primary-50' : 'bg-primary'}`}
         >
           Yes
         </button>

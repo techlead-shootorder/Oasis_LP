@@ -45,7 +45,7 @@ export default function Step4({ onNext}) {
       <div className="mt-auto">
         <button
           onClick={handleNext}
-          className="w-full py-3 bg-purple-600 text-white rounded-md font-medium"
+          className="w-full py-3 bg-primary text-white rounded-md font-medium"
         >
           Next
         </button>

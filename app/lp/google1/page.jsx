@@ -41,7 +41,7 @@ export default function GoogleLpPage() {
     <>
       {/* ✅ Start Screen */}
       {showStartScreen ? (
-        <div className="flex flex-col items-center text-center h-screen bg-white px-4 relative">
+        <div className="flex flex-col items-center text-center h-screen bg-white px-4 relative overflow-hidden">
           <div className='flex justify-end w-full p-2'>
             <img
               src="/images/google1/oasis-purple-logo.png"
@@ -50,12 +50,12 @@ export default function GoogleLpPage() {
             />
           </div>
 
-          <div className="max-w-md w-full mx-auto h-full flex flex-col justify-between p-2">
-            <h1 className="text-[18px] md:text-3xl font-semibold mb-6">
+          <div className="max-w-md w-full mx-auto flex flex-col justify-between p-2" style={{ height: 'calc(100vh - 50px)' }}>
+            <h1 className="text-[18px] md:text-3xl font-semibold mb-2">
               Your Parenthood <br /> Journey Starts Here
             </h1>
 
-            <div>
+            <div className="mb-6">
               <p className="text-sm md:text-base mb-6 text-gray-800">
                 This will take two minutes, because the more we understand, the better we can help
               </p>
@@ -64,7 +64,7 @@ export default function GoogleLpPage() {
                 className="bg-[#9C4A97] hover:bg-[#803a7f] text-white font-bold py-3 px-6 rounded-xl w-full text-sm md:text-base"
                 onClick={() => setShowStartScreen(false)}
               >
-                Let’s begin!
+                Let's begin!
               </button>
 
               <p className="mt-4 text-xs text-gray-500">
@@ -78,16 +78,16 @@ export default function GoogleLpPage() {
         </div>
       ) : (
         // ✅ Questionnaire Wrapper
-        <div className="h-screen bg-white">
+        <div className="h-screen bg-white overflow-hidden flex flex-col">
           {/* ✅ Fixed Header */}
-          <div className="w-full z-10 p-2">
+          <div className="w-full z-10 p-2 flex-shrink-0">
             <div className="flex justify-between items-center">
               {/* Show back button only from step 2 onwards (step >= 1) */}
               <div>
                 {step >= 1 && (
                   <span
                     onClick={handleBack}
-                    className="text-[#9C4A97] font-medium text-md md:text-lg material-icons"
+                    className="text-[#9C4A97] font-medium text-md md:text-lg material-icons cursor-pointer"
                   >
                     chevron_left
                   </span>
@@ -114,37 +114,39 @@ export default function GoogleLpPage() {
           </div>
 
           {/* ✅ Step Content */}
-          <div className="max-w-3xl mx-auto mt-10">
-            <AnimatePresence mode="wait">
-              {step < steps.length ? (
-                <motion.div
-                  key={step}
-                  initial={{ y: 100, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -100, opacity: 0 }}
-                  transition={{ duration: 0.4 }}
-                >
-                  <CurrentStep
-                    onNext={handleNext}
-                    onBack={handleBack}
-                    formData={formData}
-                  />
-                </motion.div>
-              ) : (
-                <motion.div
-                  key="complete"
-                  initial={{ y: 100, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -100, opacity: 0 }}
-                  className="bg-white p-6 rounded-lg shadow text-center"
-                >
-                  <h2 className="text-xl font-bold mb-4">Thanks for submitting!</h2>
-                  <pre className="bg-gray-100 p-4 rounded text-sm text-left overflow-x-auto">
-                    {JSON.stringify(formData, null, 2)}
-                  </pre>
-                </motion.div>
-              )}
-            </AnimatePresence>
+          <div className="flex-grow overflow-y-auto" style={{ height: 'calc(100vh - 80px)' }}>
+            <div className="max-w-3xl mx-auto mt-4 px-4">
+              <AnimatePresence mode="wait">
+                {step < steps.length ? (
+                  <motion.div
+                    key={step}
+                    initial={{ y: 100, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -100, opacity: 0 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <CurrentStep
+                      onNext={handleNext}
+                      onBack={handleBack}
+                      formData={formData}
+                    />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="complete"
+                    initial={{ y: 100, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -100, opacity: 0 }}
+                    className="bg-white p-6 rounded-lg shadow text-center"
+                  >
+                    <h2 className="text-xl font-bold mb-4">Thanks for submitting!</h2>
+                    <pre className="bg-gray-100 p-4 rounded text-sm text-left overflow-x-auto">
+                      {JSON.stringify(formData, null, 2)}
+                    </pre>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </div>
         </div>
       )}

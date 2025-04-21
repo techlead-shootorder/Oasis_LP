@@ -38,7 +38,7 @@ export default function Step5({ onNext, formData }) {
             key={option.range}
             onClick={() => handleSelection(option.range)}
             className={`cursor-pointer transition-transform hover:scale-105 ${
-              selection === option.range ? 'ring-4 ring-purple-600 rounded-lg' : ''
+              selection === option.range ? 'ring-4 ring-primary-50 rounded-lg' : ''
             }`}
           >
             <div className="bg-pink-50 rounded-lg relative -z-[5px] h-[200px] flex flex-col justify-end">
@@ -49,7 +49,7 @@ export default function Step5({ onNext, formData }) {
                   className="w-[150px] h-[200px] object-contain absolute -top-8 left-6 -z-[2px]"
                 />
                 <div className={`rounded-b-lg w-full p-2 text-white text-center relative z-0 ${
-                  selection === option.range ? 'bg-purple-800' : 'bg-purple-600'
+                  selection === option.range ? 'bg-primary-50' : 'bg-primary'
                 }`}>
                   <span className="flex items-center justify-center">
                     Age: {option.range} 

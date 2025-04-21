@@ -32,7 +32,7 @@ export default function Step6({ onNext }) {
       <div className="w-full mb-6">
         <button
           onClick={handleNext}
-          className="w-full py-3 bg-purple-600 text-white rounded-md font-medium text-lg"
+          className="w-full py-3 bg-primary text-white rounded-md font-medium text-lg"
         >
           Next
         </button>
