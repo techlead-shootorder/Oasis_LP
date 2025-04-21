@@ -208,18 +208,18 @@ const LeadFormV2 = ({ internal = false}) => {
     <>
 
       <div className="rounded-[27px] bg-cover bg-center bg-[#f3c1d7] overflow-hidden relative ">
-        <p className="text-white pt-4 pb-2 bg-primary mb-2 text-center text-[16px] font-bold">IVF @ ₹94,999* | LIMITED VALIDITY</p>
+        <p className="text-white mb-4 p bg-primary text-center py-2 text-[18px]  sm:text-[22px] font-bold">FREE CONSULTATION</p>
 
         <form onSubmit={handleSubmit} className="">
 
           <div className="px-4 lg:px-5 xl:px-6">
             {/* FORM HEADING */}
-            <div>
-              {/* <p className="text-center text-primary font-semibold">Fill Up The Form To Get a</p> */}
+            {/* <div>
+              <p className="text-center text-primary font-semibold">Fill Up The Form To Get a</p>
               <h2 className="text-[20px] md:text-[20px] lg:text-[24px] xl:text-[24px] !leading-[1.2] font-extrabold mb-3 xl:mb-4 text-center text-primary">
                 FREE CONSULTATION
               </h2>
-            </div>
+            </div> */}
 
             {/* INPUTS */}
             <div className="relative mb-3 xl:mb-4">
@@ -320,7 +320,7 @@ const LeadFormV2 = ({ internal = false}) => {
               
             </div>}
 
-            <div className="flex items-center justify-center mb-3 xl:mb-4 text-center">
+            <div className="flex items-center justify-center mb-2 xl:mb-3 text-center">
               <input
                 type="checkbox"
                 name="consent"
