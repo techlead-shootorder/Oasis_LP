@@ -19,6 +19,7 @@ import Step14 from './components/Step14';
 import Step15 from './components/Step15';
 
 const steps = [Step1, Step2, Step3, Step4, Step5, Step6, Step7, Step8, Step9, Step10, Step11, Step12, Step13, Step14, Step15];
+const totalSteps = 14; // Total steps excluding thank you slide
 
 export default function GoogleLpPage() {
   const [step, setStep] = useState(0);
@@ -47,7 +48,17 @@ export default function GoogleLpPage() {
     }
   };
 
-  const progress = ((step) / steps.length) * 100;
+  // Calculate progress based on current step
+  // If on step 13 with checkbox checked or step 14, progress should be 100%
+  // Otherwise, calculate progress based on current step out of 14 steps
+  const calculateProgress = () => {
+    if ((step === 12 && formData.contact && formData.contact.isWhatsApp) || step >= 13) {
+      return 100;
+    }
+    return ((step + 1) / totalSteps) * 100;
+  };
+
+  const progress = calculateProgress();
   const CurrentStep = steps[step];
 
   return (
