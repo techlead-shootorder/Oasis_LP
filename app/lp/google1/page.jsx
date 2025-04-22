@@ -41,47 +41,47 @@ export default function GoogleLpPage() {
     <>
       {/* ✅ Start Screen */}
       {showStartScreen ? (
-       <div className="flex flex-col h-screen bg-white px-4 overflow-y-hidden font-helvetica">
-       {/* Header with logo */}
-       <div className="flex justify-end w-full p-2">
-         <img
-           src="/images/google1/oasis-purple-logo.png"
-           alt="Oasis IVF & Fertility"
-           className="h-8"
-         />
-       </div>
-       
-       {/* Main content with flexible height */}
-       <div className="flex-1 flex flex-col justify-between max-w-md mx-auto w-full">
-         {/* Top section */}
-         <div className="text-center mt-4">
-           <h1 className="text-[18px] md:text-3xl font-semibold">
-             Your Parenthood <br /> Journey Starts Here
-           </h1>
-         </div>
-         
-         {/* Bottom section */}
-         <div className="text-center mb-8">
-           <p className="text-sm md:text-base mb-6 text-gray-800">
-             This will take two minutes, because the more we understand, the better we can help
-           </p>
-     
-           <button
-             className="bg-[#9C4A97] hover:bg-[#803a7f] text-white font-bold py-3 px-6 rounded-md w-full text-sm md:text-base"
-             onClick={() => setShowStartScreen(false)}
-           >
-             Let&apos;s begin!
-           </button>
-     
-           <p className="mt-4 text-xs text-gray-500">
-             By continuing, you confirm and guarantee that you have read, understood, and agreed to our{' '}
-             <a href="#" className="underline">Terms of Use</a>,{' '}
-             <a href="#" className="underline">Privacy Notice</a>, and{' '}
-             <a href="#" className="underline">Refund Policy</a>.
-           </p>
-         </div>
-       </div>
-     </div>
+        <div className="flex flex-col h-screen max-h-screen bg-white px-4 font-helvetica">
+          {/* Header with minimal padding */}
+          <div className="flex justify-end w-full p-1">
+            <img
+              src="/images/google1/oasis-purple-logo.png"
+              alt="Oasis IVF & Fertility"
+              className="h-6 sm:h-12 3xl:h-16"
+            />
+          </div>
+
+          {/* Main content area - strictly constrained */}
+          <div className="flex-1 flex flex-col justify-between max-w-md mx-auto w-full overflow-hidden">
+            {/* Top section - minimal margins */}
+            <div className="text-center mt-2">
+              <h1 className="text-[16px] md:text-2xl font-semibold">
+                Your Parenthood <br /> Journey Starts Here
+              </h1>
+            </div>
+
+            {/* Bottom section - reduced padding and spacing */}
+            <div className="text-center mb-4">
+              <p className="text-xs md:text-sm mb-4 text-gray-800">
+                This will take two minutes, because the more we understand, the better we can help
+              </p>
+
+              <button
+                className="bg-[#9C4A97] hover:bg-[#803a7f] text-white font-bold py-2 px-4 rounded-md w-full text-sm"
+                onClick={() => setShowStartScreen(false)}
+              >
+                Let&apos;s begin!
+              </button>
+
+              <p className="mt-2 text-xs text-gray-500">
+                By continuing, you confirm and guarantee that you have read, understood, and agreed to our{' '}
+                <a href="#" className="underline">Terms of Use</a>,{' '}
+                <a href="#" className="underline">Privacy Notice</a>, and{' '}
+                <a href="#" className="underline">Refund Policy</a>.
+              </p>
+            </div>
+          </div>
+        </div>
       ) : (
         // ✅ Questionnaire Wrapper
         <div className="h-screen bg-white overflow-hidden flex flex-col font-helvetica">
