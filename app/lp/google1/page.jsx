@@ -70,7 +70,7 @@ export default function GoogleLpPage() {
              className="bg-[#9C4A97] hover:bg-[#803a7f] text-white font-bold py-3 px-6 rounded-xl w-full text-sm md:text-base"
              onClick={() => setShowStartScreen(false)}
            >
-             Let's begin!
+             Let&apos;s begin!
            </button>
      
            <p className="mt-4 text-xs text-gray-500">
