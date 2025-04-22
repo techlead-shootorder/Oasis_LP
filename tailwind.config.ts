@@ -24,7 +24,8 @@ const config: Config = {
         lato: ['var(--font-lato)'],
         lato_light: ['var(--font-lato_light)'],
         cormorant_garamond: ['var(--font-cormorant_garamond)'],
-        pattaya: ['var(--font-pattaya)']
+        pattaya: ['var(--font-pattaya)'],
+        helvetica: ['Helvetica', 'Arial', 'sans-serif'] // for femia design
       },
       screens: {
         'xs': { 'max': '370px' },

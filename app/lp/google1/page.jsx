@@ -41,7 +41,7 @@ export default function GoogleLpPage() {
     <>
       {/* ✅ Start Screen */}
       {showStartScreen ? (
-        <div className="flex flex-col items-center text-center h-screen bg-white px-4 relative overflow-hidden">
+        <div className="flex flex-col items-center text-center h-screen bg-white px-4 relative overflow-hidden font-helvetica">
           <div className='flex justify-end w-full p-2'>
             <img
               src="/images/google1/oasis-purple-logo.png"
@@ -78,7 +78,7 @@ export default function GoogleLpPage() {
         </div>
       ) : (
         // ✅ Questionnaire Wrapper
-        <div className="h-screen bg-white overflow-hidden flex flex-col">
+        <div className="h-screen bg-white overflow-hidden flex flex-col font-helvetica">
           {/* ✅ Fixed Header */}
           <div className="w-full z-10 p-2 flex-shrink-0">
             <div className="flex justify-between items-center">
