@@ -27,11 +27,24 @@ export default function GoogleLpPage() {
 
   const handleNext = (key, value) => {
     setFormData((prev) => ({ ...prev, [key]: value }));
-    setStep((prev) => prev + 1);
+    
+    // Check if we're on Step13 (index 12) and user has checked the WhatsApp checkbox
+    if (step === 12 && key === 'contact' && value.isWhatsApp) {
+      // Skip Step14 by setting the step to Step15 (index 14)
+      setStep(14);
+    } else {
+      // Normal progression
+      setStep((prev) => prev + 1);
+    }
   };
 
   const handleBack = () => {
-    setStep((prev) => Math.max(prev - 1, 0));
+    // If coming back from Step15 after skipping Step14, go back to Step13
+    if (step === 14 && formData.contact && formData.contact.isWhatsApp) {
+      setStep(12);
+    } else {
+      setStep((prev) => Math.max(prev - 1, 0));
+    }
   };
 
   const progress = ((step) / steps.length) * 100;
@@ -67,7 +80,7 @@ export default function GoogleLpPage() {
               </p>
 
               <button
-                className="bg-[#9C4A97] hover:bg-[#803a7f] text-white font-bold py-2 px-4 rounded-md w-full text-sm"
+                className="bg-[#9C4A97] hover:bg-[#803a7f] text-white font-bold py-[12px] px-4 rounded-md w-full text-sm"
                 onClick={() => setShowStartScreen(false)}
               >
                 Let&apos;s begin!
@@ -84,16 +97,16 @@ export default function GoogleLpPage() {
         </div>
       ) : (
         // ✅ Questionnaire Wrapper
-        <div className="h-screen bg-white overflow-hidden flex flex-col font-helvetica">
+        <div className="h-screen overflow-hidden flex flex-col font-helvetica">
           {/* ✅ Fixed Header */}
-          {step != 14 && <div className="w-full z-10 p-2 flex-shrink-0">
+          {step != 14 && <div className="w-full z-10 py-2 px-6 flex-shrink-0">
             <div className="flex justify-between items-center">
               {/* Show back button only from step 2 onwards (step >= 1) */}
               <div>
                 {step >= 1 && (
                   <span
                     onClick={handleBack}
-                    className="text-[#9C4A97] font-medium text-md md:text-lg material-icons cursor-pointer"
+                    className="text-[#9C4A97] font-medium text-20 md:text-[30px] material-icons cursor-pointer"
                   >
                     chevron_left
                   </span>
@@ -105,7 +118,7 @@ export default function GoogleLpPage() {
                 <img
                   src="/images/google1/oasis-purple-logo.png"
                   alt="Oasis IVF & Fertility"
-                  className="h-8"
+                  className="h-6 sm:h-12 3xl:h-16"
                 />
               </div>
             </div>
@@ -120,8 +133,8 @@ export default function GoogleLpPage() {
           </div>}
 
           {/* ✅ Step Content */}
-          <div className="flex-grow overflow-y-auto" style={{ height: 'calc(100vh - 80px)' }}>
-            <div className="max-w-3xl mx-auto mt-4 px-4">
+          <div className="flex-grow overflow-y-auto">
+            <div className={`max-w-3xl mx-auto ${step == 14 ? 'mt-0' : 'mt-4'} px-4`}>
               <AnimatePresence mode="wait">
                 {step < steps.length ? (
                   <motion.div

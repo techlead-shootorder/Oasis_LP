@@ -27,12 +27,12 @@ export default function Step8({ onNext }) {
         <img 
           src="/images/google1/couple-with-baby.png" 
           alt="Pregnant woman" 
-          className="w-auto h-[400px] md:h-72"
+          className="w-auto h-80"
         />
       </div>
       
       {/* Next button */}
-      <div className="w-full mb-6 -mt-16">
+      <div className="w-full mb-6 -mt-14">
         <button
           onClick={handleNext}
           className="w-full py-[8px] bg-primary text-white rounded-md font-medium"

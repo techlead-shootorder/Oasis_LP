@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function Step5({ onNext, formData }) {
+export default function Step7({ onNext, formData }) {
   const [selection, setSelection] = useState('');
 
   // Pre-fill selection if returning to this step
@@ -27,12 +27,12 @@ export default function Step5({ onNext, formData }) {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center p-4 h-full">
+    <div className="flex flex-col items-center justify-center p-2 sm:p-4 h-full">
       {/* Title */}
       <h2 className="text-2xl font-semibold text-center mb-6">Your Spouse&apos;s Age?</h2>
       
       {/* Age options grid */}
-      <div className="grid grid-cols-2 gap-x-6 gap-y-20 w-full max-w-md mt-10">
+      <div className="grid grid-cols-2 gap-x-6 gap-y-12 w-full max-w-md mt-10">
         {ageOptions.map((option) => (
           <div 
             key={option.range}
@@ -41,12 +41,12 @@ export default function Step5({ onNext, formData }) {
               selection === option.range ? 'ring-4 ring-primary-50 rounded-lg' : ''
             }`}
           >
-            <div className="bg-pink-50 rounded-lg relative -z-[5px] h-[200px] flex flex-col justify-end">
+            <div className="bg-pink-50 rounded-lg relative -z-[5px] h-[180px] sm:h-[200px] flex flex-col justify-end">
               <div className="flex flex-col items-center">
                 <img 
                   src={option.image} 
                   alt={`Age ${option.range}`} 
-                  className="w-[150px] h-[200px] object-contain absolute -top-8 left-6 -z-[2px]"
+                  className="w-[120px] sm:w-[150px] h-[180px] sm:h-[200px] object-contain absolute -top-5 left-6 -z-[2px]"
                 />
                 <div className={`rounded-b-lg w-full p-2 text-white text-center relative z-0 ${
                   selection === option.range ? 'bg-primary-50' : 'bg-primary'

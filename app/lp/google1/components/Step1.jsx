@@ -16,6 +16,44 @@ export default function Step1({ onNext, formData }) {
     onNext('planningABaby', value);
   };
 
+  <div className="h-screen max-h-screen overflow-hidden">
+      <div className="p-2 flex flex-col h-full">
+        <label className="block mb-4 text-2xl font-bold text-center">
+          Are You Planning For A Baby?
+        </label>
+        
+        {/* Baby Image */}
+        <div className="flex-1 flex items-center justify-center">
+          <img 
+            src="/api/placeholder/400/320" 
+            alt="Baby" 
+            className="object-contain "
+          />
+        </div>
+        
+        {/* Yes / No Buttons */}
+        <div className="flex flex-col gap-4 mt-8 mb-4">
+          <button
+            type="button"
+            onClick={() => handleSelection('yes')}
+            className={`px-4 py-2 rounded text-white transition shadow-md
+              ${selection === 'yes' ? 'bg-primary-50' : 'bg-primary'}`}
+          >
+            Yes
+          </button>
+          
+          <button
+            type="button"
+            onClick={() => handleSelection('no')}
+            className={`px-4 py-2 rounded text-black transition shadow-md
+              ${selection === 'no' ? 'bg-white' : 'bg-white hover:bg-white'}`}
+          >
+            No
+          </button>
+        </div>
+      </div>
+    </div>
+
   return (
     <div className="p-2 flex flex-col">
       <label className="block mb-4 text-2xl font-bold text-center">
@@ -50,3 +88,5 @@ export default function Step1({ onNext, formData }) {
     </div>
   );
 }
+
+

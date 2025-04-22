@@ -24,7 +24,7 @@ export default function Step6({ onNext }) {
         <img 
           src="/images/google1/pregnant-woman.png" 
           alt="Pregnant woman" 
-          className="w-auto h-[400px] md:h-72"
+          className="w-auto h-72"
         />
       </div>
       

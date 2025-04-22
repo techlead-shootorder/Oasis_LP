@@ -28,7 +28,7 @@ export default function Step6({ onNext }) {
                 <img
                     src="/images/google1/doc-talk.png"
                     alt="doc-talk"
-                    className="w-auto h-[400px] md:h-72 object-contain"
+                    className="w-auto h-72 object-contain"
                 />
             </div>
 

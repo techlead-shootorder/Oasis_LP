@@ -57,18 +57,18 @@ export default function Step14({ onNext, formData }) {
       {/* Benefits list */}
       <div className="w-full space-y-3 mb-6">
         <div className="bg-blue-100 rounded-full py-2 px-4 flex items-center">
-          <span className="text-yellow-500 mr-2">👋</span>
+          <span className="text-yellow-500 mr-2">👉</span>
           <span className="text-gray-800">Expert Tips</span>
         </div>
         
         <div className="bg-blue-100 rounded-full py-2 px-4 flex items-center">
-          <span className="text-yellow-500 mr-2">👋</span>
+          <span className="text-yellow-500 mr-2">👉</span>
           <span className="text-gray-800">Appointment Reminders</span>
         </div>
         
         <div className="bg-blue-100 rounded-full py-2 px-4 flex items-center">
-          <span className="text-yellow-500 mr-2">👋</span>
-          <span className="text-gray-800">Success Stories</span>
+          <span className="text-yellow-500 mr-2">👉</span>
+          <span className="text-gray-800">Free Ebooks</span>
         </div>
       </div>
       

@@ -65,7 +65,7 @@ export default function Step13({ onNext, formData }) {
         <img 
           src="/images/google1/doctor-consultation.png" 
           alt="Doctor consultation illustration" 
-          className="w-4/5 max-w-md"
+          className="h-72"
         />
       </div>
       

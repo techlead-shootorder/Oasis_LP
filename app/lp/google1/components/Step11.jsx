@@ -43,7 +43,7 @@ export default function Step11({ onNext, formData }) {
         <img 
           src="/images/google1/india-map.png" 
           alt="Map of India" 
-          className="w-4/5 max-w-md"
+          className="h-72"
         />
       </div>
       

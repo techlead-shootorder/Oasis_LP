@@ -41,17 +41,17 @@ export default function Step5({ onNext, formData }) {
               selection === option.range ? 'ring-4 ring-primary-50 rounded-lg' : ''
             }`}
           >
-            <div className="bg-pink-50 rounded-lg relative -z-[5px] h-[200px] flex flex-col justify-end">
+            <div className="bg-pink-50 rounded-lg relative -z-[5px] h-[180px] sm:h-[200px] flex flex-col justify-end">
               <div className="flex flex-col items-center">
                 <img 
                   src={option.image} 
                   alt={`Age ${option.range}`} 
-                  className="w-[150px] h-[200px] object-contain absolute -top-8 left-6 -z-[2px]"
+                  className="w-[120px] sm:w-[150px] h-[180px] sm:h-[200px] object-contain absolute -top-5 left-6 -z-[2px]"
                 />
                 <div className={`rounded-b-lg w-full p-2 text-white text-center relative z-0 ${
                   selection === option.range ? 'bg-primary-50' : 'bg-primary'
                 }`}>
-                  <span className="flex items-center justify-center">
+                  <span className="flex items-center justify-center text-sm">
                     Age: {option.range} 
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
