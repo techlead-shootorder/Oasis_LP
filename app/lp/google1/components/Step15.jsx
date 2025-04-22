@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function ThankYouScreen() {
   return (
-    <div className="flex flex-col items-center justify-between h-full bg-white p-2">
+    <div className="flex flex-col items-center justify-between h-full bg-white">
       {/* Baby image with purple hands above */}
       <div className="flex-grow flex items-center justify-center w-full">
         <img 

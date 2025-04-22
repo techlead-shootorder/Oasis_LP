@@ -41,7 +41,7 @@ export default function GoogleLpPage() {
     <>
       {/* ✅ Start Screen */}
       {showStartScreen ? (
-       <div className="flex flex-col h-screen bg-white px-4 overflow-hidden font-helvetica">
+       <div className="flex flex-col h-screen bg-white px-4 overflow-y-hidden font-helvetica">
        {/* Header with logo */}
        <div className="flex justify-end w-full p-2">
          <img
@@ -67,7 +67,7 @@ export default function GoogleLpPage() {
            </p>
      
            <button
-             className="bg-[#9C4A97] hover:bg-[#803a7f] text-white font-bold py-3 px-6 rounded-xl w-full text-sm md:text-base"
+             className="bg-[#9C4A97] hover:bg-[#803a7f] text-white font-bold py-3 px-6 rounded-md w-full text-sm md:text-base"
              onClick={() => setShowStartScreen(false)}
            >
              Let&apos;s begin!
@@ -86,7 +86,7 @@ export default function GoogleLpPage() {
         // ✅ Questionnaire Wrapper
         <div className="h-screen bg-white overflow-hidden flex flex-col font-helvetica">
           {/* ✅ Fixed Header */}
-          <div className="w-full z-10 p-2 flex-shrink-0">
+          {step != 14 && <div className="w-full z-10 p-2 flex-shrink-0">
             <div className="flex justify-between items-center">
               {/* Show back button only from step 2 onwards (step >= 1) */}
               <div>
@@ -117,7 +117,7 @@ export default function GoogleLpPage() {
                 style={{ width: `${progress}%` }}
               ></div>
             </div>
-          </div>
+          </div>}
 
           {/* ✅ Step Content */}
           <div className="flex-grow overflow-y-auto" style={{ height: 'calc(100vh - 80px)' }}>

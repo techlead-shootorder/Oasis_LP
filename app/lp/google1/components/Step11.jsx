@@ -62,7 +62,7 @@ export default function Step11({ onNext, formData }) {
         <button
           onClick={handleContinue}
           disabled={!isValid}
-          className={`w-full py-3 rounded-md font-medium text-white ${
+          className={`w-full py-[8px] rounded-md font-medium text-white ${
             isValid ? 'bg-primary cursor-pointer' : 'bg-purple-300 cursor-not-allowed'
           }`}
         >
