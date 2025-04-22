@@ -71,7 +71,7 @@ export default function GoogleLpPage() {
             <img
               src="/images/google1/oasis-purple-logo.png"
               alt="Oasis IVF & Fertility"
-              className="h-6 sm:h-12 3xl:h-16"
+              className="h-10 sm:h-12 3xl:h-16"
             />
           </div>
 
@@ -79,7 +79,7 @@ export default function GoogleLpPage() {
           <div className="flex-1 flex flex-col justify-between max-w-md mx-auto w-full overflow-hidden">
             {/* Top section - minimal margins */}
             <div className="text-center mt-2">
-              <h1 className="text-[16px] md:text-2xl font-semibold">
+              <h1 className="text-[20px] md:text-2xl font-semibold">
                 Your Parenthood <br /> Journey Starts Here
               </h1>
             </div>
@@ -117,7 +117,7 @@ export default function GoogleLpPage() {
                 {step >= 1 && (
                   <span
                     onClick={handleBack}
-                    className="text-[#9C4A97] font-medium text-20 md:text-[30px] material-icons cursor-pointer"
+                    className="text-[#9C4A97] font-medium text-20px md:text-[30px] material-icons cursor-pointer"
                   >
                     chevron_left
                   </span>
@@ -129,7 +129,7 @@ export default function GoogleLpPage() {
                 <img
                   src="/images/google1/oasis-purple-logo.png"
                   alt="Oasis IVF & Fertility"
-                  className="h-6 sm:h-12 3xl:h-16"
+                  className="h-10 sm:h-12 3xl:h-16"
                 />
               </div>
             </div>
