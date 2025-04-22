@@ -41,41 +41,47 @@ export default function GoogleLpPage() {
     <>
       {/* ✅ Start Screen */}
       {showStartScreen ? (
-        <div className="flex flex-col items-center text-center h-screen bg-white px-4 relative overflow-hidden font-helvetica">
-          <div className='flex justify-end w-full p-2'>
-            <img
-              src="/images/google1/oasis-purple-logo.png"
-              alt="Oasis IVF & Fertility"
-              className="h-8"
-            />
-          </div>
-
-          <div className="max-w-md w-full mx-auto flex flex-col justify-between p-2" style={{ height: 'calc(100vh - 50px)' }}>
-            <h1 className="text-[18px] md:text-3xl font-semibold mb-2">
-              Your Parenthood <br /> Journey Starts Here
-            </h1>
-
-            <div className="mb-6">
-              <p className="text-sm md:text-base mb-6 text-gray-800">
-                This will take two minutes, because the more we understand, the better we can help
-              </p>
-
-              <button
-                className="bg-[#9C4A97] hover:bg-[#803a7f] text-white font-bold py-3 px-6 rounded-xl w-full text-sm md:text-base"
-                onClick={() => setShowStartScreen(false)}
-              >
-                Let's begin!
-              </button>
-
-              <p className="mt-4 text-xs text-gray-500">
-                By continuing, you confirm and guarantee that you have read, understood, and agreed to our{' '}
-                <a href="#" className="underline">Terms of Use</a>,{' '}
-                <a href="#" className="underline">Privacy Notice</a>, and{' '}
-                <a href="#" className="underline">Refund Policy</a>.
-              </p>
-            </div>
-          </div>
-        </div>
+       <div className="flex flex-col h-screen bg-white px-4 overflow-hidden font-helvetica">
+       {/* Header with logo */}
+       <div className="flex justify-end w-full p-2">
+         <img
+           src="/images/google1/oasis-purple-logo.png"
+           alt="Oasis IVF & Fertility"
+           className="h-8"
+         />
+       </div>
+       
+       {/* Main content with flexible height */}
+       <div className="flex-1 flex flex-col justify-between max-w-md mx-auto w-full">
+         {/* Top section */}
+         <div className="text-center mt-4">
+           <h1 className="text-[18px] md:text-3xl font-semibold">
+             Your Parenthood <br /> Journey Starts Here
+           </h1>
+         </div>
+         
+         {/* Bottom section */}
+         <div className="text-center mb-8">
+           <p className="text-sm md:text-base mb-6 text-gray-800">
+             This will take two minutes, because the more we understand, the better we can help
+           </p>
+     
+           <button
+             className="bg-[#9C4A97] hover:bg-[#803a7f] text-white font-bold py-3 px-6 rounded-xl w-full text-sm md:text-base"
+             onClick={() => setShowStartScreen(false)}
+           >
+             Let's begin!
+           </button>
+     
+           <p className="mt-4 text-xs text-gray-500">
+             By continuing, you confirm and guarantee that you have read, understood, and agreed to our{' '}
+             <a href="#" className="underline">Terms of Use</a>,{' '}
+             <a href="#" className="underline">Privacy Notice</a>, and{' '}
+             <a href="#" className="underline">Refund Policy</a>.
+           </p>
+         </div>
+       </div>
+     </div>
       ) : (
         // ✅ Questionnaire Wrapper
         <div className="h-screen bg-white overflow-hidden flex flex-col font-helvetica">
