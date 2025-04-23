@@ -26,7 +26,7 @@ export default function Step1({ onNext, formData }) {
 
       {/* Baby Image */}
       <div>
-      <img src='/images/google1/baby01.png'/>
+      <img src='/images/google1/fertilityTreatmentAnime.png'/>
       </div>
 
       {/* Yes / No Buttons */}

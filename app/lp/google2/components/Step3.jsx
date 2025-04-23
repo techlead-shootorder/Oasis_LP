@@ -24,7 +24,7 @@ export default function Step3({ onNext, formData }) {
 
       {/* Marriage Image */}
       <div>
-        <img src="/images/google1/marriage.png" />
+        <img src="/images/google1/marriedCouple.png" />
       </div>
 
       {/* Yes / No Buttons */}

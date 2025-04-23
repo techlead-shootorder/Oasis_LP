@@ -12,7 +12,7 @@ export default function Step4({ onNext}) {
 
   return (
     <div className="p-2 flex flex-col h-full">
-      <div className="flex-grow">
+      <div className="flex-grow mb-[94px]">
         {/* Title */}
         <h2 className="text-center text-2xl font-bold mb-4">Did You Know?</h2>
         
@@ -25,16 +25,16 @@ export default function Step4({ onNext}) {
         </div>
         
         {/* Couple Icons Grid */}
-        <div className="grid grid-cols-2 gap-2 mb-8">
+        <div className="grid grid-cols-3 gap-2 mb-8">
           {/* First couple (highlighted) */}
-          <div className="bg-white shadow rounded-lg p-3 flex justify-center">
+          <div className="bg-white rounded-lg p-3 flex justify-center">
             <img src="/images/google1/orangeCouple.png" alt="Orange couple" className="h-16" />
           
           </div>
           
           {/* Other couples - purple */}
           {[...Array(5)].map((_, index) => (
-            <div key={index} className="bg-white shadow rounded-lg p-3 flex justify-center">
+            <div key={index} className="bg-white rounded-lg p-3 flex justify-center">
               <img src="/images/google1/blueCouple.png" alt="Blue couple" className="h-16" />
             </div>
           ))}

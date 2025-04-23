@@ -4,11 +4,11 @@ export default function ThankYouScreen({formData}) {
 
   console.log("formdata", formData);
   return (
-    <div className="flex flex-col items-center justify-between h-full bg-white">
+    <div className="flex flex-col items-center justify-between h-screen bg-white">
       {/* Baby image with purple hands above */}
       <div className="flex-grow flex items-center justify-center w-full">
         <img 
-          src="/images/google1/baby-with-purple-hands.png" 
+          src="/images/google1/thankyou-thumb.png" 
           alt="Baby with protective hands above" 
           className="w-full max-w-md"
         />

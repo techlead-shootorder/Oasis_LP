@@ -29,7 +29,7 @@ export default function Step1({ onNext, formData }) {
         {/* Baby Image */}
         <div className="flex-1 flex items-center justify-center">
           <img 
-            src="/images/google1/baby01.png" 
+            src="/images/google1/babyAnime.png" 
             alt="Baby" 
             className="object-contain "
           />

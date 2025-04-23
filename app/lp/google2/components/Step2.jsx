@@ -17,7 +17,7 @@ export default function StepGender({ onNext, formData }) {
 
   return (
     <div className="p-2 flex flex-col">
-      <label className="block mb-4 text-2xl font-bold text-center">
+      <label className="block my-4 text-2xl font-bold text-center">
         Select Your Gender
       </label>
 
