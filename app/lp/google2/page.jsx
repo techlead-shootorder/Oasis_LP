@@ -17,7 +17,12 @@ import Step12 from './components/Step12';
 import Step13 from './components/Step13';
 import Step14 from './components/Step14';
 import Step15 from './components/Step15';
+import EggFreezingStep from './components/EggFreezingStep';
 
+// Define the egg freezing step index
+const EGG_FREEZING_STEP_INDEX = 100; // Using a large number to distinguish from regular steps
+
+// Regular steps array
 const steps = [Step1, Step2, Step3, Step4, Step5, Step6, Step7, Step8, Step9, Step10, Step11, Step12, Step13, Step14, Step15];
 const totalSteps = 14; // Total steps excluding thank you slide
 
@@ -28,7 +33,29 @@ export default function GoogleLpPage() {
 
   const handleNext = (key, value) => {
     setFormData((prev) => ({ ...prev, [key]: value }));
-    
+
+    // Special case for Step1 - if user selects "No" for planning a baby
+    if (step === 0 && key === 'planningABaby' && value === 'no') {
+      // Redirect to egg freezing step
+      setStep(EGG_FREEZING_STEP_INDEX);
+      return;
+    }
+
+    // Special case for Step3 - if user selects "No" for marriage status
+    if (step === 2 && key === 'married' && value === 'no') {
+      // Redirect to egg freezing step
+      setStep(EGG_FREEZING_STEP_INDEX);
+      return;
+    }
+
+    // Special case for Egg Freezing Step - proceed to appropriate next step
+    if (step === EGG_FREEZING_STEP_INDEX) {
+      // Can route to specific step based on your flow requirements
+      // For now, going to Step2
+      setStep(1);
+      return;
+    }
+
     // Check if we're on Step13 (index 12) and user has checked the WhatsApp checkbox
     if (step === 12 && key === 'contact' && value.isWhatsApp) {
       // Skip Step14 by setting the step to Step15 (index 14)
@@ -40,6 +67,12 @@ export default function GoogleLpPage() {
   };
 
   const handleBack = () => {
+    // If on egg freezing step, go back to Step1
+    if (step === EGG_FREEZING_STEP_INDEX) {
+      setStep(0);
+      return;
+    }
+
     // If coming back from Step15 after skipping Step14, go back to Step13
     if (step === 14 && formData.contact && formData.contact.isWhatsApp) {
       setStep(12);
@@ -52,6 +85,11 @@ export default function GoogleLpPage() {
   // If on step 13 with checkbox checked or step 14, progress should be 100%
   // Otherwise, calculate progress based on current step out of 14 steps
   const calculateProgress = () => {
+    // Always show 100% progress on egg freezing step
+    if (step === EGG_FREEZING_STEP_INDEX) {
+      return ((1) / totalSteps) * 100; // Show same progress as step 1
+    }
+
     if ((step === 12 && formData.contact && formData.contact.isWhatsApp) || step >= 13) {
       return 100;
     }
@@ -59,7 +97,16 @@ export default function GoogleLpPage() {
   };
 
   const progress = calculateProgress();
-  const CurrentStep = steps[step];
+
+  // Determine which component to render based on step
+  const getCurrentComponent = () => {
+    if (step === EGG_FREEZING_STEP_INDEX) {
+      return EggFreezingStep;
+    }
+    return steps[step];
+  };
+
+  const CurrentStep = getCurrentComponent();
 
   return (
     <>
@@ -112,9 +159,9 @@ export default function GoogleLpPage() {
           {/* ✅ Fixed Header */}
           {step != 14 && <div className="w-full z-10 py-2 px-6 flex-shrink-0">
             <div className="flex justify-between items-center">
-              {/* Show back button only from step 2 onwards (step >= 1) */}
+              {/* Show back button only from step 2 onwards (step >= 1) and for egg freezing step */}
               <div>
-                {step >= 1 && (
+                {(step >= 1 || step === EGG_FREEZING_STEP_INDEX) && (
                   <span
                     onClick={handleBack}
                     className="text-[#9C4A97] font-medium text-20px md:text-[30px] material-icons cursor-pointer"
@@ -147,7 +194,7 @@ export default function GoogleLpPage() {
           <div className="flex-grow overflow-y-auto">
             <div className={`max-w-3xl mx-auto ${step == 14 ? 'mt-0' : 'mt-4'} px-4`}>
               <AnimatePresence mode="wait">
-                {step < steps.length ? (
+                {step < steps.length || step === EGG_FREEZING_STEP_INDEX ? (
                   <motion.div
                     key={step}
                     initial={{ y: 100, opacity: 0 }}
