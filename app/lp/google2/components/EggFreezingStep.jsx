@@ -1,10 +1,12 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+// import { useRouter } from 'next/navigation';
+// import { useState } from 'react';
 
-export default function EggFreezingStep({ onNext }) {
-  const router = useRouter();
+// export default function EggFreezingStep({ onNext }) {
+  export default function EggFreezingStep() {
+
+  // const router = useRouter();
 
   const handleNext = () => {
     // Call the callback if needed
@@ -21,7 +23,7 @@ export default function EggFreezingStep({ onNext }) {
       {/* Main Content */}
       <div className="max-w-md w-full">
         <h2 className="text-lg font-medium mb-4">
-          You don't have to wait!
+          You don&apos;t have to wait!
           <br />
           Preserve your fertility now for
           <br />
