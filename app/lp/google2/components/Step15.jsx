@@ -4,7 +4,7 @@ export default function ThankYouScreen({formData}) {
 
   console.log("formdata", formData);
   return (
-    <div className="flex flex-col items-center justify-between h-screen bg-white">
+    <div className="flex flex-col h-[90%] bg-white">
       {/* Baby image with purple hands above */}
       <div className="flex-grow flex items-center justify-center w-full">
         <img 
