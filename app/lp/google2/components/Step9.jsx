@@ -19,9 +19,9 @@ export default function Step1({ onNext, formData }) {
   return (
     <div className="p-2 flex flex-col">
       <label className="block mb-4 text-2xl font-bold text-center">
-      Have you undergone 
+      Have you taken any 
       <br/>
-      any fertility treatment before?
+      fertility treatment before?
       </label>
 
       {/* Baby Image */}

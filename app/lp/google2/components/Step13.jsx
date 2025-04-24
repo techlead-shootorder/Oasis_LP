@@ -52,11 +52,10 @@ export default function Step13({ onNext, formData }) {
       {/* Heading */}
       <div className="w-full text-center mb-4">
         <h2 className="text-xl font-bold text-gray-800">
-          Enter your number to get
+        Please share your details 
           <br />
-          a free doctor consultation
-          <br />
-          call within 24 hours!
+          to help you further
+         
         </h2>
       </div>
       

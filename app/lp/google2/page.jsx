@@ -112,55 +112,55 @@ export default function GoogleLpPage() {
     <>
       {/* ✅ Start Screen */}
       {showStartScreen ? (
-       <div className="flex flex-col h-screen max-h-screen bg-white px-4 font-helvetica">
-       {/* Header with minimal padding */}
-       <div className="flex justify-end w-full p-1">
-         <img
-           src="/images/google1/oasis-purple-logo.png"
-           alt="Oasis IVF & Fertility"
-           className="h-10 sm:h-12 3xl:h-16"
-         />
-       </div>
-     
-       {/* Main content area */}
-       <div className="flex-1 flex flex-col justify-between max-w-md mx-auto w-full overflow-hidden">
-         {/* Top section */}
-         <div className="text-center mt-2 ">
-           <h1 className="text-[20px] md:text-2xl font-semibold">
-             Your Parenthood <br /> Journey Starts Here
-           </h1>
-     
-           {/* 👇 Image inserted here in the white space */}
-           <img
-             src="/images/google1/letsbegin.png" // Replace with your image path
-             alt="Parenthood Illustration"
-             className="mx-auto my-4 w-auto h-80" // Adjust `w-48` as needed
-           />
-         </div>
-     
-         {/* Bottom section */}
-         <div className="text-center mb-4">
-           <p className="text-md md:text-sm mb-4 text-gray-800">
-             This will take <strong>two minutes,</strong><br/>
-              because the more we understand,<br/> 
-              the better we can help
-           </p>
-     
-           <button
-             className="bg-[#9C4A97] hover:bg-[#803a7f] text-white font-bold py-[12px] px-4 rounded-md w-full text-sm"
-             onClick={() => setShowStartScreen(false)}
-           >
-             Let&apos;s begin!
-           </button>
-     
-           <p className="mt-2 text-xs text-gray-500">
-             We respect your privacy. By Continuing, you consent to our{' '}
-             <a href="https://oasisindia.in/privacy-policy/" className="underline">Privacy Policy</a>
-           </p>
-         </div>
-       </div>
-     </div>
-     
+        <div className="flex flex-col h-[90vh] bg-white px-4 font-helvetica">
+          {/* Header with minimal padding */}
+          <div className="flex justify-end w-full p-1">
+            <img
+              src="/images/google1/oasis-purple-logo.png"
+              alt="Oasis IVF & Fertility"
+              className="h-10 sm:h-12 3xl:h-16"
+            />
+          </div>
+
+          {/* Main content area */}
+          <div className="flex-1 flex flex-col justify-between max-w-md mx-auto w-full overflow-hidden">
+            {/* Top section */}
+            <div className="text-center mt-2 ">
+              <h1 className="text-[20px] md:text-2xl font-semibold">
+                Your journey to parenthood <br /> starts here
+              </h1>
+
+              {/* 👇 Image inserted here in the white space */}
+              <img
+                src="/images/google1/letsbegin.png" // Replace with your image path
+                alt="Parenthood Illustration"
+                className="mx-auto my-4 w-auto h-80" // Adjust `w-48` as needed
+              />
+            </div>
+
+            {/* Bottom section */}
+            <div className="text-center mb-4">
+              <p className="text-md md:text-sm mb-4 text-gray-800">
+                This will take <strong>two minutes,</strong><br />
+                because the more we understand,<br />
+                the better we can help
+              </p>
+
+              <button
+                className="bg-[#9C4A97] hover:bg-[#803a7f] text-white font-bold py-[12px] px-4 rounded-md w-full text-sm"
+                onClick={() => setShowStartScreen(false)}
+              >
+                Let&apos;s begin!
+              </button>
+
+              <p className="mt-2 text-xs text-gray-500">
+                We respect your privacy. By Continuing, you consent to our{' '}
+                <a href="https://oasisindia.in/privacy-policy/" className="underline">Privacy Policy</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
       ) : (
         // ✅ Questionnaire Wrapper
         <div className="h-screen overflow-hidden flex flex-col font-helvetica">

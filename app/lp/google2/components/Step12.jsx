@@ -15,7 +15,7 @@ export default function Step6({ onNext }) {
                 <p className="text-gray-800 font-medium text-lg">
                     Oasis Fertility offers
                     <br />
-                    services  in 31 centers spread
+                    services  in 31+ centers spread
                     <br />
                     across  India with  personalized and
 
