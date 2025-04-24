@@ -31,7 +31,7 @@ export default function Step1({ onNext, formData }) {
           <img 
             src="/images/google1/babyAnime.png" 
             alt="Baby" 
-            className="object-contain "
+            className="mx-auto my-2 w-auto h-80"
           />
         </div>
         

@@ -19,11 +19,13 @@ export default function Step5({ onNext, formData }) {
     }, 300);
   };
 
+  console.log("formdata", formData);
+
   const ageOptions = [
-    { range: '18-24', image: '/images/google1/women-age-18-24.png', position: 'top-left' },
-    { range: '25-34', image: '/images/google1/women-age-25-34.png', position: 'top-right' },
-    { range: '35-44', image: '/images/google1/women-age-35-44.png', position: 'bottom-left' },
-    { range: '45+', image: '/images/google1/women-age-45-plus.png', position: 'bottom-right' }
+    { range: '18-24', image: formData.gender == 'Male' ? '/images/google1/men-age-18-24.png' : '/images/google1/women-age-18-24.png', position: 'top-left' },
+    { range: '25-34', image: formData.gender == 'Male' ? '/images/google1/men-age-25-34.png' : '/images/google1/women-age-25-34.png', position: 'top-right' },
+    { range: '35-44', image: formData.gender == 'Male' ? '/images/google1/men-age-35-44.png' : '/images/google1/women-age-35-44.png', position: 'bottom-left' },
+    { range: '45+', image:   formData.gender == 'Male' ? '/images/google1/men-age-45-plus.png' : '/images/google1/women-age-45-plus.png', position: 'bottom-right' }
   ];
 
   return (

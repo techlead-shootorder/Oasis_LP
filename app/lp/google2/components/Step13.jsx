@@ -1,6 +1,11 @@
 import { useState, useEffect } from 'react';
+import { LeadController } from "@/app/(general)/component/LeadController"
+import { ToastComponent } from "@/app/(general)/widgets/components/client/toast/toast";
+import { AppConstant } from "@/lib/constant/AppConstant";
 
-export default function Step13({ onNext, formData }) {
+
+
+export default function Step13({ onNext, formData, setFormData }) {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [name, setName] = useState('');
   const [isWhatsApp, setIsWhatsApp] = useState(false);
@@ -20,9 +25,14 @@ export default function Step13({ onNext, formData }) {
   // Validate phone number - basic validation for Indian numbers (10 digits)
   const validatePhoneNumber = (number) => {
     const digitsOnly = number.replace(/\D/g, '');
-    setIsValid(digitsOnly.length === 10);
+    setIsValid(digitsOnly.length === 10 && name);
     return digitsOnly.length === 10;
   };
+
+  const handleName = (value) => {
+    setIsValid(phoneNumber.length == 10 && value);
+    setName(value)
+  }
 
   // Handle phone number input change
   const handlePhoneChange = (e) => {
@@ -38,14 +48,74 @@ export default function Step13({ onNext, formData }) {
     setIsWhatsApp(!isWhatsApp);
   };
 
+    
+
   // Handle continue button click
   const handleContinue = () => {
-    if (isValid) {
-      const digitsOnly = phoneNumber.replace(/\D/g, '');
-      //   onNext('phoneNumber', digitsOnly);
-      //   onNext('isWhatsapp', isWhatsApp);
-      onNext('contact', { phoneNumber: digitsOnly, isWhatsApp })
+
+   
+
+    if(isValid && isWhatsApp){
+        // call the sale force api 
+        const digitsOnly = phoneNumber.replace(/\D/g, '');
+        setFormData((prev)=>{
+          return {
+            ...prev,
+            contact: { phoneNumber: digitsOnly, isWhatsApp}
+          }
+        })
+        
+        try {
+              const utmParameters = localStorage.getItem("utmParams");
+              const utmParams = utmParameters ? JSON.parse(utmParameters) : {};
+              const userDetails = {...formData, contact: {phoneNumber: digitsOnly, isWhatsApp}, name: name }
+
+              const leadFormRequestBody = {
+                ...userDetails,
+                ...utmParams,
+                referralUrl:
+                  document.referrer ||
+                  localStorage.getItem("referrer") ||
+                  window.location.href,
+                pageUrl: window.location.href || AppConstant.websiteUrl + pathname,
+              };
+        
+              window.dataLayer = window.dataLayer || [];
+              window.dataLayer.push({
+                event: 'userProvidedData',
+                phone_number: userDetails.phoneNumber,
+              });
+        
+              new LeadController().submitFemiaForm(leadFormRequestBody).then(() => {
+           
+                setFormData({});
+
+                if (typeof window !== "undefined") {
+                  localStorage.removeItem("utmParams");
+                  localStorage.removeItem("referrer");
+                }
+                
+              }).catch(error => {
+                console.error(error);
+              
+              })
+                .finally(() => {
+                  
+                });
+        
+            } catch (error) {
+              console.error(error);
+             
+            }
     }
+    else{
+      // to  whatsapp number step
+      if (isValid) {
+        const digitsOnly = phoneNumber.replace(/\D/g, '');
+        onNext('contact', { phoneNumber: digitsOnly, isWhatsApp } )
+      }
+    }
+   
   };
 
   return (
@@ -76,7 +146,7 @@ export default function Step13({ onNext, formData }) {
           <input
             type="text"
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => handleName(e.target.value)}
             placeholder="Enter Your Name"
             className="w-full p-2 bg-transparent border-none focus:outline-none text-center text-gray-600"
           />

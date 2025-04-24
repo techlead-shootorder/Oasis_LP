@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function Step1({ onNext, formData }) {
+export default function Step9({ onNext, formData }) {
   const [selection, setSelection] = useState('');
 
   // Pre-fill selection if returning to this step
@@ -26,7 +26,7 @@ export default function Step1({ onNext, formData }) {
 
       {/* Baby Image */}
       <div>
-      <img src='/images/google1/fertilityTreatmentAnime.png'/>
+      <img className='mx-auto my-2 w-auto h-80' src='/images/google1/fertilityTreatmentAnime.png'/>
       </div>
 
       {/* Yes / No Buttons */}

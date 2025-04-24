@@ -3,6 +3,7 @@ import React from 'react';
 export default function ThankYouScreen({formData}) {
 
   console.log("formdata", formData);
+  
   return (
     <div className="flex flex-col h-[90%] bg-white">
       {/* Baby image with purple hands above */}

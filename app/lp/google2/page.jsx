@@ -29,6 +29,7 @@ const totalSteps = 14; // Total steps excluding thank you slide
 export default function GoogleLpPage() {
   const [step, setStep] = useState(0);
   const [formData, setFormData] = useState({});
+  const [trackStep, setTrackStep] = useState(0);
   const [showStartScreen, setShowStartScreen] = useState(true);
 
   const handleNext = (key, value) => {
@@ -36,6 +37,9 @@ export default function GoogleLpPage() {
 
     // Special case for Step1 - if user selects "No" for planning a baby
     if (step === 0 && key === 'planningABaby' && value === 'no') {
+      // first store the previous step before going to egg freezing step
+      const tempStep = step;
+      setTrackStep(tempStep);
       // Redirect to egg freezing step
       setStep(EGG_FREEZING_STEP_INDEX);
       return;
@@ -43,6 +47,27 @@ export default function GoogleLpPage() {
 
     // Special case for Step3 - if user selects "No" for marriage status
     if (step === 2 && key === 'married' && value === 'no') {
+      // first store the previous step before going to egg freezing step
+      const tempStep = step;
+      setTrackStep(tempStep);
+      // Redirect to egg freezing step
+      setStep(EGG_FREEZING_STEP_INDEX);
+      return;
+    }
+
+    if(step == 8 && value == 'no'){
+      // first store the previous step before going to egg freezing step
+      const tempStep = step;
+      setTrackStep(tempStep);
+      // Redirect to egg freezing step
+      setStep(EGG_FREEZING_STEP_INDEX);
+      return;
+    }
+
+    if(step == 4 && formData?.gender == 'Female' && value == '18-24'){
+      // first store the previous step before going to egg freezing step
+      const tempStep = step;
+      setTrackStep(tempStep);
       // Redirect to egg freezing step
       setStep(EGG_FREEZING_STEP_INDEX);
       return;
@@ -55,6 +80,8 @@ export default function GoogleLpPage() {
       setStep(1);
       return;
     }
+
+
 
     // Check if we're on Step13 (index 12) and user has checked the WhatsApp checkbox
     if (step === 12 && key === 'contact' && value.isWhatsApp) {
@@ -69,7 +96,7 @@ export default function GoogleLpPage() {
   const handleBack = () => {
     // If on egg freezing step, go back to Step1
     if (step === EGG_FREEZING_STEP_INDEX) {
-      setStep(0);
+      setStep(trackStep);
       return;
     }
 
@@ -87,7 +114,7 @@ export default function GoogleLpPage() {
   const calculateProgress = () => {
     // Always show 100% progress on egg freezing step
     if (step === EGG_FREEZING_STEP_INDEX) {
-      return ((1) / totalSteps) * 100; // Show same progress as step 1
+      return ((trackStep + 1) / totalSteps) * 100; // Show same progress as step 1
     }
 
     if ((step === 12 && formData.contact && formData.contact.isWhatsApp) || step >= 13) {
@@ -169,9 +196,9 @@ export default function GoogleLpPage() {
             <div className="flex justify-between items-center">
               {/* Show back button only from step 2 onwards (step >= 1) and for egg freezing step */}
               <div>
-                {(step >= 1 || step === EGG_FREEZING_STEP_INDEX) && (
+                {(step >= 0 || step === EGG_FREEZING_STEP_INDEX) && (
                   <span
-                    onClick={handleBack}
+                  onClick={step === 0 ? () => setShowStartScreen(true) : handleBack}
                     className="text-[#9C4A97] font-medium text-20px md:text-[30px] material-icons cursor-pointer"
                   >
                     chevron_left
@@ -214,6 +241,7 @@ export default function GoogleLpPage() {
                       onNext={handleNext}
                       onBack={handleBack}
                       formData={formData}
+                      setFormData={setFormData}
                     />
                   </motion.div>
                 ) : (
