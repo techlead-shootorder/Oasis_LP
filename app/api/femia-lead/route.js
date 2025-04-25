@@ -160,7 +160,7 @@ async function sendSalesforceLeadRequest(requestJson) {
           requestJson.errorMessage = `${message} ------ ${errorCode}`;
         }
         try {
-          await storeLeadData(requestJson);
+          // await storeLeadData(requestJson);
         } catch (error) {
           console.log(error);
         }
