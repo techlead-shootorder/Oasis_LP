@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { AppConstant } from "@/lib/constant/AppConstant";
-import { formatDateToYYYYMMDD } from "@/util/DataUtil"
+// import { formatDateToYYYYMMDD } from "@/util/DataUtil"
 import dbConnection from "@/util/db";
 
 const LIVE_LEAD_URL_PREFIX = "https://login.salesforce.com";
@@ -73,7 +73,7 @@ async function sendSalesforceLeadRequest(requestJson) {
       myHeaders.append("Authorization", "OAuth " + authData.access_token);
       myHeaders.append("Content-Type", "application/json");
       let firstName = "";
-      let lastName = "";
+      // let lastName = "";
       
       if (
         !requestJson.lastName &&
@@ -89,20 +89,20 @@ async function sendSalesforceLeadRequest(requestJson) {
         firstName = requestJson.firstName.trim();
       }
 
-      let ModifiedLeadSource;
+      // let ModifiedLeadSource;
 
       if (requestJson.utmSource) {
         const utmSource = requestJson.utmSource.toLowerCase();
 
         if (utmSource.includes("google") || utmSource.includes("GCLID")) {
-          ModifiedLeadSource = "Google Ads";
+          // ModifiedLeadSource = "Google Ads";
         } else if (utmSource.includes("meta")) {
-          ModifiedLeadSource = "Meta Ads";
+          // ModifiedLeadSource = "Meta Ads";
         } else {
-          ModifiedLeadSource = requestJson.utmSource;
+          // ModifiedLeadSource = requestJson.utmSource;
         }
       } else {
-        ModifiedLeadSource = "Organic";
+        // ModifiedLeadSource = "Organic";
       }
 
       
