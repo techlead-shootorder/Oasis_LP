@@ -72,7 +72,7 @@ async function sendSalesforceLeadRequest(requestJson) {
       const myHeaders = new Headers();
       myHeaders.append("Authorization", "OAuth " + authData.access_token);
       myHeaders.append("Content-Type", "application/json");
-      let firstName = "";
+      // let firstName = "";
       // let lastName = "";
       
       // if (
