@@ -261,11 +261,11 @@ export default function GoogleLpPage() {
           <div className="absolute inset-0 bg-purple-900 opacity-10 z-0"></div>
 
           {/* Content Container */}
-          <div className="flex flex-col h-full z-10 px-4 relative">
+          <div className="flex flex-col h-[90vh] border-2 border-red-400 z-10 px-4 relative">
             {/* Header Logo - Kept at top right */}
             <div className="flex justify-end w-full p-3">
               <img
-                src="/images/google1/oasis-white-logo.webp"
+                src="/images/google1/oasis-femia-logo.png"
                 alt="Oasis IVF & Fertility"
                 className="h-10 sm:h-12 lg:h-16"
               />
@@ -277,7 +277,7 @@ export default function GoogleLpPage() {
               <div className="ml-4 md:ml-16 lg:ml-24 max-w-[600px] h-full flex flex-col justify-between sm:justify-start">
 
                 {/* Headline */}
-                <div>
+                <div className='mt-6'>
                   <h1 className="text-white font-bold text-2xl md:text-3xl lg:text-6xl leading-10 drop-shadow-lg text-center  sm:text-left">
                     {heading.toUpperCase()}
                   </h1>
