@@ -47,74 +47,74 @@ export default function Step13({ onNext, formData, setFormData }) {
     setIsWhatsApp(!isWhatsApp);
   };
 
-    
+
 
   // Handle continue button click
   const handleContinue = () => {
 
-   
+    if (isValid && isWhatsApp) {
+      // call the sale force api 
+      const digitsOnly = phoneNumber.replace(/\D/g, '');
+      setFormData((prev) => {
+        return {
+          ...prev,
+          contact: { phoneNumber: digitsOnly, isWhatsApp }
+        }
+      })
 
-    if(isValid && isWhatsApp){
-        // call the sale force api 
-        const digitsOnly = phoneNumber.replace(/\D/g, '');
-        setFormData((prev)=>{
-          return {
-            ...prev,
-            contact: { phoneNumber: digitsOnly, isWhatsApp}
+      try {
+        const utmParameters = localStorage.getItem("utmParams");
+        const utmParams = utmParameters ? JSON.parse(utmParameters) : {};
+        const userDetails = { ...formData, contact: { phoneNumber: digitsOnly, isWhatsApp }, name: name }
+
+        const leadFormRequestBody = {
+          ...userDetails,
+          ...utmParams,
+          referralUrl:
+            document.referrer ||
+            localStorage.getItem("referrer") ||
+            window.location.href,
+          pageUrl: window.location.href || AppConstant.websiteUrl + pathname,
+        };
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'userProvidedData',
+          phone_number: userDetails.phoneNumber,
+        });
+
+        new LeadController().submitFemiaForm(leadFormRequestBody).then(() => {
+
+          setFormData({});
+
+          if (typeof window !== "undefined") {
+            localStorage.removeItem("utmParams");
+            localStorage.removeItem("referrer");
           }
+
+          onNext(onNext('contact', { phoneNumber: digitsOnly, isWhatsApp }))
+
+        }).catch(error => {
+          console.error(error);
+          alert('Something went Wrong Try Again Later');
         })
-        
-        try {
-              const utmParameters = localStorage.getItem("utmParams");
-              const utmParams = utmParameters ? JSON.parse(utmParameters) : {};
-              const userDetails = {...formData, contact: {phoneNumber: digitsOnly, isWhatsApp}, name: name }
+          .finally(() => {
 
-              const leadFormRequestBody = {
-                ...userDetails,
-                ...utmParams,
-                referralUrl:
-                  document.referrer ||
-                  localStorage.getItem("referrer") ||
-                  window.location.href,
-                pageUrl: window.location.href || AppConstant.websiteUrl + pathname,
-              };
-        
-              window.dataLayer = window.dataLayer || [];
-              window.dataLayer.push({
-                event: 'userProvidedData',
-                phone_number: userDetails.phoneNumber,
-              });
-        
-              new LeadController().submitFemiaForm(leadFormRequestBody).then(() => {
-           
-                setFormData({});
+          });
 
-                if (typeof window !== "undefined") {
-                  localStorage.removeItem("utmParams");
-                  localStorage.removeItem("referrer");
-                }
-                
-              }).catch(error => {
-                console.error(error);
-              
-              })
-                .finally(() => {
-                  
-                });
-        
-            } catch (error) {
-              console.error(error);
-             
-            }
+      } catch (error) {
+        console.error(error);
+
+      }
     }
-    else{
+    else {
       // to  whatsapp number step
       if (isValid) {
         const digitsOnly = phoneNumber.replace(/\D/g, '');
-        onNext('contact', { phoneNumber: digitsOnly, isWhatsApp } )
+        onNext('contact', { phoneNumber: digitsOnly, isWhatsApp })
       }
     }
-   
+
   };
 
   return (

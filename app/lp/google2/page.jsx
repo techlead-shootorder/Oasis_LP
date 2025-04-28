@@ -139,25 +139,25 @@ export default function GoogleLpPage() {
     <>
       {/* ✅ Start Screen */}
       {showStartScreen ? (
-        <div className="flex flex-col h-[90vh] bg-white px-4 font-helvetica">
+        <div className="flex flex-col h-[100vh] bg-white px-4 font-helvetica bg-[url('/images/google1/mobile_banner.webp')] sm:bg-[url('/images/google1/mobile_banner.webp')] md:bg-[url('/images/google1/tablet_banner.webp')] lg:bg-[url('/images/google1/desktop_banner.webp')] bg-cover bg-center w-full h-full">
           {/* Header with minimal padding */}
-          <div className="flex justify-end w-full p-1">
+          {/* <div className="flex justify-end w-full p-1">
             <img
               src="/images/google1/oasis-purple-logo.png"
               alt="Oasis IVF & Fertility"
               className="h-10 sm:h-12 3xl:h-16"
             />
-          </div>
+          </div> */}
 
           {/* Main content area */}
-          <div className="flex-1 flex flex-col justify-between max-w-md mx-auto w-full overflow-hidden">
-            {/* Top section */}
+          {/* <div className="flex-1 flex flex-col justify-between max-w-md mx-auto w-full overflow-hidden">
+            
             <div className="text-center mt-2 ">
               <h1 className="text-[20px] md:text-2xl font-semibold">
                 Your journey to parenthood <br /> starts here
               </h1>
 
-              {/* 👇 Image inserted here in the white space */}
+              
               <img
                 src="/images/google1/letsbegin.png" // Replace with your image path
                 alt="Parenthood Illustration"
@@ -165,7 +165,7 @@ export default function GoogleLpPage() {
               />
             </div>
 
-            {/* Bottom section */}
+            
             <div className="text-center mb-4">
               <p className="text-md md:text-sm mb-4 text-gray-800">
                 This will take <strong>two minutes,</strong><br />
@@ -185,7 +185,7 @@ export default function GoogleLpPage() {
                 <a href="https://oasisindia.in/privacy-policy/" className="underline">Privacy Policy</a>
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
 
       ) : (

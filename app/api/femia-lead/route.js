@@ -7,7 +7,7 @@ const LIVE_LEAD_URL_PREFIX = "https://login.salesforce.com";
 const LIVE_SF_CLIENT_ID = "3MVG95mg0lk4bath3P0wsRv34QU3hcG4X7nJXJA3QJhhQyN7zM0oAA9SJSzj615ZRwEta4KWXFyCMjkIx_ZQy";
 const LIVE_SF_CLIENT_SECRET = "347AC2A3BCA22AFA96F29043FC175553277A56925A67DD83681745EBC18BF1E3";
 const LIVE_SF_USERNAME = "integration.user@oasis.in.prod";
-const LIVE_SF_PASSWORD = "oasis@1234";
+const LIVE_SF_PASSWORD = "oasis@12345";
 
 // const LEADSQUARED_URL = "https://api.leadsquared.com/v2/LeadManagement.svc/Lead.Capture?&accessKey=u$r28bf3b3ba19df2ce87f563a0c9e7d95d&secretKey=eb6eaef1c9fc31bceaf852a72b99a3b827883261";
 
@@ -75,19 +75,19 @@ async function sendSalesforceLeadRequest(requestJson) {
       let firstName = "";
       // let lastName = "";
       
-      if (
-        !requestJson.lastName &&
-        requestJson.firstName &&
-        requestJson.firstName.length > 0 &&
-        requestJson.firstName.split(" ").length > 1
-      ) {
-        const nameParts = requestJson.firstName.trim().split(" ");
-        firstName = nameParts[0] || "";
-        lastName = nameParts.length > 1 ? nameParts.slice(1).join(" ") : firstName;
-      } else {
-        lastName = requestJson.lastName ?? requestJson.firstName.trim();
-        firstName = requestJson.firstName.trim();
-      }
+      // if (
+      //   !requestJson.lastName &&
+      //   requestJson.firstName &&
+      //   requestJson.firstName.length > 0 &&
+      //   requestJson.firstName.split(" ").length > 1
+      // ) {
+      //   const nameParts = requestJson.firstName.trim().split(" ");
+      //   firstName = nameParts[0] || "";
+      //   lastName = nameParts.length > 1 ? nameParts.slice(1).join(" ") : firstName;
+      // } else {
+      //   lastName = requestJson.lastName ?? requestJson.firstName.trim();
+      //   firstName = requestJson.firstName.trim();
+      // }
 
       // let ModifiedLeadSource;
 
@@ -105,14 +105,17 @@ async function sendSalesforceLeadRequest(requestJson) {
         // ModifiedLeadSource = "Organic";
       }
 
-      
+      console.log("")
   
     //   first write all the keys as they created from the backend
     // then get the value on that field from requestJson.ourfieldName
       const raw = JSON.stringify({
         LastName: requestJson.name,
         Company: 'Oasis Fertility',
-        Phone: requestJson.phoneNumber ?? "",
+        Phone: requestJson.contact.phoneNumber ?? "",
+        // LastName: 'Faraz',
+        // Company: 'Oasis Fertility',
+        // Phone: '7218426717',
         UTM_Campaign__c: requestJson.utmCampaign ?? "Website",
         UTM_Source__c: requestJson.utmSource ?? "Website",
         UTM_Medium__c: requestJson.utmMedium ?? "Website",
@@ -134,7 +137,7 @@ async function sendSalesforceLeadRequest(requestJson) {
       console.log("Salesforce Lead request>> ", raw);
 
       let response = await fetch(
-        authData.instance_url + `/services/data/v60.0/sobjects/Lead/Phone__c/${encodeURIComponent(requestJson.mobileNo)}`,
+        authData.instance_url + `/services/data/v60.0/sobjects/Lead/Phone__c/${encodeURIComponent(requestJson.contact.phoneNumber)}`,
         {
           method: "PATCH",
           headers: myHeaders,
@@ -192,12 +195,12 @@ async function storeLeadData(requestJson) {
     requestJson.firstName.length > 0 &&
     requestJson.firstName.split(" ").length > 1
   ) {
-    const nameParts = requestJson.firstName.trim().split(" ");
-    firstName = nameParts[0] || "";
-    lastName = nameParts.length > 1 ? nameParts.slice(1).join(" ") : firstName;
+    // const nameParts = requestJson.firstName.trim().split(" ");
+    // firstName = nameParts[0] || "";
+    // lastName = nameParts.length > 1 ? nameParts.slice(1).join(" ") : firstName;
   } else {
-    lastName = requestJson.lastName ?? requestJson.firstName.trim();
-    firstName = requestJson.firstName.trim();
+    // lastName = requestJson.lastName ?? requestJson.firstName.trim();
+    // firstName = requestJson.firstName.trim();
   }
 
   let ModifiedLeadSourceSQL;
