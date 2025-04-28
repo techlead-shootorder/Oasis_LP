@@ -19,6 +19,7 @@ import Step14 from './components/Step14';
 import Step15 from './components/Step15';
 import EggFreezingStep from './components/EggFreezingStep';
 
+
 // Define the egg freezing step index
 const EGG_FREEZING_STEP_INDEX = 100; // Using a large number to distinguish from regular steps
 
@@ -26,125 +27,178 @@ const EGG_FREEZING_STEP_INDEX = 100; // Using a large number to distinguish from
 const steps = [Step1, Step2, Step3, Step4, Step5, Step6, Step7, Step8, Step9, Step10, Step11, Step12, Step13, Step14, Step15];
 const totalSteps = 14; // Total steps excluding thank you slide
 
+// Define content configurations based on referrer and device
+const contentConfig = {
+  google: {
+    desktop: {
+      banner: '/images/google/desktop_banner.webp',
+      heading: 'Advanced IVF Technology Has Made 1,00,000+ Families Happy',
+      subheading: 'Get FREE IVF Guidance',
+      ctaText: 'BOOK YOUR FREE CONSULTATION',
+      backgroundPosition: 'center'
+    },
+    tablet: {
+      banner: '/images/google/tablet_banner.webp',
+      heading: 'Advanced IVF Technology Has Made 1,00,000+ Families Happy',
+      subheading: 'Get FREE IVF Guidance',
+      ctaText: 'BOOK YOUR FREE CONSULTATION',
+      backgroundPosition: 'center'
+    },
+    mobile: {
+      banner: '/images/google/mobile_banner.webp',
+      heading: 'Advanced IVF Technology Has Made 1,00,000+ Families Happy',
+      subheading: 'Get FREE IVF Guidance',
+      ctaText: 'BOOK YOUR FREE CONSULTATION',
+      backgroundPosition: 'top center'
+    }
+  },
+  youtube: {
+    desktop: {
+      banner: '/images/youtube/desktop_banner.webp',
+      heading: 'Start Your Fertility Journey Today',
+      subheading: 'Expert Care From Leading Specialists',
+      ctaText: 'GET A FREE CONSULTATION',
+      backgroundPosition: 'center'
+    },
+    tablet: {
+      banner: '/images/youtube/tablet_banner.webp',
+      heading: 'Start Your Fertility Journey Today',
+      subheading: 'Expert Care From Leading Specialists',
+      ctaText: 'GET A FREE CONSULTATION',
+      backgroundPosition: 'center'
+    },
+    mobile: {
+      banner: '/images/youtube/mobile_banner.webp',
+      heading: 'Start Your Fertility Journey Today',
+      subheading: 'Expert Care From Leading Specialists',
+      ctaText: 'GET A FREE CONSULTATION',
+      backgroundPosition: 'top center'
+    }
+  },
+  default: {
+    desktop: {
+      banner: '/images/google1/desktop_banner.webp',
+      heading: 'Your Journey To Parenthood Starts Here',
+      subheading: 'Take The First Step With Expert Guidance',
+      ctaText: "LET'S BEGIN!",
+      backgroundPosition: 'center'
+    },
+    tablet: {
+      banner: '/images/google1/tablet_banner.webp',
+      heading: 'Your Journey To Parenthood Starts Here',
+      subheading: 'Take The First Step With Expert Guidance',
+      ctaText: "LET'S BEGIN!",
+      backgroundPosition: 'center'
+    },
+    mobile: {
+      banner: '/images/google1/mobile_banner.webp',
+      heading: 'Your Journey To Parenthood Starts Here',
+      subheading: 'Take The First Step With Expert Guidance',
+      ctaText: "LET'S BEGIN!",
+      backgroundPosition: 'top center'
+    }
+  }
+};
+
 export default function GoogleLpPage() {
   const [step, setStep] = useState(0);
   const [formData, setFormData] = useState({});
   const [trackStep, setTrackStep] = useState(0);
   const [showStartScreen, setShowStartScreen] = useState(true);
   const [banner, setBanner] = useState('');
+  const [heading, setHeading] = useState('');
+  const [subheading, setSubheading] = useState('');
+  const [ctaText, setCtaText] = useState('');
+  const [backgroundPosition, setBackgroundPosition] = useState('center');
 
-  // Function to detect referrer and set banner for the correct device
-  const updateBannerBasedOnReferrerAndDevice = () => {
-    const referrer = document.referrer || ''; // Handle empty referrer
+  // Function to detect referrer and set content for the correct device
+  const updateContentBasedOnReferrerAndDevice = () => {
+    // Determine referrer source
+    const referrer = document.referrer || '';
+    let source = 'default';
+
+    if (referrer.includes('google.com')) {
+      source = 'google';
+    } else if (referrer.includes('youtube.com')) {
+      source = 'youtube';
+    }
+
+    // Determine device type based on width
+    let deviceType = 'mobile'; // Default to mobile
     const width = window.innerWidth;
 
-    // Determine the device type based on width
-    let deviceType = 'mobile'; // Default to mobile
     if (width >= 1024) {
       deviceType = 'desktop';
     } else if (width >= 768) {
       deviceType = 'tablet';
     }
 
-    // Check referrer and update the banner
-    if (referrer.includes('google.com')) {
-      if (deviceType === 'desktop') {
-        setBanner('/images/google/desktop_banner.webp');
-      } else if (deviceType === 'tablet') {
-        setBanner('/images/google/tablet_banner.webp');
-      } else {
-        setBanner('/images/google/mobile_banner.webp');
-      }
-    } else if (referrer.includes('youtube.com')) {
-      if (deviceType === 'desktop') {
-        setBanner('/images/youtube/desktop_banner.webp');
-      } else if (deviceType === 'tablet') {
-        setBanner('/images/youtube/tablet_banner.webp');
-      } else {
-        setBanner('/images/youtube/mobile_banner.webp');
-      }
-    } else {
-      // Default banners
-      if (deviceType === 'desktop') {
-        setBanner('/images/google1/desktop_banner.webp');
-      } else if (deviceType === 'tablet') {
-        setBanner('/images/google1/tablet_banner.webp');
-      } else {
-        setBanner('/images/google1/mobile_banner.webp');
-      }
-    }
+    // Set content based on source and device
+    const content = contentConfig[source][deviceType];
+    setBanner(content.banner);
+    setHeading(content.heading);
+    setSubheading(content.subheading);
+    setCtaText(content.ctaText);
+    setBackgroundPosition(content.backgroundPosition);
   };
 
-   // Update the banner when the component mounts and on resize
-   useEffect(() => {
-    updateBannerBasedOnReferrerAndDevice(); // Set initial banner based on referrer and device
+  // Update the content when the component mounts and on resize
+  useEffect(() => {
+    updateContentBasedOnReferrerAndDevice();
 
-    // Update banner on window resize
-    window.addEventListener('resize', updateBannerBasedOnReferrerAndDevice);
+    // Update content on window resize
+    window.addEventListener('resize', updateContentBasedOnReferrerAndDevice);
 
     // Cleanup listener on unmount
     return () => {
-      window.removeEventListener('resize', updateBannerBasedOnReferrerAndDevice);
+      window.removeEventListener('resize', updateContentBasedOnReferrerAndDevice);
     };
   }, []);
 
+  // Rest of the functions (handleNext, handleBack, calculateProgress, etc.) remain the same
   const handleNext = (key, value) => {
+    // Your existing handleNext logic
     setFormData((prev) => ({ ...prev, [key]: value }));
 
     // Special case for Step1 - if user selects "No" for planning a baby
     if (step === 0 && key === 'planningABaby' && value === 'no') {
-      // first store the previous step before going to egg freezing step
       const tempStep = step;
       setTrackStep(tempStep);
-      // Redirect to egg freezing step
       setStep(EGG_FREEZING_STEP_INDEX);
       return;
     }
 
+    // ... rest of your handleNext function
     // Special case for Step3 - if user selects "No" for marriage status
     if (step === 2 && key === 'married' && value === 'no') {
-      // first store the previous step before going to egg freezing step
       const tempStep = step;
       setTrackStep(tempStep);
-      // Redirect to egg freezing step
       setStep(EGG_FREEZING_STEP_INDEX);
       return;
     }
 
-    if(step == 8 && value == 'no'){
-      // first store the previous step before going to egg freezing step
+    if (step == 8 && value == 'no') {
       const tempStep = step;
       setTrackStep(tempStep);
-      // Redirect to egg freezing step
       setStep(EGG_FREEZING_STEP_INDEX);
       return;
     }
 
-    if(step == 4 && formData?.gender == 'Female' && value == '18-24'){
-      // first store the previous step before going to egg freezing step
+    if (step == 4 && formData?.gender == 'Female' && value == '18-24') {
       const tempStep = step;
       setTrackStep(tempStep);
-      // Redirect to egg freezing step
       setStep(EGG_FREEZING_STEP_INDEX);
       return;
     }
 
-    // Special case for Egg Freezing Step - proceed to appropriate next step
     if (step === EGG_FREEZING_STEP_INDEX) {
-      // Can route to specific step based on your flow requirements
-      // For now, going to Step2
       setStep(1);
       return;
     }
 
-
-
-    // Check if we're on Step13 (index 12) and user has checked the WhatsApp checkbox
     if (step === 12 && key === 'contact' && value.isWhatsApp) {
-      // Skip Step14 by setting the step to Step15 (index 14)
       setStep(14);
     } else {
-      // Normal progression
       setStep((prev) => prev + 1);
     }
   };
@@ -164,13 +218,10 @@ export default function GoogleLpPage() {
     }
   };
 
-  // Calculate progress based on current step
-  // If on step 13 with checkbox checked or step 14, progress should be 100%
-  // Otherwise, calculate progress based on current step out of 14 steps
   const calculateProgress = () => {
     // Always show 100% progress on egg freezing step
     if (step === EGG_FREEZING_STEP_INDEX) {
-      return ((trackStep + 1) / totalSteps) * 100; // Show same progress as step 1
+      return ((trackStep + 1) / totalSteps) * 100;
     }
 
     if ((step === 12 && formData.contact && formData.contact.isWhatsApp) || step >= 13) {
@@ -193,74 +244,81 @@ export default function GoogleLpPage() {
 
   return (
     <>
-      {/* ✅ Start Screen */}
+      {/* Start Screen with Dynamic Content */}
       {showStartScreen ? (
-        <div className="flex flex-col h-[100vh] bg-white px-4 font-helvetica bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${banner})`, // Dynamically set the background image
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-        >
-          {/* Header with minimal padding */}
-          {/* <div className="flex justify-end w-full p-1">
-            <img
-              src="/images/google1/oasis-purple-logo.png"
-              alt="Oasis IVF & Fertility"
-              className="h-10 sm:h-12 3xl:h-16"
-            />
-          </div> */}
+        <div className="flex flex-col h-screen bg-white font-helvetica relative overflow-hidden">
+          {/* Dynamic Background Image */}
+          <div
+            className="absolute inset-0 z-0"
+            style={{
+              backgroundImage: `url(${banner})`,
+              backgroundSize: 'cover',
+              backgroundPosition: backgroundPosition,
+            }}
+          />
 
-          {/* Main content area */}
-          {/* <div className="flex-1 flex flex-col justify-between max-w-md mx-auto w-full overflow-hidden">
-            
-            <div className="text-center mt-2 ">
-              <h1 className="text-[20px] md:text-2xl font-semibold">
-                Your journey to parenthood <br /> starts here
-              </h1>
+          {/* Overlay for better text readability if needed */}
+          <div className="absolute inset-0 bg-purple-900 opacity-10 z-0"></div>
 
-              
+          {/* Content Container */}
+          <div className="flex flex-col h-full z-10 px-4 relative">
+            {/* Header Logo - Kept at top right */}
+            <div className="flex justify-end w-full p-3">
               <img
-                src="/images/google1/letsbegin.png" // Replace with your image path
-                alt="Parenthood Illustration"
-                className="mx-auto my-4 w-auto h-80" // Adjust `w-48` as needed
+                src="/images/google1/oasis-white-logo.webp"
+                alt="Oasis IVF & Fertility"
+                className="h-10 sm:h-12 lg:h-16"
               />
             </div>
 
-            
-            <div className="text-center mb-4">
-              <p className="text-md md:text-sm mb-4 text-gray-800">
-                This will take <strong>two minutes,</strong><br />
-                because the more we understand,<br />
-                the better we can help
-              </p>
+            {/* Main Content - Modified to align text left */}
+            <div className="w-full h-full">
+              {/* Heading Section - Now left-aligned with max width */}
+              <div className="ml-4 md:ml-16 lg:ml-24 max-w-[600px] h-full flex flex-col justify-between sm:justify-start">
 
-              <button
-                className="bg-[#9C4A97] hover:bg-[#803a7f] text-white font-bold py-[12px] px-4 rounded-md w-full text-sm"
-                onClick={() => setShowStartScreen(false)}
-              >
-                Let&apos;s begin!
-              </button>
+                {/* Headline */}
+                <div>
+                  <h1 className="text-white font-bold text-2xl md:text-3xl lg:text-6xl leading-10 drop-shadow-lg text-center  sm:text-left">
+                    {heading.toUpperCase()}
+                  </h1>
+                  <h2 className="text-white font-semibold text-xl md:text-2xl mt-2 drop-shadow-lg text-center sm:text-left">
+                    {subheading}
+                  </h2>
+                </div>
 
-              <p className="mt-2 text-xs text-gray-500">
-                We respect your privacy. By Continuing, you consent to our{' '}
-                <a href="https://oasisindia.in/privacy-policy/" className="underline">Privacy Policy</a>
-              </p>
+                {/* CTA Button - Now below heading text */}
+                <div className="mt-8">
+                  <button
+                    className="bg-[#9C4A97] hover:bg-[#803a7f] text-white font-bold py-3 px-6 rounded-full text-lg shadow-lg transform transition hover:scale-105 w-full md:w-auto"
+                    onClick={() => setShowStartScreen(false)}
+                  >
+                    {ctaText}
+                  </button>
+
+                  <p className="mt-4 text-xs text-white drop-shadow text-center sm:text-left">
+                    We respect your privacy. By continuing, you consent to our{' '}
+                    <a href="https://oasisindia.in/privacy-policy/" className="underline font-bold">
+                      Privacy Policy
+                    </a>
+                  </p>
+                </div>
+
+
+              </div>
             </div>
-          </div> */}
+          </div>
         </div>
-
       ) : (
-        // ✅ Questionnaire Wrapper
+        // Questionnaire Wrapper - Existing code remains the same
         <div className="h-screen overflow-hidden flex flex-col font-helvetica">
-          {/* ✅ Fixed Header */}
+          {/* Fixed Header */}
           {step != 14 && <div className="w-full z-10 py-2 px-6 flex-shrink-0">
             <div className="flex justify-between items-center">
               {/* Show back button only from step 2 onwards (step >= 1) and for egg freezing step */}
               <div>
                 {(step >= 0 || step === EGG_FREEZING_STEP_INDEX) && (
                   <span
-                  onClick={step === 0 ? () => setShowStartScreen(true) : handleBack}
+                    onClick={step === 0 ? () => setShowStartScreen(true) : handleBack}
                     className="text-[#9C4A97] font-medium text-20px md:text-[30px] material-icons cursor-pointer"
                   >
                     chevron_left
@@ -287,7 +345,7 @@ export default function GoogleLpPage() {
             </div>
           </div>}
 
-          {/* ✅ Step Content */}
+          {/* Step Content */}
           <div className="flex-grow overflow-y-auto">
             <div className={`max-w-3xl mx-auto ${step == 14 ? 'mt-0' : 'mt-4'} px-4`}>
               <AnimatePresence mode="wait">
