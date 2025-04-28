@@ -53,12 +53,14 @@ export default function Step13({ onNext, formData, setFormData }) {
   const handleContinue = () => {
 
     if (isValid && isWhatsApp) {
-      // call the sale force api 
+      // call the sale force api
+      setIsValid(false); 
       const digitsOnly = phoneNumber.replace(/\D/g, '');
       setFormData((prev) => {
         return {
           ...prev,
-          contact: { phoneNumber: digitsOnly, isWhatsApp }
+          contact: { phoneNumber: digitsOnly, isWhatsApp },
+          name: name
         }
       })
 
@@ -80,7 +82,7 @@ export default function Step13({ onNext, formData, setFormData }) {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           event: 'userProvidedData',
-          phone_number: userDetails.phoneNumber,
+          phone_number: userDetails?.contact?.phoneNumber,
         });
 
         new LeadController().submitFemiaForm(leadFormRequestBody).then(() => {
@@ -91,19 +93,22 @@ export default function Step13({ onNext, formData, setFormData }) {
             localStorage.removeItem("utmParams");
             localStorage.removeItem("referrer");
           }
-
+          setIsValid(true);
           onNext(onNext('contact', { phoneNumber: digitsOnly, isWhatsApp }))
 
         }).catch(error => {
           console.error(error);
           alert('Something went Wrong Try Again Later');
+          setIsValid(true);
         })
           .finally(() => {
+            setIsValid(true);
 
           });
 
       } catch (error) {
         console.error(error);
+        setIsValid(true);
 
       }
     }
@@ -111,7 +116,12 @@ export default function Step13({ onNext, formData, setFormData }) {
       // to  whatsapp number step
       if (isValid) {
         const digitsOnly = phoneNumber.replace(/\D/g, '');
+        setFormData((prev)=> {
+          return {...prev, name: name}
+        }
+      )
         onNext('contact', { phoneNumber: digitsOnly, isWhatsApp })
+
       }
     }
 

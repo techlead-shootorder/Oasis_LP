@@ -196,11 +196,18 @@ export default function GoogleLpPage() {
       return;
     }
 
-    if (step === 12 && key === 'contact' && value.isWhatsApp) {
-      setStep(14);
-    } else {
-      setStep((prev) => prev + 1);
-    }
+    // if (step === 12 && key === 'contact' && value.isWhatsApp) {
+    //   setStep(14);
+    // } else {
+    //   setStep((prev) => prev + 1);
+    // }
+    
+    // Updated this condition to check for step 13 instead of 12
+  if (step === 13 && key === 'contact' && value.isWhatsApp) {
+    setStep(14);
+  } else {
+    setStep((prev) => prev + 1);
+  }
   };
 
   const handleBack = () => {
