@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Step1 from './components/Step1';
 import Step2 from './components/Step2';
@@ -31,6 +31,62 @@ export default function GoogleLpPage() {
   const [formData, setFormData] = useState({});
   const [trackStep, setTrackStep] = useState(0);
   const [showStartScreen, setShowStartScreen] = useState(true);
+  const [banner, setBanner] = useState('');
+
+  // Function to detect referrer and set banner for the correct device
+  const updateBannerBasedOnReferrerAndDevice = () => {
+    const referrer = document.referrer || ''; // Handle empty referrer
+    const width = window.innerWidth;
+
+    // Determine the device type based on width
+    let deviceType = 'mobile'; // Default to mobile
+    if (width >= 1024) {
+      deviceType = 'desktop';
+    } else if (width >= 768) {
+      deviceType = 'tablet';
+    }
+
+    // Check referrer and update the banner
+    if (referrer.includes('google.com')) {
+      if (deviceType === 'desktop') {
+        setBanner('/images/google/desktop_banner.webp');
+      } else if (deviceType === 'tablet') {
+        setBanner('/images/google/tablet_banner.webp');
+      } else {
+        setBanner('/images/google/mobile_banner.webp');
+      }
+    } else if (referrer.includes('youtube.com')) {
+      if (deviceType === 'desktop') {
+        setBanner('/images/youtube/desktop_banner.webp');
+      } else if (deviceType === 'tablet') {
+        setBanner('/images/youtube/tablet_banner.webp');
+      } else {
+        setBanner('/images/youtube/mobile_banner.webp');
+      }
+    } else {
+      // Default banners
+      if (deviceType === 'desktop') {
+        setBanner('/images/google1/desktop_banner.webp');
+      } else if (deviceType === 'tablet') {
+        setBanner('/images/google1/tablet_banner.webp');
+      } else {
+        setBanner('/images/google1/mobile_banner.webp');
+      }
+    }
+  };
+
+   // Update the banner when the component mounts and on resize
+   useEffect(() => {
+    updateBannerBasedOnReferrerAndDevice(); // Set initial banner based on referrer and device
+
+    // Update banner on window resize
+    window.addEventListener('resize', updateBannerBasedOnReferrerAndDevice);
+
+    // Cleanup listener on unmount
+    return () => {
+      window.removeEventListener('resize', updateBannerBasedOnReferrerAndDevice);
+    };
+  }, []);
 
   const handleNext = (key, value) => {
     setFormData((prev) => ({ ...prev, [key]: value }));
@@ -139,7 +195,13 @@ export default function GoogleLpPage() {
     <>
       {/* ✅ Start Screen */}
       {showStartScreen ? (
-        <div className="flex flex-col h-[100vh] bg-white px-4 font-helvetica bg-[url('/images/google1/mobile_banner.webp')] sm:bg-[url('/images/google1/mobile_banner.webp')] md:bg-[url('/images/google1/tablet_banner.webp')] lg:bg-[url('/images/google1/desktop_banner.webp')] bg-cover bg-center w-full h-full">
+        <div className="flex flex-col h-[100vh] bg-white px-4 font-helvetica bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${banner})`, // Dynamically set the background image
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+        >
           {/* Header with minimal padding */}
           {/* <div className="flex justify-end w-full p-1">
             <img
