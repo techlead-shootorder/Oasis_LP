@@ -29,50 +29,234 @@ const totalSteps = 14; // Total steps excluding thank you slide
 
 // Define content configurations based on referrer and device
 const contentConfig = {
-  google: {
+  confused: {
     desktop: {
-      banner: '/images/google/desktop_banner.webp',
-      heading: 'Advanced IVF Technology Has Made 1,00,000+ Families Happy',
-      subheading: 'Get FREE IVF Guidance',
-      ctaText: 'BOOK YOUR FREE CONSULTATION',
+      banner: '/images/google1/Sets/set-1/desktop_banner.webp',
+      heading: 'CONFUSED ABOUT IVF?',
+      subheading: 'Talk To Our Experts Today',
+      ctaText: `Let's Begin`,
       backgroundPosition: 'center'
     },
     tablet: {
-      banner: '/images/google/tablet_banner.webp',
-      heading: 'Advanced IVF Technology Has Made 1,00,000+ Families Happy',
-      subheading: 'Get FREE IVF Guidance',
-      ctaText: 'BOOK YOUR FREE CONSULTATION',
+      banner: '/images/google1/Sets/set-1/tablet_banner.webp',
+      heading: 'CONFUSED ABOUT IVF?',
+      subheading: 'Talk To Our Experts Today',
+      ctaText: `Let's Begin`,
       backgroundPosition: 'center'
     },
     mobile: {
-      banner: '/images/google/mobile_banner.webp',
-      heading: 'Advanced IVF Technology Has Made 1,00,000+ Families Happy',
-      subheading: 'Get FREE IVF Guidance',
-      ctaText: 'BOOK YOUR FREE CONSULTATION',
-      backgroundPosition: 'top center'
+      banner: '/images/google1/Sets/set-1/mobile_banner.webp',
+      heading: 'CONFUSED ABOUT IVF?',
+      subheading: 'Talk To Our Experts Today',
+      ctaText: `Let's Begin`,
+      backgroundPosition: 'center'
     }
   },
-  youtube: {
+  questions: {
     desktop: {
-      banner: '/images/youtube/desktop_banner.webp',
-      heading: 'Start Your Fertility Journey Today',
-      subheading: 'Expert Care From Leading Specialists',
-      ctaText: 'GET A FREE CONSULTATION',
+      banner: '/images/google1/Sets/set-2/desktop_banner.webp',
+      heading: 'HAVE QUESTIONS ABOUT IVF?',
+      subheading: 'Get A Free Consultation For A Limited Time',
+      ctaText: "Let's Begin",
       backgroundPosition: 'center'
     },
     tablet: {
-      banner: '/images/youtube/tablet_banner.webp',
-      heading: 'Start Your Fertility Journey Today',
-      subheading: 'Expert Care From Leading Specialists',
-      ctaText: 'GET A FREE CONSULTATION',
+      banner: '/images/google1/Sets/set-2/tablet_banner.webp',
+      heading: 'HAVE QUESTIONS ABOUT IVF?',
+      subheading: 'Get A Free Consultation For A Limited Time',
+      ctaText: "Let's Begin",
       backgroundPosition: 'center'
     },
     mobile: {
-      banner: '/images/youtube/mobile_banner.webp',
-      heading: 'Start Your Fertility Journey Today',
-      subheading: 'Expert Care From Leading Specialists',
-      ctaText: 'GET A FREE CONSULTATION',
-      backgroundPosition: 'top center'
+      banner: '/images/google1/Sets/set-2/mobile_banner.webp',
+      heading: 'HAVE QUESTIONS ABOUT IVF?',
+      subheading: 'Get A Free Consultation For A Limited Time',
+      ctaText: "Let's Begin",
+      backgroundPosition: 'center'
+    }
+  },
+  properGuidance: {
+    desktop: {
+      banner: '/images/google1/Sets/set-3/desktop_banner.webp',
+      heading: 'PROPER GUIDANCE FOR SUCCESSFUL IVF',
+      subheading: 'Your Dream Of Parenthood Is Now Closer',
+      ctaText: "Get Free Guidance",
+      backgroundPosition: 'center'
+    },
+    tablet: {
+      banner: '/images/google1/Sets/set-3/tablet_banner.webp',
+      heading: 'PROPER GUIDANCE FOR SUCCESSFUL IVF',
+      subheading: 'Your Dream Of Parenthood Is Now Closer',
+      ctaText: "Get Free Guidance",
+      backgroundPosition: 'center'
+    },
+    mobile: {
+      banner: '/images/google1/Sets/set-3/mobile_banner.webp',
+      heading: 'PROPER GUIDANCE FOR SUCCESSFUL IVF',
+      subheading: 'Your Dream Of Parenthood Is Now Closer',
+      ctaText: "Get Free Guidance",
+      backgroundPosition: 'center'
+    }
+  },
+  experiencedDoctors: {
+    desktop: {
+      banner: '/images/google1/Sets/set-4/desktop_banner.webp',
+      heading: 'CHOOSE EXPERIENCED IVF DOCTORS FOR YOUR PREGNANCY JOURNEY',
+      subheading: 'Free IVF Guidance',
+      ctaText: "Consult Today",
+      backgroundPosition: 'center'
+    },
+    tablet: {
+      banner: '/images/google1/Sets/set-4/tablet_banner.webp',
+      heading: 'CHOOSE EXPERIENCED IVF DOCTORS FOR YOUR PREGNANCY JOURNEY',
+      subheading: 'Free IVF Guidance',
+      ctaText: "Consult Today",
+      backgroundPosition: 'center'
+    },
+    mobile: {
+      banner: '/images/google1/Sets/set-4/mobile_banner.webp',
+      heading: 'CHOOSE EXPERIENCED IVF DOCTORS FOR YOUR PREGNANCY JOURNEY',
+      subheading: 'Free IVF Guidance',
+      ctaText: "Consult Today",
+      backgroundPosition: 'center'
+    }
+  },
+  trustedByMany: {
+    desktop: {
+      banner: '/images/google1/Sets/set-5/desktop_banner.webp',
+      heading: '1,00,000+ COUPLES HAVE TRUSTED US',
+      subheading: 'Take Your First Step Today',
+      ctaText: "Start Now",
+      backgroundPosition: 'center'
+    },
+    tablet: {
+      banner: '/images/google1/Sets/set-5/tablet_banner.webp',
+      heading: '1,00,000+ COUPLES HAVE TRUSTED US',
+      subheading: 'Take Your First Step Today',
+      ctaText: "Start Now",
+      backgroundPosition: 'center'
+    },
+    mobile: {
+      banner: '/images/google1/Sets/set-5/mobile_banner.webp',
+      heading: '1,00,000+ COUPLES HAVE TRUSTED US',
+      subheading: 'Take Your First Step Today',
+      ctaText: "Start Now",
+      backgroundPosition: 'center'
+    }
+  },
+  advancedTechnology: {
+    desktop: {
+      banner: '/images/google1/Sets/set-6/desktop_banner.webp',
+      heading: 'ADVANCED IVF TECHNOLOGY HAS MADE 1,00,000+ FAMILIES HAPPY',
+      subheading: 'Get Free IVF Guidance',
+      ctaText: "Talk To Experts",
+      backgroundPosition: 'center'
+    },
+    tablet: {
+      banner: '/images/google1/Sets/set-6/tablet_banner.webp',
+      heading: 'ADVANCED IVF TECHNOLOGY HAS MADE 1,00,000+ FAMILIES HAPPY',
+      subheading: 'Get Free IVF Guidance',
+      ctaText: "Talk To Experts",
+      backgroundPosition: 'center'
+    },
+    mobile: {
+      banner: '/images/google1/Sets/set-6/mobile_banner.webp',
+      heading: 'ADVANCED IVF TECHNOLOGY HAS MADE 1,00,000+ FAMILIES HAPPY',
+      subheading: 'Get Free IVF Guidance',
+      ctaText: "Talk To Experts",
+      backgroundPosition: 'center'
+    }
+  },
+  highSuccessRate: {
+    desktop: {
+      banner: '/images/google1/Sets/set-7/desktop_banner.webp',
+      heading: '80% OF COUPLES SUCCEED IN THEIR FIRST IVF ATTEMPT',
+      subheading: 'Start Your Successful Journey Now',
+      ctaText: "Begin Journey",
+      backgroundPosition: 'center'
+    },
+    tablet: {
+      banner: '/images/google1/Sets/set-7/tablet_banner.webp',
+      heading: '80% OF COUPLES SUCCEED IN THEIR FIRST IVF ATTEMPT',
+      subheading: 'Start Your Successful Journey Now',
+      ctaText: "Begin Journey",
+      backgroundPosition: 'center'
+    },
+    mobile: {
+      banner: '/images/google1/Sets/set-7/mobile_banner.webp',
+      heading: '80% OF COUPLES SUCCEED IN THEIR FIRST IVF ATTEMPT',
+      subheading: 'Start Your Successful Journey Now',
+      ctaText: "Begin Journey",
+      backgroundPosition: 'center'
+    }
+  },
+  perfectBlend: {
+    desktop: {
+      banner: '/images/google1/Sets/set-8/desktop_banner.webp',
+      heading: 'A PERFECT BLEND OF ADVANCED IVF TECHNOLOGY AND EXPERIENCED DOCTORS',
+      subheading: 'Make The Right Choice Today',
+      ctaText: "Choose Us",
+      backgroundPosition: 'center'
+    },
+    tablet: {
+      banner: '/images/google1/Sets/set-8/tablet_banner.webp',
+      heading: 'A PERFECT BLEND OF ADVANCED IVF TECHNOLOGY AND EXPERIENCED DOCTORS',
+      subheading: 'Make The Right Choice Today',
+      ctaText: "Choose Us",
+      backgroundPosition: 'center'
+    },
+    mobile: {
+      banner: '/images/google1/Sets/set-8/mobile_banner.webp',
+      heading: 'A PERFECT BLEND OF ADVANCED IVF TECHNOLOGY AND EXPERIENCED DOCTORS',
+      subheading: 'Make The Right Choice Today',
+      ctaText: "Choose Us",
+      backgroundPosition: 'center'
+    }
+  },
+  rightDoctor: {
+    desktop: {
+      banner: '/images/google1/Sets/set-9/desktop_banner.webp',
+      heading: 'RIGHT DOCTOR, RIGHT IVF TREATMENT',
+      subheading: 'Make The Right Choice Today',
+      ctaText: "Find Doctor",
+      backgroundPosition: 'center'
+    },
+    tablet: {
+      banner: '/images/google1/Sets/set-9/tablet_banner.webp',
+      heading: 'RIGHT DOCTOR, RIGHT IVF TREATMENT',
+      subheading: 'Make The Right Choice Today',
+      ctaText: "Find Doctor",
+      backgroundPosition: 'center'
+    },
+    mobile: {
+      banner: '/images/google1/Sets/set-9/mobile_banner.webp',
+      heading: 'RIGHT DOCTOR, RIGHT IVF TREATMENT',
+      subheading: 'Make The Right Choice Today',
+      ctaText: "Find Doctor",
+      backgroundPosition: 'center'
+    }
+  },
+  trusted: {
+    desktop: {
+      banner: '/images/google1/Sets/set-10/desktop_banner.webp',
+      heading: 'TRUSTED IVF FOR YOUR DREAM OF HAVING A BABY',
+      subheading: 'Upto 70% Success Rate',
+      ctaText: "Get Started",
+      backgroundPosition: 'center'
+    },
+    tablet: {
+      banner: '/images/google1/Sets/set-10/tablet_banner.webp',
+      heading: 'TRUSTED IVF FOR YOUR DREAM OF HAVING A BABY',
+      subheading: 'Upto 70% Success Rate',
+      ctaText: "Get Started",
+      backgroundPosition: 'center'
+    },
+    mobile: {
+      banner: '/images/google1/Sets/set-10/mobile_banner.webp',
+      heading: 'TRUSTED IVF FOR YOUR DREAM OF HAVING A BABY',
+      subheading: 'Upto 70% Success Rate',
+      ctaText: "Get Started",
+      backgroundPosition: 'center'
     }
   },
   default: {
@@ -100,6 +284,7 @@ const contentConfig = {
   }
 };
 
+
 export default function GoogleLpPage() {
   const [step, setStep] = useState(0);
   const [formData, setFormData] = useState({});
@@ -115,7 +300,7 @@ export default function GoogleLpPage() {
   const updateContentBasedOnReferrerAndDevice = () => {
     // Determine referrer source
     const referrer = document.referrer || '';
-    let source = 'default';
+    let source = 'properGuidance';
 
     if (referrer.includes('google.com')) {
       source = 'google';
