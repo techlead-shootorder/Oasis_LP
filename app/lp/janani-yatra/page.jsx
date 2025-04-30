@@ -8,6 +8,7 @@ import dynamic from 'next/dynamic';
 import HeaderTesting from "@/app/(landingpages)/components/Header/HeaderTesting";
 import HeroYatra from "./HeroYatra";
 import WhoIsThisFor from '@/app/(landingpages)/components/WhoIsThisFor/WhoIsThisFor';
+import BusRouteMap from './BusRouteTable';
 
 const MinimalLoader = () => <div className="animate-pulse bg-gray-200 h-10" />;
 const ComponentLoader = () => <div className="animate-pulse bg-gray-200 h-64 rounded-lg" />;
@@ -28,6 +29,11 @@ const DynamicComponents = {
     () => import('@/app/(landingpages)/components/Hero/StatisticsBannerV2'),
     { loading: () => <ComponentLoader /> }
   ),
+  BusRouteTable: dynamic(
+    () => import('./BusRouteTable'),
+    { loading: () => <ComponentLoader /> }
+  ),
+  
   Treatmentlp3: dynamic(
     () => import('@/app/(landingpages)/components/Treatment/Treatmentlp3'),
     { loading: () => <ComponentLoader /> }
@@ -132,7 +138,8 @@ const isfemaleAssessment = false;
 
           <HeroYatra center={filteredCity} isMeta={isMeta} internal={internal} isfemaleAssessment={isfemaleAssessment}  />
             
-           <WhoIsThisFor/> 
+           <WhoIsThisFor/>
+           <BusRouteMap/> 
           <div className="mt-[20px] md:mt-0">
             <Suspense fallback={<ComponentLoader />}>
               <DynamicComponents.StatisticBannerV2 />
