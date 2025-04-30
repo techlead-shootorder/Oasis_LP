@@ -146,8 +146,7 @@ if (typeof window !== 'undefined') {
 }
 
 // Memoized Image Component
-const HeroBanner = memo(({ type, isfemaleAssessment }) => {
-  
+const HeroBanner = memo(({ type, centerName, isfemaleAssessment }) => {
   if (isfemaleAssessment) {
     return (
       <Image

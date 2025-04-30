@@ -1,20 +1,20 @@
 'use client'
-import { useState } from 'react';
+// import { useState } from 'react';
 import { Bell } from 'lucide-react';
 
 export default function BusRouteMap() {
-  const [notifications, setNotifications] = useState({
-    'Warangal': false,
-    'Karimnagar': false,
-    'Nalgonda': false
-  });
+//   const [notifications, setNotifications] = useState({
+//     'Warangal': false,
+//     'Karimnagar': false,
+//     'Nalgonda': false
+//   });
 
-  const toggleNotification = (city) => {
-    setNotifications(prev => ({
-      ...prev,
-      [city]: !prev[city]
-    }));
-  };
+//   const toggleNotification = (city) => {
+//     setNotifications(prev => ({
+//       ...prev,
+//       [city]: !prev[city]
+//     }));
+//   };
 
   const routes = [
     { city: 'Warangal', date: 'April 25', location: 'Hanumakonda Bus Stop', time: '9AM-5PM' },
