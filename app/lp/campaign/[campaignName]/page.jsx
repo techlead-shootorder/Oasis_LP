@@ -460,7 +460,7 @@ export default function GoogleLpPage() {
           <div className="absolute inset-0 bg-purple-900 opacity-10 z-0"></div>
 
           {/* Content Container */}
-          <div className="flex flex-col h-full z-10 px-4 relative">
+          <div className="flex flex-col h-[90%] z-10 px-4 relative">
             {/* Header Logo - Kept at top right */}
             <div className="flex justify-end w-full p-3">
               <img
