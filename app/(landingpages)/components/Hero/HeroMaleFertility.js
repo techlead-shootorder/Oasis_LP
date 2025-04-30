@@ -30,7 +30,7 @@ BannerSkeleton.displayName = "BannerSkeleton";
 // Constants
 const BANNER_IMAGES = {
   desktop: {
-    src: "/images/lp/lp3/male-fertility-banner.webp",
+    src: "/images/lp/lp3/mf-desktop.webp",
     width: 1728,
     height: 787,
     className: "w-full object-cover absolute left-0 top-0 hidden md:block h-full",
@@ -38,7 +38,7 @@ const BANNER_IMAGES = {
     sizes: "(min-width: 768px) 100vw, 0vw"
   },
   mobile: {
-    src: "/images/lp/lp3/male-fertility-mobile.webp",
+    src: "/images/lp/lp3/mf-mobile.webp",
     width: 428,
     height: 452,
     className: "w-full object-cover absolute left-0 -top-[40px] md:hidden h-full",
