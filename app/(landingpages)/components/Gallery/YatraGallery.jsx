@@ -1,6 +1,6 @@
 "use client"
 import React, { useRef, useState, useEffect } from "react";
-import { getGalleryImages } from "@/util/lp/galleryImages";
+// import { getGalleryImages } from "@/util/lp/galleryImages";
 
 
 

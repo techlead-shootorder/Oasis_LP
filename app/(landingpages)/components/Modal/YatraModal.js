@@ -1,12 +1,12 @@
 "use client";
 import React, { Suspense } from "react";
-import LeadFormV2 from "../LeadForm/LeadFormV2";
-import LeadFormlp3Meta from "../LeadForm/LeadFormlp3Meta";
+// import LeadFormV2 from "../LeadForm/LeadFormV2";
+// import LeadFormlp3Meta from "../LeadForm/LeadFormlp3Meta";
 import YatraLeadFormV2 from "../LeadForm/YatraLeadFormV2";
 
 
 
-const ModalV2 = ({ isOpen, onClose, center, service, isMeta = false }) => {
+const ModalV2 = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (

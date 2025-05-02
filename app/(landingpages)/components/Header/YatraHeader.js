@@ -8,10 +8,10 @@ import { MdCall } from "react-icons/md";
 
 // Constants
 // const COMPANY_YEARS = "15";
-const PHONE_NUMBERS = {
-  default: "9513736432",
-  meta: "9513736518"
-};
+// const PHONE_NUMBERS = {
+//   default: "9513736432",
+//   meta: "9513736518"
+// };
 
 // Memoized Components
 // const LogoSection = memo(() => (
@@ -42,7 +42,7 @@ const PHONE_NUMBERS = {
 
 // YearsSection.displayName = 'YearsSection';
 
-const PhoneSection = memo(({ center, metanum }) => {
+const PhoneSection = memo(({ center }) => {
 //   const phoneNumber = metanum ? PHONE_NUMBERS.meta : PHONE_NUMBERS.default;
   const phoneNumber = '9513736397'
   const formattedPhone = center?.phone ? `0${center.phone.replace(/\D/g, "").slice(-10)}` : phoneNumber;

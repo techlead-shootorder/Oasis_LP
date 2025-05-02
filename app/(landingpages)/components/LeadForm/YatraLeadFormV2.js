@@ -405,7 +405,7 @@ const LeadFormV2 = ({ internal = false }) => {
 
                 <div className="bg-[#DEDEDE] text-center pb-3 px-3 text-black">
                     <p className="text-sm md:text-[18px] leading-[1.4]">
-                       Book Before It's Full!
+                       Book Before It&apos;s Full!
 
                     </p>
                 </div>
