@@ -210,7 +210,7 @@ const LeadFormV2 = ({ internal = false }) => {
         <>
 
             <div className="rounded-[27px] bg-cover bg-center bg-[#f3c1d7] overflow-hidden relative ">
-                <p className="text-white pt-2 pb-2 bg-[#DEDEDE] mb-4 text-center text-[22px] font-bold">Only 50 Free Consultations Per City</p>
+                <p className="text-primary pt-2 pb-2 bg-[#f3c1d7] mb-4 text-center text-[22px] font-bold">Only 50 Free Consultations Per City</p>
 
                 <form onSubmit={handleSubmit} className="">
 
