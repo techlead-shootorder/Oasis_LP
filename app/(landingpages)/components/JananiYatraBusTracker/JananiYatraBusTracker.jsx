@@ -5,6 +5,7 @@ const JananiYatraBusTracker = () => {
   const [currentTab, setCurrentTab] = useState(null);
   const [currentSchedule, setCurrentSchedule] = useState(null);
   const [tabsData, setTabsData] = useState([]);
+  const [isMobile, setIsMobile] = useState(false);
   
   // Schedule data (date, day, and stops)
   const scheduleData = [
@@ -67,6 +68,22 @@ const JananiYatraBusTracker = () => {
     }
   };
 
+  // Handle responsive design for tabs
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768); // Consider < 768px as mobile
+    };
+
+    // Check on initial load
+    checkIfMobile();
+
+    // Add resize listener
+    window.addEventListener('resize', checkIfMobile);
+
+    // Cleanup
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
+
   useEffect(() => {
     // Get location data once when component mounts
     const { schedule, location } = getBusLocation();
@@ -88,6 +105,19 @@ const JananiYatraBusTracker = () => {
     
     setTabsData(tabs);
   }, []);
+
+  // Function to get tabs based on device type
+  const getDisplayTabs = () => {
+    if (!tabsData.length) return [];
+    
+    if (isMobile) {
+      // For mobile, show only 3 tabs (first 3)
+      return tabsData.slice(0, 3);
+    } else {
+      // For desktop, show all 4 tabs
+      return tabsData;
+    }
+  };
 
   return (
     <div className="bg-pink-50">
@@ -115,7 +145,7 @@ const JananiYatraBusTracker = () => {
         {/* Tabs */}
         <div className="relative">
           <div className="flex flex-wrap justify-center space-x-2 sm:space-x-20 mb-8">
-            {tabsData.map((tab, index) => (
+            {getDisplayTabs().map((tab, index) => (
               <button
                 key={index}
                 className={`px-4 py-2 rounded-full text-sm sm:text-base border ${
