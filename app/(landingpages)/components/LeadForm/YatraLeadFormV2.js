@@ -296,16 +296,28 @@ const LeadFormV2 = ({ internal = false }) => {
                                 onBlur={() => setIsFocusedCity(false)}
                             >
                                 <option value="">City/Town</option>
-                                <option value="Hyderabad">Hyderabad</option>
-                                <option value="Secunderabad">Secunderabad</option>
-                                <option value="Warangal">Warangal</option>
-                                <option value="Karimnagar">Karimnagar</option>
-                                <option value="Nizamabad">Nizamabad</option>
-                                <option value="Khammam">Khammam</option>
-                                <option value="Mahbubnagar">Mahbubnagar</option>
-                                <option value="Nalgonda">Nalgonda</option>
-                                <option value="Adilabad">Adilabad</option>
+                                <option value="Hyderabad">Jangaon</option>
+                                <option value="Secunderabad">Jagityal</option>
+                                <option value="Warangal">Gudur</option>
+                                <option value="Karimnagar">Markapuram</option>
+                                <option value="Nizamabad">Amaravathi</option>
+                                <option value="Khammam">Tiruvuru</option>
+                                <option value="Mahbubnagar">Jaggaiahpet</option>
+                                <option value="Nalgonda">Jaggampeta</option>
+                                <option value="Adilabad">Thagarapuvalasa</option>
+                                <option value="Medak">Vizianagaram</option>
+                                <option value="Medak">Gajuwaka</option>
+                                <option value="Medak">Khammam</option>
+                                <option value="Medak">Nalgonda</option>
+                                <option value="Medak">Bhongir</option>
+                                <option value="Medak">siddipet</option>
                                 <option value="Medak">Medak</option>
+                                <option value="Medak">Nizambad</option>
+                                <option value="Medak">Vikarabad</option>
+                                <option value="Medak">Parigi</option>
+                                <option value="Medak">Shamshabad</option>
+                                <option value="Medak">Mahabubnagar</option>
+                                <option value="Medak">Adoni</option>
                             </select>
                             {!isFocusedCity && !userDetails.city && (
                                 <span className="absolute left-[88px] top-2 text-red-500 text-2xl">*</span>

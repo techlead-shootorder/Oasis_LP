@@ -5,10 +5,11 @@ import masterlp3 from "@/util/lp/masterlp3";
 import nearByAreas from "@/util/lp/nearByAreas"
 import dynamic from 'next/dynamic';
 
-import HeaderTesting from "@/app/(landingpages)/components/Header/HeaderTesting";
+import YatraHeader from "@/app/(landingpages)/components/Header/YatraHeader";
 import HeroYatra from "./HeroYatra";
 import WhoIsThisFor from '@/app/(landingpages)/components/WhoIsThisFor/WhoIsThisFor';
 import BusRouteMap from './BusRouteTable';
+import JananiYatraBusTracker from '@/app/(landingpages)/components/JananiYatraBusTracker/JananiYatraBusTracker';
 
 const MinimalLoader = () => <div className="animate-pulse bg-gray-200 h-10" />;
 const ComponentLoader = () => <div className="animate-pulse bg-gray-200 h-64 rounded-lg" />;
@@ -22,6 +23,11 @@ const DynamicComponents = {
   ),
   StickyButtonScreenlp3: dynamic(
     () => import('@/app/(landingpages)/components/StickyButtonScreen/StickyButtonScreenlp3'),
+    { loading: () => <MinimalLoader /> }
+  ),
+
+  JananiYatraBusTracker: dynamic(
+    ()=> import('@/app/(landingpages)/components/JananiYatraBusTracker/JananiYatraBusTracker'),
     { loading: () => <MinimalLoader /> }
   ),
 
@@ -42,8 +48,8 @@ const DynamicComponents = {
     () => import('@/app/(landingpages)/components/Specialists/SpeciaListslp3'),
     { loading: () => <ComponentLoader /> }
   ),
-  Reviewlp3: dynamic(
-    () => import('@/app/(landingpages)/components/Review/Reviewlp3'),
+  YatraReview: dynamic(
+    () => import('@/app/(landingpages)/components/Review/YatraReview'),
     { loading: () => <ComponentLoader /> }
   ),
   TrustedCliniclp3: dynamic(
@@ -62,8 +68,8 @@ const DynamicComponents = {
     () => import('@/app/(landingpages)/components/Award/AwardV2'),
     { loading: () => <ComponentLoader /> }
   ),
-  BestDoctorslp3: dynamic(
-    () => import('@/app/(landingpages)/components/BestDoctors/BestDoctorslp3'),
+  YatraDoctors: dynamic(
+    () => import('@/app/(landingpages)/components/BestDoctors/YatraDoctors'),
     { loading: () => <ComponentLoader /> }
   ),
   IVFClinicSliderlp3: dynamic(
@@ -78,8 +84,8 @@ const DynamicComponents = {
     () => import('@/app/(landingpages)/components/PlanInfo/PlanInfolp3'),
     { loading: () => <ComponentLoader /> }
   ),
-  Faqlp3: dynamic(
-    () => import('@/app/(landingpages)/components/Faq/Faqlp3'),
+  YatraFaq: dynamic(
+    () => import('@/app/(landingpages)/components/Faq/YatraFaq'),
     { loading: () => <ComponentLoader /> }
   ),
   ExploreCenterslp3: dynamic(
@@ -127,7 +133,7 @@ const isfemaleAssessment = false;
     <>
       <section className="relative overflow-y-auto">
         <header id="headerlp3">
-          <HeaderTesting center={filteredCity} metanum={metanum} googel1num={googel1num}/>
+          <YatraHeader center={filteredCity} metanum={metanum} googel1num={googel1num}/>
         </header>
 
         <Suspense fallback={<MinimalLoader />}>
@@ -139,6 +145,8 @@ const isfemaleAssessment = false;
           <HeroYatra center={filteredCity} isMeta={isMeta} internal={internal} isfemaleAssessment={isfemaleAssessment}  />
             
            <WhoIsThisFor/>
+
+           <JananiYatraBusTracker />
            <BusRouteMap/> 
           <div className="mt-[20px] md:mt-0">
             <Suspense fallback={<ComponentLoader />}>
@@ -147,9 +155,9 @@ const isfemaleAssessment = false;
           </div>
 
           <Suspense fallback={<ComponentLoader />}>
-              <DynamicComponents.BestDoctorslp3
+              <DynamicComponents.YatraDoctors
                 center={filteredCity}
-                filteredDoctors={filteredDoctors}
+                // filteredDoctors={filteredDoctors}
                 isMeta={isMeta}
                 internal={internal}
               />
@@ -174,7 +182,7 @@ const isfemaleAssessment = false;
             {/* <section className="max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 py-10 lg:py-16 bg-[url(/images/lp/campaign/treatment_bg_img_cropped.png)] bg-repeat mb-10 lg:mb-16 relative"> */}
             
               <Suspense fallback={<ComponentLoader />}>
-                <DynamicComponents.Reviewlp3
+                <DynamicComponents.YatraReview
                   center={filteredCity}
                   filteredReview={filteredReview}
                 />
@@ -202,7 +210,7 @@ const isfemaleAssessment = false;
             </Suspense>
 
             <Suspense fallback={<ComponentLoader />}>
-              <DynamicComponents.Faqlp3 />
+              <DynamicComponents.YatraFaq />
             </Suspense>
 
 

@@ -36,7 +36,7 @@ const YATRA = {
     sizes: "(min-width: 768px) 100vw, 0vw"
   },
   mobile: {
-    src: "/images/Yatra/mobile-banner.webp",
+    src: "/images/Yatra/mobile_banner.webp",
     width: 428,
     height: 452,
     className: "w-full object-cover absolute left-0 -top-[40px] md:hidden h-full",

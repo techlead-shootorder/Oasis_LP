@@ -75,7 +75,7 @@ const DesktopHeader = memo(({ center, metanum, googel1num }) => (
       <div className="flex items-center">
         
          <Image
-      src='/images/lp/lp3/mobile header image.webp'
+      src='/images/lp/lp3/yatra-header.webp'
       alt='logo'
       width={375}
       height={100}
@@ -98,7 +98,7 @@ const MobileHeader = memo(() => (
       <PiLineVertical className="text-white text-4xl font-thin" />
       <YearsSection /> */}
   <Image
-      src='/images/lp/lp3/mobile header image.webp'
+      src='/images/lp/lp3/yatra-header.webp'
       alt='logo'
       width={375}
       height={100}
