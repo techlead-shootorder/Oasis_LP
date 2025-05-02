@@ -210,7 +210,7 @@ const LeadFormV2 = ({ internal = false }) => {
         <>
 
             <div className="rounded-[27px] bg-cover bg-center bg-[#f3c1d7] overflow-hidden relative ">
-                <p className="text-white pt-2 pb-2 bg-primary mb-4 text-center text-[22px] font-bold">FREE CONSULTATION</p>
+                <p className="text-white pt-2 pb-2 bg-primary mb-4 text-center text-[22px] font-bold">Only 50 Free Consultations Per City</p>
 
                 <form onSubmit={handleSubmit} className="">
 
@@ -376,7 +376,7 @@ const LeadFormV2 = ({ internal = false }) => {
                     {/* ERROR MESSAGE */}
                     {errMsg && <p className="text-red-500 text-sm">{errMsg}</p>}
 
-                    <div className="bg-primary py-4 px-4">
+                    <div className="bg-[#DEDEDE] py-4 px-4">
                         <button
                             type="submit"
                             id="form-submit"
@@ -384,8 +384,8 @@ const LeadFormV2 = ({ internal = false }) => {
                                 }`}
                             disabled={loading || !formValid}
                         >
-                            {loading ? "Submitting..." : "RESERVE MY SPOT NOW"}
-                            {!loading && <p className="text-[12px] p-0 leading-none font-normal">Limited Slots Per Location</p>}
+                            {loading ? "Submitting..." : "Secure My Free Spot"}
+                            {/* {!loading && <p className="text-[12px] p-0 leading-none font-normal">Limited Slots Per Location</p>} */}
                         </button>
 
                         <div className="flex items-center justify-center mt-2">
@@ -398,14 +398,14 @@ const LeadFormV2 = ({ internal = false }) => {
                                 priority
                                 alt="shield_icon"
                             />
-                            <span className="text-white text-sm">Your data is 100% safe with us.</span>
+                            <span className="text-primary text-sm">Your data is 100% safe with us.</span>
                         </div>
                     </div>
                 </form>
 
-                <div className="bg-[#DEDEDE] text-center py-3 px-3 text-black">
+                <div className="bg-[#DEDEDE] text-center pb-3 px-3 text-black">
                     <p className="text-sm md:text-[18px] leading-[1.4]">
-                       We Listen, We Explain, We Guide.
+                       Book Before It's Full!
 
                     </p>
                 </div>

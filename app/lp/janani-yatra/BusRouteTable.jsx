@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 export default function BusRouteMap() {
   const [visibleRows, setVisibleRows] = useState(10);
-  
+
   const routes = [
     { date: '10-May-25', day: 'Saturday', location: 'Jangaon - Preston College Grounds', time: '12:00 PM - 4:00 PM' },
     { date: '11-May-25', day: 'Sunday', location: 'Jagityal - Gvt High School OLD Pochammawada', time: '9:00 AM - 2:00 PM' },
@@ -42,9 +42,9 @@ export default function BusRouteMap() {
   return (
     <div className="w-full rounded-lg shadow-lg py-16 px-4">
       <h1 className="text-center font-extrabold text-[22px] md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-[52px] mb-6" style={{ color: "#874487" }}>
-        Bus Route Map
+        Janani Yatra Route Map
       </h1>
-      
+
       <div className="overflow-x-auto bg-white max-w-6xl mx-auto rounded-lg shadow-md">
         <table className="w-full">
           <thead>
@@ -57,8 +57,8 @@ export default function BusRouteMap() {
           </thead>
           <tbody>
             {routes.slice(0, visibleRows).map((route, index) => (
-              <tr 
-                key={index} 
+              <tr
+                key={index}
                 className="border-b hover:bg-purple-50 transition-colors cursor-pointer"
                 style={{ borderColor: "#e6d6e6" }}
               >
@@ -71,7 +71,7 @@ export default function BusRouteMap() {
           </tbody>
         </table>
       </div>
-      
+
       {visibleRows < routes.length && (
         <div className="mt-6 flex justify-center">
           <button
@@ -83,6 +83,15 @@ export default function BusRouteMap() {
           </button>
         </div>
       )}
+     
+     <div className='flex justify-center mt-6'>
+      <button
+        className="px-6 py-2 rounded-md font-medium text-white shadow-md hover:shadow-lg transition-all"
+        style={{ backgroundColor: "#874487" }}
+      >
+        Notify Me When the Bus Is in My City
+      </button>
+    </div>
     </div>
   );
 }

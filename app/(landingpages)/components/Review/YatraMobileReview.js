@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 const yatraReview = [
     {
-      id: 126,
+      id: 1,
       center_name: "Hyderabad",
       clinic_location: "Hyderabad",
       city: "Hyderabad",
@@ -16,7 +16,7 @@ const yatraReview = [
       review_link: "https://maps.app.goo.gl/whdkLHy86bK6XrHV9",
     },
     {
-      id: 127,
+      id: 2,
       center_name: "Karimnagar",
       clinic_location: "Karimnagar",
       city: "Karimnagar",
@@ -28,7 +28,7 @@ const yatraReview = [
       review_link: "",
     },
     {
-      id: 128,
+      id: 3,
       center_name: "Hanamkonda",
       clinic_location: "Hanamkonda",
       city: "Hanamkonda",
@@ -40,7 +40,7 @@ const yatraReview = [
       review_link: "",
     },
     {
-      id: 129,
+      id: 4,
       center_name: "Vijayawada",
       clinic_location: "Vijayawada",
       city: "Vijayawada",
@@ -52,7 +52,7 @@ const yatraReview = [
       review_link: "",
     },
     {
-      id: 130,
+      id: 5,
       center_name: "Ongole",
       clinic_location: "Ongole",
       city: "Ongole",
@@ -64,7 +64,7 @@ const yatraReview = [
       review_link: "",
     },
     {
-      id: 131,
+      id: 6,
       center_name: "Guntur",
       clinic_location: "Guntur",
       city: "Guntur",
@@ -76,7 +76,7 @@ const yatraReview = [
       review_link: "",
     },
     {
-      id: 132,
+      id: 7,
       center_name: "Kakinada",
       clinic_location: "Kakinada",
       city: "Kakinada",
@@ -88,7 +88,7 @@ const yatraReview = [
       review_link: "",
     },
     {
-      id: 133,
+      id: 8,
       center_name: "Tirupati",
       clinic_location: "Tirupati",
       city: "Tirupati",
@@ -100,7 +100,7 @@ const yatraReview = [
       review_link: "",
     },
     {
-      id: 134,
+      id: 9,
       center_name: "Kurnool",
       clinic_location: "Kurnool",
       city: "Kurnool",
@@ -113,13 +113,13 @@ const yatraReview = [
     },
   ];
 
-const MobileReview = ({ review }) => {
+const MobileReview = () => {
     const [activeIndex, setActiveIndex] = useState(0);
-    if(!review) return null;
+    // if(!review) return null;
 
-    console.log("mobile", review);
+    // console.log("mobile", review);
 
-    const isValidIndex = activeIndex >= 0 && activeIndex < review.length;
+    const isValidIndex = activeIndex >= 0 && activeIndex < yatraReview.length;
 
     function capitalizeName(name) {
         const lower = name.toLowerCase();
@@ -186,7 +186,7 @@ const MobileReview = ({ review }) => {
                                     <svg
                                         key={i}
                                         className={`w-4 h-4 ${
-                                            i < Math.floor(review[activeIndex].rating)
+                                            i < Math.floor(yatraReview[activeIndex].rating)
                                                 ? 'text-yellow-400'
                                                 : 'text-gray-300'
                                         }`}
@@ -197,20 +197,20 @@ const MobileReview = ({ review }) => {
                                     </svg>
                                 ))}
                                 <span className="ml-1 text-gray-600">
-                                    {review[activeIndex].rating}
+                                    {yatraReview[activeIndex].rating}
                                 </span>
                             </div>
                         </div>
 
                         <div className="transition-opacity duration-300 text-center">
                             <p className="text-gray-700 mb-4">
-                                {review[activeIndex].reviews}
+                                {yatraReview[activeIndex].reviews}
                             </p>
                             <div className="text-gray-900 font-medium">
-                                {capitalizeName(review[activeIndex].name)}
+                                {capitalizeName(yatraReview[activeIndex].name)}
                             </div>
                             <div className="text-gray-500 text-sm">
-                                {review[activeIndex].clinic_location}
+                                {yatraReview[activeIndex].clinic_location}
                             </div>
                         </div>
                     </>

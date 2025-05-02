@@ -43,7 +43,8 @@ const PHONE_NUMBERS = {
 // YearsSection.displayName = 'YearsSection';
 
 const PhoneSection = memo(({ center, metanum }) => {
-  const phoneNumber = metanum ? PHONE_NUMBERS.meta : PHONE_NUMBERS.default;
+//   const phoneNumber = metanum ? PHONE_NUMBERS.meta : PHONE_NUMBERS.default;
+  const phoneNumber = '9513736397'
   const formattedPhone = center?.phone ? `0${center.phone.replace(/\D/g, "").slice(-10)}` : phoneNumber;
 
   return (
@@ -60,7 +61,7 @@ const PhoneSection = memo(({ center, metanum }) => {
             {phoneNumber.replace(/(\d{4})(\d{3})(\d{3})/, '$1\u00A0$2\u00A0$3')}
           </Link>
         </p>
-        <p className="text-[12px]">Talk To Our Experts Now</p>
+        <p className="text-[12px]">Need Help? Let&apos;s Talk</p>
       </div>
     </div>
   );

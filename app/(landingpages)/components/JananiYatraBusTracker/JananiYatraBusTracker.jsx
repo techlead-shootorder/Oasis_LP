@@ -114,7 +114,7 @@ const JananiYatraBusTracker = () => {
 
         {/* Tabs */}
         <div className="relative">
-          <div className="flex flex-wrap justify-center space-x-2 sm:space-x-4 mb-8">
+          <div className="flex flex-wrap justify-center space-x-2 sm:space-x-20 mb-8">
             {tabsData.map((tab, index) => (
               <button
                 key={index}
@@ -132,14 +132,14 @@ const JananiYatraBusTracker = () => {
           {/* Bus Timeline */}
           <div className="relative flex justify-center items-center">
             <div className="w-3/4 h-1 bg-primary"></div>
-            <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1 text-2xl">
-              🚌
+            <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1 text-2xl ">
+              <img src="/images/Yatra/bus.webp" className="mt-10 w-[200px] h-[100px] object-contain" alt="" />
             </div>
           </div>
         </div>
 
         {/* Date information */}
-        <div className="mt-6 text-primary">
+        <div className="mt-20 text-primary">
           <p>
             {currentSchedule ? `${currentSchedule.date} (${currentSchedule.day})` : "Loading schedule..."}
           </p>

@@ -206,7 +206,7 @@ const ReviewV2 = ({ center, service }) => {
           autoPlay={false}
           customButtonGroup={<ButtonGroup />}
         >
-          {yatraReview.map(({ id, rating, reviews, name }) => (
+          {yatraReview.map(({ id, rating, reviews, name, center_name }) => (
             <div
               key={id}
               className="border bg-white border-primary p-5 rounded-xl lg:rounded-[20px] text-center font-lato h-full"
@@ -246,6 +246,8 @@ const ReviewV2 = ({ center, service }) => {
               <h3 className="text-xl lg:text-[28px] mt-3 text-primary font-semibold">
                 {name}
               </h3>
+              <p className="font-lato mt-2 text-black">{center_name}</p>
+              
             </div>
           ))}
         </Carousel>

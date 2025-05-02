@@ -184,7 +184,7 @@ const filteredDoctors = [
 ]
 
 // Dynamic imports
-const Modallp3 = dynamic(() => import("../Modal/Modallp3"), {
+const YatraModal = dynamic(() => import("../Modal/YatraModal"), {
   loading: () => (
     <div className="animate-pulse bg-gray-200 rounded-lg h-96"></div>
   ),
@@ -479,7 +479,7 @@ const BestDoctors = ({ center, isMeta, service, internal }) => {
       </section>
 
       {showModal && (
-        <Modallp3
+        <YatraModal
           isOpen={showModal}
           onClose={handleCloseModal}
           service={service}

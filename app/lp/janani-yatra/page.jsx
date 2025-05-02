@@ -76,8 +76,8 @@ const DynamicComponents = {
     () => import('@/app/(landingpages)/components/IVFClinicSlider/IVFClinicSliderlp3'),
     { loading: () => <ComponentLoader /> }
   ),
-  Gallery: dynamic(
-      () => import('@/app/(landingpages)/components/Gallery/Gallery'),
+  YatraGallery: dynamic(
+      () => import('@/app/(landingpages)/components/Gallery/YatraGallery'),
       { loading: () => <ComponentLoader /> }
     ),
   PlanInfolp3: dynamic(
@@ -164,7 +164,7 @@ const isfemaleAssessment = false;
             </Suspense>
 
             <Suspense fallback={<ComponentLoader />}>
-                          <DynamicComponents.Gallery
+                          <DynamicComponents.YatraGallery
                             center={filteredCity}
                             filteredDoctors={filteredDoctors}
                             isMeta={isMeta}

@@ -28,10 +28,10 @@ export default function WhoIsThisFor() {
 
   return (
     <section className='max-w-screen-4xl mx-auto px-4 lg:px-10 xl:px-14 2xl:px-20 py-8 lg:pt-8 lg:pb-16'>
-      <div className='flex justify-start sm:justify-center mb-10'> 
-        <h2 className="text-[22px] md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-[52px] bg-primary px-6 rounded-br-2xl font-bold text-white tracking-wide relative overflow-hidden">
-          Who Is This For?
-          <span className="absolute bottom-0 left-0 w-full h-1 bg-primary transform scale-x-0 transition-transform duration-500 origin-left group-hover:scale-x-100"></span>
+      <div className='flex justify-center mb-4 sm:mb-10'> 
+        <h2 className="text-[22px] md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-[52px] px-6 rounded-br-2xl font-bold text-primary tracking-wide relative overflow-hidden">
+          Who can benefit?
+          {/* <span className="absolute bottom-0 left-0 w-full h-1 bg-primary transform scale-x-0 transition-transform duration-500 origin-left group-hover:scale-x-100"></span> */}
         </h2>
       </div>
       
