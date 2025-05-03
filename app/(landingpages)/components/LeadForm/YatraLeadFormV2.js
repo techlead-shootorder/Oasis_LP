@@ -139,7 +139,7 @@ const LeadFormV2 = ({ internal = false }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const { firstName, mobileNo, consent, city } = userDetails;
+        const { firstName, mobileNo, consent } = userDetails;
 
         
 
