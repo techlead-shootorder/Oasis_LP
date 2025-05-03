@@ -8,17 +8,17 @@ export default function WhoIsThisFor() {
     {
       iconSrc: '/images/lp/lp3/first.jpg',
       text: "Couples Planning For A Baby",
-      description: "Perfect for couples who are preparing to start or expand their family and want to ensure optimal fertility health."
+      // description: "Perfect for couples who are preparing to start or expand their family and want to ensure optimal fertility health."
     },
     {
       iconSrc: '/images/lp/lp3/second.jpg',
       text: "Anyone Who Wants Fertility Health Check Up",
-      description: "Ideal for individuals who want to understand their reproductive health status, regardless of their current family planning goals."
+      // description: "Ideal for individuals who want to understand their reproductive health status, regardless of their current family planning goals."
     },
     {
       iconSrc: '/images/lp/lp3/third.jpg',
       text: "Couples Facing Infertility",
-      description: "Supporting couples who have been trying to conceive and may be experiencing challenges in their fertility journey."
+      // description: "Supporting couples who have been trying to conceive and may be experiencing challenges in their fertility journey."
     },
   ];
 
@@ -39,7 +39,7 @@ export default function WhoIsThisFor() {
         {items.map((item, idx) => (
           <div 
             key={idx} 
-            className={`flex flex-col items-center p-6 rounded-lg shadow-md cursor-pointer transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 ${activeIndex === idx ? 'bg-purple-50 border-l-4 border-primary' : 'bg-white'}`}
+            className={`flex flex-col items-center p-6 rounded-lg shadow-md cursor-pointer transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 ${activeIndex === idx ? ' border-l-4 border-primary' : 'bg-white'}`}
             onClick={() => handleCardClick(idx)}
           >
             <div className="flex items-center gap-4 w-full">
@@ -55,7 +55,7 @@ export default function WhoIsThisFor() {
               </p>
             </div>
             
-            {activeIndex === idx && (
+            {/* {activeIndex === idx && (
               <div className="mt-4 text-gray-600 animate-fadeIn w-full">
                 <p>{item.description}</p>
                 <button 
@@ -64,7 +64,7 @@ export default function WhoIsThisFor() {
                   Learn More
                 </button>
               </div>
-            )}
+            )} */}
           </div>
         ))}
       </div>

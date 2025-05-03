@@ -4,7 +4,6 @@ import { normalizeCityParams, getFilteredData } from './helper';
 import masterlp3 from "@/util/lp/masterlp3";
 import nearByAreas from "@/util/lp/nearByAreas"
 import dynamic from 'next/dynamic';
-
 import YatraHeader from "@/app/(landingpages)/components/Header/YatraHeader";
 import HeroYatra from "./HeroYatra";
 import WhoIsThisFor from '@/app/(landingpages)/components/WhoIsThisFor/WhoIsThisFor';
@@ -100,8 +99,8 @@ const DynamicComponents = {
     () => import('@/app/(landingpages)/components/Footer/FooterV2'),
     { loading: () => <ComponentLoader /> }
   ),
-  PhoneCall: dynamic(
-    () => import('@/app/(landingpages)/components/PhoneCall/PhoneCall'),
+  YatraPhoneCall: dynamic(
+    () => import('@/app/(landingpages)/components/PhoneCall/YatraPhoneCall'),
     { loading: () => <MinimalLoader /> }
   )
 }
@@ -240,7 +239,7 @@ const isfemaleAssessment = false;
             </Suspense>
 
             {!googel1num && <Suspense fallback={<MinimalLoader />}>
-              <DynamicComponents.PhoneCall center={filteredCity} metanum={metanum} />
+              <DynamicComponents.YatraPhoneCall center={filteredCity} metanum={metanum} />
             </Suspense>}
 
 

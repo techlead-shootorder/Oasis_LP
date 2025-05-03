@@ -139,7 +139,9 @@ const LeadFormV2 = ({ internal = false }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const { firstName, mobileNo, consent } = userDetails;
+        const { firstName, mobileNo, consent, city } = userDetails;
+
+        
 
         if (!firstName) {
             setErrorMessage("Please enter your name");
@@ -149,6 +151,7 @@ const LeadFormV2 = ({ internal = false }) => {
             setErrorMessage("Please enter a valid Mobile Number");
             return;
         }
+
         if (!consent) {
             setErrorMessage("Please give your consent to contact");
             return;
@@ -180,6 +183,7 @@ const LeadFormV2 = ({ internal = false }) => {
                     mobileNo: "",
                     gender: "",
                     age: "",
+                    city: "",
                     notes: "",
                     consent: false,
                 });
@@ -210,15 +214,14 @@ const LeadFormV2 = ({ internal = false }) => {
         <>
 
             <div className="rounded-[27px] bg-cover bg-center bg-[#f3c1d7] overflow-hidden relative ">
-                <p className="text-primary pt-2 pb-2 bg-[#f3c1d7] mb-4 text-center text-[22px] font-bold">Only 50 Free Consultations Per City</p>
+                <p className="text-primary pt-2 pb-2 bg-[#f3c1d7] mb-4 text-center text-[16px] sm:text-[20px] font-bold">Only 50 Free Consultations Per City</p>
 
                 <form onSubmit={handleSubmit} className="">
-
                     <div className="px-4 lg:px-5 xl:px-6">
                         {/* FORM HEADING */}
                         <div>
                             {/* <p className="text-center text-primary font-semibold">Fill Up The Form To Get a</p> */}
-                           
+
                         </div>
 
                         {/* INPUTS */}
@@ -296,28 +299,28 @@ const LeadFormV2 = ({ internal = false }) => {
                                 onBlur={() => setIsFocusedCity(false)}
                             >
                                 <option value="">City/Town</option>
-                                <option value="Hyderabad">Jangaon</option>
-                                <option value="Secunderabad">Jagityal</option>
-                                <option value="Warangal">Gudur</option>
-                                <option value="Karimnagar">Markapuram</option>
-                                <option value="Nizamabad">Amaravathi</option>
-                                <option value="Khammam">Tiruvuru</option>
-                                <option value="Mahbubnagar">Jaggaiahpet</option>
-                                <option value="Nalgonda">Jaggampeta</option>
-                                <option value="Adilabad">Thagarapuvalasa</option>
-                                <option value="Medak">Vizianagaram</option>
-                                <option value="Medak">Gajuwaka</option>
-                                <option value="Medak">Khammam</option>
-                                <option value="Medak">Nalgonda</option>
-                                <option value="Medak">Bhongir</option>
-                                <option value="Medak">siddipet</option>
+                                <option value="Jangaon">Jangaon</option>
+                                <option value="Jagityal">Jagityal</option>
+                                <option value="Gudur">Gudur</option>
+                                <option value="Markapuram">Markapuram</option>
+                                <option value="Amaravathi">Amaravathi</option>
+                                <option value="Tiruvuru">Tiruvuru</option>
+                                <option value="Jaggaiahpet">Jaggaiahpet</option>
+                                <option value="Jaggampeta">Jaggampeta</option>
+                                <option value="Thagarapuvalasa">Thagarapuvalasa</option>
+                                <option value="Vizianagaram">Vizianagaram</option>
+                                <option value="Gajuwaka">Gajuwaka</option>
+                                <option value="Khammam">Khammam</option>
+                                <option value="Nalgonda">Nalgonda</option>
+                                <option value="Bhongir">Bhongir</option>
+                                <option value="Siddipet">Siddipet</option>
                                 <option value="Medak">Medak</option>
-                                <option value="Medak">Nizambad</option>
-                                <option value="Medak">Vikarabad</option>
-                                <option value="Medak">Parigi</option>
-                                <option value="Medak">Shamshabad</option>
-                                <option value="Medak">Mahabubnagar</option>
-                                <option value="Medak">Adoni</option>
+                                <option value="Nizambad">Nizambad</option>
+                                <option value="Vikarabad">Vikarabad</option>
+                                <option value="Parigi">Parigi</option>
+                                <option value="Shamshabad">Shamshabad</option>
+                                <option value="Mahabubnagar">Mahabubnagar</option>
+                                <option value="Adoni">Adoni</option>
                             </select>
                             {!isFocusedCity && !userDetails.city && (
                                 <span className="absolute left-[88px] top-2 text-red-500 text-2xl">*</span>
@@ -405,7 +408,7 @@ const LeadFormV2 = ({ internal = false }) => {
 
                 <div className="bg-[#DEDEDE] text-center pb-3 px-3 text-black">
                     <p className="text-sm md:text-[18px] leading-[1.4]">
-                       Book Before It&apos;s Full!
+                        Book Before It&apos;s Full!
 
                     </p>
                 </div>

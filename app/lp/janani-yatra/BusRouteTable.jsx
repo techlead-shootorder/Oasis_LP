@@ -1,8 +1,18 @@
 'use client'
-import { useState } from 'react';
+import React, { useState, memo, useCallback, useEffect } from "react";
+import dynamic from 'next/dynamic';
+
+// Dynamic imports
+const YatraModal = dynamic(() => import("@/app/(landingpages)/components/Modal/YatraModal"), {
+  loading: () => (
+    <div className="animate-pulse bg-gray-200 rounded-lg h-96"></div>
+  ),
+  ssr: false, // Modal should only load client-side
+});
 
 export default function BusRouteMap() {
   const [visibleRows, setVisibleRows] = useState(10);
+   const [showModal, setShowModal] = useState(false);
 
   const routes = [
     { date: '10-May-25', day: 'Saturday', location: 'Jangaon - Preston College Grounds', time: '12:00 PM - 4:00 PM' },
@@ -38,6 +48,12 @@ export default function BusRouteMap() {
       setVisibleRows(visibleRows + 10); // Show 10 more rows
     }
   };
+
+   const handleOpenModal = useCallback(() => setShowModal(true), []);
+   const handleCloseModal = useCallback(() => setShowModal(false), []);
+  
+
+
 
   return (
     <div className="w-full rounded-lg shadow-lg py-16 px-4">
@@ -88,9 +104,19 @@ export default function BusRouteMap() {
       <button
         className="px-6 py-2 rounded-md font-medium text-white shadow-md hover:shadow-lg transition-all"
         style={{ backgroundColor: "#874487" }}
+        onClick={handleOpenModal}
+
       >
         Notify Me When the Bus Is in My City
       </button>
+
+      {showModal && (
+        <YatraModal
+          isOpen={showModal}
+          onClose={handleCloseModal}
+          
+        />
+      )}
     </div>
     </div>
   );
