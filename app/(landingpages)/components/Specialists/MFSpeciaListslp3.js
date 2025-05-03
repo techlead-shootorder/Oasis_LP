@@ -5,7 +5,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { FaCheckCircle } from "react-icons/fa";
 
-const MFModallp3 = dynamic(() => import("../Modal/MFModallp3"), {
+const MFModallp3 = dynamic(() => import("../Modal/MFModalp3"), {
  loading: () => <div className="animate-pulse bg-gray-200 rounded-lg h-96" />,
  ssr: false
 });

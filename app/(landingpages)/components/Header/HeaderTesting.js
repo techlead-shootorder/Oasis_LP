@@ -122,7 +122,6 @@ const HeaderTesting = ({ center, metanum, googel1num}) => {
     <>
       <DesktopHeader center={center} metanum={metanum} googel1num={googel1num}/>
       <MobileHeader />
-     
     </>
   );
 };

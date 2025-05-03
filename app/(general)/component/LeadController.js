@@ -14,4 +14,11 @@ export class LeadController {
         });
     }
 
+    submitFemiaForm(leadRequest) {
+        return fetch ("/api/femia-lead", {
+            method: "POST",
+            body: JSON.stringify(leadRequest),
+        });
+    }
+
 }
