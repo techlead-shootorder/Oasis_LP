@@ -14,7 +14,6 @@ const PhoneCall = () => {
         <div
         className="md:hidden fixed z-50 bottom-[70px] right-3 md:bottom-3 flex justify-center items-center"
     >
-       
        <a
             href={
                 

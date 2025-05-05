@@ -214,7 +214,7 @@ const LeadFormV2 = ({ internal = false }) => {
         <>
 
             <div className="rounded-[27px] bg-cover bg-center bg-[#f3c1d7] overflow-hidden relative ">
-                <p className="text-primary pt-2 pb-2 bg-[#f3c1d7] mb-4 text-center text-[16px] sm:text-[20px] font-bold">Only 50 Free Consultations Per City</p>
+                <p className="text-primary pt-2 pb-2 bg-[#f3c1d7] mb-4 text-center text-[16px] sm:text-[20px] font-bold">First 50 Consultations Free Per City</p>
 
                 <form onSubmit={handleSubmit} className="">
                     <div className="px-4 lg:px-5 xl:px-6">

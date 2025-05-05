@@ -7,8 +7,143 @@ const JananiYatraBusTracker = () => {
   const [tabsData, setTabsData] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
   
-  // Schedule data (date, day, and stops)
+  // Schedule data from the table provided
   const scheduleData = [
+    {
+      date: "4-May-25",
+      day: "",
+      stops: ["........", "Hyderabad", "Jangaon", "Jagityal"]
+    },
+    {
+      date: "5-May-25",
+      day: "",
+      stops: ["........", "Hyderabad", "Jangaon", "Jagityal"]
+    },
+    {
+      date: "6-May-25",
+      day: "",
+      stops: ["........", "Hyderabad", "Jangaon", "Jagityal"]
+    },
+    {
+      date: "7-May-25",
+      day: "Wednesday",
+      stops: ["........", "Hyderabad", "Jangaon", "Jagityal"]
+    },
+    {
+      date: "8-May-25",
+      day: "Thursday",
+      stops: ["........", "Hyderabad", "Jangaon", "Jagityal"]
+    },
+    {
+      date: "9-May-25",
+      day: "Friday",
+      stops: ["........", "Hyderabad", "Jangaon", "Jagityal"]
+    },
+    {
+      date: "10-May-25",
+      day: "Saturday",
+      stops: ["Hyderabad", "Jangaon", "Jagityal", "Gudur"]
+    },
+    {
+      date: "11-May-25",
+      day: "Sunday",
+      stops: ["Jangaon", "Jagityal", "Gudur", "Markapuram"]
+    },
+    {
+      date: "12-May-25",
+      day: "Monday",
+      stops: ["Jangaon", "Jagityal", "Gudur", "Markapuram"]
+    },
+    {
+      date: "13-May-25",
+      day: "Tuesday",
+      stops: ["Jagityal", "Gudur", "Markapuram", "Amaravathi"]
+    },
+    {
+      date: "14-May-25",
+      day: "Wednesday",
+      stops: ["Gudur", "Markapuram", "Amaravathi", "Tiruvuru"]
+    },
+    {
+      date: "15-May-25",
+      day: "Thursday",
+      stops: ["Markapuram", "Amaravathi", "Tiruvuru", "Jaggaiahpet"]
+    },
+    {
+      date: "16-May-25",
+      day: "Friday",
+      stops: ["Markapuram", "Amaravathi", "Tiruvuru", "Jaggaiahpet"]
+    },
+    {
+      date: "17-May-25",
+      day: "Saturday",
+      stops: ["Amaravathi", "Tiruvuru", "Jaggaiahpet", "Jaggampeta"]
+    },
+    {
+      date: "18-May-25",
+      day: "Sunday",
+      stops: ["Tiruvuru", "Jaggaiahpet", "Jaggampeta", "Thagarapuvalasa"]
+    },
+    {
+      date: "19-May-25",
+      day: "Monday",
+      stops: ["Jaggaiahpet", "Jaggampeta", "Thagarapuvalasa", "Narasipatnam"]
+    },
+    {
+      date: "20-May-25",
+      day: "Tuesday",
+      stops: ["Jaggaiahpet", "Jaggampeta", "Thagarapuvalasa", "Narasipatnam"]
+    },
+    {
+      date: "21-May-25",
+      day: "Wednesday",
+      stops: ["Jaggampeta", "Thagarapuvalasa", "Narasipatnam", "Vizianagaram"]
+    },
+    {
+      date: "22-May-25",
+      day: "Thursday",
+      stops: ["Thagarapuvalasa", "Narasipatnam", "Vizianagaram", "Gajuwaka"]
+    },
+    {
+      date: "23-May-25",
+      day: "Friday",
+      stops: ["Narasipatnam", "Vizianagaram", "Gajuwaka", "Khammam"]
+    },
+    {
+      date: "24-May-25",
+      day: "Saturday",
+      stops: ["Vizianagaram", "Gajuwaka", "Khammam", "Nalgonda"]
+    },
+    {
+      date: "25-May-25",
+      day: "Sunday",
+      stops: ["Gajuwaka", "Khammam", "Nalgonda", "Bhongir"]
+    },
+    {
+      date: "26-May-25",
+      day: "Monday",
+      stops: ["Khammam", "Nalgonda", "Bhongir", "Siddipet"]
+    },
+    {
+      date: "27-May-25",
+      day: "Tuesday",
+      stops: ["Nalgonda", "Bhongir", "Siddipet", "Medak"]
+    },
+    {
+      date: "28-May-25",
+      day: "Wednesday",
+      stops: ["Bhongir", "Siddipet", "Medak", "Nizambad"]
+    },
+    {
+      date: "29-May-25",
+      day: "Thursday",
+      stops: ["Bhongir", "Siddipet", "Medak", "Nizambad"]
+    },
+    {
+      date: "30-May-25",
+      day: "Friday",
+      stops: ["Siddipet", "Medak", "Nizambad", "Sangareddy"]
+    },
     {
       date: "31-May-25",
       day: "Saturday",
@@ -35,31 +170,32 @@ const JananiYatraBusTracker = () => {
       stops: ["Parigi", "Shamshabad", "Mahabubnagar", "Adoni"]
     },
     {
-      date: "5-June-25", // Fixed to June instead of July
+      date: "5-June-25", // Fixed from July to June
       day: "Thursday",
-      stops: ["Shamshabad", "Mahabubnagar", "Adoni", ""]
+      stops: ["Shamshabad", "Mahabubnagar", "Adoni", "-"]
     },
     {
       date: "6-June-25",
       day: "Friday",
-      stops: ["Mahabubnagar", "Adoni", "", ""]
+      stops: ["Mahabubnagar", "Adoni", "-", "-"]
     }
   ];
 
   // Function to get bus location based on current date
   const getBusLocation = () => {
-    // For testing, hardcode a specific date
-    const today = "1-June-25"; // Change this to test different dates
+    // Get the current date in the format "DD-MMM-YY"
+    const now = new Date();
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+    const today = `${now.getDate()}-${months[now.getMonth()]}-${now.getFullYear().toString().substr(2)}`;
     
-    // For real use, uncomment this:
-    // const now = new Date();
-    // const today = `${now.getDate()}-${['Jan','Feb','Mar','Apr','May','June','July','Aug','Sept','Oct','Nov','Dec'][now.getMonth()]}-${now.getFullYear().toString().substr(2)}`;
+    // For testing, uncomment this line and comment the above code to test specific dates
+    // const today = "10-May-25"; // Change this to test different dates
     
     // Find the schedule for today
     const todaySchedule = scheduleData.find(item => item.date === today);
     
     if (todaySchedule) {
-      // Current location is the second item (index 1) which is marked with ** in example
+      // Current location is the second item (index 1) which is the current location in the table
       const currentLocation = todaySchedule.stops[1];
       return { schedule: todaySchedule, location: currentLocation };
     } else {
@@ -98,7 +234,7 @@ const JananiYatraBusTracker = () => {
       else status = "Next";
       
       return {
-        name: stop || "---", // If stop is empty, display ---
+        name: stop, // Display the stop name as is
         status
       };
     });
@@ -111,7 +247,7 @@ const JananiYatraBusTracker = () => {
     if (!tabsData.length) return [];
     
     if (isMobile) {
-      // For mobile, show only 3 tabs (first 3)
+      // For mobile, show only 3 tabs
       return tabsData.slice(0, 3);
     } else {
       // For desktop, show all 4 tabs
@@ -121,61 +257,62 @@ const JananiYatraBusTracker = () => {
 
   return (
     <div className="bg-pink-50">
-    <div className="max-w-screen-xl mx-auto px-4 lg:px-10 py-10 ">
-      <div className="text-center">
-        <h2 className="text-[22px] md:text-2xl lg:text-3xl xl:text-4xl font-bold text-primary mb-6">
-          Where is the Janani Yatra Bus Now?
-        </h2>
-        
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mb-6">
-          <div className="flex items-center">
-            <span className="inline-flex items-center text-primary">
-              <span className="mr-1">📍</span>
-              Live: Bus Currently in {currentTab || "Loading..."}
-            </span>
-          </div>
-          <div className="flex items-center sm:ml-4">
-            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center">
-              <span className="mr-1">🗺️</span>
-              Track Location on Google Maps
-            </a>
-          </div>
-        </div>
-
-        {/* Tabs */}
-        <div className="relative">
-          <div className="flex flex-wrap justify-center space-x-2 sm:space-x-20 mb-8">
-            {getDisplayTabs().map((tab, index) => (
-              <button
-                key={index}
-                className={`px-4 py-2 rounded-full text-sm sm:text-base border ${
-                  tab.status === "Current" 
-                    ? "bg-primary text-white border-primary" 
-                    : "bg-white text-primary border-primary hover:bg-primary hover:text-white transition-colors"
-                }`}
-              >
-                {tab.name}
-              </button>
-            ))}
-          </div>
+      <div className="max-w-screen-xl mx-auto px-4 lg:px-10 py-10 ">
+        <div className="text-center">
+          <h2 className="text-[22px] md:text-2xl lg:text-3xl xl:text-4xl font-bold text-primary mb-6">
+            Where is the Janani Yatra Bus Now?
+          </h2>
           
-          {/* Bus Timeline */}
-          <div className="relative flex justify-center items-center">
-            <div className="w-3/4 h-1 bg-primary"></div>
-            <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1 text-2xl ">
-              <img src="/images/Yatra/bus.webp" className="mt-10 w-[200px] h-[100px] object-contain" alt="" />
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mb-6">
+            <div className="flex items-center">
+              <span className="inline-flex items-center text-primary">
+                <span className="mr-1">📍</span>
+                Live: Bus Currently in {currentTab || "Loading..."}
+              </span>
+            </div>
+            <div className="flex items-center sm:ml-4">
+              <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center">
+                <span className="mr-1">🗺️</span>
+                Track Location on Google Maps
+              </a>
             </div>
           </div>
-        </div>
 
-        {/* Date information */}
-        <div className="mt-20 text-primary">
-          <p>
-            {currentSchedule ? `${currentSchedule.date} (${currentSchedule.day})` : "Loading schedule..."}
-          </p>
+          {/* Tabs */}
+          <div className="relative">
+            <div className="flex flex-wrap justify-center space-x-2 sm:space-x-8 md:space-x-16 lg:space-x-20 mb-8">
+              {getDisplayTabs().map((tab, index) => (
+                <button
+                  key={index}
+                  className={`px-4 py-2 rounded-full text-sm sm:text-base border ${
+                    tab.status === "Current" 
+                      ? "bg-primary text-white border-primary" 
+                      : "bg-white text-primary border-primary hover:bg-primary hover:text-white transition-colors"
+                  } ${tab.name === "........" ? "opacity-50 cursor-not-allowed" : ""}`}
+                  disabled={tab.name === "........"}
+                >
+                  {tab.name}
+                </button>
+              ))}
+            </div>
+            
+            {/* Bus Timeline */}
+            <div className="relative flex justify-center items-center">
+              <div className="w-3/4 h-1 bg-primary mt-12"></div>
+              <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1 text-2xl ">
+                <img src="/images/Yatra/bus.webp" className="mt-0 w-[180px] h-[80px] object-contain" alt="Bus" />
+              </div>
+            </div>
+          </div>
+
+          {/* Date information */}
+          <div className="mt-20 text-primary">
+            <p>
+              {currentSchedule ? `${currentSchedule.date} ${currentSchedule.day ? `(${currentSchedule.day})` : ""}` : "Loading schedule..."}
+            </p>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };

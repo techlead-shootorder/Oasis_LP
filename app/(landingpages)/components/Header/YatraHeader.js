@@ -45,7 +45,7 @@ import { MdCall } from "react-icons/md";
 const PhoneSection = memo(({ center }) => {
 //   const phoneNumber = metanum ? PHONE_NUMBERS.meta : PHONE_NUMBERS.default;
   const phoneNumber = '9513736397'
-  const formattedPhone = center?.phone ? `0${center.phone.replace(/\D/g, "").slice(-10)}` : phoneNumber;
+  const formattedPhone = phoneNumber;
 
   return (
     <div className="number flex items-center gap-2 md:mr-[40px] lg:mr-[60px] xl:mr-[100px]">
