@@ -42,7 +42,7 @@ import { MdCall } from "react-icons/md";
 
 // YearsSection.displayName = 'YearsSection';
 
-const PhoneSection = memo(({ center }) => {
+const PhoneSection = memo(() => {
 //   const phoneNumber = metanum ? PHONE_NUMBERS.meta : PHONE_NUMBERS.default;
   const phoneNumber = '9513736397'
   const formattedPhone = phoneNumber;
