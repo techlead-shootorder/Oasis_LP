@@ -141,7 +141,7 @@ const LeadFormV2 = ({ internal = false }) => {
 
         const { firstName, mobileNo, consent } = userDetails;
 
-        
+
 
         if (!firstName) {
             setErrorMessage("Please enter your name");
@@ -360,7 +360,8 @@ const LeadFormV2 = ({ internal = false }) => {
 
                             />
 
-                        </div>}
+                        </div>
+                        }
 
                         <div className="flex items-center justify-center mb-3 xl:mb-4 text-center">
                             <input
@@ -385,9 +386,10 @@ const LeadFormV2 = ({ internal = false }) => {
                             id="form-submit"
                             className={`w-full py-1 text-white text-[22px] rounded-lg leading-none font-medium ${loading || !formValid ? "bg-red-400 cursor-not-allowed" : "bg-[#D7052B]"
                                 }`}
-                            disabled={loading || !formValid}
+                        // disabled={loading || !formValid}
                         >
                             {loading ? "Submitting..." : "Secure My Free Spot"}
+                          
                             {/* {!loading && <p className="text-[12px] p-0 leading-none font-normal">Limited Slots Per Location</p>} */}
                         </button>
 
