@@ -384,8 +384,10 @@ const LeadFormV2 = ({ internal = false }) => {
                         <button
                             type="submit"
                             id="form-submit"
-                            className={`w-full py-1 text-white text-[22px] rounded-lg leading-none font-medium ${loading || !formValid ? "bg-red-400 cursor-not-allowed" : "bg-[#D7052B]"
-                                }`}
+                            // className={`w-full py-1 text-white text-[22px] rounded-lg leading-none font-medium 
+                            //     ${loading || !formValid ? "bg-red-400 cursor-not-allowed" : "bg-[#D7052B] animate-pulseHighlight"}
+                            // `}
+                            className={`w-full py-2 text-white text-[22px] rounded-lg leading-none font-medium bg-[#D7052B] animate-pulseHighlight`}
                         // disabled={loading || !formValid}
                         >
                             {loading ? "Submitting..." : "Secure My Free Spot"}

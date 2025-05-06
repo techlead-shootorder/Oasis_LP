@@ -44,6 +44,7 @@ const config: Config = {
       'spin-slow': 'spin 5s linear infinite',
       'spin-reverse': 'spin-reverse 5s linear infinite',
       ripple: 'ripple 2s infinite',
+      pulseHighlight: 'pulseHighlight 1.5s infinite',
     },
     // borderRadius: {
     //   'custom': '1.25rem 1.25rem 0 0',
@@ -52,6 +53,10 @@ const config: Config = {
       marquee: {
         '0%': { transform: 'translateX(100%)' },
         '100%': { transform: 'translateX(-100%)' },
+      },
+      pulseHighlight: {
+        '0%, 100%': { backgroundColor: '#D7052B' },
+        '50%': { backgroundColor: '#ff4b4b' }, // lighter red
       },
       slide: {
         '0%, 20%': { transform: 'translateY(0%)' },
