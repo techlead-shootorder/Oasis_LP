@@ -139,9 +139,9 @@ const LeadFormV2 = ({ internal = false }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const { firstName, mobileNo, consent } = userDetails;
+        const { firstName, mobileNo, consent, city } = userDetails;
 
-
+        console.log("user detials", userDetails);
 
         if (!firstName) {
             setErrorMessage("Please enter your name");
@@ -151,6 +151,11 @@ const LeadFormV2 = ({ internal = false }) => {
             setErrorMessage("Please enter a valid Mobile Number");
             return;
         }
+        if(!city){
+            setErrorMessage("Please Select City");
+            return;
+        }
+
 
         if (!consent) {
             setErrorMessage("Please give your consent to contact");
@@ -299,29 +304,31 @@ const LeadFormV2 = ({ internal = false }) => {
                                 onBlur={() => setIsFocusedCity(false)}
                             >
                                 <option value="">City/Town</option>
-                                <option value="Jangaon">Jangaon</option>
-                                <option value="Jagityal">Jagityal</option>
-                                <option value="Gudur">Gudur</option>
-                                <option value="Markapuram">Markapuram</option>
-                                <option value="Amaravathi">Amaravathi</option>
-                                <option value="Tiruvuru">Tiruvuru</option>
-                                <option value="Jaggaiahpet">Jaggaiahpet</option>
-                                <option value="Jaggampeta">Jaggampeta</option>
-                                <option value="Thagarapuvalasa">Thagarapuvalasa</option>
-                                <option value="Vizianagaram">Vizianagaram</option>
-                                <option value="Gajuwaka">Gajuwaka</option>
-                                <option value="Khammam">Khammam</option>
-                                <option value="Nalgonda">Nalgonda</option>
-                                <option value="Bhongir">Bhongir</option>
-                                <option value="Siddipet">Siddipet</option>
-                                <option value="Medak">Medak</option>
-                                <option value="Nizambad">Nizambad</option>
-                                <option value="Vikarabad">Vikarabad</option>
-                                <option value="Parigi">Parigi</option>
-                                <option value="Shamshabad">Shamshabad</option>
-                                <option value="Mahabubnagar">Mahabubnagar</option>
-                                <option value="Adoni">Adoni</option>
-                                <option value="Guntur">Guntur</option>
+                                <option value="Hanamkonda">Jangaon</option>
+                                <option value="Karimnagar">Jagityal</option>
+                                <option value="Tirupati">Gudur</option>
+                                <option value="Ongole">Markapuram</option>
+                                <option value="Guntur">Amaravathi</option>
+                                <option value="Vijaywada">Tiruvuru</option>
+                                <option value="Suryaraopet">Jaggaiahpet</option>
+                                <option value="Kakinada">Jaggampeta</option>
+                                <option value="Madhurawada">Thagarapuvalasa</option>
+                                <option value="Vizag">Narasipatnam</option>
+                                <option value="Madhurawada">Vizianagaram</option>
+                                <option value="Vizag">Gajuwaka</option>
+                                <option value="Hanamkonda">Khammam</option>
+                                <option value="Dilsukhnagar">Nalgonda</option>
+                                <option value="Uppal">Bhongir</option>
+                                <option value="Secunderabad">Siddipet</option>
+                                <option value="Kompally">Medak</option>
+                                <option value="Secunderabad">Nizambad</option>
+                                <option value="Miyapur">Sangareddy</option>
+                                <option value="Gachibowli">Vikarabad</option>
+                                <option value="Gachibowli">Parigi</option>
+                                <option value="Tolichowki">Shamshabad</option>
+                                <option value="Banjara Hills">Mahabubnagar</option>
+                                <option value="Kurnool">Adoni</option>
+
                             </select>
                             {!isFocusedCity && !userDetails.city && (
                                 <span className="absolute left-[88px] top-2 text-red-500 text-2xl">*</span>
@@ -342,11 +349,9 @@ const LeadFormV2 = ({ internal = false }) => {
                                 onFocus={() => setIsFocusedMobileNo(true)}
                                 onBlur={() => setIsFocusedMobileNo(false)}
                             />
-                            {/* Asterisk only if the input is empty or has only the prefix */}
-                            {!isFocusedMobileNo &&
-                                (userDetails.mobileNo.length <= 3 || userDetails.mobileNo === "+91") && (
-                                    <span className="absolute left-[40px] top-2 text-red-500 text-2xl">*</span>
-                                )}
+                            {!isFocusedMobileNo && (userDetails.mobileNo === "+91" || userDetails.mobileNo.length <= 3) && (
+                                <span className="absolute left-[40px] top-2 text-red-500 text-2xl">*</span>
+                            )}
                         </div>
 
                         {internal && <div className="relative mb-3 xl:mb-4">
@@ -392,7 +397,7 @@ const LeadFormV2 = ({ internal = false }) => {
                         // disabled={loading || !formValid}
                         >
                             {loading ? "Submitting..." : "Secure My Free Spot"}
-                          
+
                             {/* {!loading && <p className="text-[12px] p-0 leading-none font-normal">Limited Slots Per Location</p>} */}
                         </button>
 
