@@ -24,7 +24,7 @@ const LeadFormV2 = ({ internal = false }) => {
     const [errMsg, setErrorMessage] = useState("");
     const [ageOptions, setAgeOptions] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [formValid, setFormValid] = useState(false);
+    // const [formValid, setFormValid] = useState(false);
     const pathname = usePathname();
     const router = useRouter();
     const searchParams = useSearchParams();
@@ -84,15 +84,15 @@ const LeadFormV2 = ({ internal = false }) => {
         }
     }, [])
 
-    const isFormValid = () => {
-        let allInputField = false;
-        allInputField = userDetails.firstName !== "" && userDetails.mobileNo !== "+91" && userDetails.gender !== "" && userDetails.age !== "" && userDetails.city !== "" && userDetails.consent;
+    // const isFormValid = () => {
+    //     let allInputField = false;
+    //     allInputField = userDetails.firstName !== "" && userDetails.mobileNo !== "+91" && userDetails.gender !== "" && userDetails.age !== "" && userDetails.city !== "" && userDetails.consent;
 
-        return allInputField;
-    };
+    //     return allInputField;
+    // };
 
     useEffect(() => {
-        setFormValid(isFormValid());
+        // setFormValid(isFormValid());
     }, [userDetails])
 
     const handleInputChange = (e) => {
