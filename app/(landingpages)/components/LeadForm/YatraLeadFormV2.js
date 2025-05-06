@@ -321,6 +321,7 @@ const LeadFormV2 = ({ internal = false }) => {
                                 <option value="Shamshabad">Shamshabad</option>
                                 <option value="Mahabubnagar">Mahabubnagar</option>
                                 <option value="Adoni">Adoni</option>
+                                <option value="Guntur">Guntur</option>
                             </select>
                             {!isFocusedCity && !userDetails.city && (
                                 <span className="absolute left-[88px] top-2 text-red-500 text-2xl">*</span>
