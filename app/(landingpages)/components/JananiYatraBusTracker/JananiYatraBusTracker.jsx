@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-// import { useRouter } from "next/navigation";
 
 const JananiYatraBusTracker = () => {
   const [currentTab, setCurrentTab] = useState(null);
@@ -8,7 +7,6 @@ const JananiYatraBusTracker = () => {
   const [tabsData, setTabsData] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
   const [trackedLocations, setTrackedLocations] = useState({});
-  const [isTrackingEnabled, setIsTrackingEnabled] = useState(false);
   
   // Schedule data from the table provided
   const scheduleData = [
@@ -173,7 +171,7 @@ const JananiYatraBusTracker = () => {
       stops: ["Parigi", "Shamshabad", "Mahabubnagar", "Adoni"]
     },
     {
-      date: "5-June-25", // Fixed from July to June
+      date: "5-June-25",
       day: "Thursday",
       stops: ["Shamshabad", "Mahabubnagar", "Adoni", "-"]
     },
@@ -245,21 +243,7 @@ const JananiYatraBusTracker = () => {
       console.error('Failed to fetch tracked locations:', error);
     }
   };
-
-    // Toggle tracking
-    const toggleTracking = () => {
-      setIsTrackingEnabled(prev => {
-        const newState = !prev;
-        
-        // If enabling tracking, start polling for location updates
-        if (newState) {
-          fetchTrackedLocations(); // Immediate fetch
-        }
-        
-        return newState;
-      });
-    };
-
+   
   // Handle responsive design for tabs
   useEffect(() => {
     const checkIfMobile = () => {
@@ -276,21 +260,7 @@ const JananiYatraBusTracker = () => {
     return () => window.removeEventListener('resize', checkIfMobile);
   }, []);
 
-  // Polling for location updates
-  useEffect(() => {
-    let intervalId;
-    
-    if (isTrackingEnabled) {
-      intervalId = setInterval(() => {
-        fetchTrackedLocations();
-      }, 10000); // Poll every 10 seconds
-    }
-    
-    return () => {
-      if (intervalId) clearInterval(intervalId);
-    };
-  }, [isTrackingEnabled]);
-
+  // Initial setup and location tracking
   useEffect(() => {
     // Get location data once when component mounts
     const { schedule, location } = getBusLocation();
@@ -311,6 +281,19 @@ const JananiYatraBusTracker = () => {
     });
     
     setTabsData(tabs);
+    
+    // Start tracking immediately on component mount
+    fetchTrackedLocations(); // Initial fetch
+    
+    // Set up polling interval for location updates
+    const intervalId = setInterval(() => {
+      fetchTrackedLocations();
+    }, 10000); // Poll every 10 seconds
+    
+    // Cleanup
+    return () => {
+      if (intervalId) clearInterval(intervalId);
+    };
   }, []);
 
   // Function to get tabs based on device type
@@ -326,124 +309,82 @@ const JananiYatraBusTracker = () => {
     }
   };
 
-    // Helper function to check if there are active location updates
-    const hasActiveTracking = () => {
-      return Object.keys(trackedLocations).length > 0;
-    };
-  
-    // Function to show OwnTracks configuration QR code
-    const showOwnTracksConfig = () => {
-      // Get current host
-      const host = window.location.origin;
-      const endpoint = `${host}/api/owntracks`;
-      
-      // Alert with instructions
-      alert(`OwnTracks Configuration:
-  1. Open OwnTracks app
-  2. Go to Preferences > Connection
-  3. Set Mode to HTTP
-  4. Set URL to: ${endpoint}
-  5. Ensure Authentication is set to None
-  6. Save and restart the app`);
-    };
+  // Helper function to check if there are active location updates
+  const hasActiveTracking = () => {
+    return Object.keys(trackedLocations).length > 0;
+  };
 
   return (
     <div className="bg-pink-50">
-    <div className="max-w-screen-xl mx-auto px-4 lg:px-10 py-10 ">
-      <div className="text-center">
-        <h2 className="text-[22px] md:text-2xl lg:text-3xl xl:text-4xl font-bold text-primary mb-6">
-          Where is the Janani Yatra Bus Now?
-        </h2>
-        
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
-          <div className="flex items-center">
-            <span className="inline-flex items-center text-primary">
-              <span className="mr-1">📍</span>
-              Live: Bus Currently in {currentTab || "Loading..."}
-            </span>
-          </div>
+      <div className="max-w-screen-xl mx-auto px-4 lg:px-10 py-10 ">
+        <div className="text-center">
+          <h2 className="text-[22px] md:text-2xl lg:text-3xl xl:text-4xl font-bold text-primary mb-6">
+            Where is the Janani Yatra Bus Now?
+          </h2>
           
-          {hasActiveTracking() ? (
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+            <div className="flex items-center">
+              <span className="inline-flex items-center text-primary">
+                <span className="mr-1">📍</span>
+                Live: Bus Currently in {currentTab || "Loading..."}
+              </span>
+            </div>
+            
             <button
               onClick={openTrackedLocationMap}
               className="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-full flex items-center transition-colors"
+              disabled={!hasActiveTracking()}
             >
               <span className="mr-1">🗺️</span>
               Track Location on Google Maps
             </button>
-          ) : (
-            <div className="flex gap-2">
-              <button 
-                onClick={toggleTracking} 
-                className="bg-primary hover:bg-primary-dark text-white font-medium py-2 px-4 rounded-full flex items-center transition-colors"
-              >
-                <span className="mr-1">📡</span>
-                {isTrackingEnabled ? "Tracking Enabled" : "Enable Tracking"}
-              </button>
-              
-              <button 
-                onClick={showOwnTracksConfig} 
-                className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-full flex items-center transition-colors"
-              >
-                <span className="mr-1">📱</span>
-                OwnTracks Setup
-              </button>
+          </div>
+
+          {/* Tabs */}
+          <div className="relative">
+            <div className="flex flex-wrap justify-center space-x-2 sm:space-x-8 md:space-x-16 lg:space-x-20 mb-8">
+              {getDisplayTabs().map((tab, index) => (
+                <button
+                  key={index}
+                  className={`px-4 py-2 rounded-full text-sm sm:text-base border ${
+                    tab.status === "Current" 
+                      ? "bg-primary text-white border-primary" 
+                      : "bg-white text-primary border-primary hover:bg-primary hover:text-white transition-colors"
+                  } ${tab.name === "........" ? "opacity-50 cursor-not-allowed" : ""}`}
+                  disabled={tab.name === "........"}
+                >
+                  {tab.name}
+                </button>
+              ))}
+            </div>
+            
+            {/* Bus Timeline */}
+            <div className="relative flex justify-center items-center">
+              <div className="w-3/4 h-1 bg-primary mt-12"></div>
+              <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1 text-2xl ">
+                <img src="/images/Yatra/bus.webp" className="mt-0 w-[180px] h-[80px] object-contain" alt="Bus" />
+              </div>
+            </div>
+          </div>
+
+          {/* Date information */}
+          <div className="mt-20 text-primary">
+            <p>
+              {currentSchedule ? `${currentSchedule.date} ${currentSchedule.day ? `(${currentSchedule.day})` : ""}` : "Loading schedule..."}
+            </p>
+          </div>
+          
+          {/* Show status message if no tracking data yet */}
+          {!hasActiveTracking() && (
+            <div className="mt-4 p-4 bg-white rounded-lg shadow-md">
+              <div className="text-yellow-600">
+                ⏳ Loading bus location data...
+              </div>
             </div>
           )}
         </div>
-
-        {/* Tabs */}
-        <div className="relative">
-          <div className="flex flex-wrap justify-center space-x-2 sm:space-x-8 md:space-x-16 lg:space-x-20 mb-8">
-            {getDisplayTabs().map((tab, index) => (
-              <button
-                key={index}
-                className={`px-4 py-2 rounded-full text-sm sm:text-base border ${
-                  tab.status === "Current" 
-                    ? "bg-primary text-white border-primary" 
-                    : "bg-white text-primary border-primary hover:bg-primary hover:text-white transition-colors"
-                } ${tab.name === "........" ? "opacity-50 cursor-not-allowed" : ""}`}
-                disabled={tab.name === "........"}
-              >
-                {tab.name}
-              </button>
-            ))}
-          </div>
-          
-          {/* Bus Timeline */}
-          <div className="relative flex justify-center items-center">
-            <div className="w-3/4 h-1 bg-primary mt-12"></div>
-            <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1 text-2xl ">
-              <img src="/images/Yatra/bus.webp" className="mt-0 w-[180px] h-[80px] object-contain" alt="Bus" />
-            </div>
-          </div>
-        </div>
-
-        {/* Date information */}
-        <div className="mt-20 text-primary">
-          <p>
-            {currentSchedule ? `${currentSchedule.date} ${currentSchedule.day ? `(${currentSchedule.day})` : ""}` : "Loading schedule..."}
-          </p>
-        </div>
-        
-        {/* Location tracking status */}
-        {isTrackingEnabled && (
-          <div className="mt-4 p-4 bg-white rounded-lg shadow-md">
-            <h3 className="font-semibold text-lg mb-2">Tracking Status</h3>
-            {hasActiveTracking() ? (
-              <div className="text-green-600">
-                ✅ Live tracking active - Location updates are being received
-              </div>
-            ) : (
-              <div className="text-yellow-600">
-                ⏳ Waiting for location updates from OwnTracks app...
-              </div>
-            )}
-          </div>
-        )}
       </div>
     </div>
-  </div>
   );
 };
 
