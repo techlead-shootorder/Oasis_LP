@@ -299,8 +299,17 @@ export default function GoogleLpPage() {
 
   const params = useParams();
 
-  const slug = params.campaignName; // This will be "questions"
-  
+  const campaignMap = {
+    'confused-about-ivf': 'confused',
+    'have-questions-about-ivf': 'questions',
+    'guidance-for-ivf': 'properGuidance',
+    // add more custom mappings here if needed
+  };
+
+  const defaultSlug = params.campaignName;
+
+  const slug = campaignMap[params.campaignName] || defaultSlug;
+
   console.log("slug is ", slug);
   // Function to detect referrer and set content for the correct device
   const updateContentBasedOnReferrerAndDevice = () => {
@@ -393,13 +402,13 @@ export default function GoogleLpPage() {
     // } else {
     //   setStep((prev) => prev + 1);
     // }
-    
+
     // Updated this condition to check for step 13 instead of 12
-  if (step === 13 && key === 'contact' && value.isWhatsApp) {
-    setStep(14);
-  } else {
-    setStep((prev) => prev + 1);
-  }
+    if (step === 13 && key === 'contact' && value.isWhatsApp) {
+      setStep(14);
+    } else {
+      setStep((prev) => prev + 1);
+    }
   };
 
   const handleBack = () => {
@@ -488,7 +497,7 @@ export default function GoogleLpPage() {
                 {/* CTA Button - Now below heading text */}
                 <div className="mt-8">
                   <button
-                    className="bg-[#9C4A97] hover:bg-[#803a7f] text-white font-bold py-3 px-6 rounded-full text-lg shadow-lg transform transition hover:scale-105 w-full md:w-auto"
+                    className="bg-white text-primary font-bold py-3 px-6 rounded-full text-lg shadow-lg transform transition hover:scale-105 w-full md:w-auto"
                     onClick={() => setShowStartScreen(false)}
                   >
                     {ctaText}
