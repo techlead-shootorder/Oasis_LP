@@ -270,12 +270,12 @@ const JananiYatraBusTracker = () => {
                 Live: Bus Currently in {currentTab || "Loading..."}
               </span>
             </div>
-            <div className="flex items-center sm:ml-4">
+            {/* <div className="flex items-center sm:ml-4">
               <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center">
                 <span className="mr-1">🗺️</span>
                 Track Location on Google Maps
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Tabs */}
