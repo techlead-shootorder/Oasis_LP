@@ -505,7 +505,7 @@ export default function GoogleLpPage() {
 
                   <p className="mt-4 text-xs text-white drop-shadow text-center sm:text-left">
                     We respect your privacy. By continuing, you consent to our{' '}
-                    <a href="https://oasisindia.in/privacy-policy/" className="underline font-bold">
+                    <a target='_blank' href="https://oasisindia.in/privacy-policy/" className="underline font-bold">
                       Privacy Policy
                     </a>
                   </p>
