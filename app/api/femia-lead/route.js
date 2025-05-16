@@ -32,7 +32,7 @@ export async function POST(request) {
   try {
     leadResponse = await sendSalesforceLeadRequest(userRequestJson);
   } catch (error) {
-    console.log(error);
+    console.log("error in storing slaes force lead request", error);
   }
 
   return NextResponse.json(
@@ -48,7 +48,6 @@ export async function POST(request) {
 async function sendSalesforceLeadRequest(requestJson) {
   try {
     let myHeaders = new Headers();
-
     let formdata = new FormData();
     formdata.append("grant_type", "password");
     formdata.append("client_id", SF_CLIENT_ID);
@@ -220,11 +219,11 @@ async function storeLeadData(requestJson) {
   }
 
   const leadData = {
-    firstName,
+    firstName: requestJson.name,
     lastName,
     age: requestJson.age ?? null,
     gender: requestJson.gender ?? "",
-    mobile_number: requestJson.mobileNo ?? "",
+    mobile_number: requestJson.contact.phoneNumber ?? "",
     email: requestJson.emailId ?? "",
     company: requestJson.message?.length > 0 ? requestJson.message : "Oasis",
     leadSource: ModifiedLeadSourceSQL,
