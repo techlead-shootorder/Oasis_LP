@@ -185,7 +185,7 @@ async function storeLeadData(requestJson) {
     select_your_branch, fbclid, gclid, errorMessage
   ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
-  let firstName = "";
+  // let firstName = "";
   let lastName = "";
 
   if (
