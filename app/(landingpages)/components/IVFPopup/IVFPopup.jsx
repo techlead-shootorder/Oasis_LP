@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import Cookies from "js-cookie";
 import { AppConstant } from "@/lib/constant/AppConstant";
 import { LeadController } from "@/app/(general)/component/LeadController"
@@ -19,19 +19,19 @@ const IVFPopup = () => {
     });
 
     const [errMsg, setErrorMessage] = useState("");
-    const [ageOptions, setAgeOptions] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [formValid, setFormValid] = useState(false);
+    // const [ageOptions, setAgeOptions] = useState([]);
+    // const [loading, setLoading] = useState(false);
+    // const [formValid, setFormValid] = useState(false);
 
     const pathname = usePathname();
-    const router = useRouter();
+    // const router = useRouter();
     const searchParams = useSearchParams();
 
     // astrix
-    const [isFocusedFullName, setIsFocusedFullName] = useState(false);
-    const [isFocusedMobileNo, setIsFocusedMobileNo] = useState(false);
-    const [isFocusedGender, setIsFocusedGender] = useState(false);
-    const [isFocusedAge, setIsFocusedAge] = useState(false);
+    // const [isFocusedFullName, setIsFocusedFullName] = useState(false);
+    // const [isFocusedMobileNo, setIsFocusedMobileNo] = useState(false);
+    // const [isFocusedGender, setIsFocusedGender] = useState(false);
+    // const [isFocusedAge, setIsFocusedAge] = useState(false);
 
     useEffect(() => {
         if (searchParams) {
@@ -82,17 +82,17 @@ const IVFPopup = () => {
         }
     }, []);
 
-    const isFormValid = () => {
-        let allInputField = false;
-        allInputField = formData.firstName !== "" && formData.mobileNo !== "+91" && formData.gender !== "" && formData.age !== "";
+    // const isFormValid = () => {
+    //     let allInputField = false;
+    //     allInputField = formData.firstName !== "" && formData.mobileNo !== "+91" && formData.gender !== "" && formData.age !== "";
 
-        return allInputField;
-    };
+    //     return allInputField;
+    // };
 
 
-    useEffect(() => {
-        setFormValid(isFormValid());
-    }, [formData])
+    // useEffect(() => {
+    //     // setFormValid(isFormValid());
+    // }, [formData])
 
     useEffect(() => {
         // Show popup after 10 seconds
@@ -146,7 +146,7 @@ const IVFPopup = () => {
         // Handle form submission logic here
         console.log('Form submitted:', userDetails);
 
-        setLoading(true);
+        // setLoading(true);
         // handle api call
         try {
             const utmParameters = localStorage.getItem("utmParams");
@@ -212,7 +212,7 @@ const IVFPopup = () => {
                 setErrorMessage("There was an error submitting the form. Please try again.");
             })
                 .finally(() => {
-                    setLoading(false);
+                    // setLoading(false);
                     setShowPopup(false);
                 });
 
@@ -221,7 +221,7 @@ const IVFPopup = () => {
             setErrorMessage(
                 "There was an error submitting the form. Please try again."
             );
-            setLoading(false);
+            // setLoading(false);
         }
 
         // api call end
