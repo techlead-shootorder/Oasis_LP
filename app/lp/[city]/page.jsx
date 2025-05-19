@@ -19,10 +19,7 @@ const DynamicComponents = {
     () => import('@/app/(landingpages)/components/StickyButtonScreen/StickyButtonScreenlp3'),
     { loading: () => <MinimalLoader /> }
   ),
-  IVFPopup: dynamic(
-    () => import('@/app/(landingpages)/components/IVFPopup/IVFPopup'),
-    { loading: () => <IVFPopup />}
-  ),
+  
   StatisticBannerV2: dynamic(
     () => import('@/app/(landingpages)/components/Hero/StatisticsBannerV2'),
     { loading: () => <ComponentLoader /> }
@@ -119,12 +116,15 @@ const Page = memo(({ params }) => {
           <HeaderTesting center={filteredCity} metanum={metanum} googel1num={googel1num}/>
         </header>
 
+           {/* IVF Popup that appears after 10 seconds */}
+          <IVFPopup />
+
         <Suspense fallback={<MinimalLoader />}>
           <DynamicComponents.StickyButtonScreenlp3 center={filteredCity} />
         </Suspense>
 
-             {/* IVF Popup that appears after 10 seconds */}
-          <IVFPopup />
+
+
 
         <main>
 
