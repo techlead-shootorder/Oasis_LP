@@ -7,6 +7,7 @@ import dynamic from 'next/dynamic';
 
 import HeaderTesting from "@/app/(landingpages)/components/Header/HeaderTesting";
 import Herolp3 from "@/app/(landingpages)/components/Hero/Herolp3";
+import IVFPopup from '@/app/(landingpages)/components/IVFPopup/IVFPopup';
 
 const MinimalLoader = () => <div className="animate-pulse bg-gray-200 h-10" />;
 const ComponentLoader = () => <div className="animate-pulse bg-gray-200 h-64 rounded-lg" />;
@@ -17,6 +18,10 @@ const DynamicComponents = {
   StickyButtonScreenlp3: dynamic(
     () => import('@/app/(landingpages)/components/StickyButtonScreen/StickyButtonScreenlp3'),
     { loading: () => <MinimalLoader /> }
+  ),
+  IVFPopup: dynamic(
+    () => import('@/app/(landingpages)/components/IVFPopup/IVFPopup'),
+    { loading: () => <IVFPopup />}
   ),
   StatisticBannerV2: dynamic(
     () => import('@/app/(landingpages)/components/Hero/StatisticsBannerV2'),
@@ -117,6 +122,9 @@ const Page = memo(({ params }) => {
         <Suspense fallback={<MinimalLoader />}>
           <DynamicComponents.StickyButtonScreenlp3 center={filteredCity} />
         </Suspense>
+
+             {/* IVF Popup that appears after 10 seconds */}
+          <IVFPopup />
 
         <main>
 

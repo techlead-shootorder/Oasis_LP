@@ -19,6 +19,10 @@ const FooterStickyButtonlp3 = dynamic(() => import('../../../../(landingpages)/c
     ssr: true,
 });
 
+const IVFPopup = dynamic(() => import('../../../../(landingpages)/components/IVFPopup/IVFPopup'), {
+    ssr: true,
+});
+
 const StatisticBannerV2 = dynamic(() => import('../../../../(landingpages)/components/Hero/StatisticsBannerV2'), {
     ssr: true,
 });
@@ -174,6 +178,8 @@ export default function Page({ params }) {
             <header id="headerlp3" className="">
                 <HeaderTesting center={filteredCity} metanum={metanum} googel1num={isGoogle}/>
             </header>
+            
+            <IVFPopup/>
             {/* <StickyButtonScreenlp3 center={filteredCity} /> */}
             <main>
                 {/* If site link show the section first */}

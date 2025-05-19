@@ -42,6 +42,12 @@ const SpeciaListslp3 = dynamic(() => import('../../../(landingpages)/components/
     ssr: true,
 });
 
+const IVFPopup = dynamic(() => import('../../../(landingpages)/components/IVFPopup/IVFPopup'), {
+    ssr: true,
+});
+
+
+
 const BestDoctorslp3 = dynamic(() => import('../../../(landingpages)/components/BestDoctors/BestDoctorslp3'), {
     ssr: true,
 });
@@ -168,6 +174,9 @@ export default function Page({ params }) {
             <header id="headerlp3" className="">
                 <HeaderTesting center={filteredCity} metanum={metanum} googel1num={isGoogle}/>
             </header>
+
+            {/* IVF Popup that appears after 10 seconds */}
+              <IVFPopup />
             {/* <StickyButtonScreenlp3 center={filteredCity} /> */}
             <main>
                 <Herolp3 center={filteredCity} service={service} isMeta={isMeta} />

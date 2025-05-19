@@ -9,6 +9,7 @@ import HeroYatra from "./HeroYatra";
 import WhoIsThisFor from '@/app/(landingpages)/components/WhoIsThisFor/WhoIsThisFor';
 import BusRouteMap from './BusRouteTable';
 import JananiYatraBusTracker from '@/app/(landingpages)/components/JananiYatraBusTracker/JananiYatraBusTracker';
+import IVFPopup from '../../(landingpages)/components/IVFPopup/IVFPopup';
 
 const MinimalLoader = () => <div className="animate-pulse bg-gray-200 h-10" />;
 const ComponentLoader = () => <div className="animate-pulse bg-gray-200 h-64 rounded-lg" />;
@@ -18,6 +19,10 @@ const ComponentLoader = () => <div className="animate-pulse bg-gray-200 h-64 rou
 const DynamicComponents = {
   WhoIsThisFor: dynamic(
     () => import('@/app/(landingpages)/components/WhoIsThisFor/WhoIsThisFor'),
+    { loading: () => <MinimalLoader /> }
+  ),
+  IVFPopup: dynamic(
+    () => import('../../(landingpages)/components/IVFPopup/IVFPopup'),
     { loading: () => <MinimalLoader /> }
   ),
   StickyButtonScreenlp3: dynamic(
@@ -134,6 +139,8 @@ const isfemaleAssessment = false;
         <header id="headerlp3">
           <YatraHeader center={filteredCity} metanum={metanum} googel1num={googel1num}/>
         </header>
+
+        <IVFPopup/>
 
         <Suspense fallback={<MinimalLoader />}>
           <DynamicComponents.StickyButtonScreenlp3 center={filteredCity} />

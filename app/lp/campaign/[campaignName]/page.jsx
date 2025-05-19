@@ -18,6 +18,7 @@ import Step13 from './components/Step13';
 import Step14 from './components/Step14';
 import Step15 from './components/Step15';
 import EggFreezingStep from './components/EggFreezingStep';
+import IVFPopup from '../../../(landingpages)/components/IVFPopup/IVFPopup';
 
 import { useParams } from 'next/navigation';
 
@@ -467,7 +468,7 @@ export default function GoogleLpPage() {
 
           {/* Overlay for better text readability if needed */}
           <div className="absolute inset-0 bg-purple-900 opacity-10 z-0"></div>
-
+                <IVFPopup/>
           {/* Content Container */}
           <div className="flex flex-col h-[90%] z-10 px-4 relative">
             {/* Header Logo - Kept at top right */}
@@ -478,6 +479,8 @@ export default function GoogleLpPage() {
                 className="h-10 sm:h-12 lg:h-16"
               />
             </div>
+
+         
 
             {/* Main Content - Modified to align text left */}
             <div className="w-full h-full">
