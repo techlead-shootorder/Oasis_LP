@@ -19,8 +19,8 @@ import Step14 from './components/Step14';
 import Step15 from './components/Step15';
 import EggFreezingStep from './components/EggFreezingStep';
 import IVFPopup from '../../../(landingpages)/components/IVFPopup/IVFPopup';
-
-import { useParams } from 'next/navigation';
+import { useParams, useSearchParams } from 'next/navigation';
+import Cookies from "js-cookie";
 
 // Define the egg freezing step index
 const EGG_FREEZING_STEP_INDEX = 100; // Using a large number to distinguish from regular steps
@@ -299,6 +299,7 @@ export default function GoogleLpPage() {
   const [backgroundPosition, setBackgroundPosition] = useState('center');
 
   const params = useParams();
+    const searchParams = useSearchParams();
 
   const campaignMap = {
     'confused-about-ivf': 'confused',
@@ -343,6 +344,55 @@ export default function GoogleLpPage() {
     setCtaText(content.ctaText);
     setBackgroundPosition(content.backgroundPosition);
   };
+
+    useEffect(() => {
+      if (searchParams) {
+        let utmSource = searchParams?.has('utm_source') ? searchParams?.get('utm_source') : '';
+        let utmMedium = searchParams?.has('utm_medium') ? searchParams?.get('utm_medium') : '';
+        let utmCampaign = searchParams?.has('utm_campaign') ? searchParams?.get('utm_campaign') : '';
+        let utmTerm = searchParams?.has('utm_term') ? searchParams?.get('utm_term') : '';
+        let utmContent = searchParams?.has('utm_content') ? searchParams?.get('utm_content') : '';
+        let fbclid = searchParams?.has('fbclid') ? searchParams?.get('fbclid') : '';
+        let gclid = searchParams?.has('gclid') ? searchParams?.get('gclid') : '';
+        let campaignid = searchParams?.has("campaignid")
+          ? searchParams?.get("campaignid")
+          : "";
+        let adgroupid = searchParams?.has("adgroupid")
+          ? searchParams?.get("adgroupid")
+          : "";
+  
+        if (
+          (utmSource && utmSource.length > 0) ||
+          (utmMedium && utmMedium.length > 0) ||
+          (utmCampaign && utmCampaign.length > 0) ||
+          (utmTerm && utmTerm.length > 0) ||
+          (utmContent && utmContent.length > 0) ||
+          (fbclid && fbclid.length > 0) ||
+          (gclid && gclid.length > 0) ||
+          (campaignid && campaignid.length > 0) ||
+          (adgroupid && adgroupid.length > 0)
+        ) {
+          let UTMParams = {
+            utmSource: utmSource,
+            utmMedium: utmMedium,
+            utmCampaign: utmCampaign,
+            utmTerm: utmTerm,
+            utmContent: utmContent,
+            fbclid: fbclid,
+            gclid: gclid,
+            campaignid: campaignid,
+            adgroupid: adgroupid,
+          };
+          if (typeof window !== 'undefined') {
+            localStorage.setItem('utmParams', JSON.stringify(UTMParams));
+          }
+        }
+        const referrer = Cookies.get('referrer');
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('referrer', referrer)
+        }
+      }
+    }, [])
 
   // Update the content when the component mounts and on resize
   useEffect(() => {
