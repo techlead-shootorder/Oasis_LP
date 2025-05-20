@@ -24,6 +24,20 @@ export default function BusRouteMap() {
     { date: '19-May-25', day: 'Monday', location: 'Jaggampeta - Dr Neeraja Hospital', time: '9:00 AM - 2:00 PM' },
     { date: '21-May-25', day: 'Wednesday', location: 'Thagarapuvalasa - Raja Clinic, Adarshanagar', time: '9:00 AM - 2:00 PM' },
     { date: '22-May-25', day: 'Thursday', location: 'Narasipatnam - Government land, 5 Raod Junction, Near Uma Narayana childeren hospital', time: '9:00 AM - 2:00 PM' },
+    { date: '23-May-25', day: 'Friday', location: 'Vizianagaram - MR College stadium', time: '9:00 AM - 2:00 PM' },
+    { date: '24-May-25', day: 'Saturday', location: 'Gajuwaka - Amaravathi Park', time: '9:00 AM - 2:00 PM' },
+    { date: '25-May-25', day: 'Sunday', location: 'Khammam - Sardar Patel Stadium, Sports complex', time: '9:00 AM - 2:00 PM' },
+    { date: '26-May-25', day: 'Monday', location: 'Nalgonda - Nagarjuna junior college', time: '9:00 AM - 2:00 PM' },
+    { date: '27-May-25', day: 'Tuesday', location: 'Bhongir - Chimula Shiva Rajani Narayanreddy government boys junior college', time: '9:00 AM - 2:00 PM' },
+    { date: '28-May-25', day: 'Wednesday', location: 'Siddipet - IMA Maitrivanam', time: '9:00 AM - 2:00 PM' },
+    { date: '30-May-25', day: 'Friday', location: 'Medak - Dr Dayal Hospital', time: '9:00 AM - 2:00 PM' },
+    { date: '31-May-25', day: 'Saturday', location: 'Nizambad - Open space near Kallilwadi-Secbad Team', time: '9:00 AM - 2:00 PM' },
+    { date: '1-June-25', day: 'Sunday', location: 'Sangareddy - MNR Medical College', time: '9:00 AM - 2:00 PM' },
+    { date: '2-June-25', day: 'Monday', location: 'Vikarabad - Mudda Veera Mallappa Hospital', time: '9:00 AM - 2:00 PM' },
+    { date: '3-June-25', day: 'Tuesday', location: 'Parigi - Parigi Mini stadium', time: '9:00 AM - 2:00 PM' },
+    { date: '4-June-25', day: 'Wednesday', location: 'Shamshabad - Government Boys High School Ground', time: '9:00 AM - 2:00 PM' },
+    { date: '5-July-25', day: 'Thursday', location: 'Mahabubnagar - Govt boys junior college', time: '9:00 AM - 2:00 PM' },
+    { date: '6-June-25', day: 'Friday', location: 'Adoni - Arts and science college auditorium', time: '9:00 AM - 2:00 PM' }
   ];
 
   const handleOpenModal = useCallback(() => setShowModal(true), []);
@@ -61,23 +75,23 @@ export default function BusRouteMap() {
           </tbody>
         </table>
       </div>
-     
-     <div className='flex justify-center mt-6'>
-      <button
-        className="px-6 py-2 rounded-md font-medium text-white shadow-md hover:shadow-lg transition-all"
-        style={{ backgroundColor: "#874487" }}
-        onClick={handleOpenModal}
-      >
-        Notify Me When the Bus Is in My City
-      </button>
 
-      {showModal && (
-        <YatraModal
-          isOpen={showModal}
-          onClose={handleCloseModal}
-        />
-      )}
-    </div>
+      <div className='flex justify-center mt-6'>
+        <button
+          className="px-6 py-2 rounded-md font-medium text-white shadow-md hover:shadow-lg transition-all"
+          style={{ backgroundColor: "#874487" }}
+          onClick={handleOpenModal}
+        >
+          Notify Me When the Bus Is in My City
+        </button>
+
+        {showModal && (
+          <YatraModal
+            isOpen={showModal}
+            onClose={handleCloseModal}
+          />
+        )}
+      </div>
     </div>
   );
 }
