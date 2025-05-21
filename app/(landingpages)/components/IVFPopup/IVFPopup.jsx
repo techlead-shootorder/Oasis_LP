@@ -143,10 +143,10 @@ const IVFPopup = () => {
                     </div>
 
                     <div className="w-full md:w-1/2 p-4 flex flex-col justify-center">
-                        <h2 className="text-blue-900 text-xl md:text-3xl font-bold mb-1">
+                        <h2 className="text-primary text-xl md:text-3xl font-bold mb-1">
                             Download E-Book
                         </h2>
-                        <p className="text-blue-900 mb-4">
+                        <p className="text-primary-50 mb-4">
                             Please fill out the form below to receive your e-book.
                         </p>
 
@@ -213,7 +213,7 @@ const IVFPopup = () => {
 
                             <button
                                 type="submit"
-                                className="w-full bg-cyan-500 hover:bg-cyan-600 text-white py-3 rounded-md font-bold text-lg transition-colors"
+                                className="w-full bg-[#874487] hover:bg-primary-50 text-white py-3 rounded-md font-bold text-lg transition-colors"
                             >
                                 Download
                             </button>
