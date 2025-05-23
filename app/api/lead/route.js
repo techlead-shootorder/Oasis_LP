@@ -179,7 +179,7 @@ async function sendSalesforceLeadRequest(requestJson) {
 async function storeLeadData(requestJson) {
   const sql = `INSERT INTO oasisfertility_lead_store_lp (
     firstName, lastName, age, gender, mobile_number, email, company, 
-    leadSource, utm_campaign, utm_source, utm_medium, 
+    leadSource, placement, utm_campaign, utm_source, utm_medium, 
     utm_content, keyword, appointment_date, page_url, 
     referral_url, ad_group_id, google_campaign_id, 
     select_your_branch, fbclid, gclid, errorMessage
@@ -227,6 +227,7 @@ async function storeLeadData(requestJson) {
     email: requestJson.emailId ?? "",
     company: requestJson.message?.length > 0 ? requestJson.message : "Oasis",
     leadSource: ModifiedLeadSourceSQL,
+    placement: "",
     utm_campaign: requestJson.utmCampaign ?? "Website",
     utm_source: requestJson.utmSource ?? "Website",
     utm_medium: requestJson.utmMedium ?? "Website",
@@ -259,6 +260,7 @@ async function storeLeadData(requestJson) {
       leadData.email,
       leadData.company,
       leadData.leadSource,
+      leadData.placement,
       leadData.utm_campaign,
       leadData.utm_source,
       leadData.utm_medium,
