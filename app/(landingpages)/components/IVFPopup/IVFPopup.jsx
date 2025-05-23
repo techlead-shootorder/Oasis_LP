@@ -37,7 +37,7 @@ const IVFPopup = () => {
         // Show popup after 10 seconds
         const timer = setTimeout(() => {
             setShowPopup(true);
-        }, 10000);
+        }, 15000);
 
         return () => clearTimeout(timer);
     }, []);
