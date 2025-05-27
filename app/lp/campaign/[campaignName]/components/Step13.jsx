@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import { LeadController } from "@/app/(general)/component/LeadController"
 import { AppConstant } from "@/lib/constant/AppConstant";
 
-
-
 export default function Step13({ onNext, formData, setFormData }) {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [name, setName] = useState('');
@@ -22,33 +20,44 @@ export default function Step13({ onNext, formData, setFormData }) {
     }
   }, [formData]);
 
-  // Validate phone number - basic validation for Indian numbers (10 digits)
-  const validatePhoneNumber = (number) => {
-    const digitsOnly = number.replace(/\D/g, '');
-    setIsValid(digitsOnly.length === 10 && name);
-    return digitsOnly.length === 10;
-  };
+ // Check if number has sequential digits at the start
+const hasSequentialDigits = (number) => {
+  const sequences = [ '1234', '01234', '12345', '23456', '34567', '45678', '56789'];
+  return sequences.some(seq => number.startsWith(seq));
+};
+
+// Updated validation function
+const validatePhoneNumber = (number) => {
+  const digitsOnly = number.replace(/\D/g, '');
+  const isValidLength = digitsOnly.length === 10;
+  const hasNoSequential = !hasSequentialDigits(digitsOnly);
+  
+  setIsValid(isValidLength && hasNoSequential && name);
+  return isValidLength && hasNoSequential;
+};
 
   const handleName = (value) => {
     setIsValid(phoneNumber.length == 10 && value);
     setName(value)
   }
 
-  // Handle phone number input change
+  // Handle phone number input change with 10-digit limit
   const handlePhoneChange = (e) => {
     const input = e.target.value;
-    // Allow only numbers and basic formatting
-    const formattedInput = input.replace(/[^\d\s()-]/g, '');
-    setPhoneNumber(formattedInput);
-    validatePhoneNumber(formattedInput);
+    // Allow only numbers and remove any non-digit characters
+    const digitsOnly = input.replace(/\D/g, '');
+    
+    // Limit to 10 digits maximum
+    if (digitsOnly.length <= 10) {
+      setPhoneNumber(digitsOnly);
+      validatePhoneNumber(digitsOnly);
+    }
   };
 
   // Handle checkbox toggle
   const handleWhatsAppToggle = () => {
     setIsWhatsApp(!isWhatsApp);
   };
-
-
 
   // Handle continue button click
   const handleContinue = () => {
@@ -170,6 +179,7 @@ export default function Step13({ onNext, formData, setFormData }) {
             value={phoneNumber}
             onChange={handlePhoneChange}
             placeholder="Enter Your Mobile Number"
+            maxLength="10"
             className="w-full p-2 bg-transparent border-none focus:outline-none text-center text-gray-600"
           />
         </div>

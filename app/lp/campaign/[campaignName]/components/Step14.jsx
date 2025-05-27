@@ -25,20 +25,33 @@ export default function Step14({ onNext, formData, setFormData }) {
     }
   }, [formData]);
 
-  // Validate phone number - basic validation for Indian numbers (10 digits)
-  const validateNumber = (number) => {
-    const digitsOnly = number.replace(/\D/g, '');
-    setIsValid(digitsOnly.length === 10);
-    return digitsOnly.length === 10;
+  // Add this helper function
+  const hasSequentialDigits = (number) => {
+      const sequences = [ '1234', '01234', '12345', '23456', '34567', '45678', '56789'];
+    return sequences.some(seq => number.startsWith(seq));
   };
 
-  // Handle number input change
+  // Replace your existing validateNumber function with this:
+  const validateNumber = (number) => {
+    const digitsOnly = number.replace(/\D/g, '');
+    const isValidLength = digitsOnly.length === 10;
+    const hasNoSequential = !hasSequentialDigits(digitsOnly);
+
+    setIsValid(isValidLength && hasNoSequential);
+    return isValidLength && hasNoSequential;
+  };
+
+  // Replace your existing handleNumberChange function with this:
   const handleNumberChange = (e) => {
     const input = e.target.value;
-    // Allow only numbers and basic formatting
-    const formattedInput = input.replace(/[^\d\s()-]/g, '');
-    setWhatsAppNumber(formattedInput);
-    validateNumber(formattedInput);
+    // Allow only numbers and remove any non-digit characters
+    const digitsOnly = input.replace(/\D/g, '');
+
+    // Limit to 10 digits maximum
+    if (digitsOnly.length <= 10) {
+      setWhatsAppNumber(digitsOnly);
+      validateNumber(digitsOnly);
+    }
   };
 
   // Handle continue button click
@@ -156,6 +169,7 @@ export default function Step14({ onNext, formData, setFormData }) {
             value={whatsAppNumber}
             onChange={handleNumberChange}
             placeholder="Enter Your WhatsApp Number"
+            maxLength="10"
             className="w-full p-2 bg-transparent border-none focus:outline-none text-center text-gray-600"
           />
         </div>
@@ -163,9 +177,8 @@ export default function Step14({ onNext, formData, setFormData }) {
         <button
           onClick={handleContinue}
           disabled={!isValid || isLoading}
-          className={`w-full py-[8px] rounded-md font-medium text-white flex justify-center items-center ${
-            isValid && !isLoading ? 'bg-primary cursor-pointer' : 'bg-purple-300 cursor-not-allowed'
-          }`}
+          className={`w-full py-[8px] rounded-md font-medium text-white flex justify-center items-center ${isValid && !isLoading ? 'bg-primary cursor-pointer' : 'bg-purple-300 cursor-not-allowed'
+            }`}
         >
           {isLoading ? (
             <>
