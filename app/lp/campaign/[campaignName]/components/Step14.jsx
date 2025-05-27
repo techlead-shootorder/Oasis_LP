@@ -8,6 +8,9 @@ export default function Step14({ onNext, formData, setFormData }) {
   const [isValid, setIsValid] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
+  // Add this state for error message
+  const [errorMessage, setErrorMessage] = useState('');
+
 
 
 
@@ -27,15 +30,22 @@ export default function Step14({ onNext, formData, setFormData }) {
 
   // Add this helper function
   const hasSequentialDigits = (number) => {
-      const sequences = [ '1234', '01234', '12345', '23456', '34567', '45678', '56789'];
+    const sequences = ['1234', '01234', '12345', '23456', '34567', '45678', '56789'];
     return sequences.some(seq => number.startsWith(seq));
   };
 
-  // Replace your existing validateNumber function with this:
+  // Update your validateNumber function:
   const validateNumber = (number) => {
     const digitsOnly = number.replace(/\D/g, '');
     const isValidLength = digitsOnly.length === 10;
     const hasNoSequential = !hasSequentialDigits(digitsOnly);
+
+    // Set error message if sequential digits found
+    if (digitsOnly.length > 0 && hasSequentialDigits(digitsOnly)) {
+      setErrorMessage('Please enter a valid phone number');
+    } else {
+      setErrorMessage('');
+    }
 
     setIsValid(isValidLength && hasNoSequential);
     return isValidLength && hasNoSequential;
@@ -172,7 +182,15 @@ export default function Step14({ onNext, formData, setFormData }) {
             maxLength="10"
             className="w-full p-2 bg-transparent border-none focus:outline-none text-center text-gray-600"
           />
+
         </div>
+
+         {/* Add this JSX below your input field: */}
+        {errorMessage && (
+          <div className="text-red-500 text-sm text-center mt-1">
+            {errorMessage}
+          </div>
+        )}
 
         <button
           onClick={handleContinue}

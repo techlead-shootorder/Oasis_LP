@@ -8,6 +8,7 @@ export default function Step13({ onNext, formData, setFormData }) {
   const [isWhatsApp, setIsWhatsApp] = useState(false);
   const [isValid, setIsValid] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   // Pre-fill data if returning to this step
   useEffect(() => {
@@ -20,25 +21,35 @@ export default function Step13({ onNext, formData, setFormData }) {
     }
   }, [formData]);
 
- // Check if number has sequential digits at the start
-const hasSequentialDigits = (number) => {
-  const sequences = [ '1234', '01234', '12345', '23456', '34567', '45678', '56789'];
-  return sequences.some(seq => number.startsWith(seq));
-};
+  // Check if number has sequential digits at the start
+  const hasSequentialDigits = (number) => {
+    const sequences = ['1234', '01234', '12345', '23456', '34567', '45678', '56789'];
+    return sequences.some(seq => number.startsWith(seq));
+  };
 
-// Updated validation function
-const validatePhoneNumber = (number) => {
-  const digitsOnly = number.replace(/\D/g, '');
-  const isValidLength = digitsOnly.length === 10;
-  const hasNoSequential = !hasSequentialDigits(digitsOnly);
-  
-  setIsValid(isValidLength && hasNoSequential && name);
-  return isValidLength && hasNoSequential;
-};
+  // Update your validatePhoneNumber function:
+  const validatePhoneNumber = (number) => {
+    const digitsOnly = number.replace(/\D/g, '');
+    const isValidLength = digitsOnly.length === 10;
+    const hasNoSequential = !hasSequentialDigits(digitsOnly);
 
+    // Set error message if sequential digits found
+    if (digitsOnly.length > 0 && hasSequentialDigits(digitsOnly)) {
+      setErrorMessage('Please enter a valid phone number');
+    } else {
+      setErrorMessage('');
+    }
+
+    setIsValid(isValidLength && hasNoSequential && name);
+    return isValidLength && hasNoSequential;
+  };
+
+  // Update your handleName function to also check for sequential digits:
   const handleName = (value) => {
-    setIsValid(phoneNumber.length == 10 && value);
-    setName(value)
+    const digitsOnly = phoneNumber.replace(/\D/g, '');
+    const hasNoSequential = !hasSequentialDigits(digitsOnly);
+    setIsValid(phoneNumber.length == 10 && hasNoSequential && value);
+    setName(value);
   }
 
   // Handle phone number input change with 10-digit limit
@@ -46,7 +57,7 @@ const validatePhoneNumber = (number) => {
     const input = e.target.value;
     // Allow only numbers and remove any non-digit characters
     const digitsOnly = input.replace(/\D/g, '');
-    
+
     // Limit to 10 digits maximum
     if (digitsOnly.length <= 10) {
       setPhoneNumber(digitsOnly);
@@ -65,7 +76,7 @@ const validatePhoneNumber = (number) => {
     if (isValid && isWhatsApp) {
       // call the sale force api
       setIsLoading(true);
-      setIsValid(false); 
+      setIsValid(false);
       const digitsOnly = phoneNumber.replace(/\D/g, '');
       setFormData((prev) => {
         return {
@@ -129,10 +140,10 @@ const validatePhoneNumber = (number) => {
       // to  whatsapp number step
       if (isValid) {
         const digitsOnly = phoneNumber.replace(/\D/g, '');
-        setFormData((prev)=> {
-          return {...prev, name: name}
+        setFormData((prev) => {
+          return { ...prev, name: name }
         }
-      )
+        )
         onNext('contact', { phoneNumber: digitsOnly, isWhatsApp })
       }
     }
@@ -183,6 +194,11 @@ const validatePhoneNumber = (number) => {
             className="w-full p-2 bg-transparent border-none focus:outline-none text-center text-gray-600"
           />
         </div>
+        {errorMessage && (
+          <div className="text-red-500 text-sm text-center mt-1">
+            {errorMessage}
+          </div>
+        )}
 
         <div className="flex items-center px-2">
           <div className="flex items-center justify-center w-full">
@@ -207,9 +223,8 @@ const validatePhoneNumber = (number) => {
         <button
           onClick={handleContinue}
           disabled={!isValid || isLoading}
-          className={`w-full py-[8px] rounded-md font-medium text-white flex justify-center items-center ${
-            isValid && !isLoading ? 'bg-primary cursor-pointer' : 'bg-purple-300 cursor-not-allowed'
-          }`}
+          className={`w-full py-[8px] rounded-md font-medium text-white flex justify-center items-center ${isValid && !isLoading ? 'bg-primary cursor-pointer' : 'bg-purple-300 cursor-not-allowed'
+            }`}
         >
           {isLoading ? (
             <>
