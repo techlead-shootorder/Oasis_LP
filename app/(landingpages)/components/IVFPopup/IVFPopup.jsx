@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -19,6 +18,7 @@ const IVFPopup = () => {
     });
 
     const [errMsg, setErrorMessage] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
     const pathname = usePathname();
 
     // Remove useSearchParams from this component
@@ -46,17 +46,67 @@ const IVFPopup = () => {
         setShowPopup(false);
     };
 
+    // Validation function to check if all fields are filled and valid
+    const isFormValid = () => {
+        const { firstName, gender, age, mobileNo } = formData;
+        
+        // Check if all fields are filled
+        if (!firstName.trim() || !gender || !age || !mobileNo) {
+            return false;
+        }
+        
+        // Check if mobile number is exactly 10 digits
+        if (mobileNo.length !== 10) {
+            return false;
+        }
+        
+        // Check if mobile number doesn't start with invalid patterns
+        if (mobileNo.startsWith('01234') || mobileNo.startsWith('1234')) {
+            return false;
+        }
+        
+        return true;
+    };
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setErrorMessage('');
-        setFormData((prev) => ({
-            ...prev,
-            [name]: value,
-        }));
+        
+        if (name === 'mobileNo') {
+            // Only allow digits and limit to 10 characters
+            const numericValue = value.replace(/\D/g, '').slice(0, 10);
+            
+            // Check for invalid number patterns
+            if (numericValue.startsWith('01234') || numericValue.startsWith('1234')) {
+                setErrorMessage('Please enter a valid mobile number');
+            }
+            
+            setFormData((prev) => ({
+                ...prev,
+                [name]: numericValue,
+            }));
+        } else {
+            setFormData((prev) => ({
+                ...prev,
+                [name]: value,
+            }));
+        }
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        // Validate form before submission
+        if (!isFormValid()) {
+            if (formData.mobileNo.startsWith('01234') || formData.mobileNo.startsWith('1234')) {
+                setErrorMessage('Please enter a valid mobile number');
+            } else {
+                setErrorMessage('Please fill all fields correctly');
+            }
+            return;
+        }
+
+        setIsSubmitting(true);
 
         const userDetails = { ...formData, mobileNo: "+91" + formData.mobileNo }
         console.log('Form submitted:', userDetails);
@@ -81,12 +131,14 @@ const IVFPopup = () => {
             });
 
             new LeadController().submitLeadForm(leadFormRequestBody).then(() => {
+                // Clear form data
                 setFormData({
                     firstName: "",
                     mobileNo: "",
                     gender: "",
                     age: "",
                 });
+                
                 if (typeof window !== "undefined") {
                     localStorage.removeItem("utmParams");
                     localStorage.removeItem("referrer");
@@ -101,19 +153,27 @@ const IVFPopup = () => {
                 
                 window.open('https://paid.oasisindia.in/ebooks/e-book.pdf', '_blank');
                 setShowPopup(false);
+                
+                // Re-enable button after 3 seconds
+                setTimeout(() => {
+                    setIsSubmitting(false);
+                }, 3000);
             }).catch(error => {
                 console.error(error);
                 setErrorMessage("There was an error submitting the form. Please try again.");
-            })
-                .finally(() => {
-                    setShowPopup(false);
-                });
+                setTimeout(() => {
+                    setIsSubmitting(false);
+                }, 3000);
+            });
 
         } catch (error) {
             console.error(error);
             setErrorMessage(
                 "There was an error submitting the form. Please try again."
             );
+            setTimeout(() => {
+                setIsSubmitting(false);
+            }, 3000);
         }
     };
 
@@ -201,11 +261,11 @@ const IVFPopup = () => {
                                     type="tel"
                                     name="mobileNo"
                                     placeholder="Phone Number *"
-                                    pattern="[0-9]{10}"
                                     required
                                     className="w-full p-3 border border-l-0 rounded-r-md"
                                     value={formData.mobileNo}
                                     onChange={handleChange}
+                                    maxLength="10"
                                 />
                             </div>
 
@@ -213,9 +273,14 @@ const IVFPopup = () => {
 
                             <button
                                 type="submit"
-                                className="w-full bg-[#874487] hover:bg-primary-50 text-white py-3 rounded-md font-bold text-lg transition-colors"
+                                disabled={!isFormValid() || isSubmitting}
+                                className={`w-full py-3 rounded-md font-bold text-lg transition-colors ${
+                                    isFormValid() && !isSubmitting
+                                        ? 'bg-[#874487] hover:bg-primary-50 text-white cursor-pointer'
+                                        : 'bg-gray-400 text-gray-600 cursor-not-allowed'
+                                }`}
                             >
-                                Download
+                                {isSubmitting ? 'Processing...' : 'Download'}
                             </button>
                         </form>
                     </div>

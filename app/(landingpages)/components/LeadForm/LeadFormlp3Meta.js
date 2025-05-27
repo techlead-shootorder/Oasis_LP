@@ -579,7 +579,7 @@ const LeadFormV2 = () => {
                             id="form-submit"
                             className={`${loading && 'py-2'} w-full py-1 text-white text-[22px] rounded-lg leading-none font-medium ${loading || !formValid || isCallBackDisable ? "bg-red-400 cursor-not-allowed" : "bg-[#D7052B]"
                                 }`}
-                            disabled={isCallBackDisable}
+                            disabled={loading}
                         >
                             {loading ? "Submitting..." : "Get A Call Back"}
 
