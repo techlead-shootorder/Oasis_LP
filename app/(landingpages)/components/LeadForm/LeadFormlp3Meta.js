@@ -10,10 +10,7 @@ import { HiThumbDown } from "react-icons/hi";
 import Image from "next/image";
 import ReCAPTCHA from "react-google-recaptcha";
 
-
-
 const LeadFormV2 = () => {
-
     const [userDetails, setUserDetails] = useState({
         firstName: "",
         mobileNo: "+91",
@@ -26,7 +23,6 @@ const LeadFormV2 = () => {
     // Ref to hold all input boxes
     const inputRefs = useRef([]);
 
-
     const [errMsg, setErrorMessage] = useState("");
     const [ageOptions, setAgeOptions] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -34,13 +30,14 @@ const LeadFormV2 = () => {
 
     const [otpSent, setOtpSent] = useState(false);
     const [otpButtonText, setOtpButtonText] = useState("SEND OTP");
-    // const [otpValid, setOtpValid] = useState(false);
+    const [otpVerified, setOtpVerified] = useState(false); // NEW STATE
     const [randomOtp, setRandomOtp] = useState(null);
     const [showThumbsUp, setThumbsUp] = useState(false);
     const [showThumbsDown, setThumbsDown] = useState(false);
     const [showOtpInput, setOtpInput] = useState(false);
     const [isCallBackDisable, setIsCallBackDisable] = useState(true);
     const [showRecaptcha, setShowRecaptcha] = useState(false);
+    const [recaptchaVerified, setRecaptchaVerified] = useState(false); // NEW STATE
 
     // astrix
     const [isFocusedFullName, setIsFocusedFullName] = useState(false);
@@ -51,7 +48,6 @@ const LeadFormV2 = () => {
     const pathname = usePathname();
     const router = useRouter();
     const searchParams = useSearchParams();
-
 
     useEffect(() => {
         if (searchParams) {
@@ -147,9 +143,7 @@ const LeadFormV2 = () => {
     };
 
     const handleSendOtp = () => {
-
         const { firstName, mobileNo, gender, age, consent } = userDetails;
-
 
         if (!firstName) {
             setErrorMessage("Please enter your name");
@@ -208,55 +202,50 @@ const LeadFormV2 = () => {
                     setOtpButtonText('RESEND OTP');
                 }, 3000) // enable button after 3 sec and change text to RESEND OTP
             });
-
-
     };
 
     const onRecaptchaSuccess = (token) => {
         console.log("reCAPTCHA token:", token);
         // Proceed with your button action here, e.g., send OTP
-        // setShowRecaptcha(false); // Hide reCAPTCHA
+        setRecaptchaVerified(true); // UPDATED
         setIsCallBackDisable(false);
     };
 
     const onRecaptchaError = () => {
         alert("Please complete the reCAPTCHA!");
-        // setShowRecaptcha(false); // Hide reCAPTCHA
+        setRecaptchaVerified(false); // UPDATED
         setIsCallBackDisable(true);
     };
 
     const handleSubmitOtp = () => {
-        // const correctOtp = ['1', '2', '3', '4']; // Replace with actual OTP logic
-        // if (JSON.stringify(userDetails.otp) === JSON.stringify(correctOtp)) {
-        //     setOtpValid(true);
-        // } else {
-        //     setOtpValid(false);
-        // }
         if (randomOtp == userDetails.otp) {
+            setOtpVerified(true); // UPDATED
             setThumbsUp(true);
             setThumbsDown(false);
             setShowRecaptcha(true);
-
         } else {
+            setOtpVerified(false); // UPDATED
             setThumbsDown(true);
             setThumbsUp(false);
             setIsCallBackDisable(true);
-
-
         }
     };
 
-
+    // UPDATED VALIDATION FUNCTION
     const isFormValid = () => {
-        let allInputField = false;
-        allInputField = userDetails.firstName !== "" && userDetails.mobileNo !== "+91" && userDetails.gender !== "" && userDetails.age !== "" && userDetails.consent;
-
-        return allInputField;
+        const basicFieldsValid = userDetails.firstName !== "" && 
+                                userDetails.mobileNo !== "+91" && 
+                                userDetails.gender !== "" && 
+                                userDetails.age !== "" && 
+                                userDetails.consent;
+        
+        // All basic fields + OTP verified + reCAPTCHA verified
+        return basicFieldsValid && otpVerified && recaptchaVerified;
     };
 
     useEffect(() => {
         setFormValid(isFormValid());
-    }, [userDetails])
+    }, [userDetails, otpVerified, recaptchaVerified]) // UPDATED DEPENDENCIES
 
     const handleInputChange = (e) => {
         const { name, value, type, checked } = e.target;
@@ -302,20 +291,38 @@ const LeadFormV2 = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const { firstName, mobileNo, consent } = userDetails;
+        // UPDATED VALIDATION - Check all requirements before submitting
+        if (!isFormValid()) {
+            if (!userDetails.firstName) {
+                setErrorMessage("Please enter your name");
+                return;
+            }
+            if (!userDetails.mobileNo || userDetails.mobileNo.length < 13) {
+                setErrorMessage("Please enter a valid Mobile Number");
+                return;
+            }
+            if (!userDetails.gender) {
+                setErrorMessage("Please select gender");
+                return;
+            }
+            if (!userDetails.age) {
+                setErrorMessage("Please select age");
+                return;
+            }
+            if (!userDetails.consent) {
+                setErrorMessage("Please give your consent to contact");
+                return;
+            }
+            if (!otpVerified) {
+                setErrorMessage("Please verify your OTP");
+                return;
+            }
+            if (!recaptchaVerified) {
+                setErrorMessage("Please complete the reCAPTCHA verification");
+                return;
+            }
+        }
 
-        if (!firstName) {
-            setErrorMessage("Please enter your name");
-            return;
-        }
-        if (!mobileNo || mobileNo.length < 10) {
-            setErrorMessage("Please enter a valid Mobile Number");
-            return;
-        }
-        if (!consent) {
-            setErrorMessage("Please give your consent to contact");
-            return;
-        }
         setLoading(true);
         try {
             const utmParameters = localStorage.getItem("utmParams");
@@ -338,6 +345,7 @@ const LeadFormV2 = () => {
 
             new LeadController().submitLeadForm(leadFormRequestBody).then(() => {
                 ToastComponent.success("Thank you for showing interest. Our executive will get back to you shortly.");
+                router.push('/thank-you');
                 setUserDetails({
                     firstName: "",
                     mobileNo: "",
@@ -350,12 +358,13 @@ const LeadFormV2 = () => {
                 setRandomOtp(false);
                 setThumbsUp(false);
                 setOtpInput(false);
-                setIsCallBackDisable(true)
+                setIsCallBackDisable(true);
+                setOtpVerified(false); // RESET
+                setRecaptchaVerified(false); // RESET
                 if (typeof window !== "undefined") {
                     localStorage.removeItem("utmParams");
                     localStorage.removeItem("referrer");
                 }
-                router.push('/thank-you');
             }).catch(error => {
                 console.error(error);
                 setErrorMessage("There was an error submitting the form. Please try again.");
@@ -373,26 +382,13 @@ const LeadFormV2 = () => {
         }
     };
 
-
-
-
     return (
-        // bg-[url(https://images.oasisindia.in/website/lp/campaign/Form_bg.png)]
         <>
-
             <div className="rounded-[27px] bg-cover bg-center bg-[#f3c1d7] overflow-hidden relative">
-                {/* <p className="text-white pt-4 pb-2 bg-primary mb-2 text-center text-[16px] font-bold">IVF @ ₹94,999* | LIMITED VALIDITY</p> */}
                 <p className="text-white mb-4 p bg-primary text-center py-2 text-[18px]  sm:text-[22px] font-bold">FREE CONSULTATION</p>
 
                 <form onSubmit={handleSubmit} className="">
                     <div className="px-4 lg:px-5 xl:px-6">
-                        {/* FORM HEADING */}
-                        {/* <div>
-                            <p className="text-center text-primary font-semibold">Fill Up The Form To Get a</p>
-                            <h2 className="text-[20px] md:text-[20px] lg:text-[24px] xl:text-[28px] !leading-[1.2] font-extrabold mb-3 xl:mb-4 text-center text-primary">
-                                FREE CONSULTATION
-                            </h2>
-                        </div> */}
 
                         <div className="relative mb-3 xl:mb-4">
                             <input
@@ -410,9 +406,6 @@ const LeadFormV2 = () => {
                                 <span className="absolute left-[88px] top-2 text-red-500 text-2xl">*</span>
                             )}
                         </div>
-
-
-
 
                         <div className="flex space-x-4 mb-3 xl:mb-4">
                             <div className="relative w-1/2">
@@ -442,7 +435,7 @@ const LeadFormV2 = () => {
                                     className="w-full p-3 bg-white border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
                                     value={userDetails.age}
                                     onChange={handleInputChange}
-                                    disabled={!userDetails.gender} // Disable if no gender is selected
+                                    disabled={!userDetails.gender}
                                     onFocus={() => setIsFocusedAge(true)}
                                     onBlur={() => setIsFocusedAge(false)}
                                     aria-label="Age"
@@ -474,7 +467,6 @@ const LeadFormV2 = () => {
                                 onFocus={() => setIsFocusedMobileNo(true)}
                                 onBlur={() => setIsFocusedMobileNo(false)}
                             />
-                            {/* Asterisk only if the input is empty or has only the prefix */}
                             {!isFocusedMobileNo &&
                                 (userDetails.mobileNo.length <= 3 || userDetails.mobileNo === "+91") && (
                                     <span className="absolute left-[40px] top-2 text-red-500 text-2xl">*</span>
@@ -501,7 +493,7 @@ const LeadFormV2 = () => {
                                                     ref={(el) => (inputRefs.current[index] = el)}
                                                     type="text"
                                                     maxLength={1}
-                                                    inputMode="numeric" // Ensures number pad on mobile
+                                                    inputMode="numeric"
                                                     className=" w-10 h-10 sm:w-12 sm:h-12 text-center text-lg border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none bg-white"
                                                     value={userDetails.otp[index] || ""}
                                                     onChange={(e) => handleOtpChange(e.target.value, index)}
@@ -540,15 +532,13 @@ const LeadFormV2 = () => {
 
                         {showRecaptcha && (
                             <div className="mb-3">
-                                {/* <div className="text-black">Testing</div> */}
                                 <ReCAPTCHA
-                                    sitekey="6Ld-zaMqAAAAAGu_oVb0S8fB5naUyFWNK7mb3MkE" // Replace with your reCAPTCHA site key
+                                    sitekey="6Ld-zaMqAAAAAGu_oVb0S8fB5naUyFWNK7mb3MkE"
                                     onChange={onRecaptchaSuccess}
                                     onErrored={onRecaptchaError}
                                 />
                             </div>
                         )}
-
 
                         <div className="flex items-center justify-center mb-2 xl:mb-2 text-center">
                             <input
@@ -567,27 +557,19 @@ const LeadFormV2 = () => {
                     </div>
 
                     <div className="bg-primary py-4 px-4">
-
-
-
-
-
                         {errMsg && <p className="text-red-500 text-sm">{errMsg}</p>}
 
                         <button
                             type="submit"
                             id="form-submit"
-                            className={`${loading && 'py-2'} w-full py-1 text-white text-[22px] rounded-lg leading-none font-medium ${loading || !formValid || isCallBackDisable ? "bg-red-400 cursor-not-allowed" : "bg-[#D7052B]"
-                                }`}
-                            disabled={loading}
+                            className={`${loading && 'py-2'} w-full py-1 text-white text-[22px] rounded-lg leading-none font-medium ${loading || !formValid ? "bg-red-400 cursor-not-allowed" : "bg-[#D7052B]"}`}
+                            disabled={loading || !formValid} // UPDATED CONDITION
                         >
                             {loading ? "Submitting..." : "Get A Call Back"}
-
                             {!loading && <p className="text-[12px] p-0 leading-none font-normal">within 1 minute</p>}
                         </button>
 
                         <div className="flex items-center justify-center mt-2">
-                            {/* <AiFillSafetyCertificate className="text-green-500 mr-2"/> */}
                             <Image
                                 className="mr-2"
                                 src='/images/lp/lp3/shield_icon.svg'
@@ -598,16 +580,12 @@ const LeadFormV2 = () => {
                             />
                             <span className="text-white text-sm">Your data is 100% safe with us.</span>
                         </div>
-
                     </div>
-
-
                 </form>
 
                 <div className="bg-[#DEDEDE] text-center py-2 px-3 text-black">
                     <p className="text-sm md:text-[18px] leading-[1.4]">
                         Get 0% interest on <strong>EMI</strong> | Starting ₹4,999* p/m
-                       
                     </p>
                 </div>
             </div>
