@@ -35,7 +35,7 @@ const LeadFormV2 = () => {
     const [showThumbsUp, setThumbsUp] = useState(false);
     const [showThumbsDown, setThumbsDown] = useState(false);
     const [showOtpInput, setOtpInput] = useState(false);
-    const [isCallBackDisable, setIsCallBackDisable] = useState(true);
+    // const [isCallBackDisable, setIsCallBackDisable] = useState(true);
     const [showRecaptcha, setShowRecaptcha] = useState(false);
     const [recaptchaVerified, setRecaptchaVerified] = useState(false); // NEW STATE
 
@@ -208,13 +208,13 @@ const LeadFormV2 = () => {
         console.log("reCAPTCHA token:", token);
         // Proceed with your button action here, e.g., send OTP
         setRecaptchaVerified(true); // UPDATED
-        setIsCallBackDisable(false);
+        // setIsCallBackDisable(false);
     };
 
     const onRecaptchaError = () => {
         alert("Please complete the reCAPTCHA!");
         setRecaptchaVerified(false); // UPDATED
-        setIsCallBackDisable(true);
+        // setIsCallBackDisable(true);
     };
 
     const handleSubmitOtp = () => {
@@ -227,7 +227,7 @@ const LeadFormV2 = () => {
             setOtpVerified(false); // UPDATED
             setThumbsDown(true);
             setThumbsUp(false);
-            setIsCallBackDisable(true);
+            // setIsCallBackDisable(true);
         }
     };
 
@@ -358,7 +358,7 @@ const LeadFormV2 = () => {
                 setRandomOtp(false);
                 setThumbsUp(false);
                 setOtpInput(false);
-                setIsCallBackDisable(true);
+                // setIsCallBackDisable(true);
                 setOtpVerified(false); // RESET
                 setRecaptchaVerified(false); // RESET
                 if (typeof window !== "undefined") {
