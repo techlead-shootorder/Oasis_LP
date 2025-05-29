@@ -37,7 +37,10 @@ export default function BusRouteMap() {
     { date: '3-June-25', day: 'Tuesday', location: 'Parigi - Parigi Mini stadium', time: '9:00 AM - 2:00 PM' },
     { date: '4-June-25', day: 'Wednesday', location: 'Shamshabad - Government Boys High School Ground', time: '9:00 AM - 2:00 PM' },
     { date: '5-July-25', day: 'Thursday', location: 'Mahabubnagar - Govt boys junior college', time: '9:00 AM - 2:00 PM' },
-    { date: '6-June-25', day: 'Friday', location: 'Adoni - Arts and science college auditorium', time: '9:00 AM - 2:00 PM' }
+    { date: '6-June-25', day: 'Friday', location: 'Adoni - Arts and science college auditorium', time: '9:00 AM - 2:00 PM' },
+    { date: '8-June-25', day: 'Sunday', location: 'Mahububabad - MLA Camp office ground', time: '9:00 AM - 2:00 PM' },
+    { date: '9-June-25', day: 'Monday', location: 'Narasampet - MINI Stadium,Mallampalli Road', time: '9:00 AM - 2:00 PM' },
+    { date: '10-June-25', day: 'Tuesday', location: 'Mancherial - Zillaparshad High School Ground', time: '9:00 AM - 2:00 PM' }
   ];
 
   const handleOpenModal = useCallback(() => setShowModal(true), []);

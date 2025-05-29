@@ -6,6 +6,7 @@ const JananiYatraBusTracker = () => {
   const [currentSchedule, setCurrentSchedule] = useState(null);
   const [tabsData, setTabsData] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
+  const [shouldRender, setShouldRender] = useState(false);
   
   // Schedule data from the table provided
   const scheduleData = [
@@ -170,14 +171,29 @@ const JananiYatraBusTracker = () => {
       stops: ["Parigi", "Shamshabad", "Mahabubnagar", "Adoni"]
     },
     {
-      date: "5-June-25", // Fixed from July to June
+      date: "5-June-25",
       day: "Thursday",
-      stops: ["Shamshabad", "Mahabubnagar", "Adoni", "-"]
+      stops: ["Shamshabad", "Mahabubnagar", "Adoni", "Mahububabad"]
     },
     {
       date: "6-June-25",
       day: "Friday",
-      stops: ["Mahabubnagar", "Adoni", "-", "-"]
+      stops: ["Mahabubnagar", "Adoni", "Mahububabad", "Narasampet "]
+    },
+     {
+      date: "8-June-25",
+      day: "Sunday",
+      stops: ["Adoni", "Mahububabad", "Narasampet", "Mancherial"]
+    },
+     {
+      date: "9-June-25",
+      day: "Monday",
+      stops: ["Mahububabad", "Narasampet", "Mancherial", "........"]
+    },
+     {
+      date: "10-June-25",
+      day: "Tuesday",
+      stops: ["Narasampet", "Mancherial", "........", "........"]
     }
   ];
 
@@ -189,7 +205,7 @@ const JananiYatraBusTracker = () => {
     const today = `${now.getDate()}-${months[now.getMonth()]}-${now.getFullYear().toString().substr(2)}`;
     
     // For testing, uncomment this line and comment the above code to test specific dates
-    // const today = "10-May-25"; // Change this to test different dates
+    // const today = "7-June-25"; // Change this to test different dates
     
     // Find the schedule for today
     const todaySchedule = scheduleData.find(item => item.date === today);
@@ -197,10 +213,10 @@ const JananiYatraBusTracker = () => {
     if (todaySchedule) {
       // Current location is the second item (index 1) which is the current location in the table
       const currentLocation = todaySchedule.stops[1];
-      return { schedule: todaySchedule, location: currentLocation };
+      return { schedule: todaySchedule, location: currentLocation, found: true };
     } else {
-      // If no schedule found for today, use the first schedule as default
-      return { schedule: scheduleData[0], location: scheduleData[0].stops[1] };
+      // If no schedule found for today, return null
+      return { schedule: null, location: null, found: false };
     }
   };
 
@@ -222,24 +238,31 @@ const JananiYatraBusTracker = () => {
 
   useEffect(() => {
     // Get location data once when component mounts
-    const { schedule, location } = getBusLocation();
-    setCurrentTab(location);
-    setCurrentSchedule(schedule);
+    const { schedule, location, found } = getBusLocation();
     
-    // Prepare tabs data
-    const tabs = schedule.stops.map((stop, index) => {
-      let status = "";
-      if (index === 0) status = "Previous";
-      else if (index === 1) status = "Current";
-      else status = "Next";
+    // Only render the component if a matching date is found
+    if (found && schedule) {
+      setShouldRender(true);
+      setCurrentTab(location);
+      setCurrentSchedule(schedule);
       
-      return {
-        name: stop, // Display the stop name as is
-        status
-      };
-    });
-    
-    setTabsData(tabs);
+      // Prepare tabs data
+      const tabs = schedule.stops.map((stop, index) => {
+        let status = "";
+        if (index === 0) status = "Previous";
+        else if (index === 1) status = "Current";
+        else status = "Next";
+        
+        return {
+          name: stop, // Display the stop name as is
+          status
+        };
+      });
+      
+      setTabsData(tabs);
+    } else {
+      setShouldRender(false);
+    }
   }, []);
 
   // Function to get tabs based on device type
@@ -254,6 +277,11 @@ const JananiYatraBusTracker = () => {
       return tabsData;
     }
   };
+
+  // Don't render the component if no matching date is found
+  if (!shouldRender) {
+    return null;
+  }
 
   return (
     <div className="bg-pink-50">
