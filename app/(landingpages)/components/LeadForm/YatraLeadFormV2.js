@@ -328,6 +328,11 @@ const LeadFormV2 = ({ internal = false }) => {
                                 <option value="Tolichowki">Shamshabad</option>
                                 <option value="Banjara Hills">Mahabubnagar</option>
                                 <option value="Kurnool">Adoni</option>
+                                <option value="Hanamkonda">Mahububabad</option>
+                                <option value="Hanamkonda">Narsampet</option>
+                                <option value="Karimnagar">Mancherial</option>
+
+
 
                             </select>
                             {!isFocusedCity && !userDetails.city && (
