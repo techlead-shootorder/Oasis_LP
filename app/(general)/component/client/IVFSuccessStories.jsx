@@ -142,7 +142,7 @@ export default function IVFSuccessStories({ headerText = "IVF Success Stories", 
                 <div className="flex justify-center mt-8">
                     <Link 
                         className="font-lato px-4 py-2 sm:px-6 sm:py-3 rounded-[10px] bg-accent text-sm sm:text-xl font-semibold text-[#FFFFFF] uppercase"
-                        href="/why-oasis/our-success-stories/"
+                        href="https://oasisindia.in/why-oasis/our-success-stories/"
                     >
                         SHOW MORE
                     </Link>

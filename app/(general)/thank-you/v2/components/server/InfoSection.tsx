@@ -21,7 +21,7 @@ export default function InfoSection() {
                         className="mt-4 xl:mt-6">
                         For over 15 years, the fertility experts at Oasis Fertility have been helping couples struggling with infertility have healthy babies with personalized and science-based treatments. The wide range of male and female fertility treatments available at Oasis Fertility include IUI, IVF, ICSI, IVM, and MicroTESE. Along with the standard fertility treatments, Oasis Fertility also offers advanced testing methods such as PGT-A (Preimplantation Genetic Testing) and ERA (Endometrial Receptivity Array) to ensure that the treatment is successful and the babies are born healthy.</p>
                     <a className="inline-flex justify-center items-center px-4 xl:px-6 py-3 mt-6 xl:mt-8 rounded-[12px] bg-accent text-xs xl:text-xl font-semibold text-white uppercase"
-                        href="/our-treatments">KNOW MORE</a>
+                        href="https://oasisindia.in/why-oasis/other-treatments/">KNOW MORE</a>
                 </div>
             </div>
         </div>
