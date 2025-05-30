@@ -117,7 +117,6 @@ const IVFPopup = () => {
             const leadFormRequestBody = {
                 ...userDetails,
                 ...utmParams,
-                 utmContent: (utmParams.utmContent || "English|") + "_IVF_POPUP",
                 referralUrl:
                     document.referrer ||
                     localStorage.getItem("referrer") ||
