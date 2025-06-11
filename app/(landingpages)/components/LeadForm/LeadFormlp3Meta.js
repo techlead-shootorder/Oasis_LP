@@ -327,6 +327,13 @@ const LeadFormV2 = () => {
         try {
             const utmParameters = localStorage.getItem("utmParams");
             const utmParams = utmParameters ? JSON.parse(utmParameters) : {};
+
+            
+            //ensure utmContent is not empty ""
+            if(utmParams?.utmContent == "" || utmParams?.utmContent == "-" || utmParams?.utmContent == "_"){
+                utmParams.utmContent = "English";
+            }
+            
             const leadFormRequestBody = {
                 ...userDetails,
                 ...utmParams,
