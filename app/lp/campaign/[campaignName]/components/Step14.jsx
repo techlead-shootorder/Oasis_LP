@@ -83,6 +83,11 @@ export default function Step14({ onNext, formData, setFormData }) {
         const utmParams = utmParameters ? JSON.parse(utmParameters) : {};
         const userDetails = { ...formData, whatsAppNumber: digitsOnly }
 
+        //ensure utmContent is not empty ""
+        if (utmParams?.utmContent == "" || utmParams?.utmContent == "-" || utmParams?.utmContent == "_") {
+          utmParams.utmContent = "English";
+        }
+
         const leadFormRequestBody = {
           ...userDetails,
           ...utmParams,
@@ -185,7 +190,7 @@ export default function Step14({ onNext, formData, setFormData }) {
 
         </div>
 
-         {/* Add this JSX below your input field: */}
+        {/* Add this JSX below your input field: */}
         {errorMessage && (
           <div className="text-red-500 text-sm text-center mt-1">
             {errorMessage}

@@ -91,6 +91,11 @@ export default function Step13({ onNext, formData, setFormData }) {
         const utmParams = utmParameters ? JSON.parse(utmParameters) : {};
         const userDetails = { ...formData, contact: { phoneNumber: digitsOnly, isWhatsApp }, name: name }
 
+        //ensure utmContent is not empty ""
+        if (utmParams?.utmContent == "" || utmParams?.utmContent == "-" || utmParams?.utmContent == "_") {
+          utmParams.utmContent = "English";
+        }
+
         const leadFormRequestBody = {
           ...userDetails,
           ...utmParams,
