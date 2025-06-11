@@ -1,0 +1,54 @@
+/* Ensure that the cards are responsive and fit well in the grid */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Fixed height for card consistency */
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .flip-card-front {
+    background-color: #fff;
+    color: black;
+  }
+  
+  .flip-card-back {
+    background-color: #ffe0c0;
+    color: black;
+    transform: rotateY(180deg);
+  }
+  
+  /* Responsive design for card container */
+  @media (min-width: 640px) {
+    .grid-cols-1 {
+      grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+    }
+  }
+  
