@@ -9,7 +9,7 @@ import Image from "next/image";
 
 
 
-const LeadFormV2 = ({ internal = false}) => {
+const LeadFormV2 = ({ internal = false }) => {
 
   const [userDetails, setUserDetails] = useState({
     firstName: "",
@@ -155,6 +155,12 @@ const LeadFormV2 = ({ internal = false}) => {
     try {
       const utmParameters = localStorage.getItem("utmParams");
       const utmParams = utmParameters ? JSON.parse(utmParameters) : {};
+
+      //ensure utmContent is not empty ""
+      if (utmParams?.utmContent == "" || utmParams?.utmContent == "-" || utmParams?.utmContent == "_") {
+        utmParams.utmContent = "English";
+      }
+
       const leadFormRequestBody = {
         ...userDetails,
         ...utmParams,
@@ -208,7 +214,7 @@ const LeadFormV2 = ({ internal = false}) => {
     <>
 
       <div className="rounded-[27px] bg-cover bg-center bg-[#f3c1d7] overflow-hidden relative ">
-        <p className="text-white py-1 px-2 bg-primary mb-2 text-center text-[14px] sm:text-[16px] font-bold">Male Fertility Treatment @ ₹X4,999* <br/>Limited Period Offer</p>
+        <p className="text-white py-1 px-2 bg-primary mb-2 text-center text-[14px] sm:text-[16px] font-bold">Male Fertility Treatment @ ₹X4,999* <br />Limited Period Offer</p>
 
         <form onSubmit={handleSubmit} className="">
 
@@ -306,7 +312,7 @@ const LeadFormV2 = ({ internal = false}) => {
                 )}
             </div>
 
-           {internal && <div className="relative mb-3 xl:mb-4">
+            {internal && <div className="relative mb-3 xl:mb-4">
               <input
                 type="text"
                 id="notes"
@@ -315,9 +321,9 @@ const LeadFormV2 = ({ internal = false}) => {
                 className="w-full p-3 bg-white border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
                 value={userDetails.notes}
                 onChange={handleInputChange}
-                
+
               />
-              
+
             </div>}
 
             <div className="flex items-center justify-center mb-3 xl:mb-4 text-center">
@@ -367,7 +373,7 @@ const LeadFormV2 = ({ internal = false}) => {
         <div className="bg-[#DEDEDE] text-center py-3 px-3 text-black">
           <p className="text-sm md:text-[18px] leading-[1.4]">
             Get 0% interest on <strong>EMI</strong>
-           
+
           </p>
         </div>
       </div>
