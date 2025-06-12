@@ -443,6 +443,27 @@ export default function GoogleLpPage() {
       return;
     }
 
+    if (step == 4 && formData?.gender == 'Female' && value == '45+') {
+      const tempStep = step;
+      setTrackStep(tempStep);
+      setStep(EGG_FREEZING_STEP_INDEX);
+      return;
+    }
+
+     if (step == 4 && formData?.gender == 'Male' && value == '18-24') {
+      const tempStep = step;
+      setTrackStep(tempStep);
+      setStep(EGG_FREEZING_STEP_INDEX);
+      return;
+    }
+
+     if (step == 4 && formData?.gender == 'Male' && value == '45+') {
+      const tempStep = step;
+      setTrackStep(tempStep);
+      setStep(EGG_FREEZING_STEP_INDEX);
+      return;
+    }
+
     if (step === EGG_FREEZING_STEP_INDEX) {
       setStep(1);
       return;
