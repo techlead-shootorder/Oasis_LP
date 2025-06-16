@@ -464,6 +464,15 @@ export default function GoogleLpPage() {
       return;
     }
 
+    if (step == 6 && value == '18-24') {
+      const tempStep = step;
+      setTrackStep(tempStep);
+      setStep(EGG_FREEZING_STEP_INDEX);
+      return;
+    }
+
+
+
     if (step === EGG_FREEZING_STEP_INDEX) {
       setStep(1);
       return;
