@@ -365,8 +365,8 @@ const LeadFormV2 = () => {
                     localStorage.removeItem("utmParams");
                     localStorage.removeItem("referrer");
                 }
-
-                // router.push('/thank-you');
+                
+                router.push('/thank-you');
             }).catch(error => {
                 console.error(error);
                 setErrorMessage("There was an error submitting the form. Please try again.");
