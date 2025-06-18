@@ -317,6 +317,9 @@ const LeadFormV2 = () => {
             setErrorMessage("Please give your consent to contact");
             return;
         }
+
+        console.log("submitted and triggered");
+        // return
         setLoading(true);
         try {
             const utmParameters = localStorage.getItem("utmParams");
@@ -362,7 +365,8 @@ const LeadFormV2 = () => {
                     localStorage.removeItem("utmParams");
                     localStorage.removeItem("referrer");
                 }
-                router.push('/thank-you');
+
+                // router.push('/thank-you');
             }).catch(error => {
                 console.error(error);
                 setErrorMessage("There was an error submitting the form. Please try again.");
@@ -576,7 +580,7 @@ const LeadFormV2 = () => {
                             id="form-submit"
                             className={`${loading && 'py-2'} w-full py-1 text-white text-[22px] rounded-lg leading-none font-medium ${loading || !formValid || isCallBackDisable ? "bg-red-400 cursor-not-allowed" : "bg-[#D7052B]"
                                 }`}
-                            disabled={isCallBackDisable}
+                            disabled={loading}
                         >
                             {loading ? "Submitting..." : "Get A Call Back"}
 
