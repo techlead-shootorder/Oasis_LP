@@ -59,7 +59,7 @@ const LeadFormV2 = () => {
             let utmMedium = searchParams?.has('utm_medium') ? searchParams?.get('utm_medium') : '';
             let utmCampaign = searchParams?.has('utm_campaign') ? searchParams?.get('utm_campaign') : '';
             let utmTerm = searchParams?.has('utm_term') ? searchParams?.get('utm_term') : '';
-            let utmContent = searchParams?.has('utm_content') ? searchParams?.get('utm_content') : '';
+            let utmContent = searchParams?.has('utm_content') ? searchParams?.get('utm_content') : 'English|';
             let fbclid = searchParams?.has('fbclid') ? searchParams?.get('fbclid') : '';
             let gclid = searchParams?.has('gclid') ? searchParams?.get('gclid') : '';
             let campaignid = searchParams?.has("campaignid")
@@ -327,7 +327,7 @@ const LeadFormV2 = () => {
 
             //ensure utmContent is not empty ""
             if (utmParams?.utmContent == "" || utmParams?.utmContent == "-" || utmParams?.utmContent == "_") {
-                utmParams.utmContent = "English";
+                utmParams.utmContent = "English|";
             }
             
             const leadFormRequestBody = {

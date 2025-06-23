@@ -93,7 +93,7 @@ export default function Step13({ onNext, formData, setFormData }) {
 
         //ensure utmContent is not empty ""
         if (utmParams?.utmContent == "" || utmParams?.utmContent == "-" || utmParams?.utmContent == "_") {
-          utmParams.utmContent = "English";
+          utmParams.utmContent = "English|";
         }
 
         const leadFormRequestBody = {

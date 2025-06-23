@@ -158,7 +158,7 @@ const LeadFormV2 = ({ internal = false }) => {
 
       //ensure utmContent is not empty ""
       if (utmParams?.utmContent == "" || utmParams?.utmContent == "-" || utmParams?.utmContent == "_") {
-        utmParams.utmContent = "English";
+        utmParams.utmContent = "English|";
       }
 
       const leadFormRequestBody = {
