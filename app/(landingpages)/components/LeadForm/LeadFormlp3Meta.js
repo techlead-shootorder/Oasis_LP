@@ -50,7 +50,7 @@ const LeadFormV2 = () => {
     const searchParams = useSearchParams();
 
     useEffect(() => {
-        if (searchParams) {
+        // if (searchParams) {
             let utmSource = searchParams?.has('utm_source') ? searchParams?.get('utm_source') : '';
             let utmMedium = searchParams?.has('utm_medium') ? searchParams?.get('utm_medium') : '';
             let utmCampaign = searchParams?.has('utm_campaign') ? searchParams?.get('utm_campaign') : '';
@@ -66,15 +66,15 @@ const LeadFormV2 = () => {
                 : "";
 
             if (
-                (utmSource && utmSource.length > 0) ||
-                (utmMedium && utmMedium.length > 0) ||
-                (utmCampaign && utmCampaign.length > 0) ||
-                (utmTerm && utmTerm.length > 0) ||
-                (utmContent && utmContent.length > 0) ||
-                (fbclid && fbclid.length > 0) ||
-                (gclid && gclid.length > 0) ||
-                (campaignid && campaignid.length > 0) ||
-                (adgroupid && adgroupid.length > 0)
+                (utmSource && utmSource?.length > 0) ||
+                (utmMedium && utmMedium?.length > 0) ||
+                (utmCampaign && utmCampaign?.length > 0) ||
+                (utmTerm && utmTerm?.length > 0) ||
+                (utmContent && utmContent?.length > 0) ||
+                (fbclid && fbclid?.length > 0) ||
+                (gclid && gclid?.length > 0) ||
+                (campaignid && campaignid?.length > 0) ||
+                (adgroupid && adgroupid?.length > 0)
             ) {
                 let UTMParams = {
                     utmSource: utmSource,
@@ -95,7 +95,7 @@ const LeadFormV2 = () => {
             if (typeof window !== 'undefined') {
                 localStorage.setItem('referrer', referrer)
             }
-        }
+        // }
     }, [])
 
     const handleOtpChange = (value, index) => {

@@ -105,7 +105,7 @@ async function sendSalesforceLeadRequest(requestJson) {
         ModifiedLeadSource = "Organic";
       }
 
-      console.log("current city name", requestJson.city);
+      // console.log("current city name", requestJson.city);
 
       const raw = JSON.stringify({
         FirstName: firstName,
@@ -115,11 +115,11 @@ async function sendSalesforceLeadRequest(requestJson) {
         Email: requestJson.emailId ?? "",
         Company: requestJson.message && requestJson.message.length > 0 ? requestJson.message : "Oasis",
         LeadSource: ModifiedLeadSource,
-        UTM_Campaign__c: requestJson.utmCampaign ?? "Website",
-        UTM_Source__c: requestJson.utmSource ?? "Website",
-        UTM_Medium__c: requestJson.utmMedium ?? "Website",
+        UTM_Campaign__c: requestJson.utmCampaign ? requestJson?.utmCampaign :  "Test_SO",
+        UTM_Source__c: requestJson.utmSource ? requestJson?.utmSource : "Test_SO",
+        UTM_Medium__c: requestJson.utmMedium ? requestJson?.utmMedium : "Test_SO",
         UTM_Content__c: requestJson.utmContent ?? "English|",
-        Keyword__c: requestJson.utmTerm ?? "Website",
+        Keyword__c: requestJson.utmTerm ? requestJson.utmTerm : "Test_SO",
         Appointment_Date__c: requestJson.appointmentDate ?? formatDateToYYYYMMDD(new Date()),
         Page_URL1__c: requestJson.pageUrl ?? "",
         Referral_URL1__c: requestJson.referralUrl ?? "",
@@ -133,7 +133,7 @@ async function sendSalesforceLeadRequest(requestJson) {
         API_Call__c: true,
       });
 
-      console.log("Salesforce Lead request>> ", raw);
+      console.log("Salesforce Lead request---->> ", raw);
 
       let response = await fetch(
         authData.instance_url + `/services/data/v60.0/sobjects/Lead/Phone__c/${encodeURIComponent(requestJson.mobileNo)}`,
@@ -227,11 +227,11 @@ async function storeLeadData(requestJson) {
     email: requestJson.emailId ?? "",
     company: requestJson.message?.length > 0 ? requestJson.message : "Oasis",
     leadSource: ModifiedLeadSourceSQL,
-    utm_campaign: requestJson.utmCampaign ?? "Website",
-    utm_source: requestJson.utmSource ?? "Website",
-    utm_medium: requestJson.utmMedium ?? "Website",
-    utm_content: requestJson.utmContent ?? "English|",
-    keyword: requestJson.utmTerm ?? "Website",
+    utm_campaign: requestJson.utmCampaign ? requestJson.utmCampaign : "Test_SO",
+    utm_source: requestJson.utmSource ? requestJson?.utmSource : "Test_SO",
+    utm_medium: requestJson.utmMedium ? requestJson?.utmMedium : "Test_SO",
+    utm_content: requestJson.utmContent || "English|",
+    keyword: requestJson.utmTerm ? requestJson.utmTerm : "Test_SO",
     appointment_date: requestJson.appointmentDate ?? null,
     page_url: requestJson.pageUrl ?? "",
     referral_url: requestJson.referralUrl ?? "",
@@ -243,6 +243,8 @@ async function storeLeadData(requestJson) {
     errorMessage: requestJson.errorMessage ?? "success",
     api_call: true,
   };
+
+  console.log("lead Data-------------->", leadData);
 
   try {
     const [rows] = await dbConnection.execute("SELECT 1");
