@@ -178,12 +178,12 @@ async function sendSalesforceLeadRequest(requestJson) {
 
 async function storeLeadData(requestJson) {
   const sql = `INSERT INTO oasisfertility_lead_store_lp (
-    firstName, lastName, age, gender, mobile_number, email, company, 
+    firstName, lastName, age, gender, looking_for, mobile_number, email, company, 
     leadSource, utm_campaign, utm_source, utm_medium, 
     utm_content, utm_location, keyword, appointment_date, page_url, 
     referral_url, ad_group_id, google_campaign_id, 
     select_your_branch, fbclid, gclid, errorMessage
-  ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+  ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
   let firstName = "";
   let lastName = "";
@@ -225,6 +225,7 @@ async function storeLeadData(requestJson) {
     lastName,
     age: requestJson.age ?? null,
     gender: requestJson.gender ?? "",
+    looking_for: requestJson.looking_for ?? "",
     mobile_number: requestJson.mobileNo ?? "",
     email: requestJson.emailId ?? "",
     company: requestJson.message?.length > 0 ? requestJson.message : "Oasis",
@@ -260,6 +261,7 @@ async function storeLeadData(requestJson) {
       leadData.lastName,
       leadData.age,
       leadData.gender,
+      leadData.looking_for,
       leadData.mobile_number,
       leadData.email,
       leadData.company,

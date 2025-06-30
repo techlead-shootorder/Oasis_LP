@@ -4,6 +4,7 @@ import React, { Suspense, memo } from "react";
 import Image from "next/image";
 import LeadFormV2 from "../LeadForm/LeadFormV2";
 import LeadFormlp3Meta from "../LeadForm/LeadFormlp3Meta";
+import GoogleLeadFormlp3 from "../LeadForm/GoogleLeadFormlp3";
 
 // Skeleton Components
 const FormSkeleton = memo(() => (
@@ -181,6 +182,8 @@ const HeroBanner = memo(({ type, centerName, isfemaleAssessment }) => {
 });
 HeroBanner.displayName = "HeroBanner";
 
+
+
 // Memoized Content Components
 const HeroHeading = memo(({ service, centerName, isfemaleAssessment }) => (
   !isfemaleAssessment && <h1 id="heroBannerHeading" className="absolute text-[26px] top-[10px] left-0 md:text-[26px] lg:text-4xl xl:text-5xl md:top-12 md:left-[24px] lg:left-[40px] xl:left-[60px] 2xl:left-[100px] z-10 font-semibold text-primary py-2 text-center md:text-left w-full md:w-auto">
@@ -197,9 +200,12 @@ const InvisibleArticle = memo(() => (
 ));
 InvisibleArticle.displayName = "InvisibleArticle";
 
+const currentUrl = window.location.href;
+
 const LeadFormWrapper = memo(({ isMeta, center, service, internal }) => (
+  
   <>
-    {isMeta ?
+    {isMeta ? currentUrl.includes('google1') ? <GoogleLeadFormlp3 isMeta={isMeta} center={center} service={service} internal={internal} /> :
       <LeadFormlp3Meta center={center} service={service} /> :
       <LeadFormV2 center={center} service={service} internal={internal} />
     }
