@@ -40,6 +40,7 @@ const LeadFormV2 = ({ internal = false }) => {
       let utmCampaign = searchParams?.has('utm_campaign') ? searchParams?.get('utm_campaign') : '';
       let utmTerm = searchParams?.has('utm_term') ? searchParams?.get('utm_term') : '';
       let utmContent = searchParams?.has('utm_content') ? searchParams?.get('utm_content') : 'English|';
+      let utmLocation = searchParams?.has('utm_location') ? searchParams?.get('utm_location') : '';
       let fbclid = searchParams?.has('fbclid') ? searchParams?.get('fbclid') : '';
       let gclid = searchParams?.has('gclid') ? searchParams?.get('gclid') : '';
       let campaignid = searchParams?.has("campaignid")
@@ -55,6 +56,7 @@ const LeadFormV2 = ({ internal = false }) => {
         (utmCampaign && utmCampaign?.length > 0) ||
         (utmTerm && utmTerm?.length > 0) ||
         (utmContent && utmContent?.length > 0) ||
+        (utmLocation && utmLocation?.length > 0) ||
         (fbclid && fbclid?.length > 0) ||
         (gclid && gclid?.length > 0) ||
         (campaignid && campaignid?.length > 0) ||
@@ -66,15 +68,16 @@ const LeadFormV2 = ({ internal = false }) => {
           utmCampaign: utmCampaign,
           utmTerm: utmTerm,
           utmContent: utmContent,
+          utmLocation: utmLocation,
           fbclid: fbclid,
           gclid: gclid,
           campaignid: campaignid,
           adgroupid: adgroupid,
         };
         if (typeof window !== 'undefined') {
-          console.log('utm params set')
+          // console.log('utm params set')
           localStorage.setItem('utmParams', JSON.stringify(UTMParams));
-          console.log("utm param after setting", JSON.parse(localStorage.getItem('utmParams')) );
+          // console.log("utm param after setting", JSON.parse(localStorage.getItem('utmParams')) );
         }
       }
       const referrer = Cookies.get('referrer');

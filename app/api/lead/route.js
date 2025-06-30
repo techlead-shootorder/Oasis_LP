@@ -180,10 +180,10 @@ async function storeLeadData(requestJson) {
   const sql = `INSERT INTO oasisfertility_lead_store_lp (
     firstName, lastName, age, gender, mobile_number, email, company, 
     leadSource, utm_campaign, utm_source, utm_medium, 
-    utm_content, keyword, appointment_date, page_url, 
+    utm_content, utm_location, keyword, appointment_date, page_url, 
     referral_url, ad_group_id, google_campaign_id, 
     select_your_branch, fbclid, gclid, errorMessage
-  ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+  ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
   let firstName = "";
   let lastName = "";
@@ -218,6 +218,8 @@ async function storeLeadData(requestJson) {
     ModifiedLeadSourceSQL = "Organic";
   }
 
+  console.log("testing RequestJson", requestJson)
+
   const leadData = {
     firstName,
     lastName,
@@ -231,6 +233,7 @@ async function storeLeadData(requestJson) {
     utm_source: requestJson.utmSource ? requestJson?.utmSource : "Test_SO",
     utm_medium: requestJson.utmMedium ? requestJson?.utmMedium : "Test_SO",
     utm_content: requestJson.utmContent || "English|",
+    utm_location: requestJson.utmLocation ? requestJson.utmLocation : "Test_SO",
     keyword: requestJson.utmTerm ? requestJson.utmTerm : "Test_SO",
     appointment_date: requestJson.appointmentDate ?? null,
     page_url: requestJson.pageUrl ?? "",
@@ -265,6 +268,7 @@ async function storeLeadData(requestJson) {
       leadData.utm_source,
       leadData.utm_medium,
       leadData.utm_content,
+      leadData.utm_location,
       leadData.keyword,
       leadData.appointment_date,
       leadData.page_url,
