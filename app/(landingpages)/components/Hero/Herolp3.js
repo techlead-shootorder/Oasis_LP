@@ -200,15 +200,16 @@ const InvisibleArticle = memo(() => (
 ));
 InvisibleArticle.displayName = "InvisibleArticle";
 
-const currentUrl = window.location.href;
-
+const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
+ 
 const LeadFormWrapper = memo(({ isMeta, center, service, internal }) => (
   
   <>
     {isMeta ? currentUrl.includes('google1') ? <GoogleLeadFormlp3 isMeta={isMeta} center={center} service={service} internal={internal} /> :
-      <LeadFormlp3Meta center={center} service={service} /> :
+    <LeadFormlp3Meta center={center} service={service} /> :
       <LeadFormV2 center={center} service={service} internal={internal} />
     }
+   
   </>
 ));
 LeadFormWrapper.displayName = "LeadFormWrapper";
