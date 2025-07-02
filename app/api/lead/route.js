@@ -105,13 +105,12 @@ async function sendSalesforceLeadRequest(requestJson) {
         ModifiedLeadSource = "Organic";
       }
 
-      // console.log("current city name", requestJson.city);
-
       const raw = JSON.stringify({
         FirstName: firstName,
         LastName: lastName,
         Age__c: requestJson.age ?? "",
         Gender__c: requestJson.gender ?? "",
+        Looking_for__c: requestJson.looking_for ?? "",
         Email: requestJson.emailId ?? "",
         Company: requestJson.message && requestJson.message.length > 0 ? requestJson.message : "Oasis",
         LeadSource: ModifiedLeadSource,
