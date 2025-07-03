@@ -56,7 +56,8 @@ const LeadFormV2 = () => {
             let utmCampaign = searchParams?.has('utm_campaign') ? searchParams?.get('utm_campaign') : '';
             let utmTerm = searchParams?.has('utm_term') ? searchParams?.get('utm_term') : '';
             let utmContent = searchParams?.has('utm_content') ? searchParams?.get('utm_content') : 'English|';
-            let utmLocation = searchParams?.has('utm_location') ? searchParams?.get('utm_location') : '';
+            let location_interest_ms = searchParams?.has('location_interest_ms') ? searchParams?.get('location_interest_ms') : '';
+            let location_physical_ms = searchParams?.has('location_physical_ms') ? searchParams?.get('location_physical_ms') : '';
             let fbclid = searchParams?.has('fbclid') ? searchParams?.get('fbclid') : '';
             let gclid = searchParams?.has('gclid') ? searchParams?.get('gclid') : '';
             let campaignid = searchParams?.has("campaignid")
@@ -72,23 +73,25 @@ const LeadFormV2 = () => {
                 (utmCampaign && utmCampaign?.length > 0) ||
                 (utmTerm && utmTerm?.length > 0) ||
                 (utmContent && utmContent?.length > 0) ||
-                (utmLocation && utmLocation?.length > 0) ||
+                (location_interest_ms && location_interest_ms?.length > 0) ||
+                (location_physical_ms && location_physical_ms?.length > 0) ||
                 (fbclid && fbclid?.length > 0) ||
                 (gclid && gclid?.length > 0) ||
                 (campaignid && campaignid?.length > 0) ||
                 (adgroupid && adgroupid?.length > 0)
             ) {
                 let UTMParams = {
-                    utmSource: utmSource,
-                    utmMedium: utmMedium,
-                    utmCampaign: utmCampaign,
-                    utmTerm: utmTerm,
-                    utmContent: utmContent,
-                    utmLocation: utmLocation,
-                    fbclid: fbclid,
-                    gclid: gclid,
-                    campaignid: campaignid,
-                    adgroupid: adgroupid,
+                    utmSource,
+                    utmMedium,
+                    utmCampaign,
+                    utmTerm,
+                    utmContent,
+                    location_interest_ms,
+                    location_physical_ms,
+                    fbclid,
+                    gclid,
+                    campaignid,
+                    adgroupid,
                 };
                 if (typeof window !== 'undefined') {
                     localStorage.setItem('utmParams', JSON.stringify(UTMParams));

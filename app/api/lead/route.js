@@ -118,6 +118,8 @@ async function sendSalesforceLeadRequest(requestJson) {
         UTM_Source__c: requestJson.utmSource ? requestJson?.utmSource : "Test_SO",
         UTM_Medium__c: requestJson.utmMedium ? requestJson?.utmMedium : "Test_SO",
         UTM_Content__c: requestJson.utmContent ?? "English|",
+        Location_Interest_MS__c: requestJson.location_interest_ms ?? "Test_SO",
+        Location_Physical_MS__c: requestJson?.location_physical_ms ?? "Test_SO",
         Keyword__c: requestJson.utmTerm ? requestJson.utmTerm : "Test_SO",
         Appointment_Date__c: requestJson.appointmentDate ?? formatDateToYYYYMMDD(new Date()),
         Page_URL1__c: requestJson.pageUrl ?? "",
@@ -179,10 +181,10 @@ async function storeLeadData(requestJson) {
   const sql = `INSERT INTO oasisfertility_lead_store_lp (
     firstName, lastName, age, gender, looking_for, mobile_number, email, company, 
     leadSource, utm_campaign, utm_source, utm_medium, 
-    utm_content, utm_location, keyword, appointment_date, page_url, 
+    utm_content, location_interest_ms, location_physical_ms, keyword, appointment_date, page_url, 
     referral_url, ad_group_id, google_campaign_id, 
     select_your_branch, fbclid, gclid, errorMessage
-  ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+  ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
   let firstName = "";
   let lastName = "";
@@ -233,7 +235,8 @@ async function storeLeadData(requestJson) {
     utm_source: requestJson.utmSource ? requestJson?.utmSource : "Test_SO",
     utm_medium: requestJson.utmMedium ? requestJson?.utmMedium : "Test_SO",
     utm_content: requestJson.utmContent || "English|",
-    utm_location: requestJson.utmLocation ? requestJson.utmLocation : "Test_SO",
+    location_interest_ms: requestJson.location_interest_ms ? requestJson.location_interest_ms : "Test_SO",
+    location_physical_ms: requestJson.location_physical_ms ? requestJson.location_physical_ms : "Test_SO",
     keyword: requestJson.utmTerm ? requestJson.utmTerm : "Test_SO",
     appointment_date: requestJson.appointmentDate ?? null,
     page_url: requestJson.pageUrl ?? "",
@@ -269,7 +272,8 @@ async function storeLeadData(requestJson) {
       leadData.utm_source,
       leadData.utm_medium,
       leadData.utm_content,
-      leadData.utm_location,
+      leadData.location_interest_ms,
+      leadData.location_physical_ms,
       leadData.keyword,
       leadData.appointment_date,
       leadData.page_url,
