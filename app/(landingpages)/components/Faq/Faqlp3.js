@@ -18,7 +18,7 @@ const FAQV2 = () => {
         {
             question: "What IVF treatments are available at Oasis?",
             answer:
-                "Oasis provides IVF, ICSI, donor programs, fertility preservation, and tailored treatment plans for every patient.",
+                "Oasis provides IVF, ICSI, fertility preservation, and personalized treatment plans tailored to each patient’s unique needs.",
         },
         {
             question: "How much does IVF cost at Oasis Fertility?",

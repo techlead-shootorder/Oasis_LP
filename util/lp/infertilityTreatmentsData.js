@@ -17,7 +17,7 @@ const infertilityTreatmentsData = [
         id: 3,
         title: "IUI (Intrauterine Insemination)",
         description:
-            "IUI introduces high-quality sperm directly into the uterus, enhancing natural conception. Oasis offers compassionate care, tailored treatment plans, and proven expertise to turn your parenthood dreams into reality.",
+            "IUI places carefully prepared male reproductive cells directly into the uterus, enhancing the chances of natural conception. Oasis offers compassionate care, personalized treatment plans, and proven expertise to help make parenthood a reality.",
         image: "/images/lp/treatments/updated/Infertility_Treatments/IUI.jpg",
     },
     {

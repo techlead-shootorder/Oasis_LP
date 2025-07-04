@@ -11,7 +11,7 @@ const infertilityTestingData = [
         id: 2,
         title: "Semen Analysis",
         description:
-            "Semen analysis evaluates sperm health, count, and motility, essential for understanding fertility. At Oasis, advanced labs and expert diagnostics ensure tailored IVF solutions for achieving your parenthood dreams effectively.",
+            "Semen analysis evaluates male reproductive health, including count and movement, and is essential for understanding fertility. At Oasis, advanced labs and expert diagnostics ensure tailored IVF solutions to support your journey to parenthood.",
         image: "/images/lp/treatments/updated/Infertility_Testing/Semen_Analysis.png",
     },
     {

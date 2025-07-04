@@ -6,7 +6,7 @@ const data = [
     id: 1,
     title: "IVF (In Vitro Fertilization)",
     description:
-      "IVF combines eggs and sperm in a lab for precise fertilization and embryo transfer. Choose Oasis for advanced tech, expert care, and personalized solutions, ensuring your best chance at parenthood.",
+      "IVF involves fertilizing eggs in a lab and transferring the embryo with precision. Trust Oasis for expert care, cutting-edge tech, and a personalized approach to parenthood.",
     image: "/images/lp/treatments/updated/Infertility_Treatments/IVF.jpg",
   },
   {

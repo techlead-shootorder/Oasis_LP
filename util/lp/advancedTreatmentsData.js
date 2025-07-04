@@ -2,13 +2,13 @@ const advancedTreatmentsData = [
     {
         id: 1,
         title: "DFI (DNA Fragmentation Index) Testing",
-        description: "DFI testing evaluates sperm DNA integrity, a key factor in fertility. At Oasis, precise DFI analysis aids advanced IVF solutions, ensuring better outcomes through science-driven, personalized care.",
+        description: "DFI testing evaluates the DNA integrity of male reproductive cells, a key factor in fertility. At Oasis, precise analysis supports advanced IVF solutions, ensuring better outcomes through science-driven, personalized care.",
         image: "/images/lp/treatments/updated/Advanced_Treatments/DFI.webp"
     },
     {
         id: 2,
         title: "Micro TESE",
-        description: "Microdissection Testicular Sperm Extraction is a cutting-edge surgical procedure to retrieve sperm directly from the testes. At Oasis, advanced labs and expert andrologists ensure precision and personalized fertility care tailored to achieve parenthood.",
+        description: "Microdissection Testicular Extraction is a cutting-edge surgical procedure to retrieve male reproductive cells directly from the testes. At Oasis, advanced labs and expert andrologists ensure precision and personalized fertility care to support your journey to parenthood.",
         image: "/images/lp/treatments/updated/Advanced_Treatments/microTESE.webp"
     },
     {
