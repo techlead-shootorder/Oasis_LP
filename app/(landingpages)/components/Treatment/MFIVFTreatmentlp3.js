@@ -41,7 +41,7 @@ const IVFTreatmentlp3 = () => {
      <div className="w-full mt-6 lg:mt-8 flex gap-4 sm:gap-4 justify-center">
       {data.map((item) => (
         <>
-          <div className="w-[300px] flex flex-col px-3 py-4 bg-white rounded-[25px] transform hover:shadow-lg transition-all">
+          <div className="w-[300px] flex flex-col px-3 py-4 bg-white rounded-[25px] transform shadow-lg transition-all">
            
             <Image
               src={item.image}

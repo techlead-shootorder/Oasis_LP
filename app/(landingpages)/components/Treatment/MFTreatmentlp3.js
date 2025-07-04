@@ -135,7 +135,7 @@ ButtonGroup.displayName = 'ButtonGroup';
 
 // Carousel Item Component
 const CarouselItem = memo(({ item }) => (
-    <div className=" flex flex-col p-4 bg-white rounded-[25px] mx-2 lg:mx-3 h-full transform hover:shadow-lg transition-all">
+    <div className=" flex flex-col p-4 bg-white rounded-[25px] mx-2 lg:mx-3 h-full transform shadow-lg transition-all">
         <OptimizedImage
             src={item.image}
             alt={item.title}
